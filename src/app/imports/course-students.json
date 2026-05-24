@@ -49,7 +49,7 @@
 [CourseDetails loadTeams] courseId é undefined?: false
 [CourseDetails loadTeams] courseId é null?: false
 [CourseDetails loadTeams] courseId é string vazia?: false
-[CourseDetails loadTeams] URL CONSTRUÍDA: https://zyddwlonwcrnwfmcgoyl.supabase.co/functions/v1/make-server-1184b871/teams?courseId=1772442677908
+[CourseDetails loadTeams] URL CONSTRUÍDA: https://malixbxxfqzzszvjyrla.supabase.co/functions/v1/make-server-1184b871/teams?courseId=1772442677908
 [CourseDetails loadTeams] Incluiu courseId na URL?: true
 ════════════════════════════════════════════════
 [App.tsx RENDER] Renderizando CourseDetails com courseId: 1772442677908 courseName: EFA b3
@@ -244,7 +244,7 @@ Sprints loaded: {
 }
 [studentsList] ===== FIM =====
 Response status: 200
-Response URL: https://zyddwlonwcrnwfmcgoyl.supabase.co/functions/v1/make-server-1184b871/stories
+Response URL: https://malixbxxfqzzszvjyrla.supabase.co/functions/v1/make-server-1184b871/stories
 Stories loaded: {
   "success": true,
   "stories": [
@@ -586,7 +586,7 @@ Stories loaded: {
   "email": "m@formacao.pt",
   "teamId": "team_1772444382018"
 }
-[handleUpdateStudent] URL completa: https://zyddwlonwcrnwfmcgoyl.supabase.co/functions/v1/make-server-1184b871/students/student_1772444324055
+[handleUpdateStudent] URL completa: https://malixbxxfqzzszvjyrla.supabase.co/functions/v1/make-server-1184b871/students/student_1772444324055
 [handleUpdateStudent] Enviando PUT com dados: {
   "name": "Manuel",
   "email": "m@formacao.pt",
