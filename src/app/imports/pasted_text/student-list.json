@@ -1,0 +1,785 @@
+LOGIN DEBUG] 📋 Lista de formandos recebidos: [
+  {
+    "id": "student_1775117996091",
+    "name": "Formando2",
+    "courseId": "1775117855439",
+    "teamId": "team_1775117898823"
+  },
+  {
+    "id": "student_1775117962578",
+    "name": "Formando1",
+    "courseId": "1775117855439",
+    "teamId": "team_1775117898823"
+  },
+  {
+    "id": "student_1773154163047",
+    "name": "Vaz",
+    "courseId": "1773154087776",
+    "teamId": "team_1773154120926"
+  },
+  {
+    "id": "student_1773070438226",
+    "name": "Joaquim",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1772898704134",
+    "name": "vasco",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1772896122388",
+    "name": "Luis",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703042968"
+  },
+  {
+    "id": "student_1772802176681",
+    "name": "Fernão de Magalhães",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772802149173",
+    "name": "Bartolomeu Dias",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772802103577",
+    "name": "Pedro Álvares Cabral",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772801787113",
+    "name": "Vasco da Gama",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772801756311",
+    "name": "Infante D. Henrique",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772801559816",
+    "name": "Infante D. Henrique",
+    "courseId": "1772801309759",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772619484160",
+    "name": "Manuel Joaquim",
+    "courseId": "1772618991158",
+    "teamId": "team_1772619426583"
+  },
+  {
+    "id": "student_1772619464674",
+    "name": "Joana Fontinha",
+    "courseId": "1772618991158",
+    "teamId": "team_1772619426583"
+  },
+  {
+    "id": "student_1772619400094",
+    "name": "Manuel Joaquim",
+    "courseId": "1772618991158",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531365829",
+    "name": "Rui Descanso",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531162108"
+  },
+  {
+    "id": "student_1772531342692",
+    "name": "Vítor Sesta",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531162108"
+  },
+  {
+    "id": "student_1772531322237",
+    "name": "Paula Agenda",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531162108"
+  },
+  {
+    "id": "student_1772531299718",
+    "name": "Ana Paciência",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531131370"
+  },
+  {
+    "id": "student_1772531271913",
+    "name": "Carla Café",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531131370"
+  },
+  {
+    "id": "student_1772531245134",
+    "name": "Nuno Intervalo",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531131370"
+  },
+  {
+    "id": "student_1772531056891",
+    "name": "Nuno Intervalo",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531046355",
+    "name": "Paula Agenda",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531035006",
+    "name": "Vítor Sesta",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531017003",
+    "name": "Carla Café",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531000249",
+    "name": "Rui Descanso",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772530982214",
+    "name": "Ana Paciência",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772459695004",
+    "name": "marta",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772459607657",
+    "name": "marta",
+    "courseId": "1772450402879",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772451454893",
+    "name": "mais",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772451439200",
+    "name": "mais",
+    "courseId": "1772450402879",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772451189797",
+    "name": "antonio",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772451113578",
+    "name": "luis",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772450789772",
+    "name": "vasco",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772442538870",
+    "name": "Julia",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703042968"
+  },
+  {
+    "id": "student_1772275267873",
+    "name": "jose",
+    "courseId": "1772275083083",
+    "teamId": "team_1772275109093"
+  },
+  {
+    "id": "student_1772275163758",
+    "name": "Manuel",
+    "courseId": "1772275083083",
+    "teamId": "team_1772275109093"
+  },
+  {
+    "id": "student_1772182493025",
+    "name": "Jose",
+    "courseId": "1772182438947",
+    "teamId": "team_1772182462457"
+  },
+  {
+    "id": "student_1772117635526",
+    "name": "Rolando Seixo do Rio",
+    "courseId": "1772116810767",
+    "teamId": "team_1772116952107"
+  },
+  {
+    "id": "student_1772116920002",
+    "name": "Pedro Pedra da Rocha Calhau",
+    "courseId": "1772116810767",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772116891845",
+    "name": "João Passos Dias Aguiar Mota",
+    "courseId": "1772116810767",
+    "teamId": ""
+  },
+  {
+    "id": "student_1771946887181",
+    "name": "antonio",
+    "courseId": "1771946809250",
+    "teamId": ""
+  },
+  {
+    "id": "student_1771938821443",
+    "name": "Luis",
+    "courseId": "1771938777076",
+    "teamId": ""
+  },
+  {
+    "id": "student_1771421694716",
+    "name": "Manuel",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1771414084909",
+    "name": "Mario",
+    "courseId": "1771414017079",
+    "teamId": ""
+  },
+  {
+    "id": "student_1769703108611",
+    "name": "Maria",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1769703087512",
+    "name": "Luis",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  }
+]
+[LOGIN DEBUG] ✅ Formando encontrado! {
+  "id": "student_1775117996091",
+  "name": "Formando2",
+  "courseId": "1775117855439",
+  "teamId": "team_1775117898823"
+}
+[DEBUG] Formando encontrado, buscando dados adicionais...
+[DEBUG] Buscando curso: 1775117855439
+[DEBUG] Response status do curso: 200
+[DEBUG] Resposta do curso: {
+  "success": true,
+  "course": {
+    "id": "1775117855439",
+    "name": "Word",
+    "teams": 0,
+    "status": "new",
+    "endDate": "",
+    "sprints": 0,
+    "progress": 0,
+    "students": 0,
+    "createdAt": "2026-04-02T08:17:35.439Z",
+    "startDate": "02/04/2026",
+    "description": "Este é um curso de formação profissional",
+    "studentsList": []
+  }
+}
+[DEBUG] ✅ Curso encontrado: Word
+[DEBUG] Buscando equipa: team_1775117898823
+[DEBUG] Equipa encontrada: Omega
+[DEBUG] Dados do formando enriquecidos: {
+  "id": "student_1775117996091",
+  "name": "Formando2",
+  "email": "ff@formacao.pt",
+  "teamId": "team_1775117898823",
+  "courseId": "1775117855439",
+  "createdAt": "2026-04-02T08:19:56.091Z",
+  "courseName": "Word",
+  "teamName": "Omega"
+}
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 0
+[FormandoDashboard] Total userStories: 0
+[FormandoDashboard] Stories: []
+[FormandoDashboard] 📊 Member points: []
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 0,
+  "totalPoints": 0,
+  "memberPoints": []
+}
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 0
+[FormandoDashboard] Total userStories: 0
+[FormandoDashboard] Stories: []
+[FormandoDashboard] 📊 Member points: []
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 0,
+  "totalPoints": 0,
+  "memberPoints": []
+}
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 0
+[FormandoDashboard] Total userStories: 0
+[FormandoDashboard] Stories: []
+[FormandoDashboard] 📊 Member points: []
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 0,
+  "totalPoints": 0,
+  "memberPoints": []
+}
+[FormandoDashboard] ✅ Estudantes recebidos do backend
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 2
+[FormandoDashboard] Total userStories: 0
+[FormandoDashboard] Stories: []
+[FormandoDashboard] 👤 Calculando pontos para: Formando2
+[FormandoDashboard] 📊 Total de pontos de Formando2: 0
+[FormandoDashboard] 👤 Calculando pontos para: Formando1
+[FormandoDashboard] 📊 Total de pontos de Formando1: 0
+[FormandoDashboard] 📊 Member points: [
+  {
+    "id": "student_1775117996091",
+    "name": "Formando2",
+    "email": "ff@formacao.pt",
+    "teamId": "team_1775117898823",
+    "courseId": "1775117855439",
+    "createdAt": "2026-04-02T08:19:56.091Z",
+    "points": 0
+  },
+  {
+    "id": "student_1775117962578",
+    "name": "Formando1",
+    "email": "f@formacao.pt",
+    "teamId": "team_1775117898823",
+    "courseId": "1775117855439",
+    "createdAt": "2026-04-02T08:19:22.578Z",
+    "points": 0
+  }
+]
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 0,
+  "totalPoints": 0,
+  "memberPoints": [
+    {
+      "name": "Formando2",
+      "points": 0
+    },
+    {
+      "name": "Formando1",
+      "points": 0
+    }
+  ]
+}
+[FormandoDashboard] ✅ Stories recebidas do backend
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 2
+[FormandoDashboard] Total userStories: 1
+[FormandoDashboard] Stories: [
+  {
+    "id": "story_1775118142864",
+    "team": "Omega",
+    "title": "Formatar texto",
+    "votes": [
+      {
+        "value": 8,
+        "studentName": "Formando1"
+      },
+      {
+        "value": 21,
+        "studentName": "Formando2"
+      }
+    ],
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1775117855439",
+    "priority": "medium",
+    "sprintId": "sprint_1775118059858",
+    "createdAt": "2026-04-02T08:22:22.864Z",
+    "updatedAt": "2026-04-02T08:25:28.863Z",
+    "description": "Vai aprender a escrever e formatar texto",
+    "acceptanceCriteria": [
+      "Saber fazer"
+    ]
+  }
+]
+[FormandoDashboard] 👤 Calculando pontos para: Formando2
+[FormandoDashboard] ✅ Formando2 votou 21 em "Formatar texto"
+[FormandoDashboard] 📊 Total de pontos de Formando2: 21
+[FormandoDashboard] 👤 Calculando pontos para: Formando1
+[FormandoDashboard] ✅ Formando1 votou 8 em "Formatar texto"
+[FormandoDashboard] 📊 Total de pontos de Formando1: 8
+[FormandoDashboard] 📊 Member points: [
+  {
+    "id": "student_1775117996091",
+    "name": "Formando2",
+    "email": "ff@formacao.pt",
+    "teamId": "team_1775117898823",
+    "courseId": "1775117855439",
+    "createdAt": "2026-04-02T08:19:56.091Z",
+    "points": 21
+  },
+  {
+    "id": "student_1775117962578",
+    "name": "Formando1",
+    "email": "f@formacao.pt",
+    "teamId": "team_1775117898823",
+    "courseId": "1775117855439",
+    "createdAt": "2026-04-02T08:19:22.578Z",
+    "points": 8
+  }
+]
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 21,
+  "totalPoints": 29,
+  "memberPoints": [
+    {
+      "name": "Formando2",
+      "points": 21
+    },
+    {
+      "name": "Formando1",
+      "points": 8
+    }
+  ]
+}
+[FormandoDashboard] ✅ Sprints recebidos do backend
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 2
+[FormandoDashboard] Total userStories: 1
+[FormandoDashboard] Stories: [
+  {
+    "id": "story_1775118142864",
+    "team": "Omega",
+    "title": "Formatar texto",
+    "votes": [
+      {
+        "value": 8,
+        "studentName": "Formando1"
+      },
+      {
+        "value": 21,
+        "studentName": "Formando2"
+      }
+    ],
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1775117855439",
+    "priority": "medium",
+    "sprintId": "sprint_1775118059858",
+    "createdAt": "2026-04-02T08:22:22.864Z",
+    "updatedAt": "2026-04-02T08:25:28.863Z",
+    "description": "Vai aprender a escrever e formatar texto",
+    "acceptanceCriteria": [
+      "Saber fazer"
+    ]
+  }
+]
+[FormandoDashboard] 👤 Calculando pontos para: Formando2
+[FormandoDashboard] ✅ Formando2 votou 21 em "Formatar texto"
+[FormandoDashboard] 📊 Total de pontos de Formando2: 21
+[FormandoDashboard] 👤 Calculando pontos para: Formando1
+[FormandoDashboard] ✅ Formando1 votou 8 em "Formatar texto"
+[FormandoDashboard] 📊 Total de pontos de Formando1: 8
+[FormandoDashboard] 📊 Member points: [
+  {
+    "id": "student_1775117996091",
+    "name": "Formando2",
+    "email": "ff@formacao.pt",
+    "teamId": "team_1775117898823",
+    "courseId": "1775117855439",
+    "createdAt": "2026-04-02T08:19:56.091Z",
+    "points": 21
+  },
+  {
+    "id": "student_1775117962578",
+    "name": "Formando1",
+    "email": "f@formacao.pt",
+    "teamId": "team_1775117898823",
+    "courseId": "1775117855439",
+    "createdAt": "2026-04-02T08:19:22.578Z",
+    "points": 8
+  }
+]
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 21,
+  "totalPoints": 29,
+  "memberPoints": [
+    {
+      "name": "Formando2",
+      "points": 21
+    },
+    {
+      "name": "Formando1",
+      "points": 8
+    }
+  ]
+}
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🎯 Navegando para: messagesFormando
+[App.tsx handleNavigate] 📦 Params recebidos: 
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🧹 Limpando params antigos
+[FormandoDashboard] 🛑 Limpando polling automático
+🔄 useEffect disparado {
+  "isFormador": false,
+  "userType": "formando",
+  "userId": "student_1775117996091",
+  "userName": "Formando2",
+  "loggedStudent": {
+    "id": "student_1775117996091",
+    "name": "Formando2",
+    "email": "ff@formacao.pt",
+    "teamId": "team_1775117898823",
+    "courseId": "1775117855439",
+    "createdAt": "2026-04-02T08:19:56.091Z",
+    "courseName": "Word",
+    "teamName": "Omega"
+  }
+}
+🔍 Carregando mensagens... {
+  "isFormador": false,
+  "userId": "student_1775117996091"
+}
+📦 Total de mensagens no localStorage: 4
+📋 Detalhes das mensagens: [
+  {
+    "id": "msg-1775247664376",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "viva",
+    "message": "estou a escrever por",
+    "createdAt": "2026-04-03T20:21:04.377Z",
+    "updatedAt": "2026-04-03T20:21:04.377Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775247920993",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "o que se passa",
+    "createdAt": "2026-04-03T20:25:20.993Z",
+    "updatedAt": "2026-04-03T20:25:20.993Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775248123793",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "viva",
+    "message": "tudo bem ejeje",
+    "createdAt": "2026-04-03T20:28:43.793Z",
+    "updatedAt": "2026-04-03T20:28:43.793Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775248267010",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "tudo bem vamos ver",
+    "createdAt": "2026-04-03T20:31:07.010Z",
+    "updatedAt": "2026-04-03T20:31:07.010Z",
+    "isRead": false,
+    "sentBy": "formando"
+  }
+]
+🔎 Verificando mensagem msg-1775247664376: formandoId=, userId=student_1775117996091, match=false
+🔎 Verificando mensagem msg-1775247920993: formandoId=, userId=student_1775117996091, match=false
+🔎 Verificando mensagem msg-1775248123793: formandoId=, userId=student_1775117996091, match=false
+🔎 Verificando mensagem msg-1775248267010: formandoId=, userId=student_1775117996091, match=false
+👤 Mensagens filtradas do formando: 0
+👤 Detalhes: []
+💾 Salvando mensagens: 5 mensagens
+💾 Detalhes das mensagens: [
+  {
+    "id": "msg-1775247664376",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "viva",
+    "message": "estou a escrever por",
+    "createdAt": "2026-04-03T20:21:04.377Z",
+    "updatedAt": "2026-04-03T20:21:04.377Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775247920993",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "o que se passa",
+    "createdAt": "2026-04-03T20:25:20.993Z",
+    "updatedAt": "2026-04-03T20:25:20.993Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775248123793",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "viva",
+    "message": "tudo bem ejeje",
+    "createdAt": "2026-04-03T20:28:43.793Z",
+    "updatedAt": "2026-04-03T20:28:43.793Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775248267010",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "tudo bem vamos ver",
+    "createdAt": "2026-04-03T20:31:07.010Z",
+    "updatedAt": "2026-04-03T20:31:07.010Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775248754844",
+    "formandoId": "student_1775117996091",
+    "formandoName": "Formando2",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "esta tudo bem",
+    "createdAt": "2026-04-03T20:39:14.844Z",
+    "updatedAt": "2026-04-03T20:39:14.844Z",
+    "isRead": false,
+    "sentBy": "formando"
+  }
+]
+🔍 Carregando mensagens... {
+  "isFormador": false,
+  "userId": "student_1775117996091"
+}
+📦 Total de mensagens no localStorage: 5
+📋 Detalhes das mensagens: [
+  {
+    "id": "msg-1775247664376",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "viva",
+    "message": "estou a escrever por",
+    "createdAt": "2026-04-03T20:21:04.377Z",
+    "updatedAt": "2026-04-03T20:21:04.377Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775247920993",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "o que se passa",
+    "createdAt": "2026-04-03T20:25:20.993Z",
+    "updatedAt": "2026-04-03T20:25:20.993Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775248123793",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "viva",
+    "message": "tudo bem ejeje",
+    "createdAt": "2026-04-03T20:28:43.793Z",
+    "updatedAt": "2026-04-03T20:28:43.793Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775248267010",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "tudo bem vamos ver",
+    "createdAt": "2026-04-03T20:31:07.010Z",
+    "updatedAt": "2026-04-03T20:31:07.010Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775248754844",
+    "formandoId": "student_1775117996091",
+    "formandoName": "Formando2",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "esta tudo bem",
+    "createdAt": "2026-04-03T20:39:14.844Z",
+    "updatedAt": "2026-04-03T20:39:14.844Z",
+    "isRead": false,
+    "sentBy": "formando"
+  }
+]
+🔎 Verificando mensagem msg-1775247664376: formandoId=, userId=student_1775117996091, match=false
+🔎 Verificando mensagem msg-1775247920993: formandoId=, userId=student_1775117996091, match=false
+🔎 Verificando mensagem msg-1775248123793: formandoId=, userId=student_1775117996091, match=false
+🔎 Verificando mensagem msg-1775248267010: formandoId=, userId=student_1775117996091, match=false
+🔎 Verificando mensagem msg-1775248754844: formandoId=student_1775117996091, userId=student_1775117996091, match=true
+👤 Mensagens filtradas do formando: 1
+👤 Detalhes: [
+  {
+    "id": "msg-1775248754844",
+    "formandoId": "student_1775117996091",
+    "formandoName": "Formando2",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "esta tudo bem",
+    "createdAt": "2026-04-03T20:39:14.844Z",
+    "updatedAt": "2026-04-03T20:39:14.844Z",
+    "isRead": false,
+    "sentBy": "formando"
+  }
+]

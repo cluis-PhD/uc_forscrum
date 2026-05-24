@@ -1,0 +1,3738 @@
+[LOGIN DEBUG] 📋 Lista de formandos recebidos: [
+  {
+    "id": "student_1772898704134",
+    "name": "vasco",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1772896122388",
+    "name": "Luis",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703042968"
+  },
+  {
+    "id": "student_1772802176681",
+    "name": "Fernão de Magalhães",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772802149173",
+    "name": "Bartolomeu Dias",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772802103577",
+    "name": "Pedro Álvares Cabral",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772801787113",
+    "name": "Vasco da Gama",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772801756311",
+    "name": "Infante D. Henrique",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772801559816",
+    "name": "Infante D. Henrique",
+    "courseId": "1772801309759",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772619484160",
+    "name": "Manuel Joaquim",
+    "courseId": "1772618991158",
+    "teamId": "team_1772619426583"
+  },
+  {
+    "id": "student_1772619464674",
+    "name": "Joana Fontinha",
+    "courseId": "1772618991158",
+    "teamId": "team_1772619426583"
+  },
+  {
+    "id": "student_1772619400094",
+    "name": "Manuel Joaquim",
+    "courseId": "1772618991158",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772547922542",
+    "name": "marci",
+    "courseId": "1772546863570",
+    "teamId": "team_1772546939675"
+  },
+  {
+    "id": "student_1772531365829",
+    "name": "Rui Descanso",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531162108"
+  },
+  {
+    "id": "student_1772531342692",
+    "name": "Vítor Sesta",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531162108"
+  },
+  {
+    "id": "student_1772531322237",
+    "name": "Paula Agenda",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531162108"
+  },
+  {
+    "id": "student_1772531299718",
+    "name": "Ana Paciência",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531131370"
+  },
+  {
+    "id": "student_1772531271913",
+    "name": "Carla Café",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531131370"
+  },
+  {
+    "id": "student_1772531245134",
+    "name": "Nuno Intervalo",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531131370"
+  },
+  {
+    "id": "student_1772531056891",
+    "name": "Nuno Intervalo",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531046355",
+    "name": "Paula Agenda",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531035006",
+    "name": "Vítor Sesta",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531017003",
+    "name": "Carla Café",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531000249",
+    "name": "Rui Descanso",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772530982214",
+    "name": "Ana Paciência",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772528099689",
+    "name": "Lili",
+    "courseId": "1772442677908",
+    "teamId": "team_1772444382018"
+  },
+  {
+    "id": "student_1772459792006",
+    "name": "miguel",
+    "courseId": "1772442677908",
+    "teamId": "team_1772444382018"
+  },
+  {
+    "id": "student_1772459695004",
+    "name": "marta",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772459607657",
+    "name": "marta",
+    "courseId": "1772450402879",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772452043171",
+    "name": "toze",
+    "courseId": "1772442677908",
+    "teamId": "team_1772444382018"
+  },
+  {
+    "id": "student_1772451993468",
+    "name": "lucas",
+    "courseId": "1772442677908",
+    "teamId": "team_1772444382018"
+  },
+  {
+    "id": "student_1772451454893",
+    "name": "mais",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772451439200",
+    "name": "mais",
+    "courseId": "1772450402879",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772451189797",
+    "name": "antonio",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772451113578",
+    "name": "luis",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772450789772",
+    "name": "vasco",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772449148382",
+    "name": "jose",
+    "courseId": "1772442677908",
+    "teamId": "team_1772444382018"
+  },
+  {
+    "id": "student_1772448894970",
+    "name": "lucas",
+    "courseId": "1772442677908",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772448605981",
+    "name": "luis",
+    "courseId": "1772442677908",
+    "teamId": "team_1772444382018"
+  },
+  {
+    "id": "student_1772448201475",
+    "name": "jose",
+    "courseId": "1772442677908",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772447606759",
+    "name": "maria",
+    "courseId": "1772442677908",
+    "teamId": "team_1772444382018"
+  },
+  {
+    "id": "student_1772447486098",
+    "name": "joaquim",
+    "courseId": "1772442677908",
+    "teamId": "team_1772444382018"
+  },
+  {
+    "id": "student_1772446772930",
+    "name": "tome",
+    "courseId": "1772442677908",
+    "teamId": "team_1772444382018"
+  },
+  {
+    "id": "student_1772442538870",
+    "name": "Julia",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703042968"
+  },
+  {
+    "id": "student_1772275267873",
+    "name": "jose",
+    "courseId": "1772275083083",
+    "teamId": "team_1772275109093"
+  },
+  {
+    "id": "student_1772275163758",
+    "name": "Manuel",
+    "courseId": "1772275083083",
+    "teamId": "team_1772275109093"
+  },
+  {
+    "id": "student_1772182493025",
+    "name": "Jose",
+    "courseId": "1772182438947",
+    "teamId": "team_1772182462457"
+  },
+  {
+    "id": "student_1772117635526",
+    "name": "Rolando Seixo do Rio",
+    "courseId": "1772116810767",
+    "teamId": "team_1772116952107"
+  },
+  {
+    "id": "student_1772116920002",
+    "name": "Pedro Pedra da Rocha Calhau",
+    "courseId": "1772116810767",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772116891845",
+    "name": "João Passos Dias Aguiar Mota",
+    "courseId": "1772116810767",
+    "teamId": ""
+  },
+  {
+    "id": "student_1771946887181",
+    "name": "antonio",
+    "courseId": "1771946809250",
+    "teamId": ""
+  },
+  {
+    "id": "student_1771938821443",
+    "name": "Luis",
+    "courseId": "1771938777076",
+    "teamId": ""
+  },
+  {
+    "id": "student_1771421694716",
+    "name": "Manuel",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1771414084909",
+    "name": "Mario",
+    "courseId": "1771414017079",
+    "teamId": ""
+  },
+  {
+    "id": "student_1769703108611",
+    "name": "Maria",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1769703087512",
+    "name": "Luis",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  }
+]
+[LOGIN DEBUG] ✅ Formando encontrado! {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "courseId": "1769703027879",
+  "teamId": "team_1769703042968"
+}
+[DEBUG] Formando encontrado, buscando dados adicionais...
+[DEBUG] Buscando curso: 1769703027879
+[DEBUG] Response status do curso: 200
+[DEBUG] Resposta do curso: {
+  "success": true,
+  "course": {
+    "id": "1769703027879",
+    "name": "forScrum",
+    "teams": 0,
+    "status": "new",
+    "endDate": "",
+    "sprints": 0,
+    "progress": 0,
+    "students": 0,
+    "createdAt": "2026-01-29T16:10:27.879Z",
+    "startDate": "29/01/2026",
+    "description": "O forScrum destina-se a formadores, assumindo-se como uma plataforma concebida para apoiar o planeamento, a dinamização e a avaliação de processos formativos baseados no framework Scrum.",
+    "studentsList": []
+  }
+}
+[DEBUG] ✅ Curso encontrado: forScrum
+[DEBUG] Buscando equipa: team_1769703042968
+[DEBUG] Equipa encontrada: Alfa
+[DEBUG] Dados do formando enriquecidos: {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 0
+[FormandoDashboard] Total userStories: 0
+[FormandoDashboard] Stories: []
+[FormandoDashboard] 📊 Member points: []
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 0,
+  "totalPoints": 0,
+  "memberPoints": []
+}
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 0
+[FormandoDashboard] Total userStories: 0
+[FormandoDashboard] Stories: []
+[FormandoDashboard] 📊 Member points: []
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 0,
+  "totalPoints": 0,
+  "memberPoints": []
+}
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 0
+[FormandoDashboard] Total userStories: 0
+[FormandoDashboard] Stories: []
+[FormandoDashboard] 📊 Member points: []
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 0,
+  "totalPoints": 0,
+  "memberPoints": []
+}
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 2
+[FormandoDashboard] Total userStories: 0
+[FormandoDashboard] Stories: []
+[FormandoDashboard] 👤 Calculando pontos para: Luis
+[FormandoDashboard] 📊 Total de pontos de Luis: 0
+[FormandoDashboard] 👤 Calculando pontos para: Julia
+[FormandoDashboard] 📊 Total de pontos de Julia: 0
+[FormandoDashboard] 📊 Member points: [
+  {
+    "id": "student_1772896122388",
+    "name": "Luis",
+    "email": "l@formacao.pt",
+    "teamId": "team_1769703042968",
+    "courseId": "1769703027879",
+    "createdAt": "2026-03-07T15:08:42.388Z",
+    "points": 0
+  },
+  {
+    "id": "student_1772442538870",
+    "name": "Julia",
+    "email": "J@formacao.pt",
+    "teamId": "team_1769703042968",
+    "courseId": "1769703027879",
+    "createdAt": "2026-03-02T09:08:58.870Z",
+    "points": 0
+  }
+]
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 0,
+  "totalPoints": 0,
+  "memberPoints": [
+    {
+      "name": "Luis",
+      "points": 0
+    },
+    {
+      "name": "Julia",
+      "points": 0
+    }
+  ]
+}
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 2
+[FormandoDashboard] Total userStories: 6
+[FormandoDashboard] Stories: [
+  {
+    "id": "story_1772531834664",
+    "team": "Os resistentes da agenda cheia",
+    "title": "Agenda inteligente",
+    "votes": [
+      {
+        "value": 13,
+        "studentName": "Luis"
+      }
+    ],
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1769703027879",
+    "priority": "medium",
+    "sprintId": "sprint_1769703550711",
+    "createdAt": "2026-03-03T09:57:14.664Z",
+    "updatedAt": "2026-03-07T15:34:25.694Z",
+    "description": "Como equipa, queremos construir um modelo de agenda para a segunda-feira, para demonstrar como organizar tarefas e prioridades.",
+    "acceptanceCriteria": [
+      "Identificar tarefas típicas de início de semana"
+    ]
+  },
+  {
+    "id": "story_1772531741388",
+    "team": "Os Sobreviventes do café forte",
+    "title": "Diagnóstico da segunda-feira",
+    "votes": [
+      {
+        "value": 2,
+        "studentName": "Luis"
+      }
+    ],
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1769703027879",
+    "priority": "medium",
+    "sprintId": "sprint_1769703550711",
+    "createdAt": "2026-03-03T09:55:41.388Z",
+    "updatedAt": "2026-03-07T15:32:59.776Z",
+    "description": "Como formandos do curso, queremos identificar os principais problemas que surgem à segunda-feira, para compreender por que motivo este dia é frequentemente visto como difícil.",
+    "acceptanceCriteria": [
+      "Identificar 5 dificuldades comuns"
+    ]
+  },
+  {
+    "id": "story_1772531630677",
+    "team": "Os Sobreviventes do café forte",
+    "title": "Diagnóstico da segunda-feira",
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1769703027879",
+    "priority": "medium",
+    "sprintId": "sprint_1769703550711",
+    "createdAt": "2026-03-03T09:53:50.677Z",
+    "description": "Como formandos do curso, queremos identificar os principais problemas que surgem à segunda-feira, para compreender por que motivo este dia é frequentemente visto como difícil.",
+    "acceptanceCriteria": [
+      "Identificar cinco dificuldades comuns"
+    ]
+  },
+  {
+    "id": "story_1769964245749",
+    "team": "Beta",
+    "title": "viva",
+    "votes": [
+      {
+        "value": 2,
+        "studentName": "Maria"
+      },
+      {
+        "value": 21,
+        "studentName": "Luis"
+      },
+      {
+        "value": 21,
+        "studentName": "Manuel"
+      }
+    ],
+    "points": 0,
+    "status": "todo",
+    "courseId": "1769703027879",
+    "priority": "high",
+    "sprintId": "sprint_1769703292163",
+    "createdAt": "2026-02-01T16:44:05.749Z",
+    "updatedAt": "2026-02-19T15:02:39.135Z",
+    "description": "mais uma descrição",
+    "acceptanceCriteria": [
+      "qual"
+    ]
+  },
+  {
+    "id": "story_1769703488012",
+    "team": "Beta",
+    "title": "Planeamento e Acompanhamento do Sprint",
+    "votes": [
+      {
+        "value": 13,
+        "studentName": "Maria"
+      }
+    ],
+    "points": 0,
+    "status": "todo",
+    "courseId": "1769703027879",
+    "priority": "high",
+    "sprintId": "sprint_1769703292163",
+    "createdAt": "2026-01-29T16:18:08.012Z",
+    "updatedAt": "2026-02-21T12:03:46.598Z",
+    "description": "Como formador,\nquero planear um sprint, criar user stories e acompanhar o seu progresso através do quadro Kanban,\npara monitorizar o desempenho das equipas e apoiar o processo de aprendizagem contínua.",
+    "acceptanceCriteria": [
+      "O sprint encontra-se criado com user stories associadas."
+    ]
+  },
+  {
+    "id": "story_1769703402763",
+    "team": "Beta",
+    "title": "Criação e Organização do Curso",
+    "votes": [
+      {
+        "value": 21,
+        "studentName": "Maria"
+      },
+      {
+        "value": 21,
+        "studentName": "Luis"
+      }
+    ],
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1769703027879",
+    "priority": "high",
+    "sprintId": "sprint_1769703292163",
+    "createdAt": "2026-01-29T16:16:42.763Z",
+    "updatedAt": "2026-02-21T12:03:52.842Z",
+    "description": "Como formador,\nquero criar e configurar um curso no forScrum, definindo equipas e formandos,\npara estruturar o ambiente de aprendizagem e organizar o trabalho colaborativo desde o início da formação.",
+    "acceptanceCriteria": [
+      "O curso encontra-se criado e configurado na plataforma."
+    ]
+  }
+]
+[FormandoDashboard] 👤 Calculando pontos para: Luis
+[FormandoDashboard] ✅ Luis votou 13 em "Agenda inteligente"
+[FormandoDashboard] ✅ Luis votou 2 em "Diagnóstico da segunda-feira"
+[FormandoDashboard] ✅ Luis votou 21 em "viva"
+[FormandoDashboard] ✅ Luis votou 21 em "Criação e Organização do Curso"
+[FormandoDashboard] 📊 Total de pontos de Luis: 57
+[FormandoDashboard] 👤 Calculando pontos para: Julia
+[FormandoDashboard] 📊 Total de pontos de Julia: 0
+[FormandoDashboard] 📊 Member points: [
+  {
+    "id": "student_1772896122388",
+    "name": "Luis",
+    "email": "l@formacao.pt",
+    "teamId": "team_1769703042968",
+    "courseId": "1769703027879",
+    "createdAt": "2026-03-07T15:08:42.388Z",
+    "points": 57
+  },
+  {
+    "id": "student_1772442538870",
+    "name": "Julia",
+    "email": "J@formacao.pt",
+    "teamId": "team_1769703042968",
+    "courseId": "1769703027879",
+    "createdAt": "2026-03-02T09:08:58.870Z",
+    "points": 0
+  }
+]
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 57,
+  "totalPoints": 57,
+  "memberPoints": [
+    {
+      "name": "Luis",
+      "points": 57
+    },
+    {
+      "name": "Julia",
+      "points": 0
+    }
+  ]
+}
+[FormandoDashboard] 📊 Calculando KPIs...
+[FormandoDashboard] Total teamMembers: 2
+[FormandoDashboard] Total userStories: 6
+[FormandoDashboard] Stories: [
+  {
+    "id": "story_1772531834664",
+    "team": "Os resistentes da agenda cheia",
+    "title": "Agenda inteligente",
+    "votes": [
+      {
+        "value": 13,
+        "studentName": "Luis"
+      }
+    ],
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1769703027879",
+    "priority": "medium",
+    "sprintId": "sprint_1769703550711",
+    "createdAt": "2026-03-03T09:57:14.664Z",
+    "updatedAt": "2026-03-07T15:34:25.694Z",
+    "description": "Como equipa, queremos construir um modelo de agenda para a segunda-feira, para demonstrar como organizar tarefas e prioridades.",
+    "acceptanceCriteria": [
+      "Identificar tarefas típicas de início de semana"
+    ]
+  },
+  {
+    "id": "story_1772531741388",
+    "team": "Os Sobreviventes do café forte",
+    "title": "Diagnóstico da segunda-feira",
+    "votes": [
+      {
+        "value": 2,
+        "studentName": "Luis"
+      }
+    ],
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1769703027879",
+    "priority": "medium",
+    "sprintId": "sprint_1769703550711",
+    "createdAt": "2026-03-03T09:55:41.388Z",
+    "updatedAt": "2026-03-07T15:32:59.776Z",
+    "description": "Como formandos do curso, queremos identificar os principais problemas que surgem à segunda-feira, para compreender por que motivo este dia é frequentemente visto como difícil.",
+    "acceptanceCriteria": [
+      "Identificar 5 dificuldades comuns"
+    ]
+  },
+  {
+    "id": "story_1772531630677",
+    "team": "Os Sobreviventes do café forte",
+    "title": "Diagnóstico da segunda-feira",
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1769703027879",
+    "priority": "medium",
+    "sprintId": "sprint_1769703550711",
+    "createdAt": "2026-03-03T09:53:50.677Z",
+    "description": "Como formandos do curso, queremos identificar os principais problemas que surgem à segunda-feira, para compreender por que motivo este dia é frequentemente visto como difícil.",
+    "acceptanceCriteria": [
+      "Identificar cinco dificuldades comuns"
+    ]
+  },
+  {
+    "id": "story_1769964245749",
+    "team": "Beta",
+    "title": "viva",
+    "votes": [
+      {
+        "value": 2,
+        "studentName": "Maria"
+      },
+      {
+        "value": 21,
+        "studentName": "Luis"
+      },
+      {
+        "value": 21,
+        "studentName": "Manuel"
+      }
+    ],
+    "points": 0,
+    "status": "todo",
+    "courseId": "1769703027879",
+    "priority": "high",
+    "sprintId": "sprint_1769703292163",
+    "createdAt": "2026-02-01T16:44:05.749Z",
+    "updatedAt": "2026-02-19T15:02:39.135Z",
+    "description": "mais uma descrição",
+    "acceptanceCriteria": [
+      "qual"
+    ]
+  },
+  {
+    "id": "story_1769703488012",
+    "team": "Beta",
+    "title": "Planeamento e Acompanhamento do Sprint",
+    "votes": [
+      {
+        "value": 13,
+        "studentName": "Maria"
+      }
+    ],
+    "points": 0,
+    "status": "todo",
+    "courseId": "1769703027879",
+    "priority": "high",
+    "sprintId": "sprint_1769703292163",
+    "createdAt": "2026-01-29T16:18:08.012Z",
+    "updatedAt": "2026-02-21T12:03:46.598Z",
+    "description": "Como formador,\nquero planear um sprint, criar user stories e acompanhar o seu progresso através do quadro Kanban,\npara monitorizar o desempenho das equipas e apoiar o processo de aprendizagem contínua.",
+    "acceptanceCriteria": [
+      "O sprint encontra-se criado com user stories associadas."
+    ]
+  },
+  {
+    "id": "story_1769703402763",
+    "team": "Beta",
+    "title": "Criação e Organização do Curso",
+    "votes": [
+      {
+        "value": 21,
+        "studentName": "Maria"
+      },
+      {
+        "value": 21,
+        "studentName": "Luis"
+      }
+    ],
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1769703027879",
+    "priority": "high",
+    "sprintId": "sprint_1769703292163",
+    "createdAt": "2026-01-29T16:16:42.763Z",
+    "updatedAt": "2026-02-21T12:03:52.842Z",
+    "description": "Como formador,\nquero criar e configurar um curso no forScrum, definindo equipas e formandos,\npara estruturar o ambiente de aprendizagem e organizar o trabalho colaborativo desde o início da formação.",
+    "acceptanceCriteria": [
+      "O curso encontra-se criado e configurado na plataforma."
+    ]
+  }
+]
+[FormandoDashboard] 👤 Calculando pontos para: Luis
+[FormandoDashboard] ✅ Luis votou 13 em "Agenda inteligente"
+[FormandoDashboard] ✅ Luis votou 2 em "Diagnóstico da segunda-feira"
+[FormandoDashboard] ✅ Luis votou 21 em "viva"
+[FormandoDashboard] ✅ Luis votou 21 em "Criação e Organização do Curso"
+[FormandoDashboard] 📊 Total de pontos de Luis: 57
+[FormandoDashboard] 👤 Calculando pontos para: Julia
+[FormandoDashboard] 📊 Total de pontos de Julia: 0
+[FormandoDashboard] 📊 Member points: [
+  {
+    "id": "student_1772896122388",
+    "name": "Luis",
+    "email": "l@formacao.pt",
+    "teamId": "team_1769703042968",
+    "courseId": "1769703027879",
+    "createdAt": "2026-03-07T15:08:42.388Z",
+    "points": 57
+  },
+  {
+    "id": "student_1772442538870",
+    "name": "Julia",
+    "email": "J@formacao.pt",
+    "teamId": "team_1769703042968",
+    "courseId": "1769703027879",
+    "createdAt": "2026-03-02T09:08:58.870Z",
+    "points": 0
+  }
+]
+[FormandoDashboard] 📊 KPIs finais: {
+  "velocity": 0,
+  "completionRate": 0,
+  "myStoryPoints": 57,
+  "totalPoints": 57,
+  "memberPoints": [
+    {
+      "name": "Luis",
+      "points": 57
+    },
+    {
+      "name": "Julia",
+      "points": 0
+    }
+  ]
+}
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🎯 Navegando para: courseDetails
+[App.tsx handleNavigate] 📦 Params recebidos: 
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🧹 Limpando params antigos
+════════════════════════════════════════════════
+[App.tsx handleNavigate] NAVEGANDO PARA COURSEDETAILS
+[App.tsx handleNavigate] params recebidos: 
+[App.tsx handleNavigate] params.courseId: 
+[App.tsx handleNavigate] params.courseName: 
+[App.tsx handleNavigate] selectedCourseId ATUAL: 1769703027879
+[App.tsx handleNavigate] ⚠️ AVISO: params.courseId está vazio, mantendo selectedCourseId atual: 1769703027879
+[App.tsx handleNavigate] ⚠️ AVISO: params.courseName está vazio, mantendo selectedCourseName atual: forScrum
+[App.tsx handleNavigate] selectedCourseId DEPOIS: 1769703027879
+════════════════════════════════════════════════
+[App.tsx RENDER] Renderizando FormandoSprints para formando
+[FormandoSprints] 🔍 DADOS DO FORMANDO: {
+  "loggedStudent": {
+    "id": "student_1772896122388",
+    "name": "Luis",
+    "email": "l@formacao.pt",
+    "teamId": "team_1769703042968",
+    "courseId": "1769703027879",
+    "createdAt": "2026-03-07T15:08:42.388Z",
+    "courseName": "forScrum",
+    "teamName": "Alfa"
+  },
+  "teamId": "team_1769703042968",
+  "teamName": "Alfa",
+  "courseId": "1769703027879",
+  "courseName": "forScrum"
+}
+[FormandoDashboard] 🛑 Limpando polling automático
+[FormandoSprints] 📥 A carregar sprints da equipa: team_1769703042968
+[FormandoSprints] 🔍 DADOS DO FORMANDO: {
+  "loggedStudent": {
+    "id": "student_1772896122388",
+    "name": "Luis",
+    "email": "l@formacao.pt",
+    "teamId": "team_1769703042968",
+    "courseId": "1769703027879",
+    "createdAt": "2026-03-07T15:08:42.388Z",
+    "courseName": "forScrum",
+    "teamName": "Alfa"
+  },
+  "teamId": "team_1769703042968",
+  "teamName": "Alfa",
+  "courseId": "1769703027879",
+  "courseName": "forScrum"
+}
+[FormandoSprints] 📦 Resposta da API completa: {
+  "success": true,
+  "sprints": [
+    {
+      "id": "sprint_1772815179130",
+      "goal": "Criar 3 capturas de ecrã de um processo simples:\n•\tAbrir site\n•\tClicar num botão\n•\tMostrar resultado\nGuardar as três imagens.",
+      "name": "Exercício 3 – Criar mini guia",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 0,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T16:39:39.130Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772815088287",
+      "goal": "1.\tFazer um recorte de uma página\n2.\tDestacar um elemento com a caneta\n3.\tGuardar a imagem",
+      "name": "Exercício 2 – Recorte com anotação",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 0,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T16:38:08.287Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772802441430",
+      "goal": "-\tFazer um recorte de uma página\n-\tDestacar um elemento com a caneta\n-\tGuardar a imagem",
+      "name": "Exercício 1 – Recorte simples",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 1,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T13:07:21.430Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772619663899",
+      "goal": "Gerir o stress é um processo contínuo, por isso não é um sprint, mas sim, uma interminável maratona, utilize as ferramentas de gestão stress em casos reais da vida.",
+      "name": "Dia stressante",
+      "status": "planning",
+      "endDate": "2026-03-26",
+      "stories": 0,
+      "courseId": "1772618991158",
+      "createdAt": "2026-03-04T10:21:03.899Z",
+      "startDate": "2026-03-16",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772547209176",
+      "goal": "Descrição do sprint",
+      "name": "Sprint Agora",
+      "status": "planning",
+      "endDate": "2026-04-11",
+      "stories": 1,
+      "courseId": "1772546863570",
+      "createdAt": "2026-03-03T14:13:29.176Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772547014851",
+      "goal": "Temos que fazer uma grande descrição do curos",
+      "name": "Primeiro Sprint",
+      "status": "planning",
+      "endDate": "2026-04-10",
+      "stories": 0,
+      "courseId": "1772546863570",
+      "createdAt": "2026-03-03T14:10:14.851Z",
+      "startDate": "2026-03-21",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772543954375",
+      "goal": "Ola esta tudo bem",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-03-28",
+      "stories": 1,
+      "courseId": "1772442677908",
+      "createdAt": "2026-03-03T13:19:14.376Z",
+      "startDate": "2026-03-26",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772543777015",
+      "goal": "Um novo sprint",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-03-28",
+      "stories": 1,
+      "courseId": "1772530945643",
+      "createdAt": "2026-03-03T13:16:17.015Z",
+      "startDate": "2026-03-25",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1771674757079",
+      "goal": "Hoje vamos ver coisas novas",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-02-27",
+      "stories": 0,
+      "courseId": "1771518583306",
+      "createdAt": "2026-02-21T11:52:37.079Z",
+      "startDate": "2026-02-20",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1769703550711",
+      "goal": "Aplicar o framework Scrum de forma prática, promovendo a colaboração, a estimativa de esforço e o acompanhamento do progresso.",
+      "name": "Planeamento, Execução e Acompanhamento",
+      "status": "planning",
+      "endDate": "2026-02-07",
+      "stories": 3,
+      "courseId": "1769703027879",
+      "createdAt": "2026-01-29T16:19:10.711Z",
+      "startDate": "2026-01-31",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1769703292163",
+      "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-01-30",
+      "stories": 3,
+      "courseId": "1769703027879",
+      "createdAt": "2026-01-29T16:14:52.163Z",
+      "startDate": "2026-01-23",
+      "courseName": ""
+    }
+  ]
+}
+[FormandoSprints] 📊 TODOS OS SPRINTS antes do filtro: [
+  {
+    "id": "sprint_1772815179130",
+    "goal": "Criar 3 capturas de ecrã de um processo simples:\n•\tAbrir site\n•\tClicar num botão\n•\tMostrar resultado\nGuardar as três imagens.",
+    "name": "Exercício 3 – Criar mini guia",
+    "status": "planning",
+    "endDate": "2026-04-02",
+    "stories": 0,
+    "courseId": "1772801309759",
+    "createdAt": "2026-03-06T16:39:39.130Z",
+    "startDate": "2026-04-01",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1772815088287",
+    "goal": "1.\tFazer um recorte de uma página\n2.\tDestacar um elemento com a caneta\n3.\tGuardar a imagem",
+    "name": "Exercício 2 – Recorte com anotação",
+    "status": "planning",
+    "endDate": "2026-04-02",
+    "stories": 0,
+    "courseId": "1772801309759",
+    "createdAt": "2026-03-06T16:38:08.287Z",
+    "startDate": "2026-04-01",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1772802441430",
+    "goal": "-\tFazer um recorte de uma página\n-\tDestacar um elemento com a caneta\n-\tGuardar a imagem",
+    "name": "Exercício 1 – Recorte simples",
+    "status": "planning",
+    "endDate": "2026-04-02",
+    "stories": 1,
+    "courseId": "1772801309759",
+    "createdAt": "2026-03-06T13:07:21.430Z",
+    "startDate": "2026-04-01",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1772619663899",
+    "goal": "Gerir o stress é um processo contínuo, por isso não é um sprint, mas sim, uma interminável maratona, utilize as ferramentas de gestão stress em casos reais da vida.",
+    "name": "Dia stressante",
+    "status": "planning",
+    "endDate": "2026-03-26",
+    "stories": 0,
+    "courseId": "1772618991158",
+    "createdAt": "2026-03-04T10:21:03.899Z",
+    "startDate": "2026-03-16",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1772547209176",
+    "goal": "Descrição do sprint",
+    "name": "Sprint Agora",
+    "status": "planning",
+    "endDate": "2026-04-11",
+    "stories": 1,
+    "courseId": "1772546863570",
+    "createdAt": "2026-03-03T14:13:29.176Z",
+    "startDate": "2026-04-01",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1772547014851",
+    "goal": "Temos que fazer uma grande descrição do curos",
+    "name": "Primeiro Sprint",
+    "status": "planning",
+    "endDate": "2026-04-10",
+    "stories": 0,
+    "courseId": "1772546863570",
+    "createdAt": "2026-03-03T14:10:14.851Z",
+    "startDate": "2026-03-21",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1772543954375",
+    "goal": "Ola esta tudo bem",
+    "name": "Sprint 1",
+    "status": "planning",
+    "endDate": "2026-03-28",
+    "stories": 1,
+    "courseId": "1772442677908",
+    "createdAt": "2026-03-03T13:19:14.376Z",
+    "startDate": "2026-03-26",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1772543777015",
+    "goal": "Um novo sprint",
+    "name": "Sprint 1",
+    "status": "planning",
+    "endDate": "2026-03-28",
+    "stories": 1,
+    "courseId": "1772530945643",
+    "createdAt": "2026-03-03T13:16:17.015Z",
+    "startDate": "2026-03-25",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1771674757079",
+    "goal": "Hoje vamos ver coisas novas",
+    "name": "Sprint 1",
+    "status": "planning",
+    "endDate": "2026-02-27",
+    "stories": 0,
+    "courseId": "1771518583306",
+    "createdAt": "2026-02-21T11:52:37.079Z",
+    "startDate": "2026-02-20",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1769703550711",
+    "goal": "Aplicar o framework Scrum de forma prática, promovendo a colaboração, a estimativa de esforço e o acompanhamento do progresso.",
+    "name": "Planeamento, Execução e Acompanhamento",
+    "status": "planning",
+    "endDate": "2026-02-07",
+    "stories": 3,
+    "courseId": "1769703027879",
+    "createdAt": "2026-01-29T16:19:10.711Z",
+    "startDate": "2026-01-31",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1769703292163",
+    "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+    "name": "Sprint 1",
+    "status": "planning",
+    "endDate": "2026-01-30",
+    "stories": 3,
+    "courseId": "1769703027879",
+    "createdAt": "2026-01-29T16:14:52.163Z",
+    "startDate": "2026-01-23",
+    "courseName": ""
+  }
+]
+[FormandoSprints] 🔍 Procurando teamId: team_1769703042968
+[FormandoSprints] Sprint 1: {
+  "id": "sprint_1772815179130",
+  "name": "Exercício 3 – Criar mini guia",
+  "courseId": "1772801309759",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "❌ não match course"
+}
+[FormandoSprints] Sprint 2: {
+  "id": "sprint_1772815088287",
+  "name": "Exercício 2 – Recorte com anotação",
+  "courseId": "1772801309759",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "❌ não match course"
+}
+[FormandoSprints] Sprint 3: {
+  "id": "sprint_1772802441430",
+  "name": "Exercício 1 – Recorte simples",
+  "courseId": "1772801309759",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "❌ não match course"
+}
+[FormandoSprints] Sprint 4: {
+  "id": "sprint_1772619663899",
+  "name": "Dia stressante",
+  "courseId": "1772618991158",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "❌ não match course"
+}
+[FormandoSprints] Sprint 5: {
+  "id": "sprint_1772547209176",
+  "name": "Sprint Agora",
+  "courseId": "1772546863570",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "❌ não match course"
+}
+[FormandoSprints] Sprint 6: {
+  "id": "sprint_1772547014851",
+  "name": "Primeiro Sprint",
+  "courseId": "1772546863570",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "❌ não match course"
+}
+[FormandoSprints] Sprint 7: {
+  "id": "sprint_1772543954375",
+  "name": "Sprint 1",
+  "courseId": "1772442677908",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "❌ não match course"
+}
+[FormandoSprints] Sprint 8: {
+  "id": "sprint_1772543777015",
+  "name": "Sprint 1",
+  "courseId": "1772530945643",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "❌ não match course"
+}
+[FormandoSprints] Sprint 9: {
+  "id": "sprint_1771674757079",
+  "name": "Sprint 1",
+  "courseId": "1771518583306",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "❌ não match course"
+}
+[FormandoSprints] Sprint 10: {
+  "id": "sprint_1769703550711",
+  "name": "Planeamento, Execução e Acompanhamento",
+  "courseId": "1769703027879",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "✅ MATCH COURSE!"
+}
+[FormandoSprints] Sprint 11: {
+  "id": "sprint_1769703292163",
+  "name": "Sprint 1",
+  "courseId": "1769703027879",
+  "status": "planning",
+  "matchTeam": "❌ não match team",
+  "matchCourse": "✅ MATCH COURSE!"
+}
+[FormandoSprints] ❌ Sprint "Exercício 3 – Criar mini guia" - DE OUTRO CURSO
+[FormandoSprints] ❌ Sprint "Exercício 2 – Recorte com anotação" - DE OUTRO CURSO
+[FormandoSprints] ❌ Sprint "Exercício 1 – Recorte simples" - DE OUTRO CURSO
+[FormandoSprints] ❌ Sprint "Dia stressante" - DE OUTRO CURSO
+[FormandoSprints] ❌ Sprint "Sprint Agora" - DE OUTRO CURSO
+[FormandoSprints] ❌ Sprint "Primeiro Sprint" - DE OUTRO CURSO
+3
+[FormandoSprints] ❌ Sprint "Sprint 1" - DE OUTRO CURSO
+[FormandoSprints] ✅ Sprint "Planeamento, Execução e Acompanhamento" - TODAS AS EQUIPAS
+[FormandoSprints] ✅ Sprint "Sprint 1" - TODAS AS EQUIPAS
+[FormandoSprints] ✅ Sprints após filtro: 2 sprints
+[FormandoSprints] 📋 Sprints filtrados: [
+  {
+    "id": "sprint_1769703550711",
+    "goal": "Aplicar o framework Scrum de forma prática, promovendo a colaboração, a estimativa de esforço e o acompanhamento do progresso.",
+    "name": "Planeamento, Execução e Acompanhamento",
+    "status": "planning",
+    "endDate": "2026-02-07",
+    "stories": 3,
+    "courseId": "1769703027879",
+    "createdAt": "2026-01-29T16:19:10.711Z",
+    "startDate": "2026-01-31",
+    "courseName": ""
+  },
+  {
+    "id": "sprint_1769703292163",
+    "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+    "name": "Sprint 1",
+    "status": "planning",
+    "endDate": "2026-01-30",
+    "stories": 3,
+    "courseId": "1769703027879",
+    "createdAt": "2026-01-29T16:14:52.163Z",
+    "startDate": "2026-01-23",
+    "courseName": ""
+  }
+]
+[FormandoSprints] 🔍 DADOS DO FORMANDO: {
+  "loggedStudent": {
+    "id": "student_1772896122388",
+    "name": "Luis",
+    "email": "l@formacao.pt",
+    "teamId": "team_1769703042968",
+    "courseId": "1769703027879",
+    "createdAt": "2026-03-07T15:08:42.388Z",
+    "courseName": "forScrum",
+    "teamName": "Alfa"
+  },
+  "teamId": "team_1769703042968",
+  "teamName": "Alfa",
+  "courseId": "1769703027879",
+  "courseName": "forScrum"
+}
+[FormandoSprints] 🎯 Navegando para SprintBoard: sprint_1769703292163
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🎯 Navegando para: sprintBoard
+[App.tsx handleNavigate] 📦 Params recebidos: {
+  "sprintId": "sprint_1769703292163",
+  "sprintName": "Sprint 1"
+}
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] ✅ Guardando params: {
+  "sprintId": "sprint_1769703292163",
+  "sprintName": "Sprint 1"
+}
+🏁 NAVEGANDO PARA SPRINTBOARD!
+🏁 sprintBoardKey ANTES: 2
+🎯 SprintId recebido nos params: sprint_1769703292163
+ Setando selectedSprintId...
+🎯 selectedSprintId setado para: sprint_1769703292163
+🏁 sprintBoardKey DEPOIS: 3
+🎬🎬🎬 ════════════════════════════════════════════════
+[App.tsx RENDER] 🎬 RENDERIZANDO SPRINTBOARD
+[App.tsx RENDER] userType: formando
+[App.tsx RENDER] selectedSprintId: sprint_1769703292163
+[App.tsx RENDER] navigationParams: {
+  "sprintId": "sprint_1769703292163",
+  "sprintName": "Sprint 1"
+}
+[App.tsx RENDER] navigationParams.sprintId: sprint_1769703292163
+[App.tsx RENDER] loggedStudentData?.teamId: team_1769703042968
+[App.tsx RENDER] sprintBoardKey: 3
+🎬🎬🎬 ════════════════════════════════════════════════
+[App.tsx RENDER] 🎯 SPRINT ID FINAL A USAR: sprint_1769703292163
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] Componente montado/remontado - carregando dados...
+[SprintBoard] ========================================
+[SprintBoard] Carregando sprint ativo...
+[SprintBoard] User Type: formando
+[SprintBoard] Course ID: 1769703027879
+[SprintBoard] Team ID (formando): team_1769703042968
+[SprintBoard] SprintId passado: sprint_1769703292163
+[SprintBoard] Response status: 200
+[SprintBoard] Response OK?: true
+[SprintBoard] ✅ Dados recebidos do backend: {
+  "success": true,
+  "sprints": [
+    {
+      "id": "sprint_1772815179130",
+      "goal": "Criar 3 capturas de ecrã de um processo simples:\n•\tAbrir site\n•\tClicar num botão\n•\tMostrar resultado\nGuardar as três imagens.",
+      "name": "Exercício 3 – Criar mini guia",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 0,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T16:39:39.130Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772815088287",
+      "goal": "1.\tFazer um recorte de uma página\n2.\tDestacar um elemento com a caneta\n3.\tGuardar a imagem",
+      "name": "Exercício 2 – Recorte com anotação",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 0,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T16:38:08.287Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772802441430",
+      "goal": "-\tFazer um recorte de uma página\n-\tDestacar um elemento com a caneta\n-\tGuardar a imagem",
+      "name": "Exercício 1 – Recorte simples",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 1,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T13:07:21.430Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772619663899",
+      "goal": "Gerir o stress é um processo contínuo, por isso não é um sprint, mas sim, uma interminável maratona, utilize as ferramentas de gestão stress em casos reais da vida.",
+      "name": "Dia stressante",
+      "status": "planning",
+      "endDate": "2026-03-26",
+      "stories": 0,
+      "courseId": "1772618991158",
+      "createdAt": "2026-03-04T10:21:03.899Z",
+      "startDate": "2026-03-16",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772547209176",
+      "goal": "Descrição do sprint",
+      "name": "Sprint Agora",
+      "status": "planning",
+      "endDate": "2026-04-11",
+      "stories": 1,
+      "courseId": "1772546863570",
+      "createdAt": "2026-03-03T14:13:29.176Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772547014851",
+      "goal": "Temos que fazer uma grande descrição do curos",
+      "name": "Primeiro Sprint",
+      "status": "planning",
+      "endDate": "2026-04-10",
+      "stories": 0,
+      "courseId": "1772546863570",
+      "createdAt": "2026-03-03T14:10:14.851Z",
+      "startDate": "2026-03-21",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772543954375",
+      "goal": "Ola esta tudo bem",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-03-28",
+      "stories": 1,
+      "courseId": "1772442677908",
+      "createdAt": "2026-03-03T13:19:14.376Z",
+      "startDate": "2026-03-26",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772543777015",
+      "goal": "Um novo sprint",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-03-28",
+      "stories": 1,
+      "courseId": "1772530945643",
+      "createdAt": "2026-03-03T13:16:17.015Z",
+      "startDate": "2026-03-25",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1771674757079",
+      "goal": "Hoje vamos ver coisas novas",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-02-27",
+      "stories": 0,
+      "courseId": "1771518583306",
+      "createdAt": "2026-02-21T11:52:37.079Z",
+      "startDate": "2026-02-20",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1769703550711",
+      "goal": "Aplicar o framework Scrum de forma prática, promovendo a colaboração, a estimativa de esforço e o acompanhamento do progresso.",
+      "name": "Planeamento, Execução e Acompanhamento",
+      "status": "planning",
+      "endDate": "2026-02-07",
+      "stories": 3,
+      "courseId": "1769703027879",
+      "createdAt": "2026-01-29T16:19:10.711Z",
+      "startDate": "2026-01-31",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1769703292163",
+      "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-01-30",
+      "stories": 3,
+      "courseId": "1769703027879",
+      "createdAt": "2026-01-29T16:14:52.163Z",
+      "startDate": "2026-01-23",
+      "courseName": ""
+    }
+  ]
+}
+[SprintBoard] Total de sprints recebidos: 11
+[SprintBoard] Filtrando por courseId: 1769703027879
+[SprintBoard] Sprints do curso: 2
+[SprintBoard] 🎯 Procurando sprint específico: sprint_1769703292163
+[SprintBoard] ✅ Sprint carregado: {
+  "id": "sprint_1769703292163",
+  "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+  "name": "Sprint 1",
+  "status": "planning",
+  "endDate": "2026-01-30",
+  "stories": 3,
+  "courseId": "1769703027879",
+  "createdAt": "2026-01-29T16:14:52.163Z",
+  "startDate": "2026-01-23",
+  "courseName": ""
+}
+[SprintBoard] ========================================
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] Sprint mudou, recarregando stories... {
+  "id": "sprint_1769703292163",
+  "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+  "name": "Sprint 1",
+  "status": "planning",
+  "endDate": "2026-01-30",
+  "stories": 3,
+  "courseId": "1769703027879",
+  "createdAt": "2026-01-29T16:14:52.163Z",
+  "startDate": "2026-01-23",
+  "courseName": ""
+}
+[SprintBoard] Carregando stories para sprint: sprint_1769703292163 Sprint 1
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] ✅ Stories recebidas do backend
+📊📊📊 ════════════════════════════════════════════════
+[SprintBoard loadUserStories] 📊 FILTROS:
+[SprintBoard loadUserStories] isFormador: false
+[SprintBoard loadUserStories] courseIdToFilter: 1769703027879
+[SprintBoard loadUserStories] teamNameToFilter: Alfa
+[SprintBoard loadUserStories] loggedStudent COMPLETO: {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+[SprintBoard loadUserStories] currentSprint.id: sprint_1769703292163
+[SprintBoard loadUserStories] currentSprint.name: Sprint 1
+[SprintBoard loadUserStories] Total stories recebidas: 10
+📊📊📊 ════════════════════════════════════════════════
+🔍🔍🔍 ════════════════════════════════════════════════
+[SprintBoard] 🔍 PROCESSANDO STORIES:
+[SprintBoard] Total stories recebidas: 10
+[SprintBoard] Primeira story (exemplo): {
+  "id": "story_1772804612843",
+  "team": "Descobridores",
+  "title": "Guias visuais",
+  "votes": [
+    {
+      "value": 0,
+      "studentName": "Fernão de Magalhães"
+    },
+    {
+      "value": 3,
+      "studentName": "Vasco da Gama"
+    },
+    {
+      "value": 89,
+      "studentName": "Pedro Álvares Cabral"
+    },
+    {
+      "value": 55,
+      "studentName": "Infante D. Henrique"
+    }
+  ],
+  "points": 0,
+  "status": "done",
+  "courseId": "1772801309759",
+  "priority": "high",
+  "sprintId": "sprint_1772802441430",
+  "createdAt": "2026-03-06T13:43:32.843Z",
+  "updatedAt": "2026-03-06T17:15:39.110Z",
+  "description": "Exemplo:\n1.\tRecortar parte do ecrã\n2.\tDestacar botão importante\n3.\tGuardar imagem\n4.\tInserir no documento de apoio",
+  "acceptanceCriteria": [
+    "Marcar como vista."
+  ]
+}
+🔍🔍🔍 ════════════════════════════════════════════════
+[SprintBoard] 🔍 Story #1: {
+  "title": "Guias visuais",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 0,
+      "studentName": "Fernão de Magalhães"
+    },
+    {
+      "value": 3,
+      "studentName": "Vasco da Gama"
+    },
+    {
+      "value": 89,
+      "studentName": "Pedro Álvares Cabral"
+    },
+    {
+      "value": 55,
+      "studentName": "Infante D. Henrique"
+    }
+  ],
+  "votesLength": 4,
+  "courseId": "1772801309759",
+  "team": "Descobridores",
+  "sprintId": "sprint_1772802441430",
+  "status": "done"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772801309759" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Guias visuais
+[SprintBoard] 🔍 Story #2: {
+  "title": "Ola",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1772546863570",
+  "team": "Alfa 1",
+  "sprintId": "sprint_1772547209176",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772546863570" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Ola
+[SprintBoard] 🔍 Story #3: {
+  "title": "Nova story",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 3,
+      "studentName": "miguel"
+    },
+    {
+      "value": 5,
+      "studentName": "maria"
+    }
+  ],
+  "votesLength": 2,
+  "courseId": "1772442677908",
+  "team": "equipa 5",
+  "sprintId": "sprint_1772543954375",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772442677908" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Nova story
+[SprintBoard] 🔍 Story #4: {
+  "title": "Cheias",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1772530945643",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1772543777015",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772530945643" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Cheias
+[SprintBoard] 🔍 Story #5: {
+  "title": "Agenda inteligente",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 13,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Os resistentes da agenda cheia",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os resistentes da agenda cheia" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Agenda inteligente (story.team: "Os resistentes da agenda cheia", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #6: {
+  "title": "Diagnóstico da segunda-feira",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 2,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os Sobreviventes do café forte" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Diagnóstico da segunda-feira (story.team: "Os Sobreviventes do café forte", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #7: {
+  "title": "Diagnóstico da segunda-feira",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1769703027879",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os Sobreviventes do café forte" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Diagnóstico da segunda-feira (story.team: "Os Sobreviventes do café forte", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #8: {
+  "title": "viva",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 2,
+      "studentName": "Maria"
+    },
+    {
+      "value": 21,
+      "studentName": "Luis"
+    },
+    {
+      "value": 21,
+      "studentName": "Manuel"
+    }
+  ],
+  "votesLength": 3,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "todo"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): viva (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #9: {
+  "title": "Planeamento e Acompanhamento do Sprint",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 13,
+      "studentName": "Maria"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "todo"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Planeamento e Acompanhamento do Sprint (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #10: {
+  "title": "Criação e Organização do Curso",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 21,
+      "studentName": "Maria"
+    },
+    {
+      "value": 21,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 2,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Criação e Organização do Curso (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] User stories carregadas e organizadas: {
+  "backlog": [],
+  "todo": [],
+  "inProgress": [],
+  "done": []
+}
+[SprintBoard] Total de stories por coluna: {
+  "backlog": 0,
+  "todo": 0,
+  "inProgress": 0,
+  "done": 0,
+  "total": 0
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+🚨 ═══════════════════════════════════
+🚨 FORÇANDO RELOAD DE TODAS AS STORIES SEM FILTROS
+🚨 Stories do BACKEND: {
+  "success": true,
+  "stories": [
+    {
+      "id": "story_1772804612843",
+      "team": "Descobridores",
+      "title": "Guias visuais",
+      "votes": [
+        {
+          "value": 0,
+          "studentName": "Fernão de Magalhães"
+        },
+        {
+          "value": 3,
+          "studentName": "Vasco da Gama"
+        },
+        {
+          "value": 89,
+          "studentName": "Pedro Álvares Cabral"
+        },
+        {
+          "value": 55,
+          "studentName": "Infante D. Henrique"
+        }
+      ],
+      "points": 0,
+      "status": "done",
+      "courseId": "1772801309759",
+      "priority": "high",
+      "sprintId": "sprint_1772802441430",
+      "createdAt": "2026-03-06T13:43:32.843Z",
+      "updatedAt": "2026-03-06T17:15:39.110Z",
+      "description": "Exemplo:\n1.\tRecortar parte do ecrã\n2.\tDestacar botão importante\n3.\tGuardar imagem\n4.\tInserir no documento de apoio",
+      "acceptanceCriteria": [
+        "Marcar como vista."
+      ]
+    },
+    {
+      "id": "story_1772547562884",
+      "team": "Alfa 1",
+      "title": "Ola",
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1772546863570",
+      "priority": "medium",
+      "sprintId": "sprint_1772547209176",
+      "createdAt": "2026-03-03T14:19:22.884Z",
+      "updatedAt": "2026-03-03T14:37:27.316Z",
+      "description": "Esta é a nova user stoy",
+      "acceptanceCriteria": [
+        "ok"
+      ]
+    },
+    {
+      "id": "story_1772544992166",
+      "team": "equipa 5",
+      "title": "Nova story",
+      "votes": [
+        {
+          "value": 3,
+          "studentName": "miguel"
+        },
+        {
+          "value": 5,
+          "studentName": "maria"
+        }
+      ],
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1772442677908",
+      "priority": "high",
+      "sprintId": "sprint_1772543954375",
+      "createdAt": "2026-03-03T13:36:32.166Z",
+      "updatedAt": "2026-03-07T15:13:04.771Z",
+      "description": "O que a de novo nas story",
+      "acceptanceCriteria": [
+        "Ora viva "
+      ]
+    },
+    {
+      "id": "story_1772543834945",
+      "team": "Os Sobreviventes do café forte",
+      "title": "Cheias",
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1772530945643",
+      "priority": "medium",
+      "sprintId": "sprint_1772543777015",
+      "createdAt": "2026-03-03T13:17:14.945Z",
+      "description": "Isto é uma questão de gestão",
+      "acceptanceCriteria": [
+        "Logo se vê "
+      ]
+    },
+    {
+      "id": "story_1772531834664",
+      "team": "Os resistentes da agenda cheia",
+      "title": "Agenda inteligente",
+      "votes": [
+        {
+          "value": 13,
+          "studentName": "Luis"
+        }
+      ],
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1769703027879",
+      "priority": "medium",
+      "sprintId": "sprint_1769703550711",
+      "createdAt": "2026-03-03T09:57:14.664Z",
+      "updatedAt": "2026-03-07T15:34:25.694Z",
+      "description": "Como equipa, queremos construir um modelo de agenda para a segunda-feira, para demonstrar como organizar tarefas e prioridades.",
+      "acceptanceCriteria": [
+        "Identificar tarefas típicas de início de semana"
+      ]
+    },
+    {
+      "id": "story_1772531741388",
+      "team": "Os Sobreviventes do café forte",
+      "title": "Diagnóstico da segunda-feira",
+      "votes": [
+        {
+          "value": 2,
+          "studentName": "Luis"
+        }
+      ],
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1769703027879",
+      "priority": "medium",
+      "sprintId": "sprint_1769703550711",
+      "createdAt": "2026-03-03T09:55:41.388Z",
+      "updatedAt": "2026-03-07T15:32:59.776Z",
+      "description": "Como formandos do curso, queremos identificar os principais problemas que surgem à segunda-feira, para compreender por que motivo este dia é frequentemente visto como difícil.",
+      "acceptanceCriteria": [
+        "Identificar 5 dificuldades comuns"
+      ]
+    },
+    {
+      "id": "story_1772531630677",
+      "team": "Os Sobreviventes do café forte",
+      "title": "Diagnóstico da segunda-feira",
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1769703027879",
+      "priority": "medium",
+      "sprintId": "sprint_1769703550711",
+      "createdAt": "2026-03-03T09:53:50.677Z",
+      "description": "Como formandos do curso, queremos identificar os principais problemas que surgem à segunda-feira, para compreender por que motivo este dia é frequentemente visto como difícil.",
+      "acceptanceCriteria": [
+        "Identificar cinco dificuldades comuns"
+      ]
+    },
+    {
+      "id": "story_1769964245749",
+      "team": "Beta",
+      "title": "viva",
+      "votes": [
+        {
+          "value": 2,
+          "studentName": "Maria"
+        },
+        {
+          "value": 21,
+          "studentName": "Luis"
+        },
+        {
+          "value": 21,
+          "studentName": "Manuel"
+        }
+      ],
+      "points": 0,
+      "status": "todo",
+      "courseId": "1769703027879",
+      "priority": "high",
+      "sprintId": "sprint_1769703292163",
+      "createdAt": "2026-02-01T16:44:05.749Z",
+      "updatedAt": "2026-02-19T15:02:39.135Z",
+      "description": "mais uma descrição",
+      "acceptanceCriteria": [
+        "qual"
+      ]
+    },
+    {
+      "id": "story_1769703488012",
+      "team": "Beta",
+      "title": "Planeamento e Acompanhamento do Sprint",
+      "votes": [
+        {
+          "value": 13,
+          "studentName": "Maria"
+        }
+      ],
+      "points": 0,
+      "status": "todo",
+      "courseId": "1769703027879",
+      "priority": "high",
+      "sprintId": "sprint_1769703292163",
+      "createdAt": "2026-01-29T16:18:08.012Z",
+      "updatedAt": "2026-02-21T12:03:46.598Z",
+      "description": "Como formador,\nquero planear um sprint, criar user stories e acompanhar o seu progresso através do quadro Kanban,\npara monitorizar o desempenho das equipas e apoiar o processo de aprendizagem contínua.",
+      "acceptanceCriteria": [
+        "O sprint encontra-se criado com user stories associadas."
+      ]
+    },
+    {
+      "id": "story_1769703402763",
+      "team": "Beta",
+      "title": "Criação e Organização do Curso",
+      "votes": [
+        {
+          "value": 21,
+          "studentName": "Maria"
+        },
+        {
+          "value": 21,
+          "studentName": "Luis"
+        }
+      ],
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1769703027879",
+      "priority": "high",
+      "sprintId": "sprint_1769703292163",
+      "createdAt": "2026-01-29T16:16:42.763Z",
+      "updatedAt": "2026-02-21T12:03:52.842Z",
+      "description": "Como formador,\nquero criar e configurar um curso no forScrum, definindo equipas e formandos,\npara estruturar o ambiente de aprendizagem e organizar o trabalho colaborativo desde o início da formação.",
+      "acceptanceCriteria": [
+        "O curso encontra-se criado e configurado na plataforma."
+      ]
+    }
+  ]
+}
+🚨 TOTAL DE STORIES RECEBIDAS: 10
+🚨 Story 1: {
+  "id": "story_1772804612843",
+  "title": "Guias visuais",
+  "courseId": "1772801309759",
+  "team": "Descobridores",
+  "sprintId": "sprint_1772802441430",
+  "status": "done"
+}
+🚨 Story 2: {
+  "id": "story_1772547562884",
+  "title": "Ola",
+  "courseId": "1772546863570",
+  "team": "Alfa 1",
+  "sprintId": "sprint_1772547209176",
+  "status": "backlog"
+}
+🚨 Story 3: {
+  "id": "story_1772544992166",
+  "title": "Nova story",
+  "courseId": "1772442677908",
+  "team": "equipa 5",
+  "sprintId": "sprint_1772543954375",
+  "status": "backlog"
+}
+🚨 Story 4: {
+  "id": "story_1772543834945",
+  "title": "Cheias",
+  "courseId": "1772530945643",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1772543777015",
+  "status": "backlog"
+}
+🚨 Story 5: {
+  "id": "story_1772531834664",
+  "title": "Agenda inteligente",
+  "courseId": "1769703027879",
+  "team": "Os resistentes da agenda cheia",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+🚨 Story 6: {
+  "id": "story_1772531741388",
+  "title": "Diagnóstico da segunda-feira",
+  "courseId": "1769703027879",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+🚨 Story 7: {
+  "id": "story_1772531630677",
+  "title": "Diagnóstico da segunda-feira",
+  "courseId": "1769703027879",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+🚨 Story 8: {
+  "id": "story_1769964245749",
+  "title": "viva",
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "todo"
+}
+🚨 Story 9: {
+  "id": "story_1769703488012",
+  "title": "Planeamento e Acompanhamento do Sprint",
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "todo"
+}
+🚨 Story 10: {
+  "id": "story_1769703402763",
+  "title": "Criação e Organização do Curso",
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "backlog"
+}
+🚨 ═══════════════════════════════════
+[SprintBoard] 🔄 Auto-reload - A recarregar dados...
+[SprintBoard] ========================================
+[SprintBoard] Carregando sprint ativo...
+[SprintBoard] User Type: formando
+[SprintBoard] Course ID: 1769703027879
+[SprintBoard] Team ID (formando): team_1769703042968
+[SprintBoard] SprintId passado: sprint_1769703292163
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] Response status: 200
+[SprintBoard] Response OK?: true
+[SprintBoard] ✅ Dados recebidos do backend: {
+  "success": true,
+  "sprints": [
+    {
+      "id": "sprint_1772815179130",
+      "goal": "Criar 3 capturas de ecrã de um processo simples:\n•\tAbrir site\n•\tClicar num botão\n•\tMostrar resultado\nGuardar as três imagens.",
+      "name": "Exercício 3 – Criar mini guia",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 0,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T16:39:39.130Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772815088287",
+      "goal": "1.\tFazer um recorte de uma página\n2.\tDestacar um elemento com a caneta\n3.\tGuardar a imagem",
+      "name": "Exercício 2 – Recorte com anotação",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 0,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T16:38:08.287Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772802441430",
+      "goal": "-\tFazer um recorte de uma página\n-\tDestacar um elemento com a caneta\n-\tGuardar a imagem",
+      "name": "Exercício 1 – Recorte simples",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 1,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T13:07:21.430Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772619663899",
+      "goal": "Gerir o stress é um processo contínuo, por isso não é um sprint, mas sim, uma interminável maratona, utilize as ferramentas de gestão stress em casos reais da vida.",
+      "name": "Dia stressante",
+      "status": "planning",
+      "endDate": "2026-03-26",
+      "stories": 0,
+      "courseId": "1772618991158",
+      "createdAt": "2026-03-04T10:21:03.899Z",
+      "startDate": "2026-03-16",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772547209176",
+      "goal": "Descrição do sprint",
+      "name": "Sprint Agora",
+      "status": "planning",
+      "endDate": "2026-04-11",
+      "stories": 1,
+      "courseId": "1772546863570",
+      "createdAt": "2026-03-03T14:13:29.176Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772547014851",
+      "goal": "Temos que fazer uma grande descrição do curos",
+      "name": "Primeiro Sprint",
+      "status": "planning",
+      "endDate": "2026-04-10",
+      "stories": 0,
+      "courseId": "1772546863570",
+      "createdAt": "2026-03-03T14:10:14.851Z",
+      "startDate": "2026-03-21",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772543954375",
+      "goal": "Ola esta tudo bem",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-03-28",
+      "stories": 1,
+      "courseId": "1772442677908",
+      "createdAt": "2026-03-03T13:19:14.376Z",
+      "startDate": "2026-03-26",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772543777015",
+      "goal": "Um novo sprint",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-03-28",
+      "stories": 1,
+      "courseId": "1772530945643",
+      "createdAt": "2026-03-03T13:16:17.015Z",
+      "startDate": "2026-03-25",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1771674757079",
+      "goal": "Hoje vamos ver coisas novas",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-02-27",
+      "stories": 0,
+      "courseId": "1771518583306",
+      "createdAt": "2026-02-21T11:52:37.079Z",
+      "startDate": "2026-02-20",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1769703550711",
+      "goal": "Aplicar o framework Scrum de forma prática, promovendo a colaboração, a estimativa de esforço e o acompanhamento do progresso.",
+      "name": "Planeamento, Execução e Acompanhamento",
+      "status": "planning",
+      "endDate": "2026-02-07",
+      "stories": 3,
+      "courseId": "1769703027879",
+      "createdAt": "2026-01-29T16:19:10.711Z",
+      "startDate": "2026-01-31",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1769703292163",
+      "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-01-30",
+      "stories": 3,
+      "courseId": "1769703027879",
+      "createdAt": "2026-01-29T16:14:52.163Z",
+      "startDate": "2026-01-23",
+      "courseName": ""
+    }
+  ]
+}
+[SprintBoard] Total de sprints recebidos: 11
+[SprintBoard] Filtrando por courseId: 1769703027879
+[SprintBoard] Sprints do curso: 2
+[SprintBoard] 🎯 Procurando sprint específico: sprint_1769703292163
+[SprintBoard] ✅ Sprint carregado: {
+  "id": "sprint_1769703292163",
+  "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+  "name": "Sprint 1",
+  "status": "planning",
+  "endDate": "2026-01-30",
+  "stories": 3,
+  "courseId": "1769703027879",
+  "createdAt": "2026-01-29T16:14:52.163Z",
+  "startDate": "2026-01-23",
+  "courseName": ""
+}
+[SprintBoard] ========================================
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] Sprint mudou, recarregando stories... {
+  "id": "sprint_1769703292163",
+  "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+  "name": "Sprint 1",
+  "status": "planning",
+  "endDate": "2026-01-30",
+  "stories": 3,
+  "courseId": "1769703027879",
+  "createdAt": "2026-01-29T16:14:52.163Z",
+  "startDate": "2026-01-23",
+  "courseName": ""
+}
+[SprintBoard] Carregando stories para sprint: sprint_1769703292163 Sprint 1
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] ✅ Stories recebidas do backend
+📊📊📊 ════════════════════════════════════════════════
+[SprintBoard loadUserStories] 📊 FILTROS:
+[SprintBoard loadUserStories] isFormador: false
+[SprintBoard loadUserStories] courseIdToFilter: 1769703027879
+[SprintBoard loadUserStories] teamNameToFilter: Alfa
+[SprintBoard loadUserStories] loggedStudent COMPLETO: {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+[SprintBoard loadUserStories] currentSprint.id: sprint_1769703292163
+[SprintBoard loadUserStories] currentSprint.name: Sprint 1
+[SprintBoard loadUserStories] Total stories recebidas: 10
+📊📊📊 ════════════════════════════════════════════════
+🔍🔍🔍 ════════════════════════════════════════════════
+[SprintBoard] 🔍 PROCESSANDO STORIES:
+[SprintBoard] Total stories recebidas: 10
+[SprintBoard] Primeira story (exemplo): {
+  "id": "story_1772804612843",
+  "team": "Descobridores",
+  "title": "Guias visuais",
+  "votes": [
+    {
+      "value": 0,
+      "studentName": "Fernão de Magalhães"
+    },
+    {
+      "value": 3,
+      "studentName": "Vasco da Gama"
+    },
+    {
+      "value": 89,
+      "studentName": "Pedro Álvares Cabral"
+    },
+    {
+      "value": 55,
+      "studentName": "Infante D. Henrique"
+    }
+  ],
+  "points": 0,
+  "status": "done",
+  "courseId": "1772801309759",
+  "priority": "high",
+  "sprintId": "sprint_1772802441430",
+  "createdAt": "2026-03-06T13:43:32.843Z",
+  "updatedAt": "2026-03-06T17:15:39.110Z",
+  "description": "Exemplo:\n1.\tRecortar parte do ecrã\n2.\tDestacar botão importante\n3.\tGuardar imagem\n4.\tInserir no documento de apoio",
+  "acceptanceCriteria": [
+    "Marcar como vista."
+  ]
+}
+🔍🔍🔍 ════════════════════════════════════════════════
+[SprintBoard] 🔍 Story #1: {
+  "title": "Guias visuais",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 0,
+      "studentName": "Fernão de Magalhães"
+    },
+    {
+      "value": 3,
+      "studentName": "Vasco da Gama"
+    },
+    {
+      "value": 89,
+      "studentName": "Pedro Álvares Cabral"
+    },
+    {
+      "value": 55,
+      "studentName": "Infante D. Henrique"
+    }
+  ],
+  "votesLength": 4,
+  "courseId": "1772801309759",
+  "team": "Descobridores",
+  "sprintId": "sprint_1772802441430",
+  "status": "done"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772801309759" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Guias visuais
+[SprintBoard] 🔍 Story #2: {
+  "title": "Ola",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1772546863570",
+  "team": "Alfa 1",
+  "sprintId": "sprint_1772547209176",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772546863570" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Ola
+[SprintBoard] 🔍 Story #3: {
+  "title": "Nova story",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 3,
+      "studentName": "miguel"
+    },
+    {
+      "value": 5,
+      "studentName": "maria"
+    }
+  ],
+  "votesLength": 2,
+  "courseId": "1772442677908",
+  "team": "equipa 5",
+  "sprintId": "sprint_1772543954375",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772442677908" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Nova story
+[SprintBoard] 🔍 Story #4: {
+  "title": "Cheias",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1772530945643",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1772543777015",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772530945643" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Cheias
+[SprintBoard] 🔍 Story #5: {
+  "title": "Agenda inteligente",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 13,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Os resistentes da agenda cheia",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os resistentes da agenda cheia" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Agenda inteligente (story.team: "Os resistentes da agenda cheia", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #6: {
+  "title": "Diagnóstico da segunda-feira",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 2,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os Sobreviventes do café forte" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Diagnóstico da segunda-feira (story.team: "Os Sobreviventes do café forte", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #7: {
+  "title": "Diagnóstico da segunda-feira",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1769703027879",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os Sobreviventes do café forte" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Diagnóstico da segunda-feira (story.team: "Os Sobreviventes do café forte", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #8: {
+  "title": "viva",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 2,
+      "studentName": "Maria"
+    },
+    {
+      "value": 21,
+      "studentName": "Luis"
+    },
+    {
+      "value": 21,
+      "studentName": "Manuel"
+    }
+  ],
+  "votesLength": 3,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "todo"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): viva (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #9: {
+  "title": "Planeamento e Acompanhamento do Sprint",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 13,
+      "studentName": "Maria"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "todo"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Planeamento e Acompanhamento do Sprint (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #10: {
+  "title": "Criação e Organização do Curso",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 21,
+      "studentName": "Maria"
+    },
+    {
+      "value": 21,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 2,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Criação e Organização do Curso (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] User stories carregadas e organizadas: {
+  "backlog": [],
+  "todo": [],
+  "inProgress": [],
+  "done": []
+}
+[SprintBoard] Total de stories por coluna: {
+  "backlog": 0,
+  "todo": 0,
+  "inProgress": 0,
+  "done": 0,
+  "total": 0
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 🔄 Auto-reload - A recarregar dados...
+[SprintBoard] ========================================
+[SprintBoard] Carregando sprint ativo...
+[SprintBoard] User Type: formando
+[SprintBoard] Course ID: 1769703027879
+[SprintBoard] Team ID (formando): team_1769703042968
+[SprintBoard] SprintId passado: sprint_1769703292163
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] Response status: 200
+[SprintBoard] Response OK?: true
+[SprintBoard] ✅ Dados recebidos do backend: {
+  "success": true,
+  "sprints": [
+    {
+      "id": "sprint_1772815179130",
+      "goal": "Criar 3 capturas de ecrã de um processo simples:\n•\tAbrir site\n•\tClicar num botão\n•\tMostrar resultado\nGuardar as três imagens.",
+      "name": "Exercício 3 – Criar mini guia",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 0,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T16:39:39.130Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772815088287",
+      "goal": "1.\tFazer um recorte de uma página\n2.\tDestacar um elemento com a caneta\n3.\tGuardar a imagem",
+      "name": "Exercício 2 – Recorte com anotação",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 0,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T16:38:08.287Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772802441430",
+      "goal": "-\tFazer um recorte de uma página\n-\tDestacar um elemento com a caneta\n-\tGuardar a imagem",
+      "name": "Exercício 1 – Recorte simples",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 1,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T13:07:21.430Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772619663899",
+      "goal": "Gerir o stress é um processo contínuo, por isso não é um sprint, mas sim, uma interminável maratona, utilize as ferramentas de gestão stress em casos reais da vida.",
+      "name": "Dia stressante",
+      "status": "planning",
+      "endDate": "2026-03-26",
+      "stories": 0,
+      "courseId": "1772618991158",
+      "createdAt": "2026-03-04T10:21:03.899Z",
+      "startDate": "2026-03-16",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772547209176",
+      "goal": "Descrição do sprint",
+      "name": "Sprint Agora",
+      "status": "planning",
+      "endDate": "2026-04-11",
+      "stories": 1,
+      "courseId": "1772546863570",
+      "createdAt": "2026-03-03T14:13:29.176Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772547014851",
+      "goal": "Temos que fazer uma grande descrição do curos",
+      "name": "Primeiro Sprint",
+      "status": "planning",
+      "endDate": "2026-04-10",
+      "stories": 0,
+      "courseId": "1772546863570",
+      "createdAt": "2026-03-03T14:10:14.851Z",
+      "startDate": "2026-03-21",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772543954375",
+      "goal": "Ola esta tudo bem",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-03-28",
+      "stories": 1,
+      "courseId": "1772442677908",
+      "createdAt": "2026-03-03T13:19:14.376Z",
+      "startDate": "2026-03-26",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772543777015",
+      "goal": "Um novo sprint",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-03-28",
+      "stories": 1,
+      "courseId": "1772530945643",
+      "createdAt": "2026-03-03T13:16:17.015Z",
+      "startDate": "2026-03-25",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1771674757079",
+      "goal": "Hoje vamos ver coisas novas",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-02-27",
+      "stories": 0,
+      "courseId": "1771518583306",
+      "createdAt": "2026-02-21T11:52:37.079Z",
+      "startDate": "2026-02-20",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1769703550711",
+      "goal": "Aplicar o framework Scrum de forma prática, promovendo a colaboração, a estimativa de esforço e o acompanhamento do progresso.",
+      "name": "Planeamento, Execução e Acompanhamento",
+      "status": "planning",
+      "endDate": "2026-02-07",
+      "stories": 3,
+      "courseId": "1769703027879",
+      "createdAt": "2026-01-29T16:19:10.711Z",
+      "startDate": "2026-01-31",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1769703292163",
+      "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-01-30",
+      "stories": 3,
+      "courseId": "1769703027879",
+      "createdAt": "2026-01-29T16:14:52.163Z",
+      "startDate": "2026-01-23",
+      "courseName": ""
+    }
+  ]
+}
+[SprintBoard] Total de sprints recebidos: 11
+[SprintBoard] Filtrando por courseId: 1769703027879
+[SprintBoard] Sprints do curso: 2
+[SprintBoard] 🎯 Procurando sprint específico: sprint_1769703292163
+[SprintBoard] ✅ Sprint carregado: {
+  "id": "sprint_1769703292163",
+  "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+  "name": "Sprint 1",
+  "status": "planning",
+  "endDate": "2026-01-30",
+  "stories": 3,
+  "courseId": "1769703027879",
+  "createdAt": "2026-01-29T16:14:52.163Z",
+  "startDate": "2026-01-23",
+  "courseName": ""
+}
+[SprintBoard] ========================================
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] Sprint mudou, recarregando stories... {
+  "id": "sprint_1769703292163",
+  "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+  "name": "Sprint 1",
+  "status": "planning",
+  "endDate": "2026-01-30",
+  "stories": 3,
+  "courseId": "1769703027879",
+  "createdAt": "2026-01-29T16:14:52.163Z",
+  "startDate": "2026-01-23",
+  "courseName": ""
+}
+[SprintBoard] Carregando stories para sprint: sprint_1769703292163 Sprint 1
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] ✅ Stories recebidas do backend
+📊📊📊 ════════════════════════════════════════════════
+[SprintBoard loadUserStories] 📊 FILTROS:
+[SprintBoard loadUserStories] isFormador: false
+[SprintBoard loadUserStories] courseIdToFilter: 1769703027879
+[SprintBoard loadUserStories] teamNameToFilter: Alfa
+[SprintBoard loadUserStories] loggedStudent COMPLETO: {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+[SprintBoard loadUserStories] currentSprint.id: sprint_1769703292163
+[SprintBoard loadUserStories] currentSprint.name: Sprint 1
+[SprintBoard loadUserStories] Total stories recebidas: 10
+📊📊📊 ════════════════════════════════════════════════
+🔍🔍🔍 ════════════════════════════════════════════════
+[SprintBoard] 🔍 PROCESSANDO STORIES:
+[SprintBoard] Total stories recebidas: 10
+[SprintBoard] Primeira story (exemplo): {
+  "id": "story_1772804612843",
+  "team": "Descobridores",
+  "title": "Guias visuais",
+  "votes": [
+    {
+      "value": 0,
+      "studentName": "Fernão de Magalhães"
+    },
+    {
+      "value": 3,
+      "studentName": "Vasco da Gama"
+    },
+    {
+      "value": 89,
+      "studentName": "Pedro Álvares Cabral"
+    },
+    {
+      "value": 55,
+      "studentName": "Infante D. Henrique"
+    }
+  ],
+  "points": 0,
+  "status": "done",
+  "courseId": "1772801309759",
+  "priority": "high",
+  "sprintId": "sprint_1772802441430",
+  "createdAt": "2026-03-06T13:43:32.843Z",
+  "updatedAt": "2026-03-06T17:15:39.110Z",
+  "description": "Exemplo:\n1.\tRecortar parte do ecrã\n2.\tDestacar botão importante\n3.\tGuardar imagem\n4.\tInserir no documento de apoio",
+  "acceptanceCriteria": [
+    "Marcar como vista."
+  ]
+}
+🔍🔍🔍 ════════════════════════════════════════════════
+[SprintBoard] 🔍 Story #1: {
+  "title": "Guias visuais",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 0,
+      "studentName": "Fernão de Magalhães"
+    },
+    {
+      "value": 3,
+      "studentName": "Vasco da Gama"
+    },
+    {
+      "value": 89,
+      "studentName": "Pedro Álvares Cabral"
+    },
+    {
+      "value": 55,
+      "studentName": "Infante D. Henrique"
+    }
+  ],
+  "votesLength": 4,
+  "courseId": "1772801309759",
+  "team": "Descobridores",
+  "sprintId": "sprint_1772802441430",
+  "status": "done"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772801309759" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Guias visuais
+[SprintBoard] 🔍 Story #2: {
+  "title": "Ola",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1772546863570",
+  "team": "Alfa 1",
+  "sprintId": "sprint_1772547209176",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772546863570" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Ola
+[SprintBoard] 🔍 Story #3: {
+  "title": "Nova story",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 3,
+      "studentName": "miguel"
+    },
+    {
+      "value": 5,
+      "studentName": "maria"
+    }
+  ],
+  "votesLength": 2,
+  "courseId": "1772442677908",
+  "team": "equipa 5",
+  "sprintId": "sprint_1772543954375",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772442677908" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Nova story
+[SprintBoard] 🔍 Story #4: {
+  "title": "Cheias",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1772530945643",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1772543777015",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772530945643" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Cheias
+[SprintBoard] 🔍 Story #5: {
+  "title": "Agenda inteligente",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 13,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Os resistentes da agenda cheia",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os resistentes da agenda cheia" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Agenda inteligente (story.team: "Os resistentes da agenda cheia", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #6: {
+  "title": "Diagnóstico da segunda-feira",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 2,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os Sobreviventes do café forte" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Diagnóstico da segunda-feira (story.team: "Os Sobreviventes do café forte", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #7: {
+  "title": "Diagnóstico da segunda-feira",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1769703027879",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os Sobreviventes do café forte" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Diagnóstico da segunda-feira (story.team: "Os Sobreviventes do café forte", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #8: {
+  "title": "viva",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 2,
+      "studentName": "Maria"
+    },
+    {
+      "value": 21,
+      "studentName": "Luis"
+    },
+    {
+      "value": 21,
+      "studentName": "Manuel"
+    }
+  ],
+  "votesLength": 3,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "todo"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): viva (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #9: {
+  "title": "Planeamento e Acompanhamento do Sprint",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 13,
+      "studentName": "Maria"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "todo"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Planeamento e Acompanhamento do Sprint (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #10: {
+  "title": "Criação e Organização do Curso",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 21,
+      "studentName": "Maria"
+    },
+    {
+      "value": 21,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 2,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Criação e Organização do Curso (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] User stories carregadas e organizadas: {
+  "backlog": [],
+  "todo": [],
+  "inProgress": [],
+  "done": []
+}
+[SprintBoard] Total de stories por coluna: {
+  "backlog": 0,
+  "todo": 0,
+  "inProgress": 0,
+  "done": 0,
+  "total": 0
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 🔄 Auto-reload - A recarregar dados...
+[SprintBoard] ========================================
+[SprintBoard] Carregando sprint ativo...
+[SprintBoard] User Type: formando
+[SprintBoard] Course ID: 1769703027879
+[SprintBoard] Team ID (formando): team_1769703042968
+[SprintBoard] SprintId passado: sprint_1769703292163
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] Response status: 200
+[SprintBoard] Response OK?: true
+[SprintBoard] ✅ Dados recebidos do backend: {
+  "success": true,
+  "sprints": [
+    {
+      "id": "sprint_1772815179130",
+      "goal": "Criar 3 capturas de ecrã de um processo simples:\n•\tAbrir site\n•\tClicar num botão\n•\tMostrar resultado\nGuardar as três imagens.",
+      "name": "Exercício 3 – Criar mini guia",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 0,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T16:39:39.130Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772815088287",
+      "goal": "1.\tFazer um recorte de uma página\n2.\tDestacar um elemento com a caneta\n3.\tGuardar a imagem",
+      "name": "Exercício 2 – Recorte com anotação",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 0,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T16:38:08.287Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772802441430",
+      "goal": "-\tFazer um recorte de uma página\n-\tDestacar um elemento com a caneta\n-\tGuardar a imagem",
+      "name": "Exercício 1 – Recorte simples",
+      "status": "planning",
+      "endDate": "2026-04-02",
+      "stories": 1,
+      "courseId": "1772801309759",
+      "createdAt": "2026-03-06T13:07:21.430Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772619663899",
+      "goal": "Gerir o stress é um processo contínuo, por isso não é um sprint, mas sim, uma interminável maratona, utilize as ferramentas de gestão stress em casos reais da vida.",
+      "name": "Dia stressante",
+      "status": "planning",
+      "endDate": "2026-03-26",
+      "stories": 0,
+      "courseId": "1772618991158",
+      "createdAt": "2026-03-04T10:21:03.899Z",
+      "startDate": "2026-03-16",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772547209176",
+      "goal": "Descrição do sprint",
+      "name": "Sprint Agora",
+      "status": "planning",
+      "endDate": "2026-04-11",
+      "stories": 1,
+      "courseId": "1772546863570",
+      "createdAt": "2026-03-03T14:13:29.176Z",
+      "startDate": "2026-04-01",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772547014851",
+      "goal": "Temos que fazer uma grande descrição do curos",
+      "name": "Primeiro Sprint",
+      "status": "planning",
+      "endDate": "2026-04-10",
+      "stories": 0,
+      "courseId": "1772546863570",
+      "createdAt": "2026-03-03T14:10:14.851Z",
+      "startDate": "2026-03-21",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772543954375",
+      "goal": "Ola esta tudo bem",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-03-28",
+      "stories": 1,
+      "courseId": "1772442677908",
+      "createdAt": "2026-03-03T13:19:14.376Z",
+      "startDate": "2026-03-26",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1772543777015",
+      "goal": "Um novo sprint",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-03-28",
+      "stories": 1,
+      "courseId": "1772530945643",
+      "createdAt": "2026-03-03T13:16:17.015Z",
+      "startDate": "2026-03-25",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1771674757079",
+      "goal": "Hoje vamos ver coisas novas",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-02-27",
+      "stories": 0,
+      "courseId": "1771518583306",
+      "createdAt": "2026-02-21T11:52:37.079Z",
+      "startDate": "2026-02-20",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1769703550711",
+      "goal": "Aplicar o framework Scrum de forma prática, promovendo a colaboração, a estimativa de esforço e o acompanhamento do progresso.",
+      "name": "Planeamento, Execução e Acompanhamento",
+      "status": "planning",
+      "endDate": "2026-02-07",
+      "stories": 3,
+      "courseId": "1769703027879",
+      "createdAt": "2026-01-29T16:19:10.711Z",
+      "startDate": "2026-01-31",
+      "courseName": ""
+    },
+    {
+      "id": "sprint_1769703292163",
+      "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+      "name": "Sprint 1",
+      "status": "planning",
+      "endDate": "2026-01-30",
+      "stories": 3,
+      "courseId": "1769703027879",
+      "createdAt": "2026-01-29T16:14:52.163Z",
+      "startDate": "2026-01-23",
+      "courseName": ""
+    }
+  ]
+}
+[SprintBoard] Total de sprints recebidos: 11
+[SprintBoard] Filtrando por courseId: 1769703027879
+[SprintBoard] Sprints do curso: 2
+[SprintBoard] 🎯 Procurando sprint específico: sprint_1769703292163
+[SprintBoard] ✅ Sprint carregado: {
+  "id": "sprint_1769703292163",
+  "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+  "name": "Sprint 1",
+  "status": "planning",
+  "endDate": "2026-01-30",
+  "stories": 3,
+  "courseId": "1769703027879",
+  "createdAt": "2026-01-29T16:14:52.163Z",
+  "startDate": "2026-01-23",
+  "courseName": ""
+}
+[SprintBoard] ========================================
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] Sprint mudou, recarregando stories... {
+  "id": "sprint_1769703292163",
+  "goal": "Compreender os conceitos fundamentais do framework Scrum e estruturar o trabalho colaborativo no ambiente forScrum.",
+  "name": "Sprint 1",
+  "status": "planning",
+  "endDate": "2026-01-30",
+  "stories": 3,
+  "courseId": "1769703027879",
+  "createdAt": "2026-01-29T16:14:52.163Z",
+  "startDate": "2026-01-23",
+  "courseName": ""
+}
+[SprintBoard] Carregando stories para sprint: sprint_1769703292163 Sprint 1
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] ✅ Stories recebidas do backend
+📊📊📊 ════════════════════════════════════════════════
+[SprintBoard loadUserStories] 📊 FILTROS:
+[SprintBoard loadUserStories] isFormador: false
+[SprintBoard loadUserStories] courseIdToFilter: 1769703027879
+[SprintBoard loadUserStories] teamNameToFilter: Alfa
+[SprintBoard loadUserStories] loggedStudent COMPLETO: {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+[SprintBoard loadUserStories] currentSprint.id: sprint_1769703292163
+[SprintBoard loadUserStories] currentSprint.name: Sprint 1
+[SprintBoard loadUserStories] Total stories recebidas: 10
+📊📊📊 ════════════════════════════════════════════════
+🔍🔍🔍 ════════════════════════════════════════════════
+[SprintBoard] 🔍 PROCESSANDO STORIES:
+[SprintBoard] Total stories recebidas: 10
+[SprintBoard] Primeira story (exemplo): {
+  "id": "story_1772804612843",
+  "team": "Descobridores",
+  "title": "Guias visuais",
+  "votes": [
+    {
+      "value": 0,
+      "studentName": "Fernão de Magalhães"
+    },
+    {
+      "value": 3,
+      "studentName": "Vasco da Gama"
+    },
+    {
+      "value": 89,
+      "studentName": "Pedro Álvares Cabral"
+    },
+    {
+      "value": 55,
+      "studentName": "Infante D. Henrique"
+    }
+  ],
+  "points": 0,
+  "status": "done",
+  "courseId": "1772801309759",
+  "priority": "high",
+  "sprintId": "sprint_1772802441430",
+  "createdAt": "2026-03-06T13:43:32.843Z",
+  "updatedAt": "2026-03-06T17:15:39.110Z",
+  "description": "Exemplo:\n1.\tRecortar parte do ecrã\n2.\tDestacar botão importante\n3.\tGuardar imagem\n4.\tInserir no documento de apoio",
+  "acceptanceCriteria": [
+    "Marcar como vista."
+  ]
+}
+🔍🔍🔍 ════════════════════════════════════════════════
+[SprintBoard] 🔍 Story #1: {
+  "title": "Guias visuais",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 0,
+      "studentName": "Fernão de Magalhães"
+    },
+    {
+      "value": 3,
+      "studentName": "Vasco da Gama"
+    },
+    {
+      "value": 89,
+      "studentName": "Pedro Álvares Cabral"
+    },
+    {
+      "value": 55,
+      "studentName": "Infante D. Henrique"
+    }
+  ],
+  "votesLength": 4,
+  "courseId": "1772801309759",
+  "team": "Descobridores",
+  "sprintId": "sprint_1772802441430",
+  "status": "done"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772801309759" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Guias visuais
+[SprintBoard] 🔍 Story #2: {
+  "title": "Ola",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1772546863570",
+  "team": "Alfa 1",
+  "sprintId": "sprint_1772547209176",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772546863570" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Ola
+[SprintBoard] 🔍 Story #3: {
+  "title": "Nova story",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 3,
+      "studentName": "miguel"
+    },
+    {
+      "value": 5,
+      "studentName": "maria"
+    }
+  ],
+  "votesLength": 2,
+  "courseId": "1772442677908",
+  "team": "equipa 5",
+  "sprintId": "sprint_1772543954375",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772442677908" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Nova story
+[SprintBoard] 🔍 Story #4: {
+  "title": "Cheias",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1772530945643",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1772543777015",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1772530945643" === courseIdToFilter: "1769703027879" = false
+[SprintBoard] ❌ Story IGNORADA (curso diferente): Cheias
+[SprintBoard] 🔍 Story #5: {
+  "title": "Agenda inteligente",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 13,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Os resistentes da agenda cheia",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os resistentes da agenda cheia" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Agenda inteligente (story.team: "Os resistentes da agenda cheia", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #6: {
+  "title": "Diagnóstico da segunda-feira",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 2,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os Sobreviventes do café forte" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Diagnóstico da segunda-feira (story.team: "Os Sobreviventes do café forte", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #7: {
+  "title": "Diagnóstico da segunda-feira",
+  "points": 0,
+  "pointsType": "number",
+  "courseId": "1769703027879",
+  "team": "Os Sobreviventes do café forte",
+  "sprintId": "sprint_1769703550711",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Os Sobreviventes do café forte" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Diagnóstico da segunda-feira (story.team: "Os Sobreviventes do café forte", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #8: {
+  "title": "viva",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 2,
+      "studentName": "Maria"
+    },
+    {
+      "value": 21,
+      "studentName": "Luis"
+    },
+    {
+      "value": 21,
+      "studentName": "Manuel"
+    }
+  ],
+  "votesLength": 3,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "todo"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): viva (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #9: {
+  "title": "Planeamento e Acompanhamento do Sprint",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 13,
+      "studentName": "Maria"
+    }
+  ],
+  "votesLength": 1,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "todo"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Planeamento e Acompanhamento do Sprint (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] 🔍 Story #10: {
+  "title": "Criação e Organização do Curso",
+  "points": 0,
+  "pointsType": "number",
+  "votes": [
+    {
+      "value": 21,
+      "studentName": "Maria"
+    },
+    {
+      "value": 21,
+      "studentName": "Luis"
+    }
+  ],
+  "votesLength": 2,
+  "courseId": "1769703027879",
+  "team": "Beta",
+  "sprintId": "sprint_1769703292163",
+  "status": "backlog"
+}
+[SprintBoard] 📋 Filtro CURSO - story.courseId: "1769703027879" === courseIdToFilter: "1769703027879" = true
+[SprintBoard] 📋 Filtro EQUIPA - story.team: "Beta" === teamNameToFilter: "Alfa" = false
+[SprintBoard] 📋 hasTeam: true, teamMatch: false
+[SprintBoard] ❌ Story IGNORADA (equipa diferente): Criação e Organização do Curso (story.team: "Beta", teamNameToFilter: "Alfa")
+[SprintBoard] User stories carregadas e organizadas: {
+  "backlog": [],
+  "todo": [],
+  "inProgress": [],
+  "done": []
+}
+[SprintBoard] Total de stories por coluna: {
+  "backlog": 0,
+  "todo": 0,
+  "inProgress": 0,
+  "done": 0,
+  "total": 0
+}
+📥📥📥 ════════════════════════════════════════════════
+[SprintBoard] 📥 PROPS RECEBIDAS:
+[SprintBoard] userType: formando
+[SprintBoard] sprintId (prop): sprint_1769703292163
+[SprintBoard] teamId (prop): team_1769703042968
+[SprintBoard] selectedCourse (context): {
+  "id": "1769703027879",
+  "name": "forScrum"
+}
+[SprintBoard] loggedStudent (context): {
+  "id": "student_1772896122388",
+  "name": "Luis",
+  "email": "l@formacao.pt",
+  "teamId": "team_1769703042968",
+  "courseId": "1769703027879",
+  "createdAt": "2026-03-07T15:08:42.388Z",
+  "courseName": "forScrum",
+  "teamName": "Alfa"
+}
+📥📥📥 ════════════════════════════════════════════════

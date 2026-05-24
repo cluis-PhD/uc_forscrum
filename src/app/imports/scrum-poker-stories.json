@@ -1,0 +1,277 @@
+[ScrumPoker] Salvando voto: {
+  "storyId": "story_1772531834664",
+  "userId": "student_1772896122388",
+  "userName": "Luis",
+  "vote": "13",
+  "votingSystem": "fibonacci"
+}
+[ScrumPoker] 🌐 Buscando todas as stories: https://zyddwlonwcrnwfmcgoyl.supabase.co/functions/v1/make-server-1184b871/stories
+[ScrumPoker] 📦 Stories recebidas: {
+  "success": true,
+  "stories": [
+    {
+      "id": "story_1772804612843",
+      "team": "Descobridores",
+      "title": "Guias visuais",
+      "votes": [
+        {
+          "value": 0,
+          "studentName": "Fernão de Magalhães"
+        },
+        {
+          "value": 3,
+          "studentName": "Vasco da Gama"
+        },
+        {
+          "value": 89,
+          "studentName": "Pedro Álvares Cabral"
+        },
+        {
+          "value": 55,
+          "studentName": "Infante D. Henrique"
+        }
+      ],
+      "points": 0,
+      "status": "done",
+      "courseId": "1772801309759",
+      "priority": "high",
+      "sprintId": "sprint_1772802441430",
+      "createdAt": "2026-03-06T13:43:32.843Z",
+      "updatedAt": "2026-03-06T17:15:39.110Z",
+      "description": "Exemplo:\n1.\tRecortar parte do ecrã\n2.\tDestacar botão importante\n3.\tGuardar imagem\n4.\tInserir no documento de apoio",
+      "acceptanceCriteria": [
+        "Marcar como vista."
+      ]
+    },
+    {
+      "id": "story_1772547562884",
+      "team": "Alfa 1",
+      "title": "Ola",
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1772546863570",
+      "priority": "medium",
+      "sprintId": "sprint_1772547209176",
+      "createdAt": "2026-03-03T14:19:22.884Z",
+      "updatedAt": "2026-03-03T14:37:27.316Z",
+      "description": "Esta é a nova user stoy",
+      "acceptanceCriteria": [
+        "ok"
+      ]
+    },
+    {
+      "id": "story_1772544992166",
+      "team": "equipa 5",
+      "title": "Nova story",
+      "votes": [
+        {
+          "value": 3,
+          "studentName": "miguel"
+        },
+        {
+          "value": 5,
+          "studentName": "maria"
+        }
+      ],
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1772442677908",
+      "priority": "high",
+      "sprintId": "sprint_1772543954375",
+      "createdAt": "2026-03-03T13:36:32.166Z",
+      "updatedAt": "2026-03-07T15:13:04.771Z",
+      "description": "O que a de novo nas story",
+      "acceptanceCriteria": [
+        "Ora viva "
+      ]
+    },
+    {
+      "id": "story_1772543834945",
+      "team": "Os Sobreviventes do café forte",
+      "title": "Cheias",
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1772530945643",
+      "priority": "medium",
+      "sprintId": "sprint_1772543777015",
+      "createdAt": "2026-03-03T13:17:14.945Z",
+      "description": "Isto é uma questão de gestão",
+      "acceptanceCriteria": [
+        "Logo se vê "
+      ]
+    },
+    {
+      "id": "story_1772531834664",
+      "team": "Os resistentes da agenda cheia",
+      "title": "Agenda inteligente",
+      "votes": [
+        {
+          "value": 3,
+          "studentName": "Luis"
+        }
+      ],
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1769703027879",
+      "priority": "medium",
+      "sprintId": "sprint_1769703550711",
+      "createdAt": "2026-03-03T09:57:14.664Z",
+      "updatedAt": "2026-03-07T15:11:19.298Z",
+      "description": "Como equipa, queremos construir um modelo de agenda para a segunda-feira, para demonstrar como organizar tarefas e prioridades.",
+      "acceptanceCriteria": [
+        "Identificar tarefas típicas de início de semana"
+      ]
+    },
+    {
+      "id": "story_1772531741388",
+      "team": "Os Sobreviventes do café forte",
+      "title": "Diagnóstico da segunda-feira",
+      "votes": [
+        {
+          "value": 2,
+          "studentName": "Luis"
+        }
+      ],
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1769703027879",
+      "priority": "medium",
+      "sprintId": "sprint_1769703550711",
+      "createdAt": "2026-03-03T09:55:41.388Z",
+      "updatedAt": "2026-03-07T15:32:59.776Z",
+      "description": "Como formandos do curso, queremos identificar os principais problemas que surgem à segunda-feira, para compreender por que motivo este dia é frequentemente visto como difícil.",
+      "acceptanceCriteria": [
+        "Identificar 5 dificuldades comuns"
+      ]
+    },
+    {
+      "id": "story_1772531630677",
+      "team": "Os Sobreviventes do café forte",
+      "title": "Diagnóstico da segunda-feira",
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1769703027879",
+      "priority": "medium",
+      "sprintId": "sprint_1769703550711",
+      "createdAt": "2026-03-03T09:53:50.677Z",
+      "description": "Como formandos do curso, queremos identificar os principais problemas que surgem à segunda-feira, para compreender por que motivo este dia é frequentemente visto como difícil.",
+      "acceptanceCriteria": [
+        "Identificar cinco dificuldades comuns"
+      ]
+    },
+    {
+      "id": "story_1769964245749",
+      "team": "Beta",
+      "title": "viva",
+      "votes": [
+        {
+          "value": 2,
+          "studentName": "Maria"
+        },
+        {
+          "value": 21,
+          "studentName": "Luis"
+        },
+        {
+          "value": 21,
+          "studentName": "Manuel"
+        }
+      ],
+      "points": 0,
+      "status": "todo",
+      "courseId": "1769703027879",
+      "priority": "high",
+      "sprintId": "sprint_1769703292163",
+      "createdAt": "2026-02-01T16:44:05.749Z",
+      "updatedAt": "2026-02-19T15:02:39.135Z",
+      "description": "mais uma descrição",
+      "acceptanceCriteria": [
+        "qual"
+      ]
+    },
+    {
+      "id": "story_1769703488012",
+      "team": "Beta",
+      "title": "Planeamento e Acompanhamento do Sprint",
+      "votes": [
+        {
+          "value": 13,
+          "studentName": "Maria"
+        }
+      ],
+      "points": 0,
+      "status": "todo",
+      "courseId": "1769703027879",
+      "priority": "high",
+      "sprintId": "sprint_1769703292163",
+      "createdAt": "2026-01-29T16:18:08.012Z",
+      "updatedAt": "2026-02-21T12:03:46.598Z",
+      "description": "Como formador,\nquero planear um sprint, criar user stories e acompanhar o seu progresso através do quadro Kanban,\npara monitorizar o desempenho das equipas e apoiar o processo de aprendizagem contínua.",
+      "acceptanceCriteria": [
+        "O sprint encontra-se criado com user stories associadas."
+      ]
+    },
+    {
+      "id": "story_1769703402763",
+      "team": "Beta",
+      "title": "Criação e Organização do Curso",
+      "votes": [
+        {
+          "value": 21,
+          "studentName": "Maria"
+        },
+        {
+          "value": 21,
+          "studentName": "Luis"
+        }
+      ],
+      "points": 0,
+      "status": "backlog",
+      "courseId": "1769703027879",
+      "priority": "high",
+      "sprintId": "sprint_1769703292163",
+      "createdAt": "2026-01-29T16:16:42.763Z",
+      "updatedAt": "2026-02-21T12:03:52.842Z",
+      "description": "Como formador,\nquero criar e configurar um curso no forScrum, definindo equipas e formandos,\npara estruturar o ambiente de aprendizagem e organizar o trabalho colaborativo desde o início da formação.",
+      "acceptanceCriteria": [
+        "O curso encontra-se criado e configurado na plataforma."
+      ]
+    }
+  ]
+}
+[ScrumPoker] ✅ Story encontrada: {
+  "id": "story_1772531834664",
+  "title": "Agenda inteligente"
+}
+[ScrumPoker] 🗳️ Votos atualizados: [
+  {
+    "studentName": "Luis",
+    "value": 13
+  }
+]
+[ScrumPoker] 💾 Salvando voto na URL: https://zyddwlonwcrnwfmcgoyl.supabase.co/functions/v1/make-server-1184b871/stories/story_1772531834664
+[ScrumPoker] ✅ Resposta do update: {
+  "success": true,
+  "story": {
+    "id": "story_1772531834664",
+    "team": "Os resistentes da agenda cheia",
+    "title": "Agenda inteligente",
+    "votes": [
+      {
+        "studentName": "Luis",
+        "value": 13
+      }
+    ],
+    "points": 0,
+    "status": "backlog",
+    "courseId": "1769703027879",
+    "priority": "medium",
+    "sprintId": "sprint_1769703550711",
+    "createdAt": "2026-03-03T09:57:14.664Z",
+    "updatedAt": "2026-03-07T15:34:25.694Z",
+    "description": "Como equipa, queremos construir um modelo de agenda para a segunda-feira, para demonstrar como organizar tarefas e prioridades.",
+    "acceptanceCriteria": [
+      "Identificar tarefas típicas de início de semana"
+    ]
+  }
+}

@@ -1,0 +1,284 @@
+[LOGIN DEBUG] 📋 Lista de formandos recebidos: [
+  {
+    "id": "student_1775117996091",
+    "name": "Formando2",
+    "courseId": "1775117855439",
+    "teamId": "team_1775117898823"
+  },
+  {
+    "id": "student_1775117962578",
+    "name": "Formando1",
+    "courseId": "1775117855439",
+    "teamId": "team_1775117898823"
+  },
+  {
+    "id": "student_1773154163047",
+    "name": "Vaz",
+    "courseId": "1773154087776",
+    "teamId": "team_1773154120926"
+  },
+  {
+    "id": "student_1773070438226",
+    "name": "Joaquim",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1772898704134",
+    "name": "vasco",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1772896122388",
+    "name": "Luis",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703042968"
+  },
+  {
+    "id": "student_1772802176681",
+    "name": "Fernão de Magalhães",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772802149173",
+    "name": "Bartolomeu Dias",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772802103577",
+    "name": "Pedro Álvares Cabral",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772801787113",
+    "name": "Vasco da Gama",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772801756311",
+    "name": "Infante D. Henrique",
+    "courseId": "1772801309759",
+    "teamId": "team_1772801587983"
+  },
+  {
+    "id": "student_1772801559816",
+    "name": "Infante D. Henrique",
+    "courseId": "1772801309759",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772619484160",
+    "name": "Manuel Joaquim",
+    "courseId": "1772618991158",
+    "teamId": "team_1772619426583"
+  },
+  {
+    "id": "student_1772619464674",
+    "name": "Joana Fontinha",
+    "courseId": "1772618991158",
+    "teamId": "team_1772619426583"
+  },
+  {
+    "id": "student_1772619400094",
+    "name": "Manuel Joaquim",
+    "courseId": "1772618991158",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531365829",
+    "name": "Rui Descanso",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531162108"
+  },
+  {
+    "id": "student_1772531342692",
+    "name": "Vítor Sesta",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531162108"
+  },
+  {
+    "id": "student_1772531322237",
+    "name": "Paula Agenda",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531162108"
+  },
+  {
+    "id": "student_1772531299718",
+    "name": "Ana Paciência",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531131370"
+  },
+  {
+    "id": "student_1772531271913",
+    "name": "Carla Café",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531131370"
+  },
+  {
+    "id": "student_1772531245134",
+    "name": "Nuno Intervalo",
+    "courseId": "1772530945643",
+    "teamId": "team_1772531131370"
+  },
+  {
+    "id": "student_1772531056891",
+    "name": "Nuno Intervalo",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531046355",
+    "name": "Paula Agenda",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531035006",
+    "name": "Vítor Sesta",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531017003",
+    "name": "Carla Café",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772531000249",
+    "name": "Rui Descanso",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772530982214",
+    "name": "Ana Paciência",
+    "courseId": "1772530945643",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772459695004",
+    "name": "marta",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772459607657",
+    "name": "marta",
+    "courseId": "1772450402879",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772451454893",
+    "name": "mais",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772451439200",
+    "name": "mais",
+    "courseId": "1772450402879",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772451189797",
+    "name": "antonio",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772451113578",
+    "name": "luis",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772450789772",
+    "name": "vasco",
+    "courseId": "1772450402879",
+    "teamId": "team_1772450460651"
+  },
+  {
+    "id": "student_1772442538870",
+    "name": "Julia",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703042968"
+  },
+  {
+    "id": "student_1772275267873",
+    "name": "jose",
+    "courseId": "1772275083083",
+    "teamId": "team_1772275109093"
+  },
+  {
+    "id": "student_1772275163758",
+    "name": "Manuel",
+    "courseId": "1772275083083",
+    "teamId": "team_1772275109093"
+  },
+  {
+    "id": "student_1772182493025",
+    "name": "Jose",
+    "courseId": "1772182438947",
+    "teamId": "team_1772182462457"
+  },
+  {
+    "id": "student_1772117635526",
+    "name": "Rolando Seixo do Rio",
+    "courseId": "1772116810767",
+    "teamId": "team_1772116952107"
+  },
+  {
+    "id": "student_1772116920002",
+    "name": "Pedro Pedra da Rocha Calhau",
+    "courseId": "1772116810767",
+    "teamId": ""
+  },
+  {
+    "id": "student_1772116891845",
+    "name": "João Passos Dias Aguiar Mota",
+    "courseId": "1772116810767",
+    "teamId": ""
+  },
+  {
+    "id": "student_1771946887181",
+    "name": "antonio",
+    "courseId": "1771946809250",
+    "teamId": ""
+  },
+  {
+    "id": "student_1771938821443",
+    "name": "Luis",
+    "courseId": "1771938777076",
+    "teamId": ""
+  },
+  {
+    "id": "student_1771421694716",
+    "name": "Manuel",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1771414084909",
+    "name": "Mario",
+    "courseId": "1771414017079",
+    "teamId": ""
+  },
+  {
+    "id": "student_1769703108611",
+    "name": "Maria",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  },
+  {
+    "id": "student_1769703087512",
+    "name": "Luis",
+    "courseId": "1769703027879",
+    "teamId": "team_1769703052365"
+  }
+]

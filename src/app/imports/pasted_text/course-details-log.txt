@@ -1,0 +1,227 @@
+[vite] hot updated: /src/components/MessagesFormando.tsx
+[vite] hot updated: /index.css
+8:34:35 PM [vite] (client) hmr update /src/components/MessagesFormando.tsx, /index.css
+🔄 useEffect disparado {
+  "isFormador": false
+}
+🔍 Carregando mensagens... {
+  "isFormador": false
+}
+📦 Total de mensagens no localStorage: 4
+📋 Detalhes das mensagens: [
+  {
+    "id": "msg-1775247664376",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "viva",
+    "message": "estou a escrever por",
+    "createdAt": "2026-04-03T20:21:04.377Z",
+    "updatedAt": "2026-04-03T20:21:04.377Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775247920993",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "o que se passa",
+    "createdAt": "2026-04-03T20:25:20.993Z",
+    "updatedAt": "2026-04-03T20:25:20.993Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775248123793",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "viva",
+    "message": "tudo bem ejeje",
+    "createdAt": "2026-04-03T20:28:43.793Z",
+    "updatedAt": "2026-04-03T20:28:43.793Z",
+    "isRead": false,
+    "sentBy": "formando"
+  },
+  {
+    "id": "msg-1775248267010",
+    "formandoId": "",
+    "formandoName": "Formando",
+    "formadorName": "Formador",
+    "title": "ola",
+    "message": "tudo bem vamos ver",
+    "createdAt": "2026-04-03T20:31:07.010Z",
+    "updatedAt": "2026-04-03T20:31:07.010Z",
+    "isRead": false,
+    "sentBy": "formando"
+  }
+]
+⚠️ Usuário não identificado
+[FormadorDashboard] ✅ Cursos recebidos do backend
+[FormadorDashboard] ✅ Equipas recebidas do backend
+[FormadorDashboard] ✅ Estudantes recebidos do backend
+[FormadorDashboard] ✅ Sprints recebidos do backend
+[FormadorDashboard] ✅ Stories recebidas do backend
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🎯 Navegando para: messages
+[App.tsx handleNavigate] 📦 Params recebidos: 
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🧹 Limpando params antigos
+[FormadorDashboard] 🛑 Limpando polling automático
+[FormadorDashboard] ✅ Cursos recebidos do backend
+[FormadorDashboard] ✅ Equipas recebidas do backend
+[FormadorDashboard] ✅ Estudantes recebidos do backend
+[FormadorDashboard] ✅ Sprints recebidos do backend
+[FormadorDashboard] ✅ Stories recebidas do backend
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🎯 Navegando para: messages
+[App.tsx handleNavigate] 📦 Params recebidos: 
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🧹 Limpando params antigos
+[FormadorDashboard] 🛑 Limpando polling automático
+[FormadorDashboard] ✅ Cursos recebidos do backend
+[FormadorDashboard] ✅ Equipas recebidas do backend
+[FormadorDashboard] ✅ Estudantes recebidos do backend
+[FormadorDashboard] ✅ Sprints recebidos do backend
+[FormadorDashboard] ✅ Stories recebidas do backend
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🎯 Navegando para: courseManagement
+[App.tsx handleNavigate] 📦 Params recebidos: 
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🧹 Limpando params antigos
+[FormadorDashboard] 🛑 Limpando polling automático
+6 cursos carregados com sucesso
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] 🎯 Navegando para: courseDetails
+[App.tsx handleNavigate] 📦 Params recebidos: {
+  "courseId": "1775117855439",
+  "courseName": "Word"
+}
+🚀🚀🚀 ════════════════════════════════════════════════
+[App.tsx handleNavigate] ✅ Guardando params: {
+  "courseId": "1775117855439",
+  "courseName": "Word"
+}
+════════════════════════════════════════════════
+[App.tsx handleNavigate] NAVEGANDO PARA COURSEDETAILS
+[App.tsx handleNavigate] params recebidos: {
+  "courseId": "1775117855439",
+  "courseName": "Word"
+}
+[App.tsx handleNavigate] params.courseId: 1775117855439
+[App.tsx handleNavigate] params.courseName: Word
+[App.tsx handleNavigate] selectedCourseId ATUAL: 1775117855439
+[App.tsx handleNavigate] ✓ Setando selectedCourseId: 1775117855439
+[App.tsx handleNavigate] ✓ Setando selectedCourseName: Word
+[App.tsx handleNavigate] selectedCourseId DEPOIS: 1775117855439
+════════════════════════════════════════════════
+[App.tsx RENDER] Renderizando CourseDetails com courseId: 1775117855439 courseName: Word
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[CourseManagement] 🛑 Limpando polling automático
+[studentsList] ===== LISTA DE FORMANDOS ATUALIZADA =====
+[studentsList] Total: 0
+[studentsList] ===== FIM =====
+[App.tsx RENDER] Renderizando CourseDetails com courseId: 1775117855439 courseName: Word
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[loadUserStories] Response status: 200
+[loadTeams] ✅ 3 equipas carregadas
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[loadUserStories] ✅ Stories carregadas: 12
+[loadUserStories] User stories do curso 1775117855439: 1
+[loadSprints] ✅ 1 sprints carregados
+[loadStudents] ✅ 2 formandos carregados
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[studentsList] ===== LISTA DE FORMANDOS ATUALIZADA =====
+[studentsList] Total: 2
+[studentsList] 1. {
+  "id": "student_1775117996091",
+  "name": "Formando2",
+  "email": "ff@formacao.pt"
+}
+[studentsList] 2. {
+  "id": "student_1775117962578",
+  "name": "Formando1",
+  "email": "f@formacao.pt"
+}
+[studentsList] ===== FIM =====
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
+[CourseDetails] isFormador calculado: true
+[CourseDetails] PROPS RECEBIDAS: {
+  "courseName": "Word",
+  "courseId": "1775117855439",
+  "initialTab": "overview",
+  "userType": "formador"
+}
