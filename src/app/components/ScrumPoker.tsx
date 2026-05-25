@@ -116,7 +116,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       
       // Se localStorage estiver vazio, tentar backend (quando implementado)
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-42b5d594/votes?storyId=${currentStoryId}`,
+        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/votes?storyId=${currentStoryId}`,
         {
           method: 'GET',
           headers: {
@@ -164,7 +164,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       // Tentar backend primeiro
       try {
         const response = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-42b5d594/stories`,
+          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`,
           {
             method: 'GET',
             headers: {
@@ -255,7 +255,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       if (userType === 'formando' && loggedStudent?.teamId) {
         try {
           const response = await fetch(
-            `https://${projectId}.supabase.co/functions/v1/make-server-42b5d594/students`,
+            `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
             {
               method: 'GET',
               headers: {
@@ -471,7 +471,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       // Tentar backend primeiro
       try {
         const response = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-42b5d594/stories/${currentStoryId}`,
+          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories/${currentStoryId}`,
           {
             method: 'PUT',
             headers: {
