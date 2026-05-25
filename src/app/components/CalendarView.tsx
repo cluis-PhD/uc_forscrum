@@ -40,7 +40,7 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
     try {
       setLoadingSprints(true);
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-42b5d594/sprints`,
+        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`,
         {
           method: 'GET',
           headers: {
