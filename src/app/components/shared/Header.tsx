@@ -1,5 +1,5 @@
 import { MessageSquare, Settings, Bell, ArrowLeft, Plus } from 'lucide-react';
-import { useApp } from '../../context/AppContext';
+import { useApp } from '@/app/context/AppContext';
 
 interface HeaderProps {
   onNavigate?: (screen: string) => void;
@@ -22,7 +22,7 @@ export function Header({ onNavigate, title, showActions = true, onBack, onCreate
   const darkSecondaryColor = userType === 'formando' ? '#054a5e' : '#2d6828';
 
   return (
-    <div 
+    <header
       className="px-6 pt-12 pb-4 shadow-lg fixed top-0 left-0 right-0 z-50"
       style={{
         background: theme === 'dark'
@@ -35,7 +35,10 @@ export function Header({ onNavigate, title, showActions = true, onBack, onCreate
         {showActions && !title && (
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white text-base shadow-lg border border-white/20">
+              <div
+                aria-hidden="true"
+                className="w-10 h-10 bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white text-base shadow-lg border border-white/20"
+              >
                 {userProfile.avatar}
               </div>
               <div>
@@ -44,12 +47,12 @@ export function Header({ onNavigate, title, showActions = true, onBack, onCreate
               </div>
             </div>
             <div className="flex gap-2">
-              {/* Botão de definições só aparece no dashboard */}
-              <button 
+              <button
                 onClick={() => onNavigate?.('profile')}
+                aria-label="Definições de perfil"
                 className="bg-white/20 backdrop-blur-md p-2.5 rounded-full hover:bg-white/30 transition-all shadow-md border border-white/20 hover:scale-105 active:scale-95"
               >
-                <Settings className="text-white" size={20} />
+                <Settings className="text-white" size={20} aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -59,39 +62,40 @@ export function Header({ onNavigate, title, showActions = true, onBack, onCreate
         {title && (
           <div className="flex items-center justify-between">
             {onBack ? (
-              <button 
+              <button
                 onClick={onBack}
+                aria-label="Voltar"
                 className="bg-white/20 backdrop-blur-md p-2.5 rounded-full hover:bg-white/30 transition-all shadow-md border border-white/20 hover:scale-105 active:scale-95"
               >
-                <ArrowLeft className="text-white" size={20} />
+                <ArrowLeft className="text-white" size={20} aria-hidden="true" />
               </button>
             ) : (
-              <div className="w-10" />
+              <div className="w-10" aria-hidden="true" />
             )}
             <h2 className="text-white text-lg font-medium text-center flex-1 drop-shadow-sm">{title}</h2>
             <div className="flex gap-2">
-              {/* Botão de criar (se fornecido) */}
               {onCreate && (
-                <button 
+                <button
                   onClick={onCreate}
+                  aria-label="Criar novo"
                   className="bg-white/20 backdrop-blur-md p-2.5 rounded-full hover:bg-white/30 transition-all shadow-md border border-white/20 hover:scale-105 active:scale-95"
                 >
-                  <Plus className="text-white" size={20} />
+                  <Plus className="text-white" size={20} aria-hidden="true" />
                 </button>
               )}
-              {/* Botão de definições (só se showProfile for true) */}
               {showProfile && (
-                <button 
+                <button
                   onClick={() => onNavigate?.('profile')}
+                  aria-label="Definições de perfil"
                   className="bg-white/20 backdrop-blur-md p-2.5 rounded-full hover:bg-white/30 transition-all shadow-md border border-white/20 hover:scale-105 active:scale-95"
                 >
-                  <Settings className="text-white" size={20} />
+                  <Settings className="text-white" size={20} aria-hidden="true" />
                 </button>
               )}
             </div>
           </div>
         )}
       </div>
-    </div>
+    </header>
   );
 }
