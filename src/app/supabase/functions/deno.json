@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run --allow-all --watch=./ server/index.tsx"
+    "start": "deno run --allow-all --watch=./ make-server/index.tsx"
   },
   "imports": {
     "hono": "npm:hono@^4.0.0"
