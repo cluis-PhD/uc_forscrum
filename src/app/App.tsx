@@ -898,7 +898,7 @@ export default function App() {
               <div className="flex items-center justify-center gap-2 text-center">
                 <div className="w-2 h-2 bg-[#4aa540] rounded-full" />
                 <p className="text-[13px] text-slate-500">
-                  forScrum - Aplicação de Ensino Scrum
+                  forScrum
                 </p>
               </div>
             </div>
