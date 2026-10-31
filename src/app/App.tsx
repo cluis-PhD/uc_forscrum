@@ -896,7 +896,6 @@ export default function App() {
             {/* Info */}
             <div className="mt-8 pt-6 border-t border-slate-100">
               <div className="flex items-center justify-center gap-2 text-center">
-                <div className="w-2 h-2 bg-[#4aa540] rounded-full" />
                 <p className="text-[13px] text-slate-500">
                   forScrum
                 </p>
