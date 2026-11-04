@@ -14,11 +14,11 @@ export function Header({ onNavigate, title, showActions = true, onBack, onCreate
   const { userProfile, unreadMessages, unreadAlerts, userType, selectedCourse, theme } = useApp();
   
   // Cores dinâmicas baseado no userType
-  const primaryColor = userType === 'formando' ? '#0b87ac' : '#4aa540';
-  const secondaryColor = userType === 'formando' ? '#096d8a' : '#3d8935';
+  const primaryColor = userType === 'formando' ? '#0a7da0' : '#3b8433';
+  const secondaryColor = userType === 'formando' ? '#096d8a' : '#2f6b29';
   
   // Cores para modo escuro (mais escuras)
-  const darkPrimaryColor = userType === 'formando' ? '#075d76' : '#3d8935';
+  const darkPrimaryColor = userType === 'formando' ? '#075d76' : '#2f6b29';
   const darkSecondaryColor = userType === 'formando' ? '#054a5e' : '#2d6828';
 
   return (

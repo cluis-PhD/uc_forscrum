@@ -144,7 +144,7 @@ function StoryCard({
     <div
       ref={drag}
       onClick={handleEdit}
-      className={`bg-white rounded-xl p-3 shadow-sm border-2 border-transparent hover:border-[#4aa540] transition-all relative cursor-pointer hover:shadow-md ${
+      className={`bg-white rounded-xl p-3 shadow-sm border-2 border-transparent hover:border-[#3b8433] transition-all relative cursor-pointer hover:shadow-md ${
         isDragging ? 'opacity-50' : ''
       }`}
     >
@@ -159,14 +159,14 @@ function StoryCard({
         {pointsValue > 0 ? (
           <span 
             className="text-white px-2 py-0.5 rounded-md text-xs font-semibold"
-            style={{ backgroundColor: isFormador ? '#4aa540' : '#0b87ac' }}
+            style={{ backgroundColor: isFormador ? '#3b8433' : '#0a7da0' }}
           >
             {pointsValue} pts
           </span>
         ) : averageVote !== null ? (
           <span 
             className="text-white px-2 py-0.5 rounded-md text-xs font-semibold"
-            style={{ backgroundColor: isFormador ? '#4aa540' : '#60a5fa' }}
+            style={{ backgroundColor: isFormador ? '#3b8433' : '#60a5fa' }}
             title={`Média de ${story.votes?.length} voto(s)`}
           >
             {averageVote} pts
@@ -229,7 +229,7 @@ function Column({
     <div 
       ref={drop}
       className={`flex-shrink-0 w-[280px] ${column.color} rounded-2xl p-4 ${
-        isOver ? 'ring-2 ring-[#4aa540]' : ''
+        isOver ? 'ring-2 ring-[#3b8433]' : ''
       }`}
     >
       <div className="flex items-center justify-between mb-3">
@@ -261,7 +261,7 @@ function Column({
 
 function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprintId, teamId }: SprintBoardProps) {
   const isFormador = userType === 'formador';
-  const primaryColor = isFormador ? '#4aa540' : '#0b87ac';
+  const primaryColor = isFormador ? '#3b8433' : '#0a7da0';
   const { selectedUserStory, selectedCourse, loggedStudent, setSelectedUserStory, setPreviousScreen } = useApp();
 
   console.log('📥📥📥 ════════════════════════════════════════════════');
@@ -777,7 +777,7 @@ function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprin
         {/* Info Card - Stories Count */}
         <div 
           className="rounded-xl p-4 shadow-sm"
-          style={{ backgroundColor: isFormador ? '#4aa540' : '#0b87ac' }}
+          style={{ backgroundColor: isFormador ? '#3b8433' : '#0a7da0' }}
         >
           <div className="flex items-center justify-between text-white">
             <div className="flex items-center gap-2">
@@ -797,7 +797,7 @@ function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprin
           <button
             onClick={() => onNavigate?.('scrumPoker')}
             className="w-full rounded-xl p-4 shadow-sm hover:shadow-md transition-all"
-            style={{ backgroundColor: '#0b87ac' }}
+            style={{ backgroundColor: '#0a7da0' }}
           >
             <div className="flex items-center justify-between text-white">
               <div className="text-left">

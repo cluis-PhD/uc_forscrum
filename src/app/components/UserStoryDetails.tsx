@@ -25,7 +25,7 @@ interface UserStoryDetailsProps {
 
 export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDetailsProps) {
   const isFormador = userType === 'formador';
-  const primaryColor = isFormador ? '#4aa540' : '#0b87ac';
+  const primaryColor = isFormador ? '#3b8433' : '#0a7da0';
   const { selectedUserStory } = useApp();
 
   const [story, setStory] = useState<any>(null); // ✅ Começa com null em vez de selectedUserStory
@@ -520,7 +520,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
         {/* Estimativa de Pontos - Destaque */}
         <div className={`rounded-[16px] p-4 shadow-lg ${ 
           hasEstimate
-            ? `bg-gradient-to-br ${isFormador ? 'from-green-500 to-green-600' : 'from-[#0b87ac] to-[#096d8a]'}`
+            ? `bg-gradient-to-br ${isFormador ? 'from-green-500 to-green-600' : 'from-[#0a7da0] to-[#096d8a]'}`
             : 'bg-gradient-to-br from-slate-400 to-slate-500'
         }`}>
           <div className="flex items-center justify-between mb-3">
@@ -530,7 +530,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                 {hasEstimate ? (
                   <span 
                     className="text-white px-2 py-0.5 rounded-full text-[10px] font-medium"
-                    style={{ backgroundColor: isFormador ? '#22c55e' : '#0b87ac' }}
+                    style={{ backgroundColor: isFormador ? '#22c55e' : '#0a7da0' }}
                   >
                     {story?.points && Number(story.points) > 0 ? 'Estimado' : 'Média da votação'}
                   </span>

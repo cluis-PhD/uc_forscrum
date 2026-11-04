@@ -268,7 +268,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
 
           <button
             onClick={onBack}
-            className="w-full bg-[#4aa540] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg"
           >
             OK
           </button>
@@ -280,7 +280,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
   return (
     <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif] pb-24">
       {/* Header */}
-      <div className="bg-[#4aa540] px-6 pt-12 pb-6 rounded-b-[24px] shadow-lg">
+      <div className="bg-[#3b8433] px-6 pt-12 pb-6 rounded-b-[24px] shadow-lg">
         <div className="max-w-[390px] mx-auto">
           <div className="flex items-center justify-between">
             <button 
@@ -323,7 +323,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
               errors.name && touched.name ? 'border-red-500' : 
               !errors.name && touched.name && name ? 'border-green-500' : 
               'border-slate-200'
-            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors`}
+            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
           />
           {errors.name && touched.name && (
             <p className="text-[12px] text-red-500 flex items-center gap-1 mt-1">
@@ -355,7 +355,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
               errors.email && touched.email ? 'border-red-500' : 
               !errors.email && touched.email && email ? 'border-green-500' : 
               'border-slate-200'
-            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors`}
+            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
           />
           {errors.email && touched.email && (
             <p className="text-[12px] text-red-500 flex items-center gap-1 mt-1">
@@ -377,7 +377,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
           {initialCourseId ? (
             <div className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200 rounded-[12px] p-4">
               <div className="flex items-center gap-2">
-                <BookOpen size={16} className="text-[#4aa540]" />
+                <BookOpen size={16} className="text-[#3b8433]" />
                 <p className="text-[14px] text-slate-800 font-medium">{getCourseName()}</p>
               </div>
             </div>
@@ -392,7 +392,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
                 className={`w-full bg-white border-2 ${
                   errors.course && touched.course ? 'border-red-500' :
                   courseId ? 'border-green-500' : 'border-slate-200'
-                } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors`}
+                } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
               >
                 <option value="">Selecione um curso</option>
                 {loadingCourses ? (
@@ -424,7 +424,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
           <select
             value={teamId}
             onChange={(e) => setTeamId(e.target.value)}
-            className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors"
+            className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors"
           >
             <option value="">Sem equipa</option>
             {loadingTeams ? (
@@ -446,7 +446,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
         <button
           onClick={handleSave}
           disabled={isSaving}
-          className="w-full bg-[#4aa540] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSaving ? (
             <>

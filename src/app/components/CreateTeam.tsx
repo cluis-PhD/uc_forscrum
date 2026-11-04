@@ -202,7 +202,7 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
           {/* Botão OK */}
           <button
             onClick={onBack}
-            className="w-full bg-[#4aa540] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg"
           >
             OK
           </button>
@@ -214,7 +214,7 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
   return (
     <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif]">
       {/* Header */}
-      <div className="bg-[#4aa540] px-6 pt-12 pb-6 rounded-b-[24px] shadow-lg">
+      <div className="bg-[#3b8433] px-6 pt-12 pb-6 rounded-b-[24px] shadow-lg">
         <div className="max-w-[390px] mx-auto">
           <div className="flex items-center justify-between">
             <button 
@@ -255,7 +255,7 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
               errors.teamName && touched.teamName ? 'border-red-500' : 
               !errors.teamName && touched.teamName && teamName ? 'border-green-500' : 
               'border-slate-200'
-            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors`}
+            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
           />
           {errors.teamName && touched.teamName && (
             <p className="text-[12px] text-red-500 flex items-center gap-1 mt-1">
@@ -289,7 +289,7 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
             <select
               value={selectedCourseId || ''}
               onChange={(e) => setSelectedCourseId(e.target.value)}
-              className="w-full bg-slate-50 border-2 border-slate-200 rounded-[10px] px-3 py-2 text-[13px] focus:outline-none focus:border-[#4aa540] transition-colors"
+              className="w-full bg-slate-50 border-2 border-slate-200 rounded-[10px] px-3 py-2 text-[13px] focus:outline-none focus:border-[#3b8433] transition-colors"
             >
               <option value="">Selecione um curso</option>
               {courses.map(course => (
@@ -329,7 +329,7 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
         {/* Save Button - espaçamento adequado */}
         <button
           onClick={handleSave}
-          className="w-full bg-[#4aa540] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+          className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
         >
           <Save size={20} />
           {isEditMode ? 'Guardar Alterações' : 'Criar Equipa'}

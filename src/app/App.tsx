@@ -754,11 +754,17 @@ export default function App() {
   return (
     <>
       <Toaster position="top-center" richColors closeButton />
+      <a
+        href="#conteudo"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-[10px] focus:shadow-lg"
+      >
+        Saltar para o conteúdo
+      </a>
       <div className="bg-white min-h-screen w-full md:flex md:items-center md:justify-center font-['Roboto']">
         <div className="relative w-full min-h-screen md:min-h-0 md:h-[844px] md:max-w-md md:w-full md:shadow-2xl md:rounded-[40px] bg-white overflow-hidden">
           
           {/* Ilustração superior */}
-          <div className="relative h-[280px] bg-gradient-to-br from-[#4aa540] to-[#3d8935] px-6 pt-20 pb-8 overflow-hidden">
+          <div className="relative h-[280px] bg-gradient-to-br from-[#3b8433] to-[#2f6b29] px-6 pt-20 pb-8 overflow-hidden">
             {/* Padrão decorativo */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-12 left-8 w-24 h-24 border-4 border-white rounded-full" />
@@ -772,7 +778,7 @@ export default function App() {
             <div className="relative z-10 text-center">
               <div className="inline-block mb-4">
                 <div className="w-16 h-16 bg-white rounded-[18px] flex items-center justify-center shadow-lg">
-                  <GraduationCap size={32} className="text-[#4aa540]" />
+                  <GraduationCap size={32} className="text-[#3b8433]" />
                 </div>
               </div>
               <h1 className="text-white text-[36px] tracking-tight mb-1">
@@ -785,7 +791,7 @@ export default function App() {
           </div>
 
           {/* Formulário */}
-          <div className="px-6 pt-8 pb-12">
+          <main id="conteudo" tabIndex={-1} className="px-6 pt-8 pb-12 focus:outline-none">
             <form onSubmit={handleLogin} className="space-y-5">
               {/* Campo Nome do Utilizador */}
               <div className="flex flex-col gap-2">
@@ -806,8 +812,8 @@ export default function App() {
                       errors.username && touched.username
                         ? 'border-red-400 focus:border-red-500'
                         : !errors.username && touched.username && username
-                        ? 'border-[#4aa540] focus:border-[#4aa540]'
-                        : 'border-slate-200 focus:border-[#4aa540]'
+                        ? 'border-[#3b8433] focus:border-[#3b8433]'
+                        : 'border-slate-200 focus:border-[#3b8433]'
                     } pl-12 pr-12 py-4 text-[16px] text-slate-800 focus:outline-none transition-all placeholder:text-slate-400 shadow-sm`}
                     placeholder="formador ou formando"
                   />
@@ -816,7 +822,7 @@ export default function App() {
                       {errors.username ? (
                         <AlertCircle size={20} className="text-red-500" />
                       ) : username ? (
-                        <CheckCircle size={20} className="text-[#4aa540]" />
+                        <CheckCircle size={20} className="text-[#3b8433]" />
                       ) : null}
                     </div>
                   )}
@@ -850,7 +856,7 @@ export default function App() {
               {/* Campo Password - Opcional para todos */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="password" className="text-[14px] text-slate-600 font-medium">
-                  Password (opcional)
+                  Palavra-passe (opcional)
                 </label>
                 <div className="relative">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
@@ -862,13 +868,15 @@ export default function App() {
                     value={password}
                     onChange={(e) => handlePasswordChange(e.target.value)}
                     onBlur={handlePasswordBlur}
-                    className="bg-white w-full rounded-[14px] border-2 border-slate-200 focus:border-[#4aa540] pl-12 pr-12 py-4 text-[16px] text-slate-800 focus:outline-none transition-all placeholder:text-slate-400 shadow-sm"
-                    placeholder="Digite a sua password (opcional)"
+                    className="bg-white w-full rounded-[14px] border-2 border-slate-200 focus:border-[#3b8433] pl-12 pr-12 py-4 text-[16px] text-slate-800 focus:outline-none transition-all placeholder:text-slate-400 shadow-sm"
+                    placeholder="Escreva a palavra-passe"
+                    autoComplete="current-password"
                   />
                   <button
                     type="button"
-                    aria-label={showPassword ? "Ocultar password" : "Mostrar password"}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
+                    aria-label={showPassword ? "Ocultar palavra-passe" : "Mostrar palavra-passe"}
+                    aria-pressed={showPassword}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-[10px] text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
@@ -880,7 +888,7 @@ export default function App() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="bg-[#4aa540] w-full h-[56px] rounded-[14px] text-[17px] text-white font-semibold hover:bg-[#3d8935] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-[#4aa540]/20 mt-8"
+                className="bg-[#3b8433] w-full h-[56px] rounded-[14px] text-[17px] text-white font-semibold hover:bg-[#2f6b29] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-[#3b8433]/20 mt-8"
               >
                 {isLoading ? (
                   <div className="flex items-center justify-center gap-2">
@@ -901,7 +909,7 @@ export default function App() {
                 </p>
               </div>
             </div>
-          </div>
+          </main>
 
           {/* Footer */}
         <div className="absolute bottom-6 left-0 right-0 text-center px-6">

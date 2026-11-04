@@ -225,7 +225,7 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
   return (
     <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif] pb-24">
       {/* Header com seta de voltar */}
-      <div className="bg-[#4aa540] px-6 pt-6 pb-3 rounded-b-[16px] shadow-lg">
+      <div className="bg-[#3b8433] px-6 pt-6 pb-3 rounded-b-[16px] shadow-lg">
         <div className="w-full max-w-md mx-auto">
           <div className="flex items-center justify-between">
             <button 
@@ -281,9 +281,9 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
                   onClick={() => setSelectedDay(day)}
                   className={`aspect-square rounded-[8px] text-[13px] flex flex-col items-center justify-center transition-all ${
                     isToday
-                      ? 'bg-[#4aa540] text-white font-semibold shadow-md'
+                      ? 'bg-[#3b8433] text-white font-semibold shadow-md'
                       : selectedDay === day
-                      ? 'bg-[#4aa540]/20 text-[#4aa540] font-semibold'
+                      ? 'bg-[#3b8433]/20 text-[#3b8433] font-semibold'
                       : hasEvent
                       ? 'bg-blue-50 text-slate-700 hover:bg-blue-100'
                       : 'text-slate-600 hover:bg-slate-100'
@@ -291,7 +291,7 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
                 >
                   {day}
                   {hasEvent && !isToday && (
-                    <div className="w-1 h-1 bg-[#4aa540] rounded-full mt-1" />
+                    <div className="w-1 h-1 bg-[#3b8433] rounded-full mt-1" />
                   )}
                 </button>
               );
@@ -356,8 +356,8 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
               return (
                 <div
                   key={event.id}
-                  className={`bg-white rounded-[14px] p-3 shadow-sm border-2 border-transparent hover:border-[#4aa540] transition-all ${
-                    isToday ? 'ring-2 ring-[#4aa540]/20' : ''
+                  className={`bg-white rounded-[14px] p-3 shadow-sm border-2 border-transparent hover:border-[#3b8433] transition-all ${
+                    isToday ? 'ring-2 ring-[#3b8433]/20' : ''
                   }`}
                 >
                   <div className="flex gap-3">

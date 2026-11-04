@@ -421,7 +421,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
       {/* Main Content */}
       <div className="max-w-[390px] mx-auto px-6 pt-6 space-y-4">
         {/* Summary Card */}
-        <div className="bg-gradient-to-br from-[#4aa540] to-[#3d8935] rounded-[16px] p-5 shadow-lg text-white">
+        <div className="bg-gradient-to-br from-[#3b8433] to-[#2f6b29] rounded-[16px] p-5 shadow-lg text-white">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-white/80 text-[12px] mb-1">Total de Alertas</p>
@@ -440,7 +440,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
         {/* Alerts List */}
         {isLoading && alerts.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20">
-            <Loader2 className="text-[#4aa540] animate-spin mb-4" size={40} />
+            <Loader2 className="text-[#3b8433] animate-spin mb-4" size={40} />
             <p className="text-slate-600 text-[14px] dark:text-slate-400">A carregar alertas...</p>
           </div>
         ) : alerts.length === 0 ? (
@@ -454,7 +454,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
             </p>
             <button
               onClick={handleCreate}
-              className="w-full bg-[#4aa540] text-white py-4 rounded-[14px] text-[16px] hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+              className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
             >
               <Plus size={20} />
               Criar Primeiro Alerta
@@ -523,7 +523,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-6">
           <div className="bg-white rounded-[20px] w-full max-w-md shadow-2xl dark:bg-slate-800">
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-[#4aa540] to-[#3d8935] rounded-t-[20px] p-5 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-[#3b8433] to-[#2f6b29] rounded-t-[20px] p-5 flex items-center justify-between">
               <h2 className="text-white text-[18px]">
                 {editingAlert ? 'Editar Alerta' : 'Criar Novo Alerta'}
               </h2>
@@ -572,7 +572,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
                   value={formTitle}
                   onChange={(e) => setFormTitle(e.target.value)}
                   placeholder="Ex: Sprint Planning Amanhã"
-                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:border-[#4aa540] dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
+                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:border-[#3b8433] dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
                   maxLength={100}
                 />
               </div>
@@ -587,7 +587,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
                   onChange={(e) => setFormMessage(e.target.value)}
                   placeholder="Descreva o alerta..."
                   rows={3}
-                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:border-[#4aa540] resize-none dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
+                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:border-[#3b8433] resize-none dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
                   maxLength={300}
                 />
               </div>
@@ -600,7 +600,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
                 <select
                   value={formCourseId}
                   onChange={(e) => setFormCourseId(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:border-[#4aa540] dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
+                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:border-[#3b8433] dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
                 >
                   <option value="all">Todos os cursos</option>
                   {courses.map((course) => (
@@ -622,7 +622,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
                 </button>
                 <button
                   onClick={handleSave}
-                  className="flex-1 bg-[#4aa540] text-white py-3 rounded-[12px] text-[14px] hover:bg-[#3d8935] transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="flex-1 bg-[#3b8433] text-white py-3 rounded-[12px] text-[14px] hover:bg-[#2f6b29] transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                   disabled={isSaving}
                 >
                   {isSaving ? (

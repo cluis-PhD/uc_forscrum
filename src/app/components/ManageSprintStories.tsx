@@ -31,7 +31,7 @@ interface ManageSprintStoriesProps {
 
 export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSprintStoriesProps) {
   const { userType } = useApp();
-  const primaryColor = userType === 'formador' ? '#4aa540' : '#0b87ac';
+  const primaryColor = userType === 'formador' ? '#3b8433' : '#0a7da0';
   
   const [allStories, setAllStories] = useState<UserStory[]>([]);
   const [assignedStories, setAssignedStories] = useState<string[]>([]);
@@ -181,7 +181,7 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
     return (
       <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif] flex items-center justify-center">
         <div className="flex flex-col items-center">
-          <Loader2 className="text-[#4aa540] animate-spin mb-4" size={40} />
+          <Loader2 className="text-[#3b8433] animate-spin mb-4" size={40} />
           <p className="text-slate-600 text-[14px]">Carregando user stories...</p>
         </div>
       </div>

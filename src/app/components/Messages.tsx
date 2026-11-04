@@ -127,7 +127,7 @@ export function Messages({ onBack }: MessagesProps) {
   return (
     <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif]">
       {/* Header */}
-      <div className="bg-[#4aa540] px-6 pt-12 pb-6 rounded-b-[24px] shadow-lg">
+      <div className="bg-[#3b8433] px-6 pt-12 pb-6 rounded-b-[24px] shadow-lg">
         <div className="w-full max-w-md mx-auto">
           <div className="flex items-center justify-between mb-4">
             <button 
@@ -200,7 +200,7 @@ export function Messages({ onBack }: MessagesProps) {
               {/* Sent Message */}
               <div className="flex gap-2 justify-end">
                 <div>
-                  <div className="bg-[#4aa540] rounded-[12px] rounded-tr-none p-3 max-w-[250px]">
+                  <div className="bg-[#3b8433] rounded-[12px] rounded-tr-none p-3 max-w-[250px]">
                     <p className="text-[13px] text-white">
                       Olá Pedro! Claro, os critérios de aceitação devem ser mensuráveis e testáveis. Quer agendar uma call?
                     </p>
@@ -236,7 +236,7 @@ export function Messages({ onBack }: MessagesProps) {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Escrever mensagem..."
-                  className="flex-1 bg-slate-50 border-2 border-slate-200 rounded-[12px] px-4 py-2 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors"
+                  className="flex-1 bg-slate-50 border-2 border-slate-200 rounded-[12px] px-4 py-2 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors"
                   onKeyPress={(e) => {
                     if (e.key === 'Enter') {
                       handleSendMessage();
@@ -245,7 +245,7 @@ export function Messages({ onBack }: MessagesProps) {
                 />
                 <button
                   onClick={handleSendMessage}
-                  className="bg-[#4aa540] p-3 rounded-[12px] text-white hover:bg-[#3d8935] transition-colors"
+                  className="bg-[#3b8433] p-3 rounded-[12px] text-white hover:bg-[#2f6b29] transition-colors"
                 >
                   <Send size={18} />
                 </button>
@@ -263,7 +263,7 @@ export function Messages({ onBack }: MessagesProps) {
               <button
                 key={conv.id}
                 onClick={() => setSelectedConversation(conv.id)}
-                className="bg-white rounded-[16px] p-4 shadow-sm hover:shadow-md transition-all w-full text-left border-2 border-transparent hover:border-[#4aa540]"
+                className="bg-white rounded-[16px] p-4 shadow-sm hover:shadow-md transition-all w-full text-left border-2 border-transparent hover:border-[#3b8433]"
               >
                 <div className="flex gap-3">
                   {/* Avatar */}

@@ -158,12 +158,12 @@ html.font-size-extra-large {
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #4aa540;
+    background: #3b8433;
     border-radius: 10px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #3d8935;
+    background: #2f6b29;
   }
 
   /* Dark mode scrollbar */
@@ -172,11 +172,11 @@ html.font-size-extra-large {
   }
 
   .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #4aa540;
+    background: #3b8433;
   }
 
   .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #3d8935;
+    background: #2f6b29;
   }
 }
 

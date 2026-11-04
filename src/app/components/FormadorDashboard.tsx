@@ -471,7 +471,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
             className="bg-white rounded-[14px] p-4 shadow-sm hover:shadow-md transition-shadow text-left dark:bg-slate-800"
             aria-label="Gerir Cursos"
           >
-            <div className="bg-[#4aa540] p-2 rounded-[10px] w-fit mb-3 mx-auto">
+            <div className="bg-[#3b8433] p-2 rounded-[10px] w-fit mb-3 mx-auto">
               <BookOpen className="text-white" size={20} />
             </div>
             <p className="text-[13px] text-slate-800 dark:text-slate-200 text-center">Gerir Cursos</p>
@@ -509,7 +509,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
             className="bg-white rounded-[14px] p-4 shadow-sm hover:shadow-md transition-shadow text-left dark:bg-slate-800"
             aria-label="Mensagens"
           >
-            <div className="bg-[#0b87ac] p-2 rounded-[10px] w-fit mb-3 mx-auto">
+            <div className="bg-[#0a7da0] p-2 rounded-[10px] w-fit mb-3 mx-auto">
               <MessageSquare className="text-white" size={20} />
             </div>
             <p className="text-[13px] text-slate-800 dark:text-slate-200 text-center">Mensagens</p>
@@ -612,10 +612,10 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
                 key="line-real-burndown-formador"
                 type="monotone" 
                 dataKey="real" 
-                stroke="#4aa540" 
+                stroke="#3b8433" 
                 strokeWidth={3}
                 name="Real"
-                dot={{ fill: '#4aa540', r: 4 }}
+                dot={{ fill: '#3b8433', r: 4 }}
                 isAnimationActive={false}
               />
             </LineChart>
@@ -624,7 +624,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
           <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
             <div className="flex items-center justify-between text-[12px]">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-[#4aa540] rounded-full"></div>
+                <div className="w-3 h-3 bg-[#3b8433] rounded-full"></div>
                 <span className="text-slate-600 dark:text-slate-400">Trabalho Restante: <strong className="text-slate-800 dark:text-slate-200">5 pts</strong></span>
               </div>
               <span className="text-green-600 dark:text-green-400">No prazo ✓</span>
@@ -636,7 +636,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-[16px] text-slate-800 dark:text-slate-200">Velocidade por Sprint</h2>
-            <BarChart3 className="text-[#4aa540]" size={20} />
+            <BarChart3 className="text-[#3b8433]" size={20} />
           </div>
 
           <ResponsiveContainer width="100%" height={200} key={`velocity-formador-${velocityData.length}-${velocityData[0]?.concluido || 0}`}>
@@ -673,7 +673,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
               <Bar 
                 key="bar-concluido-velocity-formador"
                 dataKey="concluido" 
-                fill="#4aa540" 
+                fill="#3b8433" 
                 radius={[8, 8, 0, 0]}
                 name="Concluído"
                 isAnimationActive={false}
@@ -685,7 +685,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
             <div className="flex items-center justify-between text-[12px]">
               <span className="text-slate-600 dark:text-slate-400">Velocidade Média</span>
               <div className="flex items-center gap-2">
-                <strong className="text-[#4aa540] text-[16px]">52 pts</strong>
+                <strong className="text-[#3b8433] text-[16px]">52 pts</strong>
                 <div className="flex items-center gap-1 bg-green-100 px-2 py-1 rounded-[6px] dark:bg-green-900/30">
                   <TrendingUp size={12} className="text-green-600 dark:text-green-400" />
                   <span className="text-green-600 dark:text-green-400 text-[11px]">+8%</span>
@@ -713,7 +713,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
                   'from-cyan-400 to-cyan-600'
                 ];
                 const colorClass = colors[index % colors.length];
-                const barColor = ['#4aa540', '#0b87ac', 'rgb(147 51 234)', '#f97316', '#ec4899', '#06b6d4'][index % 6];
+                const barColor = ['#3b8433', '#0a7da0', 'rgb(147 51 234)', '#f97316', '#ec4899', '#06b6d4'][index % 6];
                 
                 const initials = team.name
                   .split(' ')

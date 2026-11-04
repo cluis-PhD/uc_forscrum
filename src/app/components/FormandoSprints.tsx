@@ -260,7 +260,7 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
         ) : (
           <>
             {/* Info Card da Equipa */}
-            <div className="bg-gradient-to-br from-[#0b87ac] to-[#096d8a] rounded-[16px] p-5 shadow-lg text-white">
+            <div className="bg-gradient-to-br from-[#0a7da0] to-[#096d8a] rounded-[16px] p-5 shadow-lg text-white">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-white/80 text-[12px] mb-1">Minha Equipa</p>
@@ -369,7 +369,7 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
                         </div>
                         <div>
                           <p className="text-[11px] text-slate-500 dark:text-slate-400 mb-1">Story Points</p>
-                          <p className="text-[16px] text-[#0b87ac] font-medium">
+                          <p className="text-[16px] text-[#0a7da0] font-medium">
                             {totalStoryPoints || 0}
                           </p>
                         </div>
@@ -382,7 +382,7 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
                       </div>
 
                       {/* Indicador de ação */}
-                      <div className="flex items-center justify-end gap-2 mt-3 text-[#0b87ac] text-[12px] font-medium">
+                      <div className="flex items-center justify-end gap-2 mt-3 text-[#0a7da0] text-[12px] font-medium">
                         <ListTodo size={14} />
                         <span>Ver Quadro Kanban</span>
                       </div>

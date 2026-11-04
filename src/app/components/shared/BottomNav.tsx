@@ -11,7 +11,7 @@ export function BottomNav({ currentScreen, onNavigate, onLogout }: BottomNavProp
   const { userType } = useApp();
   
   // Cores dinâmicas baseadas no tipo de utilizador
-  const primaryColor = userType === 'formando' ? '#0b87ac' : '#4aa540';
+  const primaryColor = userType === 'formando' ? '#0a7da0' : '#3b8433';
   
   // Itens de navegação diferentes para formador e formando
   const navItems = userType === 'formando' 
