@@ -37,3 +37,4 @@ npm run dev
 ## Próximos passos
 
 App nativa em React Native, com autenticação real, controlo de acesso por perfil, sincronização entre dispositivos e integração com o Moodle.
+
