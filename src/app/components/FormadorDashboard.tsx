@@ -86,6 +86,11 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
         setCourses(allCourses);
       }
 
+      // Só mostrar dados de cursos que ainda existem (cursos apagados deixam equipas, formandos, sprints e stories órfãos)
+      const existingCourses: any[] = Array.isArray(coursesData?.courses) ? coursesData.courses : [];
+      const courseNameById = new Map<string, string>(existingCourses.map((c: any) => [c.id, c.name]));
+      const belongsToExistingCourse = (item: any) => courseNameById.has(item?.courseId);
+
       // ✅ 2. Carregar teams (com fallback para Mock API)
       try {
         const teamsResponse = await fetch(
@@ -114,7 +119,11 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       }
       
       if (teamsData?.success && Array.isArray(teamsData.teams)) {
-        setTeams(teamsData.teams);
+        setTeams(
+          teamsData.teams
+            .filter(belongsToExistingCourse)
+            .map((t: any) => ({ ...t, courseName: courseNameById.get(t.courseId) }))
+        );
       }
 
       // ✅ 3. Carregar students (com fallback para Mock API)
@@ -145,7 +154,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       }
       
       if (studentsData?.success && Array.isArray(studentsData.students)) {
-        setStudents(studentsData.students);
+        setStudents(studentsData.students.filter(belongsToExistingCourse));
       }
 
       // ✅ 4. Carregar sprints (com fallback para Mock API)
@@ -176,7 +185,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       }
       
       if (sprintsData?.success && Array.isArray(sprintsData.sprints)) {
-        setSprints(sprintsData.sprints);
+        setSprints(sprintsData.sprints.filter(belongsToExistingCourse));
       }
 
       // ✅ 5. Carregar user stories (com fallback para Mock API)
@@ -207,7 +216,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       }
       
       if (storiesData?.success && Array.isArray(storiesData.stories)) {
-        setUserStories(storiesData.stories);
+        setUserStories(storiesData.stories.filter(belongsToExistingCourse));
       }
     } catch (error) {
       console.error('[FormadorDashboard] ❌ Erro ao carregar dados:', error);
