@@ -53,6 +53,7 @@ interface Course {
 interface Team {
   id: string;
   name: string;
+  courseId?: string;
 }
 
 export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, sprintName: initialSprintName, courseId: initialCourseId, courseName: initialCourseName }: CreateUserStoryProps) {
@@ -76,6 +77,8 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
 
   const [teams, setTeams] = useState<Team[]>([]);
   const [loadingTeams, setLoadingTeams] = useState(true);
+  // Só as equipas do curso da user story (evita equipas de outros cursos ou de cursos apagados)
+  const courseTeams = courseId ? teams.filter((t) => t.courseId === courseId) : teams;
 
   useEffect(() => {
     loadCourses();
@@ -612,10 +615,10 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
             <option value="">Selecione uma equipa</option>
             {loadingTeams ? (
               <option value="">Carregando...</option>
-            ) : teams.length === 0 ? (
+            ) : courseTeams.length === 0 ? (
               <option value="">Nenhuma equipa disponível</option>
             ) : (
-              teams.map((t) => (
+              courseTeams.map((t) => (
                 <option key={t.id} value={t.name}>{t.name}</option>
               ))
             )}
