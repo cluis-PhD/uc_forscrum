@@ -44,17 +44,16 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-/* Font Size Accessibility */
-html.font-size-normal {
-  font-size: 16px;
-}
-
+/* Font Size Accessibility
+   Tamanhos em percentagem do tamanho do navegador (e não em px), para que a
+   escala de texto do telemóvel (meta text-scale) também seja respeitada.
+   O tamanho normal não define font-size na raiz. */
 html.font-size-large {
-  font-size: 18px;
+  font-size: 112.5%;
 }
 
 html.font-size-extra-large {
-  font-size: 20px;
+  font-size: 125%;
 }
 
 .dark {
@@ -236,7 +235,6 @@ html.font-size-extra-large {
 }
 
 html {
-  font-size: var(--font-size);
   font-family: var(--font-family);
 }
 
