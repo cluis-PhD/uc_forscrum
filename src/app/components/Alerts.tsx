@@ -288,7 +288,7 @@ export function Alerts({ onNavigate }: AlertsProps) {
       <div className="max-w-[390px] mx-auto px-6 pt-6 space-y-4">
         {isLoading && alerts.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20">
-            <Loader2 className="text-[#0b87ac] animate-spin mb-4" size={40} />
+            <Loader2 className="text-[#0a7da0] animate-spin mb-4" size={40} />
             <p className="text-slate-600 text-[14px] dark:text-slate-400">A carregar alertas...</p>
           </div>
         ) : (
@@ -311,7 +311,7 @@ export function Alerts({ onNavigate }: AlertsProps) {
               {unreadCount > 0 && (
                 <button
                   onClick={handleMarkAllAsRead}
-                  className="w-full bg-[#0b87ac] text-white py-2 px-3 rounded-[10px] text-[14px] hover:bg-[#096d8a] transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-[#0a7da0] text-white py-2 px-3 rounded-[10px] text-[14px] hover:bg-[#096d8a] transition-colors flex items-center justify-center gap-2"
                 >
                   <Check size={16} />
                   Marcar Todos como Lidos

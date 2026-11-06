@@ -184,7 +184,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
           </div>
           <h2 className="text-[24px] text-slate-800 mb-3">Curso Criado!</h2>
           <p className="text-[15px] text-slate-600 mb-4">
-            O curso <span className="font-medium text-[#4aa540]">{name}</span> foi criado com sucesso.
+            O curso <span className="font-medium text-[#3b8433]">{name}</span> foi criado com sucesso.
           </p>
         </div>
       </div>
@@ -194,7 +194,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
   return (
     <div className="bg-[#f0f0f0] min-h-screen h-full w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif] overflow-auto">
       {/* Header */}
-      <div className="bg-[#4aa540] px-6 pt-12 pb-6 rounded-b-[24px] shadow-lg">
+      <div className="bg-[#3b8433] px-6 pt-12 pb-6 rounded-b-[24px] shadow-lg">
         <div className="max-w-[390px] mx-auto">
           <div className="flex items-center justify-between">
             <button 
@@ -236,7 +236,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
               className={`w-full px-4 py-3.5 rounded-[12px] border-2 transition-all text-[15px] ${
                 touched.name && errors.name
                   ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-2 focus:ring-red-200'
-                  : 'border-slate-200 bg-white focus:border-[#4aa540] focus:ring-2 focus:ring-green-100'
+                  : 'border-slate-200 bg-white focus:border-[#3b8433] focus:ring-2 focus:ring-green-100'
               }`}
             />
             {touched.name && errors.name && (
@@ -268,7 +268,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
               className={`w-full px-4 py-3.5 rounded-[12px] border-2 transition-all text-[15px] resize-none ${
                 touched.description && errors.description
                   ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-2 focus:ring-red-200'
-                  : 'border-slate-200 bg-white focus:border-[#4aa540] focus:ring-2 focus:ring-green-100'
+                  : 'border-slate-200 bg-white focus:border-[#3b8433] focus:ring-2 focus:ring-green-100'
               }`}
             />
           </div>
@@ -295,7 +295,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
               className={`w-full pl-10 pr-4 py-3.5 rounded-[12px] border-2 transition-all text-[15px] ${
                 touched.startDate && errors.startDate
                   ? 'border-red-300 bg-red-50 focus:border-red-500'
-                  : 'border-slate-200 bg-white focus:border-[#4aa540]'
+                  : 'border-slate-200 bg-white focus:border-[#3b8433]'
               }`}
             />
           </div>
@@ -322,7 +322,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
               className={`w-full pl-10 pr-4 py-3.5 rounded-[12px] border-2 transition-all text-[15px] ${
                 touched.endDate && errors.endDate
                   ? 'border-red-300 bg-red-50 focus:border-red-500'
-                  : 'border-slate-200 bg-white focus:border-[#4aa540]'
+                  : 'border-slate-200 bg-white focus:border-[#3b8433]'
               }`}
             />
           </div>
@@ -339,7 +339,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
           <button
             onClick={handleSave}
             disabled={isSaving}
-            className="w-full bg-[#4aa540] text-white py-4 rounded-[14px] text-[16px] font-medium hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[16px] font-medium hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isSaving ? (
               <>
@@ -689,16 +689,16 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
         {/* Criar Curso Button */}
         <button
           onClick={() => setShowCreateCourse(true)}
-          className="w-full bg-white text-[#4aa540] border-2 border-[#4aa540] rounded-[14px] p-4 shadow-sm hover:shadow-md hover:bg-[#4aa540] hover:text-white transition-all flex items-center justify-center gap-2 group"
+          className="w-full bg-white text-[#3b8433] border-2 border-[#3b8433] rounded-[14px] p-4 shadow-sm hover:shadow-md hover:bg-[#3b8433] hover:text-white transition-all flex items-center justify-center gap-2 group"
         >
-          <Plus size={22} strokeWidth={2.5} className="text-[#4aa540] group-hover:text-white transition-colors" />
+          <Plus size={22} strokeWidth={2.5} className="text-[#3b8433] group-hover:text-white transition-colors" />
           <span className="text-[16px] font-medium">Criar Novo Curso</span>
         </button>
 
         {/* Loading State */}
         {loadingCourses && (
           <div className="text-center py-12">
-            <Loader2 className="inline-block animate-spin text-[#4aa540] h-12 w-12 mb-3" />
+            <Loader2 className="inline-block animate-spin text-[#3b8433] h-12 w-12 mb-3" />
             <p className="text-slate-500 mt-4">A carregar cursos...</p>
           </div>
         )}
@@ -715,7 +715,7 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
                 <div
                   key={course.id}
                   onClick={() => onNavigate?.('courseDetails', { courseId: course.id, courseName: course.name })}
-                  className="bg-white rounded-[16px] p-4 shadow-sm hover:shadow-md transition-all border-2 border-transparent hover:border-[#4aa540] cursor-pointer"
+                  className="bg-white rounded-[16px] p-4 shadow-sm hover:shadow-md transition-all border-2 border-transparent hover:border-[#3b8433] cursor-pointer"
                 >
                   {/* Header */}
                   <div className="flex items-start justify-between mb-3">
@@ -783,7 +783,7 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-1.5">
                       <div 
-                        className="bg-[#4aa540] h-1.5 rounded-full transition-all" 
+                        className="bg-[#3b8433] h-1.5 rounded-full transition-all" 
                         style={{ width: `${course.progress}%` }}
                       />
                     </div>

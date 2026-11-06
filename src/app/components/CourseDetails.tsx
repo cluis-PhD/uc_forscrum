@@ -711,7 +711,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
             onClick={() => setActiveTab('overview')}
             className={`w-full py-3 px-4 rounded-[12px] text-[14px] transition-all flex items-center justify-between ${
               activeTab === 'overview'
-                ? 'bg-[#4aa540] text-white shadow-md'
+                ? 'bg-[#3b8433] text-white shadow-md'
                 : 'text-slate-700 hover:bg-slate-50'
             }`}
           >
@@ -725,7 +725,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
             onClick={() => setActiveTab('teams')}
             className={`w-full py-3 px-4 rounded-[12px] text-[14px] transition-all flex items-center justify-between ${
               activeTab === 'teams'
-                ? 'bg-[#4aa540] text-white shadow-md'
+                ? 'bg-[#3b8433] text-white shadow-md'
                 : 'text-slate-700 hover:bg-slate-50'
             }`}
           >
@@ -739,7 +739,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
             onClick={() => setActiveTab('students')}
             className={`w-full py-3 px-4 rounded-[12px] text-[14px] transition-all flex items-center justify-between ${
               activeTab === 'students'
-                ? 'bg-[#4aa540] text-white shadow-md'
+                ? 'bg-[#3b8433] text-white shadow-md'
                 : 'text-slate-700 hover:bg-slate-50'
             }`}
           >
@@ -753,7 +753,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
             onClick={() => setActiveTab('sprints')}
             className={`w-full py-3 px-4 rounded-[12px] text-[14px] transition-all flex items-center justify-between ${
               activeTab === 'sprints'
-                ? 'bg-[#4aa540] text-white shadow-md'
+                ? 'bg-[#3b8433] text-white shadow-md'
                 : 'text-slate-700 hover:bg-slate-50'
             }`}
           >
@@ -767,7 +767,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
             onClick={() => setActiveTab('stories')}
             className={`w-full py-3 px-4 rounded-[12px] text-[14px] transition-all flex items-center justify-between ${
               activeTab === 'stories'
-                ? 'bg-[#4aa540] text-white shadow-md'
+                ? 'bg-[#3b8433] text-white shadow-md'
                 : 'text-slate-700 hover:bg-slate-50'
             }`}
           >
@@ -800,7 +800,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                 onClick={() => setActiveTab('students')}
                 className="bg-slate-50 rounded-[12px] p-4 text-center hover:bg-slate-100 transition-colors"
               >
-                <Users className="text-[#4aa540] mx-auto mb-2" size={28} />
+                <Users className="text-[#3b8433] mx-auto mb-2" size={28} />
                 <p className="text-[24px] text-slate-800">{studentsList.length}</p>
                 <p className="text-[13px] text-slate-600">Formandos</p>
               </button>
@@ -825,11 +825,11 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
             <div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[15px] text-slate-700">Conclusão do Curso</span>
-                <span className="text-[18px] text-[#4aa540] font-medium">{course.progress}%</span>
+                <span className="text-[18px] text-[#3b8433] font-medium">{course.progress}%</span>
               </div>
               <div className="w-full bg-slate-200 rounded-full h-4">
                 <div 
-                  className="bg-[#4aa540] h-4 rounded-full transition-all" 
+                  className="bg-[#3b8433] h-4 rounded-full transition-all" 
                   style={{ width: `${course.progress}%` }}
                 />
               </div>
@@ -844,7 +844,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
               <h3 className="text-[16px] text-slate-800">Formandos ({studentsList.length})</h3>
               <button
                 onClick={() => onNavigate?.('createStudent', { courseId, courseName })}
-                className="bg-[#4aa540] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#3d8935] transition-colors"
+                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
               >
                 <Plus size={16} />
                 Adicionar
@@ -857,7 +857,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
               <input
                 type="text"
                 placeholder="Pesquisar formandos..."
-                className="w-full bg-white border border-slate-200 rounded-[12px] pl-10 pr-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540]"
+                className="w-full bg-white border border-slate-200 rounded-[12px] pl-10 pr-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433]"
               />
             </div>
 
@@ -891,7 +891,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                            <span className={`text-[11px] px-2 py-0.5 rounded-full ${
                              !student.teamId 
                                ? 'bg-slate-100 text-slate-500' 
-                               : 'bg-green-50 text-[#4aa540]'
+                               : 'bg-green-50 text-[#3b8433]'
                            }`}>
                              {getTeamName(student.teamId)}
                            </span>
@@ -901,7 +901,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                     
                     <div className="flex items-center gap-2">
                       <button 
-                        className="p-2 text-slate-400 hover:text-[#4aa540] hover:bg-slate-50 rounded-full transition-colors"
+                        className="p-2 text-slate-400 hover:text-[#3b8433] hover:bg-slate-50 rounded-full transition-colors"
                         onClick={() => openMessageModal(student)}
                       >
                         <Mail size={18} />
@@ -939,7 +939,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
               <h3 className="text-[16px] text-slate-800">Equipas ({teams.length})</h3>
               <button
                 onClick={() => onNavigate?.('createTeam', { courseId, courseName })}
-                className="bg-[#4aa540] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#3d8935] transition-colors"
+                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
               >
                 <Plus size={16} />
                 Nova Equipa
@@ -964,7 +964,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                   return (
                   <div
                     key={team.id}
-                    className="bg-white rounded-[16px] p-4 shadow-sm hover:shadow-md transition-all w-full border-2 border-transparent hover:border-[#4aa540]"
+                    className="bg-white rounded-[16px] p-4 shadow-sm hover:shadow-md transition-all w-full border-2 border-transparent hover:border-[#3b8433]"
                   >
                     <div className="flex items-center justify-between mb-3">
                       <button
@@ -978,7 +978,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => onNavigate?.('turmaDetails', { teamId: team.id })}
-                          className="p-2 text-slate-400 hover:text-[#4aa540] hover:bg-slate-50 rounded-full transition-colors"
+                          className="p-2 text-slate-400 hover:text-[#3b8433] hover:bg-slate-50 rounded-full transition-colors"
                         >
                           <ChevronRight size={20} />
                         </button>
@@ -1027,7 +1027,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                           <div className="flex items-center gap-2">
                             <div className="flex-1 bg-slate-200 rounded-full h-2">
                               <div 
-                                className="bg-[#4aa540] h-2 rounded-full transition-all" 
+                                className="bg-[#3b8433] h-2 rounded-full transition-all" 
                                 style={{ width: `${performance}%` }}
                               />
                             </div>
@@ -1055,7 +1055,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
               <h3 className="text-[16px] text-slate-800">Sprints ({sprints.length})</h3>
               <button
                 onClick={() => onNavigate?.('createSprint')}
-                className="bg-[#4aa540] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#3d8935] transition-colors"
+                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
               >
                 <Plus size={16} />
                 Novo Sprint
@@ -1077,7 +1077,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                 {sprints.map((sprint) => (
                   <div
                     key={sprint.id}
-                    className="bg-white rounded-[16px] p-4 shadow-sm hover:shadow-md transition-all w-full border-2 border-transparent hover:border-[#4aa540]"
+                    className="bg-white rounded-[16px] p-4 shadow-sm hover:shadow-md transition-all w-full border-2 border-transparent hover:border-[#3b8433]"
                   >
                     <div className="flex items-center justify-between mb-2">
                       <button
@@ -1154,7 +1154,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                           return totalPoints > 0 ? (
                             <span 
                               className="text-white px-2.5 py-1 rounded-[6px] text-[11px] font-medium"
-                              style={{ backgroundColor: isFormador ? '#4aa540' : '#0b87ac' }}
+                              style={{ backgroundColor: isFormador ? '#3b8433' : '#0a7da0' }}
                             >
                               {totalPoints} pts total
                             </span>
@@ -1177,7 +1177,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                         </div>
                         <div className="w-full bg-slate-200 rounded-full h-2">
                           <div 
-                            className="bg-[#4aa540] h-2 rounded-full" 
+                            className="bg-[#3b8433] h-2 rounded-full" 
                             style={{ width: `${(() => {
                               // Calcular progresso real baseado nas stories concluídas
                               const sprintStories = stories.filter(s => s.sprintId === sprint.id);
@@ -1205,7 +1205,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
               <h3 className="text-[16px] text-slate-800">User Stories ({stories.length})</h3>
               <button
                 onClick={() => onNavigate?.('createUserStory')}
-                className="bg-[#4aa540] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#3d8935] transition-colors"
+                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
               >
                 <Plus size={16} />
                 Nova Story
@@ -1240,7 +1240,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                   return (
                   <div
                     key={story.id}
-                    className="bg-white rounded-[12px] p-4 shadow-sm border-2 border-transparent hover:border-[#4aa540] transition-all"
+                    className="bg-white rounded-[12px] p-4 shadow-sm border-2 border-transparent hover:border-[#3b8433] transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex-1 pr-2">
@@ -1279,7 +1279,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                             <span 
                               className="text-white px-2.5 py-1 rounded-[6px] text-[11px] font-medium"
                               style={{ 
-                                backgroundColor: isFormador ? '#4aa540' : '#0b87ac'
+                                backgroundColor: isFormador ? '#3b8433' : '#0a7da0'
                               }}
                             >
                               {story.points} pts
@@ -1289,7 +1289,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                           return (
                             <span 
                               className="text-white px-2.5 py-1 rounded-[6px] text-[11px] font-medium"
-                              style={{ backgroundColor: isFormador ? '#4aa540' : '#60a5fa' }}
+                              style={{ backgroundColor: isFormador ? '#3b8433' : '#60a5fa' }}
                               title={`Média de ${story.votes?.length} voto(s)`}
                             >
                               {averageVote} pts
@@ -1374,7 +1374,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsAddStudentOpen(false)}>Cancelar</Button>
-            <Button onClick={handleAddStudent} className="bg-[#4aa540] hover:bg-[#3d8935]">Adicionar</Button>
+            <Button onClick={handleAddStudent} className="bg-[#3b8433] hover:bg-[#2f6b29]">Adicionar</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -1421,7 +1421,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                   id="edit-team"
                   value={studentTeamId}
                   onChange={(e) => setStudentTeamId(e.target.value)}
-                  className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4aa540] focus-visible:ring-offset-2"
+                  className="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b8433] focus-visible:ring-offset-2"
                 >
                   <option value="">Sem equipa atribuída</option>
                   {teams.map((team) => (
@@ -1438,7 +1438,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsEditStudentOpen(false)}>Cancelar</Button>
-            <Button onClick={handleUpdateStudent} className="bg-[#4aa540] hover:bg-[#3d8935]">Salvar</Button>
+            <Button onClick={handleUpdateStudent} className="bg-[#3b8433] hover:bg-[#2f6b29]">Salvar</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -1466,7 +1466,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsMessageStudentOpen(false)}>Cancelar</Button>
-            <Button onClick={handleSendMessage} className="bg-[#4aa540] hover:bg-[#3d8935] flex items-center gap-2">
+            <Button onClick={handleSendMessage} className="bg-[#3b8433] hover:bg-[#2f6b29] flex items-center gap-2">
               <MessageSquare size={16} />
               Enviar
             </Button>

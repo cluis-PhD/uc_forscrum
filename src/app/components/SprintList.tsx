@@ -171,7 +171,7 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
       <div className="max-w-[390px] mx-auto px-6 pt-6 pb-6 space-y-5">
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-20">
-            <Loader2 className="text-[#4aa540] animate-spin mb-4" size={40} />
+            <Loader2 className="text-[#3b8433] animate-spin mb-4" size={40} />
             <p className="text-slate-600 text-[14px] dark:text-slate-400">Carregando sprints...</p>
           </div>
         ) : error ? (
@@ -183,7 +183,7 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
             <p className="text-slate-600 text-[14px] mb-4 dark:text-slate-400">{error}</p>
             <button
               onClick={fetchSprints}
-              className="w-full bg-[#4aa540] text-white py-3 rounded-[12px] text-[14px] hover:bg-[#3d8935] transition-colors"
+              className="w-full bg-[#3b8433] text-white py-3 rounded-[12px] text-[14px] hover:bg-[#2f6b29] transition-colors"
             >
               Tentar Novamente
             </button>
@@ -199,7 +199,7 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
             </p>
             <button
               onClick={() => onNavigate('CreateSprint')}
-              className="w-full bg-[#4aa540] text-white py-4 rounded-[14px] text-[16px] hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+              className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
             >
               {/* <Plus size={20} />*/ } 
               Voltar ao menu anterior
@@ -212,7 +212,7 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
               className="rounded-[16px] p-5 shadow-sm text-white"
               style={{
                 background: userType === 'formando' 
-                  ? 'linear-gradient(135deg, #0b87ac 0%, #096d8a 100%)'
+                  ? 'linear-gradient(135deg, #0a7da0 0%, #096d8a 100%)'
                   : 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
               }}
             >
@@ -233,7 +233,7 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
               {sprints.map((sprint) => {
                 const status = getSprintStatus(sprint.startDate, sprint.endDate);
                 const duration = calculateDuration(sprint.startDate, sprint.endDate);
-                const hoverBorderColor = userType === 'formando' ? 'hover:border-[#0b87ac]' : 'hover:border-[#4aa540]';
+                const hoverBorderColor = userType === 'formando' ? 'hover:border-[#0a7da0]' : 'hover:border-[#3b8433]';
                 
                 return (
                   <div 
@@ -308,7 +308,7 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
             {userType === 'formador' && (
               <button
                 onClick={() => onNavigate('createSprint')}
-                className="w-full bg-[#4aa540] text-white py-4 rounded-[14px] text-[16px] hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+                className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
               >
                 <Plus size={20} />
                 Criar Novo Sprint

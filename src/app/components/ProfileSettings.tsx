@@ -41,15 +41,15 @@ export function ProfileSettings({
 
   // Cores dinâmicas baseadas no tipo de utilizador
   const primaryColor =
-    userType === "formando" ? "#0b87ac" : "#4aa540";
+    userType === "formando" ? "#0a7da0" : "#3b8433";
   const secondaryColor =
-    userType === "formando" ? "#096d8a" : "#3d8935";
+    userType === "formando" ? "#096d8a" : "#2f6b29";
 
   // Cores dinâmicas para o tema escuro
   const darkPrimaryColor =
-    userType === "formando" ? "#0b87ac" : "#4aa540";
+    userType === "formando" ? "#0a7da0" : "#3b8433";
   const darkSecondaryColor =
-    userType === "formando" ? "#096d8a" : "#3d8935";
+    userType === "formando" ? "#096d8a" : "#2f6b29";
 
   const [name, setName] = useState(userProfile.name);
   const [email, setEmail] = useState(userProfile.email);
@@ -119,8 +119,8 @@ export function ProfileSettings({
                   className="w-16 h-16 rounded-full flex items-center justify-center text-white text-[20px] shadow-lg"
                   style={{
                     background: userType === "formando"
-                      ? "linear-gradient(135deg, #0b87ac 0%, #096d8a 100%)"
-                      : "linear-gradient(135deg, #4aa540 0%, #3d8935 100%)",
+                      ? "linear-gradient(135deg, #0a7da0 0%, #096d8a 100%)"
+                      : "linear-gradient(135deg, #3b8433 0%, #2f6b29 100%)",
                   }}
                 >
                   {userProfile.avatar}
@@ -293,8 +293,8 @@ export function ProfileSettings({
                   className="w-24 h-24 rounded-full flex items-center justify-center text-white text-[32px]"
                   style={{
                     background: userType === "formando"
-                      ? "linear-gradient(135deg, #0b87ac 0%, #096d8a 100%)"
-                      : "linear-gradient(135deg, #4aa540 0%, #3d8935 100%)",
+                      ? "linear-gradient(135deg, #0a7da0 0%, #096d8a 100%)"
+                      : "linear-gradient(135deg, #3b8433 0%, #2f6b29 100%)",
                   }}
                 >
                   {userProfile.avatar}
@@ -333,7 +333,7 @@ export function ProfileSettings({
               className={`w-full border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none transition-colors dark:border-slate-700 dark:text-white ${
                 userType === 'formando' 
                   ? 'bg-slate-100 dark:bg-slate-700/50 cursor-not-allowed opacity-60' 
-                  : 'bg-white dark:bg-slate-800 focus:border-[#4aa540]'
+                  : 'bg-white dark:bg-slate-800 focus:border-[#3b8433]'
               }`}
             />
             {userType === 'formando' && (
@@ -357,7 +357,7 @@ export function ProfileSettings({
               className={`w-full border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none transition-colors dark:border-slate-700 dark:text-white ${
                 userType === 'formando' 
                   ? 'bg-slate-100 dark:bg-slate-700/50 cursor-not-allowed opacity-60' 
-                  : 'bg-white dark:bg-slate-800 focus:border-[#4aa540]'
+                  : 'bg-white dark:bg-slate-800 focus:border-[#3b8433]'
               }`}
             />
             {userType === 'formando' && (
@@ -378,7 +378,7 @@ export function ProfileSettings({
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder={userType === 'formando' ? 'Adicione o seu número de telefone' : ''}
-              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors dark:bg-slate-800 dark:border-slate-700 dark:text-white"
+              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors dark:bg-slate-800 dark:border-slate-700 dark:text-white"
             />
           </div>
 
@@ -392,7 +392,7 @@ export function ProfileSettings({
               type="text"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors dark:bg-slate-800 dark:border-slate-700 dark:text-white"
+              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors dark:bg-slate-800 dark:border-slate-700 dark:text-white"
             />
           </div>
 
@@ -405,7 +405,7 @@ export function ProfileSettings({
               value={bio}
               onChange={(e) => setBio(e.target.value)}
               rows={4}
-              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors resize-none dark:bg-slate-800 dark:border-slate-700 dark:text-white"
+              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors resize-none dark:bg-slate-800 dark:border-slate-700 dark:text-white"
               placeholder="Conte um pouco sobre você..."
             />
           </div>
@@ -420,7 +420,7 @@ export function ProfileSettings({
                 onClick={() =>
                   toast.info("Adicionar certificação")
                 }
-                className="text-[#4aa540] text-[13px] hover:underline"
+                className="text-[#3b8433] text-[13px] hover:underline"
               >
                 + Adicionar
               </button>
@@ -460,7 +460,7 @@ export function ProfileSettings({
           {/* Save Button */}
           <button
             onClick={handleSave}
-            className="w-full bg-[#4aa540] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
           >
             <Save size={20} />
             Guardar Alterações
@@ -506,8 +506,8 @@ export function ProfileSettings({
                   className="w-28 h-28 rounded-full flex items-center justify-center text-white text-[36px] shadow-lg"
                   style={{
                     background: userType === "formando"
-                      ? "linear-gradient(135deg, #0b87ac 0%, #096d8a 100%)"
-                      : "linear-gradient(135deg, #4aa540 0%, #3d8935 100%)",
+                      ? "linear-gradient(135deg, #0a7da0 0%, #096d8a 100%)"
+                      : "linear-gradient(135deg, #3b8433 0%, #2f6b29 100%)",
                   }}
                 >
                   {userProfile.avatar}
@@ -549,7 +549,7 @@ export function ProfileSettings({
                 <input
                   type="checkbox"
                   defaultChecked
-                  className="w-4 h-4 text-[#4aa540]"
+                  className="w-4 h-4 text-[#3b8433]"
                 />
               </label>
               <label className="flex items-center justify-between cursor-pointer">
@@ -559,7 +559,7 @@ export function ProfileSettings({
                 <input
                   type="checkbox"
                   defaultChecked
-                  className="w-4 h-4 text-[#4aa540]"
+                  className="w-4 h-4 text-[#3b8433]"
                 />
               </label>
             </div>
@@ -578,7 +578,7 @@ export function ProfileSettings({
                 <input
                   type="checkbox"
                   defaultChecked
-                  className="w-4 h-4 text-[#4aa540]"
+                  className="w-4 h-4 text-[#3b8433]"
                 />
               </label>
             </div>
@@ -614,7 +614,7 @@ export function ProfileSettings({
                     }}
                     className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                       theme === 'dark'
-                        ? 'bg-[#4aa540] focus:ring-[#4aa540]'
+                        ? 'bg-[#3b8433] focus:ring-[#3b8433]'
                         : 'bg-slate-300 focus:ring-slate-400'
                     }`}
                     role="switch"
@@ -646,7 +646,7 @@ export function ProfileSettings({
                     }}
                     className={`py-2 px-3 rounded-lg text-[12px] font-medium transition-all ${
                       fontSize === 'normal'
-                        ? 'bg-[#4aa540] text-white shadow-md'
+                        ? 'bg-[#3b8433] text-white shadow-md'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300'
                     }`}
                   >
@@ -659,7 +659,7 @@ export function ProfileSettings({
                     }}
                     className={`py-2 px-3 rounded-lg text-[13px] font-medium transition-all ${
                       fontSize === 'large'
-                        ? 'bg-[#4aa540] text-white shadow-md'
+                        ? 'bg-[#3b8433] text-white shadow-md'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300'
                     }`}
                   >
@@ -672,7 +672,7 @@ export function ProfileSettings({
                     }}
                     className={`py-2 px-3 rounded-lg text-[14px] font-medium transition-all ${
                       fontSize === 'extra-large'
-                        ? 'bg-[#4aa540] text-white shadow-md'
+                        ? 'bg-[#3b8433] text-white shadow-md'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300'
                     }`}
                   >
@@ -689,7 +689,7 @@ export function ProfileSettings({
           {/* Save Button */}
           <button
             onClick={handleSave}
-            className="w-full bg-[#4aa540] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
           >
             <Save size={20} />
             Guardar Alterações

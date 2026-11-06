@@ -379,7 +379,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
           
           <button
             onClick={openNewMessageModal}
-            className="bg-[#4aa540] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#3d8935] transition-colors"
+            className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
           >
             <Plus size={16} />
             Nova Mensagem
@@ -407,7 +407,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                 className={`bg-white dark:bg-slate-800 rounded-[16px] p-4 shadow-sm transition-all ${
                   !isFormador && !message.isRead 
                     ? 'border-2 border-orange-400 dark:border-orange-500' 
-                    : 'border-2 border-transparent hover:border-[#4aa540]'
+                    : 'border-2 border-transparent hover:border-[#3b8433]'
                 }`}
               >
                 <div className="flex items-start justify-between gap-3">
@@ -506,7 +506,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
         <DialogContent className="sm:max-w-[550px] bg-white dark:bg-slate-800 rounded-xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="dark:text-slate-100 text-[18px] flex items-center gap-2">
-              <Mail className="text-[#4aa540]" size={22} />
+              <Mail className="text-[#3b8433]" size={22} />
               Nova Mensagem
             </DialogTitle>
             <DialogDescription className="dark:text-slate-400 text-[13px]">
@@ -526,7 +526,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                 
                 {loadingStudents ? (
                   <div className="flex items-center justify-center py-6 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-[#4aa540]"></div>
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-[#3b8433]"></div>
                     <span className="ml-2 text-[13px] text-slate-500 dark:text-slate-400">
                       A carregar...
                     </span>
@@ -555,8 +555,8 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                           onClick={() => setSelectedFormandoId(student.id)}
                           className={`flex items-center gap-3 p-2.5 rounded-lg border-2 transition-all text-left ${
                             isSelected
-                              ? 'border-[#4aa540] bg-green-50 dark:bg-green-900/20'
-                              : 'border-slate-200 dark:border-slate-600 hover:border-[#4aa540]/50 bg-white dark:bg-slate-700/30'
+                              ? 'border-[#3b8433] bg-green-50 dark:bg-green-900/20'
+                              : 'border-slate-200 dark:border-slate-600 hover:border-[#3b8433]/50 bg-white dark:bg-slate-700/30'
                           }`}
                         >
                           <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-[11px] font-medium">
@@ -565,14 +565,14 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                           <div className="flex-1">
                             <p className={`text-[13px] font-medium ${
                               isSelected 
-                                ? 'text-[#4aa540] dark:text-green-400' 
+                                ? 'text-[#3b8433] dark:text-green-400' 
                                 : 'text-slate-800 dark:text-slate-200'
                             }`}>
                               {student.name}
                             </p>
                           </div>
                           {isSelected && (
-                            <div className="w-4 h-4 bg-[#4aa540] rounded-full flex items-center justify-center">
+                            <div className="w-4 h-4 bg-[#3b8433] rounded-full flex items-center justify-center">
                               <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                               </svg>
@@ -657,7 +657,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
             <Button 
               type="button"
               onClick={handleCreateMessage} 
-              className="bg-[#4aa540] hover:bg-[#3d8935] text-white flex items-center gap-2"
+              className="bg-[#3b8433] hover:bg-[#2f6b29] text-white flex items-center gap-2"
               disabled={!title.trim() || !messageText.trim() || (isFormador && !selectedFormandoId) || messageText.length < 10}
             >
               <MessageSquare size={16} />
@@ -690,7 +690,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                   id="edit-formando"
                   value={selectedFormandoId}
                   onChange={(e) => setSelectedFormandoId(e.target.value)}
-                  className="flex h-10 w-full rounded-md border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 px-3 py-2 text-sm dark:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4aa540] focus-visible:ring-offset-2"
+                  className="flex h-10 w-full rounded-md border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 px-3 py-2 text-sm dark:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b8433] focus-visible:ring-offset-2"
                   required
                 >
                   <option value="">Selecione um formando</option>
@@ -744,7 +744,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
             </Button>
             <Button 
               onClick={handleUpdateMessage} 
-              className="bg-[#4aa540] hover:bg-[#3d8935] text-white"
+              className="bg-[#3b8433] hover:bg-[#2f6b29] text-white"
               disabled={!title.trim() || !messageText.trim() || !selectedFormandoId}
             >
               Salvar Alterações
@@ -780,7 +780,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
           <DialogFooter>
             <Button 
               onClick={() => setIsViewOpen(false)}
-              className="bg-[#4aa540] hover:bg-[#3d8935] text-white w-full"
+              className="bg-[#3b8433] hover:bg-[#2f6b29] text-white w-full"
             >
               Fechar
             </Button>

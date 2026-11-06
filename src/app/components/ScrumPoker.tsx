@@ -35,7 +35,7 @@ interface UserStory {
 export function ScrumPoker({ onBack }: ScrumPokerProps) {
   const { userType, userProfile, selectedUserStory, selectedCourse, loggedStudent, setSelectedUserStory } = useApp();
   
-  const primaryColor = userType === 'formando' ? '#0b87ac' : '#4aa540';
+  const primaryColor = userType === 'formando' ? '#0a7da0' : '#3b8433';
   
   const [votingSystem, setVotingSystem] = useState<VotingSystem>('fibonacci');
   
@@ -608,7 +608,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
         <div 
           className="rounded-[16px] p-5 shadow-sm text-white"
           style={{
-            background: `linear-gradient(135deg, ${primaryColor} 0%, ${userType === 'formando' ? '#096d8a' : '#3d8935'} 100%)`
+            background: `linear-gradient(135deg, ${primaryColor} 0%, ${userType === 'formando' ? '#096d8a' : '#2f6b29'} 100%)`
           }}
         >
           <div className="flex items-start justify-between mb-2">
@@ -800,7 +800,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
                         className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[13px]"
                         style={{
                           background: isCurrentUser 
-                            ? `linear-gradient(135deg, ${primaryColor}, ${userType === 'formando' ? '#096d8a' : '#3d8935'})` 
+                            ? `linear-gradient(135deg, ${primaryColor}, ${userType === 'formando' ? '#096d8a' : '#2f6b29'})` 
                             : '#64748b'
                         }}
                       >

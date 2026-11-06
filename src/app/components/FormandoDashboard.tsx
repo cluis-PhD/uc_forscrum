@@ -335,7 +335,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
       {/* Main Content */}
       <div className="w-full max-w-md mx-auto px-6 pt-6 pb-6 space-y-6">
         {/* Minha Equipa - Destaque */}
-        <div className="bg-gradient-to-br from-[#0b87ac] to-[#096d8a] rounded-[16px] p-5 shadow-lg text-white">
+        <div className="bg-gradient-to-br from-[#0a7da0] to-[#096d8a] rounded-[16px] p-5 shadow-lg text-white">
           <div className="flex items-start justify-between mb-4">
             <div>
               <p className="text-white/80 text-[12px] mb-1">Minha Equipa</p>
@@ -370,7 +370,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
             className="bg-white rounded-[14px] p-4 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 text-left dark:bg-slate-800"
             aria-label="Ver Sprints"
           >
-            <div className="bg-[#0b87ac] p-2 rounded-[10px] w-fit mb-3">
+            <div className="bg-[#0a7da0] p-2 rounded-[10px] w-fit mb-3">
               <ListTodo className="text-white" size={20} />
             </div>
             <p className="text-[14px] font-medium text-slate-800 dark:text-slate-200">Ver Sprints</p>
@@ -382,7 +382,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
             className="bg-white rounded-[14px] p-4 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5 text-left dark:bg-slate-800"
             aria-label="Ver Mensagens"
           >
-            <div className="bg-[#0b87ac] p-2 rounded-[10px] w-fit mb-3">
+            <div className="bg-[#0a7da0] p-2 rounded-[10px] w-fit mb-3">
               <Mail className="text-white" size={20} />
             </div>
             <p className="text-[14px] font-medium text-slate-800 dark:text-slate-200">Mensagens</p>
@@ -423,14 +423,14 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-[16px] text-slate-800 dark:text-slate-200">Meus Story Points</h2>
-            <Award className="text-[#0b87ac]" size={20} />
+            <Award className="text-[#0a7da0]" size={20} />
           </div>
           
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-[14px] text-slate-600 dark:text-slate-400 mb-1">Sprint Atual</p>
-                <p className="text-[28px] text-[#0b87ac]">{teamKPIs.myStoryPoints} pts</p>
+                <p className="text-[28px] text-[#0a7da0]">{teamKPIs.myStoryPoints} pts</p>
               </div>
               <div className="flex items-center gap-2 bg-green-100 px-3 py-2 rounded-[10px] dark:bg-green-900/30">
                 <TrendingUp size={16} className="text-green-600 dark:text-green-400" />
@@ -445,7 +445,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
               </div>
               <div className="w-full bg-slate-200 rounded-full h-3 dark:bg-slate-700">
                 <div 
-                  className="bg-gradient-to-r from-[#0b87ac] to-[#0ea3d1] h-3 rounded-full transition-all" 
+                  className="bg-gradient-to-r from-[#0a7da0] to-[#0ea3d1] h-3 rounded-full transition-all" 
                   style={{ width: `${teamKPIs.completionRate}%` }}
                 ></div>
               </div>
@@ -472,7 +472,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
                   'from-cyan-400 to-cyan-600'
                 ];
                 const colorClass = isCurrentUser 
-                  ? 'from-[#0b87ac] to-[#096d8a]' 
+                  ? 'from-[#0a7da0] to-[#096d8a]' 
                   : colors[index % colors.length];
                 
                 const initials = member.name
@@ -487,7 +487,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
                     key={member.id}
                     className={`flex items-center justify-between p-3 rounded-[12px] ${
                       isCurrentUser 
-                        ? 'bg-blue-50 border-2 border-[#0b87ac] dark:bg-blue-900/20 dark:border-[#0b87ac]' 
+                        ? 'bg-blue-50 border-2 border-[#0a7da0] dark:bg-blue-900/20 dark:border-[#0a7da0]' 
                         : 'bg-slate-50 dark:bg-slate-700/50'
                     }`}
                   >
@@ -497,13 +497,13 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
                       </div>
                       <div>
                         <p className="text-[14px] text-slate-800 dark:text-slate-200">{member.name}</p>
-                        <p className={`text-[11px] ${isCurrentUser ? 'text-[#0b87ac]' : 'text-slate-500 dark:text-slate-400'}`}>
+                        <p className={`text-[11px] ${isCurrentUser ? 'text-[#0a7da0]' : 'text-slate-500 dark:text-slate-400'}`}>
                           {isCurrentUser ? 'Você' : 'Formando'}
                         </p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-[14px] text-[#0b87ac]">{member.points || 0} pts</p>
+                      <p className="text-[14px] text-[#0a7da0]">{member.points || 0} pts</p>
                     </div>
                   </div>
                 );
@@ -516,7 +516,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
           <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
             <div className="flex items-center justify-between text-[13px]">
               <span className="text-slate-600 dark:text-slate-400">Total da Equipa</span>
-              <strong className="text-[#0b87ac] text-[16px]">{teamKPIs.totalPoints} pts</strong>
+              <strong className="text-[#0a7da0] text-[16px]">{teamKPIs.totalPoints} pts</strong>
             </div>
           </div>
         </div>
@@ -571,10 +571,10 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
                 key="line-real-burndown"
                 type="monotone" 
                 dataKey="real" 
-                stroke="#0b87ac" 
+                stroke="#0a7da0" 
                 strokeWidth={3}
                 name="Real"
-                dot={{ fill: '#0b87ac', r: 4 }}
+                dot={{ fill: '#0a7da0', r: 4 }}
                 isAnimationActive={false}
               />
             </LineChart>
@@ -583,7 +583,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
           <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
             <div className="flex items-center justify-between text-[12px]">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-[#0b87ac] rounded-full"></div>
+                <div className="w-3 h-3 bg-[#0a7da0] rounded-full"></div>
                 <span className="text-slate-600 dark:text-slate-400">Trabalho Restante: <strong className="text-slate-800 dark:text-slate-200">0 pts</strong></span>
               </div>
               <span className="text-green-600 dark:text-green-400">Concluído ✓</span>
@@ -595,7 +595,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-[16px] text-slate-800 dark:text-slate-200">Velocidade da Equipa</h2>
-            <BarChart3 className="text-[#0b87ac]" size={20} />
+            <BarChart3 className="text-[#0a7da0]" size={20} />
           </div>
 
           <ResponsiveContainer width="100%" height={200} key={`velocity-${velocityData.length}-${velocityData[0]?.concluido || 0}`}>
@@ -632,7 +632,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
               <Bar 
                 key="bar-concluido-velocity"
                 dataKey="concluido" 
-                fill="#0b87ac" 
+                fill="#0a7da0" 
                 radius={[8, 8, 0, 0]}
                 name="Concluído"
                 isAnimationActive={false}
@@ -644,7 +644,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
             <div className="flex items-center justify-between text-[12px]">
               <span className="text-slate-600 dark:text-slate-400">Velocidade Média</span>
               <div className="flex items-center gap-2">
-                <strong className="text-[#0b87ac] text-[16px]">{teamKPIs.velocity} pts</strong>
+                <strong className="text-[#0a7da0] text-[16px]">{teamKPIs.velocity} pts</strong>
                 <div className="flex items-center gap-1 bg-green-100 px-2 py-1 rounded-[6px] dark:bg-green-900/30">
                   <TrendingUp size={12} className="text-green-600 dark:text-green-400" />
                   <span className="text-green-600 dark:text-green-400 text-[11px]">{teamKPIs.velocityTrend}</span>

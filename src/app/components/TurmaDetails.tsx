@@ -327,7 +327,7 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
         {teamId && selectedTeam && (
           <>
             {/* Card com informações gerais da equipa */}
-            <div className="bg-gradient-to-br from-[#4aa540] to-[#3d8935] rounded-[16px] p-4 shadow-lg text-white">
+            <div className="bg-gradient-to-br from-[#3b8433] to-[#2f6b29] rounded-[16px] p-4 shadow-lg text-white">
               <div className="flex items-start justify-between mb-3">
                 <div>
                   <p className="text-white/80 text-[11px] mb-1">Equipa</p>
@@ -383,17 +383,17 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
         {!teamId && (
           <div className="grid grid-cols-3 gap-3">
             <div className="bg-white rounded-[12px] p-3 text-center shadow-sm dark:bg-slate-800 transition-colors">
-              <UsersIcon className="text-[#4aa540] mx-auto mb-1" size={18} />
+              <UsersIcon className="text-[#3b8433] mx-auto mb-1" size={18} />
               <p className="text-slate-800 text-[16px] dark:text-slate-100">20</p>
               <p className="text-slate-500 text-[12px] dark:text-slate-400">Formandos</p>
             </div>
             <div className="bg-white rounded-[12px] p-3 text-center shadow-sm dark:bg-slate-800 transition-colors">
-              <Award className="text-[#4aa540] mx-auto mb-1" size={18} />
+              <Award className="text-[#3b8433] mx-auto mb-1" size={18} />
               <p className="text-slate-800 text-[16px] dark:text-slate-100">85%</p>
               <p className="text-slate-500 text-[12px] dark:text-slate-400">Média Turma</p>
             </div>
             <div className="bg-white rounded-[12px] p-3 text-center shadow-sm dark:bg-slate-800 transition-colors">
-              <TrendingUp className="text-[#4aa540] mx-auto mb-1" size={18} />
+              <TrendingUp className="text-[#3b8433] mx-auto mb-1" size={18} />
               <p className="text-slate-800 text-[16px] dark:text-slate-100">36</p>
               <p className="text-slate-500 text-[12px] dark:text-slate-400">Stories Done</p>
             </div>
@@ -404,9 +404,9 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
         {!teamId && (
           <button
             onClick={() => onNavigate?.('createTeam')}
-            className="w-full bg-white text-[#4aa540] border-2 border-[#4aa540] rounded-[14px] p-4 shadow-sm hover:shadow-md hover:bg-[#4aa540] hover:text-white transition-all flex items-center justify-center gap-2 group dark:bg-slate-800 dark:text-[#4aa540] dark:border-[#4aa540] dark:hover:bg-[#4aa540] dark:hover:text-white"
+            className="w-full bg-white text-[#3b8433] border-2 border-[#3b8433] rounded-[14px] p-4 shadow-sm hover:shadow-md hover:bg-[#3b8433] hover:text-white transition-all flex items-center justify-center gap-2 group dark:bg-slate-800 dark:text-[#3b8433] dark:border-[#3b8433] dark:hover:bg-[#3b8433] dark:hover:text-white"
           >
-            <Plus size={20} strokeWidth={2.5} className="text-[#4aa540] group-hover:text-white transition-colors" />
+            <Plus size={20} strokeWidth={2.5} className="text-[#3b8433] group-hover:text-white transition-colors" />
             <span className="text-[15px] font-medium">Criar Nova Equipa</span>
           </button>
         )}
@@ -422,7 +422,7 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
               {/* Team Header - cabeçalho da equipa sem menu de 3 pontos */}
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
-                  <div className="bg-gradient-to-br from-[#4aa540] to-[#3d8935] p-2 rounded-full">
+                  <div className="bg-gradient-to-br from-[#3b8433] to-[#2f6b29] p-2 rounded-full">
                     <UsersIcon className="text-white" size={20} />
                   </div>
                   <div>
@@ -439,7 +439,7 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
                   <div className="flex items-center gap-2">
                     <div className="flex-1 bg-slate-200 rounded-full h-2 dark:bg-slate-600">
                       <div 
-                        className="bg-[#4aa540] h-2 rounded-full transition-all"
+                        className="bg-[#3b8433] h-2 rounded-full transition-all"
                         style={{ width: `${team.performance}%` }}
                       />
                     </div>
@@ -510,7 +510,7 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
 
                       <div className="w-full bg-slate-200 rounded-full h-1.5 dark:bg-slate-600">
                         <div 
-                          className="bg-[#4aa540] h-1.5 rounded-full transition-all" 
+                          className="bg-[#3b8433] h-1.5 rounded-full transition-all" 
                           style={{ width: `${sprint.progress}%` }}
                         />
                       </div>
@@ -523,7 +523,7 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
               <div className="flex gap-2 mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
                 {/*<button
                   onClick={() => handleAddMember(team)}
-                  className="flex-1 py-2 px-2 bg-[#4aa540] text-white rounded-[8px] text-[12px] hover:bg-[#3d8935] transition-colors flex items-center justify-center gap-1"
+                  className="flex-1 py-2 px-2 bg-[#3b8433] text-white rounded-[8px] text-[12px] hover:bg-[#2f6b29] transition-colors flex items-center justify-center gap-1"
                 >
                   <Plus size={14} />
                   <span>Membro</span>
@@ -592,7 +592,7 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setShowAddMemberModal(false)}>Cancelar</Button>
-            <Button onClick={saveNewMember} className="bg-[#4aa540] hover:bg-[#3d8935]">Adicionar</Button>
+            <Button onClick={saveNewMember} className="bg-[#3b8433] hover:bg-[#2f6b29]">Adicionar</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -617,7 +617,7 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
           </div>
           <DialogFooter>
              <Button variant="outline" onClick={() => setShowEditTeamModal(false)}>Cancelar</Button>
-            <Button onClick={saveTeamEdit} className="bg-[#4aa540] hover:bg-[#3d8935]">Salvar</Button>
+            <Button onClick={saveTeamEdit} className="bg-[#3b8433] hover:bg-[#2f6b29]">Salvar</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

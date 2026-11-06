@@ -53,6 +53,7 @@ interface Course {
 interface Team {
   id: string;
   name: string;
+  courseId?: string;
 }
 
 export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, sprintName: initialSprintName, courseId: initialCourseId, courseName: initialCourseName }: CreateUserStoryProps) {
@@ -76,6 +77,8 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
 
   const [teams, setTeams] = useState<Team[]>([]);
   const [loadingTeams, setLoadingTeams] = useState(true);
+  // Só as equipas do curso da user story (evita equipas de outros cursos ou de cursos apagados)
+  const courseTeams = courseId ? teams.filter((t) => t.courseId === courseId) : teams;
 
   useEffect(() => {
     loadCourses();
@@ -369,7 +372,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
         <div className="bg-white rounded-[24px] shadow-lg p-6 w-full max-w-[390px] animate-in fade-in zoom-in duration-300">
           <div className="flex flex-col items-center text-center mb-6">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-              <CheckCircle className="text-[#4aa540]" size={32} />
+              <CheckCircle className="text-[#3b8433]" size={32} />
             </div>
             <h2 className="text-[20px] font-bold text-slate-800">User Story Criada!</h2>
             <p className="text-slate-500 text-[14px]">A user story foi adicionada com sucesso</p>
@@ -427,7 +430,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
 
           <button
             onClick={onBack}
-            className="w-full bg-[#4aa540] text-white py-4 rounded-[16px] text-[16px] font-medium hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] font-medium hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg"
           >
             Voltar ao Referencial
           </button>
@@ -439,7 +442,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
   return (
     <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif] pb-24 pt-[100px]">
       {/* Header Fixo - Compacto */}
-      <div className="fixed top-0 left-0 right-0 bg-[#4aa540] px-6 pt-6 pb-3 rounded-b-[20px] shadow-md z-50">
+      <div className="fixed top-0 left-0 right-0 bg-[#3b8433] px-6 pt-6 pb-3 rounded-b-[20px] shadow-md z-50">
         <div className="max-w-[390px] mx-auto">
           <div className="flex items-center justify-between mb-2">
             <button 
@@ -502,7 +505,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
               errors.title && touched.title ? 'border-red-500' : 
               !errors.title && touched.title && title ? 'border-green-500' : 
               'border-slate-200'
-            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors`}
+            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
           />
           {errors.title && touched.title && (
             <p className="text-[12px] text-red-500 flex items-center gap-1 mt-1">
@@ -533,7 +536,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
               errors.description && touched.description ? 'border-red-500' : 
               !errors.description && touched.description && description ? 'border-green-500' : 
               'border-slate-200'
-            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors resize-none`}
+            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors resize-none`}
           />
           {errors.description && touched.description && (
             <p className="text-[12px] text-red-500 flex items-center gap-1 mt-1">
@@ -607,15 +610,15 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
               errors.team && touched.team ? 'border-red-500' : 
               team ? 'border-green-500' : 
               'border-slate-200'
-            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors`}
+            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
           >
             <option value="">Selecione uma equipa</option>
             {loadingTeams ? (
               <option value="">Carregando...</option>
-            ) : teams.length === 0 ? (
+            ) : courseTeams.length === 0 ? (
               <option value="">Nenhuma equipa disponível</option>
             ) : (
-              teams.map((t) => (
+              courseTeams.map((t) => (
                 <option key={t.id} value={t.name}>{t.name}</option>
               ))
             )}
@@ -649,7 +652,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
           {initialSprintId ? (
             <div className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200 rounded-[12px] p-4">
               <div className="flex items-center gap-2 mb-2">
-                <Layers size={16} className="text-[#4aa540]" />
+                <Layers size={16} className="text-[#3b8433]" />
                 <p className="text-[14px] text-slate-800 font-medium">{getSprintName()}</p>
               </div>
               <div className="flex items-center gap-2">
@@ -669,7 +672,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
                 className={`w-full bg-white border-2 ${
                   errors.sprint && touched.sprint ? 'border-red-500' :
                   sprintId ? 'border-green-500' : 'border-slate-200'
-                } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors`}
+                } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
                 disabled={!team} 
               >
                 <option value="">
@@ -716,7 +719,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
             </label>
             <button
               onClick={addCriteria}
-              className="text-[#4aa540] text-[13px] hover:underline"
+              className="text-[#3b8433] text-[13px] hover:underline"
             >
               + Adicionar
             </button>
@@ -729,7 +732,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
                   value={criterion}
                   onChange={(e) => updateCriteria(index, e.target.value)}
                   placeholder={`Critério ${index + 1}`}
-                  className="flex-1 bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#4aa540] transition-colors"
+                  className="flex-1 bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors"
                 />
                 {criteria.length > 1 && (
                   <button
@@ -754,7 +757,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
         <button
           onClick={handleSave}
           disabled={isSaving}
-          className="w-full bg-[#4aa540] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#3d8935] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSaving ? (
             <>
