@@ -182,8 +182,8 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
           <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="text-green-600" size={40} />
           </div>
-          <h2 className="text-[24px] text-slate-800 mb-3">Curso Criado!</h2>
-          <p className="text-[15px] text-slate-600 mb-4">
+          <h2 className="text-[1.5rem] text-slate-800 mb-3">Curso Criado!</h2>
+          <p className="text-[0.9375rem] text-slate-600 mb-4">
             O curso <span className="font-medium text-[#3b8433]">{name}</span> foi criado com sucesso.
           </p>
         </div>
@@ -203,7 +203,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
             >
               <ArrowLeft className="text-white" size={24} />
             </button>
-            <h1 className="text-white text-[20px]">Criar Curso</h1>
+            <h1 className="text-white text-[1.25rem]">Criar Curso</h1>
             <button 
               onClick={handleSave}
               disabled={isSaving}
@@ -223,7 +223,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
       <div className="w-full max-w-md mx-auto px-6 py-6 space-y-5 pb-32">
         {/* Course Name */}
         <div>
-          <label className="block text-[14px] text-slate-700 mb-2 font-medium">
+          <label className="block text-[0.875rem] text-slate-700 mb-2 font-medium">
             Nome do Curso *
           </label>
           <div className="relative">
@@ -233,7 +233,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
               onChange={(e) => setName(e.target.value)}
               onBlur={() => handleBlur('name')}
               placeholder="Ex: Product Owner Avançado"
-              className={`w-full px-4 py-3.5 rounded-[12px] border-2 transition-all text-[15px] ${
+              className={`w-full px-4 py-3.5 rounded-[12px] border-2 transition-all text-[0.9375rem] ${
                 touched.name && errors.name
                   ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-2 focus:ring-red-200'
                   : 'border-slate-200 bg-white focus:border-[#3b8433] focus:ring-2 focus:ring-green-100'
@@ -246,7 +246,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
             )}
           </div>
           {touched.name && errors.name && (
-            <p className="mt-2 text-[13px] text-red-600 flex items-center gap-1">
+            <p className="mt-2 text-[0.8125rem] text-red-600 flex items-center gap-1">
               <AlertCircle size={14} />
               {errors.name}
             </p>
@@ -255,7 +255,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
 
         {/* Description */}
         <div>
-          <label className="block text-[14px] text-slate-700 mb-2 font-medium">
+          <label className="block text-[0.875rem] text-slate-700 mb-2 font-medium">
             Descrição *
           </label>
           <div className="relative">
@@ -265,7 +265,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
               onBlur={() => handleBlur('description')}
               placeholder="Descreva o curso e seus objetivos..."
               rows={4}
-              className={`w-full px-4 py-3.5 rounded-[12px] border-2 transition-all text-[15px] resize-none ${
+              className={`w-full px-4 py-3.5 rounded-[12px] border-2 transition-all text-[0.9375rem] resize-none ${
                 touched.description && errors.description
                   ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-2 focus:ring-red-200'
                   : 'border-slate-200 bg-white focus:border-[#3b8433] focus:ring-2 focus:ring-green-100'
@@ -273,7 +273,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
             />
           </div>
           {touched.description && errors.description && (
-            <p className="mt-2 text-[13px] text-red-600 flex items-center gap-1">
+            <p className="mt-2 text-[0.8125rem] text-red-600 flex items-center gap-1">
               <AlertCircle size={14} />
               {errors.description}
             </p>
@@ -282,7 +282,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
 
         {/* Start Date - Full Width */}
         <div>
-          <label className="block text-[14px] text-slate-700 mb-2 font-medium">
+          <label className="block text-[0.875rem] text-slate-700 mb-2 font-medium">
             Data de Início *
           </label>
           <div className="relative">
@@ -292,7 +292,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}
               onBlur={() => handleBlur('startDate')}
-              className={`w-full pl-10 pr-4 py-3.5 rounded-[12px] border-2 transition-all text-[15px] ${
+              className={`w-full pl-10 pr-4 py-3.5 rounded-[12px] border-2 transition-all text-[0.9375rem] ${
                 touched.startDate && errors.startDate
                   ? 'border-red-300 bg-red-50 focus:border-red-500'
                   : 'border-slate-200 bg-white focus:border-[#3b8433]'
@@ -300,7 +300,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
             />
           </div>
           {touched.startDate && errors.startDate && (
-            <p className="mt-2 text-[13px] text-red-600 flex items-center gap-1">
+            <p className="mt-2 text-[0.8125rem] text-red-600 flex items-center gap-1">
               <AlertCircle size={14} />
               {errors.startDate}
             </p>
@@ -309,7 +309,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
 
         {/* End Date - Full Width */}
         <div>
-          <label className="block text-[14px] text-slate-700 mb-2 font-medium">
+          <label className="block text-[0.875rem] text-slate-700 mb-2 font-medium">
             Data de Fim *
           </label>
           <div className="relative">
@@ -319,7 +319,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
               onBlur={() => handleBlur('endDate')}
-              className={`w-full pl-10 pr-4 py-3.5 rounded-[12px] border-2 transition-all text-[15px] ${
+              className={`w-full pl-10 pr-4 py-3.5 rounded-[12px] border-2 transition-all text-[0.9375rem] ${
                 touched.endDate && errors.endDate
                   ? 'border-red-300 bg-red-50 focus:border-red-500'
                   : 'border-slate-200 bg-white focus:border-[#3b8433]'
@@ -327,7 +327,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
             />
           </div>
           {touched.endDate && errors.endDate && (
-            <p className="mt-2 text-[13px] text-red-600 flex items-center gap-1">
+            <p className="mt-2 text-[0.8125rem] text-red-600 flex items-center gap-1">
               <AlertCircle size={14} />
               {errors.endDate}
             </p>
@@ -339,7 +339,7 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
           <button
             onClick={handleSave}
             disabled={isSaving}
-            className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[16px] font-medium hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[1rem] font-medium hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isSaving ? (
               <>
@@ -692,7 +692,7 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
           className="w-full bg-white text-[#3b8433] border-2 border-[#3b8433] rounded-[14px] p-4 shadow-sm hover:shadow-md hover:bg-[#3b8433] hover:text-white transition-all flex items-center justify-center gap-2 group"
         >
           <Plus size={22} strokeWidth={2.5} className="text-[#3b8433] group-hover:text-white transition-colors" />
-          <span className="text-[16px] font-medium">Criar Novo Curso</span>
+          <span className="text-[1rem] font-medium">Criar Novo Curso</span>
         </button>
 
         {/* Loading State */}
@@ -706,7 +706,7 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
         {/* Courses List */}
         {!loadingCourses && (
           <div>
-            <p className="text-[14px] text-slate-500 mb-3">
+            <p className="text-[0.875rem] text-slate-500 mb-3">
               {filteredCourses.length} {filteredCourses.length === 1 ? 'curso' : 'cursos'}
             </p>
 
@@ -721,13 +721,13 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <h3 className="text-[17px] text-slate-800">{course.name}</h3>
-                        <span className={`${getStatusColor(course.status)} px-2 py-1 rounded-[6px] text-[11px]`}>
+                        <h3 className="text-[1.0625rem] text-slate-800">{course.name}</h3>
+                        <span className={`${getStatusColor(course.status)} px-2 py-1 rounded-[6px] text-[0.6875rem]`}>
                           {getStatusLabel(course.status)}
                         </span>
                       </div>
-                      <p className="text-[14px] text-slate-500 mb-2">{course.description}</p>
-                      <p className="text-[12px] text-slate-400">
+                      <p className="text-[0.875rem] text-slate-500 mb-2">{course.description}</p>
+                      <p className="text-[0.75rem] text-slate-400">
                         {formatDate(course.startDate)}
                       </p>
                     </div>
@@ -740,8 +740,8 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
                         <Users size={18} className="text-blue-600" />
                       </div>
                       <div className="flex-1">
-                        <p className="text-[12px] text-slate-500">Formandos</p>
-                        <p className="text-[18px] text-slate-800 font-semibold">{getStudentCount(course.id)}</p>
+                        <p className="text-[0.75rem] text-slate-500">Formandos</p>
+                        <p className="text-[1.125rem] text-slate-800 font-semibold">{getStudentCount(course.id)}</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-3 bg-purple-50 rounded-[10px] p-3 border border-purple-100">
@@ -749,8 +749,8 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
                         <Target size={18} className="text-purple-600" />
                       </div>
                       <div className="flex-1">
-                        <p className="text-[12px] text-slate-500">Equipas</p>
-                        <p className="text-[18px] text-slate-800 font-semibold">{getTeamCount(course.id)}</p>
+                        <p className="text-[0.75rem] text-slate-500">Equipas</p>
+                        <p className="text-[1.125rem] text-slate-800 font-semibold">{getTeamCount(course.id)}</p>
                       </div>
                     </div>
                     
@@ -759,8 +759,8 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
                         <Layers size={18} className="text-orange-600" />
                       </div>
                       <div className="flex-1">
-                        <p className="text-[12px] text-slate-500">Sprints</p>
-                        <p className="text-[18px] text-slate-800 font-semibold">{getSprintCount(course.id)}</p>
+                        <p className="text-[0.75rem] text-slate-500">Sprints</p>
+                        <p className="text-[1.125rem] text-slate-800 font-semibold">{getSprintCount(course.id)}</p>
                       </div>
                     </div>
                     
@@ -769,8 +769,8 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
                         <FileText size={18} className="text-green-600" />
                       </div>
                       <div className="flex-1">
-                        <p className="text-[12px] text-slate-500">User Stories</p>
-                        <p className="text-[18px] text-slate-800 font-semibold">{getStoryCount(course.id)}</p>
+                        <p className="text-[0.75rem] text-slate-500">User Stories</p>
+                        <p className="text-[1.125rem] text-slate-800 font-semibold">{getStoryCount(course.id)}</p>
                       </div>
                     </div>
                   </div>
@@ -778,8 +778,8 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
                   {/* Progress */}
                   <div className="mb-3">
                     <div className="flex items-center justify-between mb-1">
-                      <p className="text-[12px] text-slate-500">Progresso</p>
-                      <p className="text-[13px] text-slate-800">{course.progress}%</p>
+                      <p className="text-[0.75rem] text-slate-500">Progresso</p>
+                      <p className="text-[0.8125rem] text-slate-800">{course.progress}%</p>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-1.5">
                       <div 
@@ -796,7 +796,7 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
                         e.stopPropagation();
                         handleArchiveCourse(course.id, course.name);
                       }}
-                      className="flex-1 py-2.5 px-3 border-2 border-slate-200 text-slate-700 rounded-[10px] text-[14px] hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
+                      className="flex-1 py-2.5 px-3 border-2 border-slate-200 text-slate-700 rounded-[10px] text-[0.875rem] hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
                     >
                       <Trash2 size={16} />
                       Eliminar
@@ -808,8 +808,8 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
               {filteredCourses.length === 0 && !loadingCourses && (
                 <div className="text-center py-12">
                   <BookOpen size={48} className="text-slate-300 mx-auto mb-3" />
-                  <p className="text-slate-400 text-[15px]">Nenhum curso encontrado</p>
-                  <p className="text-slate-400 text-[13px] mt-1">Crie o seu primeiro curso!</p>
+                  <p className="text-slate-400 text-[0.9375rem]">Nenhum curso encontrado</p>
+                  <p className="text-slate-400 text-[0.8125rem] mt-1">Crie o seu primeiro curso!</p>
                 </div>
               )}
             </div>

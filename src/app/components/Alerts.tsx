@@ -289,7 +289,7 @@ export function Alerts({ onNavigate }: AlertsProps) {
         {isLoading && alerts.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20">
             <Loader2 className="text-[#0a7da0] animate-spin mb-4" size={40} />
-            <p className="text-slate-600 text-[14px] dark:text-slate-400">A carregar alertas...</p>
+            <p className="text-slate-600 text-[0.875rem] dark:text-slate-400">A carregar alertas...</p>
           </div>
         ) : (
           <>
@@ -297,13 +297,13 @@ export function Alerts({ onNavigate }: AlertsProps) {
             <div className="bg-white rounded-[16px] p-4 shadow-sm dark:bg-slate-800">
               <div className="flex items-center justify-between mb-3">
                 <div>
-                  <p className="text-[13px] text-slate-500 dark:text-slate-400 mb-1">Total de Alertas</p>
-                  <p className="text-[26px] text-slate-800 dark:text-slate-200">{alerts.length}</p>
+                  <p className="text-[0.8125rem] text-slate-500 dark:text-slate-400 mb-1">Total de Alertas</p>
+                  <p className="text-[1.625rem] text-slate-800 dark:text-slate-200">{alerts.length}</p>
                 </div>
                 {unreadCount > 0 && (
                   <div className="bg-red-100 px-4 py-2 rounded-[12px] dark:bg-red-900/30">
-                    <p className="text-[13px] text-red-600 dark:text-red-400 mb-1">Não Lidos</p>
-                    <p className="text-[22px] text-red-600 dark:text-red-400 text-center">{unreadCount}</p>
+                    <p className="text-[0.8125rem] text-red-600 dark:text-red-400 mb-1">Não Lidos</p>
+                    <p className="text-[1.375rem] text-red-600 dark:text-red-400 text-center">{unreadCount}</p>
                   </div>
                 )}
               </div>
@@ -311,7 +311,7 @@ export function Alerts({ onNavigate }: AlertsProps) {
               {unreadCount > 0 && (
                 <button
                   onClick={handleMarkAllAsRead}
-                  className="w-full bg-[#0a7da0] text-white py-2 px-3 rounded-[10px] text-[14px] hover:bg-[#096d8a] transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-[#0a7da0] text-white py-2 px-3 rounded-[10px] text-[0.875rem] hover:bg-[#096d8a] transition-colors flex items-center justify-center gap-2"
                 >
                   <Check size={16} />
                   Marcar Todos como Lidos
@@ -325,14 +325,14 @@ export function Alerts({ onNavigate }: AlertsProps) {
                 <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 dark:bg-slate-700">
                   <AlertCircle className="text-slate-400" size={32} />
                 </div>
-                <h3 className="text-[18px] text-slate-800 mb-2 dark:text-slate-200">Sem Alertas</h3>
-                <p className="text-[14px] text-slate-500 dark:text-slate-400">
+                <h3 className="text-[1.125rem] text-slate-800 mb-2 dark:text-slate-200">Sem Alertas</h3>
+                <p className="text-[0.875rem] text-slate-500 dark:text-slate-400">
                   Não existem alertas no momento.
                 </p>
               </div>
             ) : (
               <div>
-                <h3 className="text-[17px] text-slate-800 dark:text-slate-200 mb-3">Todos os Alertas</h3>
+                <h3 className="text-[1.0625rem] text-slate-800 dark:text-slate-200 mb-3">Todos os Alertas</h3>
                 <div className="space-y-3">
                   {alerts.map((alert) => {
                     const read = isAlertRead(alert.id);
@@ -350,31 +350,31 @@ export function Alerts({ onNavigate }: AlertsProps) {
                           </div>
                           <div className="flex-1">
                             <div className="flex items-start justify-between mb-1">
-                              <h4 className={`text-[15px] text-slate-800 dark:text-slate-200 ${!read ? 'font-semibold' : ''}`}>
+                              <h4 className={`text-[0.9375rem] text-slate-800 dark:text-slate-200 ${!read ? 'font-semibold' : ''}`}>
                                 {alert.title}
                               </h4>
                               {!read && (
                                 <span className="bg-red-500 rounded-full w-2 h-2 mt-1.5 flex-shrink-0 ml-2"></span>
                               )}
                             </div>
-                            <p className="text-[14px] text-slate-600 dark:text-slate-400 mb-2">{alert.message}</p>
+                            <p className="text-[0.875rem] text-slate-600 dark:text-slate-400 mb-2">{alert.message}</p>
                             <div className="flex items-center justify-between flex-wrap gap-2">
-                              <p className="text-[12px] text-slate-400 dark:text-slate-500">
+                              <p className="text-[0.75rem] text-slate-400 dark:text-slate-500">
                                 {formatTimestamp(alert.createdAt)}
                               </p>
                               {alert.courseName ? (
-                                <span className="bg-white/50 px-2 py-1 rounded-[6px] text-[11px] text-slate-600 dark:text-slate-400">
+                                <span className="bg-white/50 px-2 py-1 rounded-[6px] text-[0.6875rem] text-slate-600 dark:text-slate-400">
                                   {alert.courseName}
                                 </span>
                               ) : (
-                                <span className="bg-purple-100 px-2 py-1 rounded-[6px] text-[11px] text-purple-700 dark:bg-purple-900/30 dark:text-purple-400">
+                                <span className="bg-purple-100 px-2 py-1 rounded-[6px] text-[0.6875rem] text-purple-700 dark:bg-purple-900/30 dark:text-purple-400">
                                   Geral
                                 </span>
                               )}
                             </div>
                             {!read && (
                               <div className="mt-2 pt-2 border-t border-slate-200 dark:border-slate-700">
-                                <p className="text-[11px] text-slate-400 dark:text-slate-500 italic">
+                                <p className="text-[0.6875rem] text-slate-400 dark:text-slate-500 italic">
                                   Clique para marcar como lido
                                 </p>
                               </div>

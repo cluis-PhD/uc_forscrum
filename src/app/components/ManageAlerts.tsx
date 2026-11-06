@@ -424,12 +424,12 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
         <div className="bg-gradient-to-br from-[#3b8433] to-[#2f6b29] rounded-[16px] p-5 shadow-lg text-white">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-white/80 text-[12px] mb-1">Total de Alertas</p>
-              <p className="text-[32px]">{alerts.length}</p>
+              <p className="text-white/80 text-[0.75rem] mb-1">Total de Alertas</p>
+              <p className="text-[2rem]">{alerts.length}</p>
             </div>
             <button
               onClick={handleCreate}
-              className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-[10px] hover:bg-white/30 transition-colors text-white text-[14px] font-medium"
+              className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-[10px] hover:bg-white/30 transition-colors text-white text-[0.875rem] font-medium"
               aria-label="Criar novo alerta"
             >
               Novo Alerta
@@ -441,20 +441,20 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
         {isLoading && alerts.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20">
             <Loader2 className="text-[#3b8433] animate-spin mb-4" size={40} />
-            <p className="text-slate-600 text-[14px] dark:text-slate-400">A carregar alertas...</p>
+            <p className="text-slate-600 text-[0.875rem] dark:text-slate-400">A carregar alertas...</p>
           </div>
         ) : alerts.length === 0 ? (
           <div className="bg-white rounded-[16px] p-8 shadow-sm text-center dark:bg-slate-800">
             <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 dark:bg-slate-700">
               <AlertCircle className="text-slate-400" size={32} />
             </div>
-            <h3 className="text-[18px] text-slate-800 mb-2 dark:text-slate-200">Nenhum Alerta Criado</h3>
-            <p className="text-[14px] text-slate-500 mb-6 dark:text-slate-400">
+            <h3 className="text-[1.125rem] text-slate-800 mb-2 dark:text-slate-200">Nenhum Alerta Criado</h3>
+            <p className="text-[0.875rem] text-slate-500 mb-6 dark:text-slate-400">
               Crie o primeiro alerta para notificar os formandos.
             </p>
             <button
               onClick={handleCreate}
-              className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+              className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[1rem] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
             >
               <Plus size={20} />
               Criar Primeiro Alerta
@@ -472,23 +472,23 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
                     {getAlertIcon(alert.type)}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="text-[15px] text-slate-800 dark:text-slate-200 mb-1">
+                    <h4 className="text-[0.9375rem] text-slate-800 dark:text-slate-200 mb-1">
                       {alert.title}
                     </h4>
-                    <p className="text-[14px] text-slate-600 dark:text-slate-400 mb-2">
+                    <p className="text-[0.875rem] text-slate-600 dark:text-slate-400 mb-2">
                       {alert.message}
                     </p>
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-2">
-                        <p className="text-[12px] text-slate-400 dark:text-slate-500">
+                        <p className="text-[0.75rem] text-slate-400 dark:text-slate-500">
                           {formatDate(alert.createdAt)}
                         </p>
                         {alert.courseName ? (
-                          <span className="bg-white/50 px-2 py-1 rounded-[6px] text-[11px] text-slate-600 dark:text-slate-400">
+                          <span className="bg-white/50 px-2 py-1 rounded-[6px] text-[0.6875rem] text-slate-600 dark:text-slate-400">
                             {alert.courseName}
                           </span>
                         ) : (
-                          <span className="bg-purple-100 px-2 py-1 rounded-[6px] text-[11px] text-purple-700 dark:bg-purple-900/30 dark:text-purple-400">
+                          <span className="bg-purple-100 px-2 py-1 rounded-[6px] text-[0.6875rem] text-purple-700 dark:bg-purple-900/30 dark:text-purple-400">
                             Todos os cursos
                           </span>
                         )}
@@ -524,7 +524,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
           <div className="bg-white rounded-[20px] w-full max-w-md shadow-2xl dark:bg-slate-800">
             {/* Modal Header */}
             <div className="bg-gradient-to-r from-[#3b8433] to-[#2f6b29] rounded-t-[20px] p-5 flex items-center justify-between">
-              <h2 className="text-white text-[18px]">
+              <h2 className="text-white text-[1.125rem]">
                 {editingAlert ? 'Editar Alerta' : 'Criar Novo Alerta'}
               </h2>
               <button
@@ -539,7 +539,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
             <div className="p-6 space-y-4">
               {/* Type */}
               <div>
-                <label className="text-[13px] text-slate-700 dark:text-slate-300 mb-2 block font-medium">
+                <label className="text-[0.8125rem] text-slate-700 dark:text-slate-300 mb-2 block font-medium">
                   Tipo de Alerta
                 </label>
                 <div className="grid grid-cols-2 gap-2">
@@ -550,7 +550,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
                     <button
                       key={type.value}
                       onClick={() => setFormType(type.value as any)}
-                      className={`py-2 px-3 rounded-[10px] text-[13px] border-2 transition-all ${
+                      className={`py-2 px-3 rounded-[10px] text-[0.8125rem] border-2 transition-all ${
                         formType === type.value
                           ? type.color + ' border-2'
                           : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100 dark:bg-slate-700 dark:text-slate-300 dark:border-slate-600'
@@ -564,7 +564,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
 
               {/* Title */}
               <div>
-                <label className="text-[13px] text-slate-700 dark:text-slate-300 mb-2 block font-medium">
+                <label className="text-[0.8125rem] text-slate-700 dark:text-slate-300 mb-2 block font-medium">
                   Título
                 </label>
                 <input
@@ -572,14 +572,14 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
                   value={formTitle}
                   onChange={(e) => setFormTitle(e.target.value)}
                   placeholder="Ex: Sprint Planning Amanhã"
-                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:border-[#3b8433] dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
+                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[0.875rem] focus:outline-none focus:border-[#3b8433] dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
                   maxLength={100}
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label className="text-[13px] text-slate-700 dark:text-slate-300 mb-2 block font-medium">
+                <label className="text-[0.8125rem] text-slate-700 dark:text-slate-300 mb-2 block font-medium">
                   Mensagem
                 </label>
                 <textarea
@@ -587,20 +587,20 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
                   onChange={(e) => setFormMessage(e.target.value)}
                   placeholder="Descreva o alerta..."
                   rows={3}
-                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:border-[#3b8433] resize-none dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
+                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[0.875rem] focus:outline-none focus:border-[#3b8433] resize-none dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
                   maxLength={300}
                 />
               </div>
 
               {/* Course */}
               <div>
-                <label className="text-[13px] text-slate-700 dark:text-slate-300 mb-2 block font-medium">
+                <label className="text-[0.8125rem] text-slate-700 dark:text-slate-300 mb-2 block font-medium">
                   Curso (Opcional)
                 </label>
                 <select
                   value={formCourseId}
                   onChange={(e) => setFormCourseId(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:border-[#3b8433] dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
+                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-[12px] text-[0.875rem] focus:outline-none focus:border-[#3b8433] dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200"
                 >
                   <option value="all">Todos os cursos</option>
                   {courses.map((course) => (
@@ -615,14 +615,14 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
               <div className="flex gap-3 pt-4">
                 <button
                   onClick={() => setShowCreateModal(false)}
-                  className="flex-1 bg-slate-200 text-slate-700 py-3 rounded-[12px] text-[14px] hover:bg-slate-300 transition-colors dark:bg-slate-700 dark:text-slate-300"
+                  className="flex-1 bg-slate-200 text-slate-700 py-3 rounded-[12px] text-[0.875rem] hover:bg-slate-300 transition-colors dark:bg-slate-700 dark:text-slate-300"
                   disabled={isSaving}
                 >
                   Cancelar
                 </button>
                 <button
                   onClick={handleSave}
-                  className="flex-1 bg-[#3b8433] text-white py-3 rounded-[12px] text-[14px] hover:bg-[#2f6b29] transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="flex-1 bg-[#3b8433] text-white py-3 rounded-[12px] text-[0.875rem] hover:bg-[#2f6b29] transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                   disabled={isSaving}
                 >
                   {isSaving ? (

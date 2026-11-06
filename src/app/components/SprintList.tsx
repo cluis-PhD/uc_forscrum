@@ -172,7 +172,7 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-20">
             <Loader2 className="text-[#3b8433] animate-spin mb-4" size={40} />
-            <p className="text-slate-600 text-[14px] dark:text-slate-400">Carregando sprints...</p>
+            <p className="text-slate-600 text-[0.875rem] dark:text-slate-400">Carregando sprints...</p>
           </div>
         ) : error ? (
           <div className="bg-white rounded-[16px] p-6 shadow-sm border-2 border-red-200 dark:bg-slate-800">
@@ -180,10 +180,10 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
               <AlertCircle className="text-red-600" size={24} />
               <h3 className="text-red-600 dark:text-red-400">Erro</h3>
             </div>
-            <p className="text-slate-600 text-[14px] mb-4 dark:text-slate-400">{error}</p>
+            <p className="text-slate-600 text-[0.875rem] mb-4 dark:text-slate-400">{error}</p>
             <button
               onClick={fetchSprints}
-              className="w-full bg-[#3b8433] text-white py-3 rounded-[12px] text-[14px] hover:bg-[#2f6b29] transition-colors"
+              className="w-full bg-[#3b8433] text-white py-3 rounded-[12px] text-[0.875rem] hover:bg-[#2f6b29] transition-colors"
             >
               Tentar Novamente
             </button>
@@ -193,13 +193,13 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
             <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 dark:bg-slate-700">
               <Calendar className="text-slate-400" size={32} />
             </div>
-            <h3 className="text-[18px] text-slate-800 mb-2 dark:text-slate-200">Nenhum Sprint Criado</h3>
-            <p className="text-[14px] text-slate-500 mb-6 dark:text-slate-400">
+            <h3 className="text-[1.125rem] text-slate-800 mb-2 dark:text-slate-200">Nenhum Sprint Criado</h3>
+            <p className="text-[0.875rem] text-slate-500 mb-6 dark:text-slate-400">
               Ainda não existem Sprints criados.
             </p>
             <button
               onClick={() => onNavigate('CreateSprint')}
-              className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+              className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[1rem] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
             >
               {/* <Plus size={20} />*/ } 
               Voltar ao menu anterior
@@ -216,9 +216,9 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
                   : 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
               }}
             >
-              <p className="text-white/80 text-[12px] mb-1">Total de Sprints</p>
-              <h2 className="text-[32px] font-semibold">{sprints.length}</h2>
-              <p className="text-white/90 text-[13px] mt-2">
+              <p className="text-white/80 text-[0.75rem] mb-1">Total de Sprints</p>
+              <h2 className="text-[2rem] font-semibold">{sprints.length}</h2>
+              <p className="text-white/90 text-[0.8125rem] mt-2">
                 {sprints.filter(s => {
                   const now = new Date();
                   const start = new Date(s.startDate);
@@ -244,14 +244,14 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                          <h3 className="text-[16px] text-slate-800 font-medium dark:text-slate-200">
+                          <h3 className="text-[1rem] text-slate-800 font-medium dark:text-slate-200">
                             {sprint.name}
                           </h3>
-                          <span className={`text-[11px] px-2 py-1 rounded-full ${status.color}`}>
+                          <span className={`text-[0.6875rem] px-2 py-1 rounded-full ${status.color}`}>
                             {status.label}
                           </span>
                         </div>
-                        <p className="text-[13px] text-slate-600 mb-3 line-clamp-2 dark:text-slate-400">
+                        <p className="text-[0.8125rem] text-slate-600 mb-3 line-clamp-2 dark:text-slate-400">
                           {sprint.goal}
                         </p>
                       </div>
@@ -272,12 +272,12 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
                     </div>
 
                     <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-[12px] text-slate-600 dark:text-slate-400">
+                      <div className="flex items-center gap-2 text-[0.75rem] text-slate-600 dark:text-slate-400">
                         <Target size={14} />
                         <span>{sprint.courseName || 'Sem curso'}</span>
                       </div>
                       
-                      <div className="flex items-center gap-2 text-[12px] text-slate-600 dark:text-slate-400">
+                      <div className="flex items-center gap-2 text-[0.75rem] text-slate-600 dark:text-slate-400">
                         <Calendar size={14} />
                         <span>
                           {new Date(sprint.startDate).toLocaleDateString('pt-PT', { 
@@ -294,7 +294,7 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-2 text-[12px] text-slate-600 dark:text-slate-400">
+                      <div className="flex items-center gap-2 text-[0.75rem] text-slate-600 dark:text-slate-400">
                         <Clock size={14} />
                         <span>{duration} dias</span>
                       </div>
@@ -308,7 +308,7 @@ export function SprintList({ onBack, onNavigate }: SprintListProps) {
             {userType === 'formador' && (
               <button
                 onClick={() => onNavigate('createSprint')}
-                className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+                className="w-full bg-[#3b8433] text-white py-4 rounded-[14px] text-[1rem] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
               >
                 <Plus size={20} />
                 Criar Novo Sprint

@@ -252,8 +252,8 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
         {!loggedStudent?.teamId ? (
           <div className="text-center py-12 bg-white dark:bg-slate-800 rounded-[16px] shadow-sm">
             <Target className="mx-auto text-slate-300 dark:text-slate-600 mb-3" size={48} />
-            <p className="text-slate-500 dark:text-slate-400 text-[14px]">Ainda não estás numa equipa</p>
-            <p className="text-slate-400 dark:text-slate-500 text-[12px] mt-1">
+            <p className="text-slate-500 dark:text-slate-400 text-[0.875rem]">Ainda não estás numa equipa</p>
+            <p className="text-slate-400 dark:text-slate-500 text-[0.75rem] mt-1">
               O formador irá atribuir-te a uma equipa em breve
             </p>
           </div>
@@ -263,25 +263,25 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
             <div className="bg-gradient-to-br from-[#0a7da0] to-[#096d8a] rounded-[16px] p-5 shadow-lg text-white">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-white/80 text-[12px] mb-1">Minha Equipa</p>
-                  <h2 className="text-[20px]">{loggedStudent?.teamName || 'Sem Equipa'}</h2>
+                  <p className="text-white/80 text-[0.75rem] mb-1">Minha Equipa</p>
+                  <h2 className="text-[1.25rem]">{loggedStudent?.teamName || 'Sem Equipa'}</h2>
                 </div>
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-[18px] border-2 border-white/30">
+                <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-[1.125rem] border-2 border-white/30">
                   {loggedStudent?.teamName?.charAt(0).toUpperCase() || 'F'}
                 </div>
               </div>
               <div className="flex items-center gap-4 mt-4 pt-4 border-t border-white/20">
                 <div>
-                  <p className="text-white/70 text-[11px] mb-1">Total Sprints</p>
-                  <p className="text-[20px]">{sprints.length}</p>
+                  <p className="text-white/70 text-[0.6875rem] mb-1">Total Sprints</p>
+                  <p className="text-[1.25rem]">{sprints.length}</p>
                 </div>
                 <div>
-                  <p className="text-white/70 text-[11px] mb-1">Em Progresso</p>
-                  <p className="text-[20px]">{sprints.filter(s => s.status === 'active').length}</p>
+                  <p className="text-white/70 text-[0.6875rem] mb-1">Em Progresso</p>
+                  <p className="text-[1.25rem]">{sprints.filter(s => s.status === 'active').length}</p>
                 </div>
                 <div>
-                  <p className="text-white/70 text-[11px] mb-1">Concluídos</p>
-                  <p className="text-[20px]">{sprints.filter(s => s.status === 'completed').length}</p>
+                  <p className="text-white/70 text-[0.6875rem] mb-1">Concluídos</p>
+                  <p className="text-[1.25rem]">{sprints.filter(s => s.status === 'completed').length}</p>
                 </div>
               </div>
             </div>
@@ -294,8 +294,8 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
                   <div className="bg-blue-100 dark:bg-blue-900/30 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
                     <Target className="text-blue-600 dark:text-blue-400" size={20} />
                   </div>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 mb-1">Total</p>
-                  <p className="text-[20px]">{sprints.length}</p>
+                  <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mb-1">Total</p>
+                  <p className="text-[1.25rem]">{sprints.length}</p>
                 </div>
               </div>
             </div>
@@ -308,8 +308,8 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
             ) : sprints.length === 0 ? (
               <div className="text-center py-12 bg-white dark:bg-slate-800 rounded-[16px] shadow-sm">
                 <Target className="mx-auto text-slate-300 dark:text-slate-600 mb-3" size={48} />
-                <p className="text-slate-500 dark:text-slate-400 text-[14px]">Ainda não há sprints</p>
-                <p className="text-slate-400 dark:text-slate-500 text-[12px] mt-1">
+                <p className="text-slate-500 dark:text-slate-400 text-[0.875rem]">Ainda não há sprints</p>
+                <p className="text-slate-400 dark:text-slate-500 text-[0.75rem] mt-1">
                   O formador irá criar sprints para a tua equipa
                 </p>
               </div>
@@ -331,29 +331,29 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
                       {/* Header do Sprint */}
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex-1">
-                          <h3 className="text-[16px] text-slate-800 dark:text-slate-200 mb-1">
+                          <h3 className="text-[1rem] text-slate-800 dark:text-slate-200 mb-1">
                             {sprint.name}
                           </h3>
                           {sprint.goal && (
-                            <p className="text-[13px] text-slate-500 dark:text-slate-400 line-clamp-2">
+                            <p className="text-[0.8125rem] text-slate-500 dark:text-slate-400 line-clamp-2">
                               {sprint.goal}
                             </p>
                           )}
                         </div>
                         <div className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-[8px] ${statusInfo.bg} ${statusInfo.text}`}>
                           <StatusIcon size={14} />
-                          <span className="text-[11px] font-medium">{statusInfo.label}</span>
+                          <span className="text-[0.6875rem] font-medium">{statusInfo.label}</span>
                         </div>
                       </div>
 
                       {/* Datas */}
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="flex items-center gap-1.5 text-[12px] text-slate-500 dark:text-slate-400">
+                        <div className="flex items-center gap-1.5 text-[0.75rem] text-slate-500 dark:text-slate-400">
                           <Calendar size={14} />
                           <span>{formatDate(sprint.startDate)}</span>
                         </div>
                         <span className="text-slate-300 dark:text-slate-600">→</span>
-                        <div className="flex items-center gap-1.5 text-[12px] text-slate-500 dark:text-slate-400">
+                        <div className="flex items-center gap-1.5 text-[0.75rem] text-slate-500 dark:text-slate-400">
                           <Calendar size={14} />
                           <span>{formatDate(sprint.endDate)}</span>
                         </div>
@@ -362,27 +362,27 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
                       {/* Métricas */}
                       <div className="grid grid-cols-3 gap-3 pt-3 border-t border-slate-200 dark:border-slate-700">
                         <div>
-                          <p className="text-[11px] text-slate-500 dark:text-slate-400 mb-1">User Stories</p>
-                          <p className="text-[16px] text-slate-800 dark:text-slate-200 font-medium">
+                          <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mb-1">User Stories</p>
+                          <p className="text-[1rem] text-slate-800 dark:text-slate-200 font-medium">
                             {userStoryCount || 0}
                           </p>
                         </div>
                         <div>
-                          <p className="text-[11px] text-slate-500 dark:text-slate-400 mb-1">Story Points</p>
-                          <p className="text-[16px] text-[#0a7da0] font-medium">
+                          <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mb-1">Story Points</p>
+                          <p className="text-[1rem] text-[#0a7da0] font-medium">
                             {totalStoryPoints || 0}
                           </p>
                         </div>
                         <div>
-                          <p className="text-[11px] text-slate-500 dark:text-slate-400 mb-1">Conclusão</p>
-                          <p className="text-[16px] text-green-600 dark:text-green-400 font-medium">
+                          <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mb-1">Conclusão</p>
+                          <p className="text-[1rem] text-green-600 dark:text-green-400 font-medium">
                             {completionRate || 0}%
                           </p>
                         </div>
                       </div>
 
                       {/* Indicador de ação */}
-                      <div className="flex items-center justify-end gap-2 mt-3 text-[#0a7da0] text-[12px] font-medium">
+                      <div className="flex items-center justify-end gap-2 mt-3 text-[#0a7da0] text-[0.75rem] font-medium">
                         <ListTodo size={14} />
                         <span>Ver Quadro Kanban</span>
                       </div>

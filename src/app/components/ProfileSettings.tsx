@@ -108,7 +108,7 @@ export function ProfileSettings({
               >
                 <ArrowLeft className="text-white" size={20} />
               </button>
-              <h1 className="text-white text-[18px]">Perfil</h1>
+              <h1 className="text-white text-[1.125rem]">Perfil</h1>
               <div className="w-9" /> {/* Spacer */}
             </div>
 
@@ -116,7 +116,7 @@ export function ProfileSettings({
             <div className="flex items-center gap-3 mt-3">
               <div className="relative">
                 <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center text-white text-[20px] shadow-lg"
+                  className="w-16 h-16 rounded-full flex items-center justify-center text-white text-[1.25rem] shadow-lg"
                   style={{
                     background: userType === "formando"
                       ? "linear-gradient(135deg, #0a7da0 0%, #096d8a 100%)"
@@ -127,10 +127,10 @@ export function ProfileSettings({
                 </div>
               </div>
               <div className="flex-1">
-                <h2 className="text-white text-[16px]">
+                <h2 className="text-white text-[1rem]">
                   {userProfile.name}
                 </h2>
-                <p className="text-white/80 text-[12px]">
+                <p className="text-white/80 text-[0.75rem]">
                   {userProfile.email}
                 </p>
               </div>
@@ -162,10 +162,10 @@ export function ProfileSettings({
                 />
               </div>
               <div className="text-left">
-                <h3 className="text-[16px] text-slate-800 mb-0.5 dark:text-slate-200">
+                <h3 className="text-[1rem] text-slate-800 mb-0.5 dark:text-slate-200">
                   Meu Perfil
                 </h3>
-                <p className="text-[13px] text-slate-500 dark:text-slate-400">
+                <p className="text-[0.8125rem] text-slate-500 dark:text-slate-400">
                   Editar informações pessoais
                 </p>
               </div>
@@ -198,10 +198,10 @@ export function ProfileSettings({
                 />
               </div>
               <div className="text-left">
-                <h3 className="text-[16px] text-slate-800 mb-0.5 dark:text-slate-200">
+                <h3 className="text-[1rem] text-slate-800 mb-0.5 dark:text-slate-200">
                   Configurações
                 </h3>
-                <p className="text-[13px] text-slate-500 dark:text-slate-400">
+                <p className="text-[0.8125rem] text-slate-500 dark:text-slate-400">
                   Preferências e notificações
                 </p>
               </div>
@@ -235,10 +235,10 @@ export function ProfileSettings({
                   />
                 </div>
                 <div className="text-left">
-                  <h3 className="text-[16px] text-red-700 mb-0.5 dark:text-red-400">
+                  <h3 className="text-[1rem] text-red-700 mb-0.5 dark:text-red-400">
                     Terminar Sessão
                   </h3>
-                  <p className="text-[13px] text-red-500 dark:text-red-300">
+                  <p className="text-[0.8125rem] text-red-500 dark:text-red-300">
                     Sair da plataforma forScrum
                   </p>
                 </div>
@@ -275,7 +275,7 @@ export function ProfileSettings({
               >
                 <ArrowLeft className="text-white" size={24} />
               </button>
-              <h1 className="text-white text-[20px]">
+              <h1 className="text-white text-[1.25rem]">
                 Editar Perfil
               </h1>
               <button
@@ -290,7 +290,7 @@ export function ProfileSettings({
             <div className="flex flex-col items-center">
               <div className="relative">
                 <div
-                  className="w-24 h-24 rounded-full flex items-center justify-center text-white text-[32px]"
+                  className="w-24 h-24 rounded-full flex items-center justify-center text-white text-[2rem]"
                   style={{
                     background: userType === "formando"
                       ? "linear-gradient(135deg, #0a7da0 0%, #096d8a 100%)"
@@ -311,7 +311,7 @@ export function ProfileSettings({
                   />
                 </button>
               </div>
-              <p className="text-white/80 text-[12px] mt-2">
+              <p className="text-white/80 text-[0.75rem] mt-2">
                 Clique para alterar foto
               </p>
             </div>
@@ -322,7 +322,7 @@ export function ProfileSettings({
         <div className="max-w-[390px] mx-auto px-6 py-6 space-y-5">
           {/* Name */}
           <div>
-            <label className="text-[14px] text-slate-700 mb-2 block dark:text-slate-300">
+            <label className="text-[0.875rem] text-slate-700 mb-2 block dark:text-slate-300">
               Nome Completo
             </label>
             <input
@@ -330,14 +330,14 @@ export function ProfileSettings({
               value={name}
               onChange={(e) => setName(e.target.value)}
               disabled={userType === 'formando'}
-              className={`w-full border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none transition-colors dark:border-slate-700 dark:text-white ${
+              className={`w-full border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[0.875rem] focus:outline-none transition-colors dark:border-slate-700 dark:text-white ${
                 userType === 'formando' 
                   ? 'bg-slate-100 dark:bg-slate-700/50 cursor-not-allowed opacity-60' 
                   : 'bg-white dark:bg-slate-800 focus:border-[#3b8433]'
               }`}
             />
             {userType === 'formando' && (
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5">
+              <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1.5">
                 O nome não pode ser alterado pelos formandos
               </p>
             )}
@@ -345,7 +345,7 @@ export function ProfileSettings({
 
           {/* Email */}
           <div>
-            <label className="text-[14px] text-slate-700 mb-2 block flex items-center gap-2 dark:text-slate-300">
+            <label className="text-[0.875rem] text-slate-700 mb-2 block flex items-center gap-2 dark:text-slate-300">
               <Mail size={16} />
               Email
             </label>
@@ -354,14 +354,14 @@ export function ProfileSettings({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={userType === 'formando'}
-              className={`w-full border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none transition-colors dark:border-slate-700 dark:text-white ${
+              className={`w-full border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[0.875rem] focus:outline-none transition-colors dark:border-slate-700 dark:text-white ${
                 userType === 'formando' 
                   ? 'bg-slate-100 dark:bg-slate-700/50 cursor-not-allowed opacity-60' 
                   : 'bg-white dark:bg-slate-800 focus:border-[#3b8433]'
               }`}
             />
             {userType === 'formando' && (
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5">
+              <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1.5">
                 O email não pode ser alterado pelos formandos
               </p>
             )}
@@ -369,22 +369,22 @@ export function ProfileSettings({
 
           {/* Phone */}
           <div>
-            <label className="text-[14px] text-slate-700 mb-2 block flex items-center gap-2 dark:text-slate-300">
+            <label className="text-[0.875rem] text-slate-700 mb-2 block flex items-center gap-2 dark:text-slate-300">
               <Phone size={16} />
-              Telefone {userType === 'formando' && <span className="text-[11px] text-slate-400">(opcional)</span>}
+              Telefone {userType === 'formando' && <span className="text-[0.6875rem] text-slate-400">(opcional)</span>}
             </label>
             <input
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder={userType === 'formando' ? 'Adicione o seu número de telefone' : ''}
-              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors dark:bg-slate-800 dark:border-slate-700 dark:text-white"
+              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[0.875rem] focus:outline-none focus:border-[#3b8433] transition-colors dark:bg-slate-800 dark:border-slate-700 dark:text-white"
             />
           </div>
 
           {/* Location */}
           <div>
-            <label className="text-[14px] text-slate-700 mb-2 block flex items-center gap-2 dark:text-slate-300">
+            <label className="text-[0.875rem] text-slate-700 mb-2 block flex items-center gap-2 dark:text-slate-300">
               <MapPin size={16} />
               Localização
             </label>
@@ -392,20 +392,20 @@ export function ProfileSettings({
               type="text"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors dark:bg-slate-800 dark:border-slate-700 dark:text-white"
+              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[0.875rem] focus:outline-none focus:border-[#3b8433] transition-colors dark:bg-slate-800 dark:border-slate-700 dark:text-white"
             />
           </div>
 
           {/* Bio */}
           <div>
-            <label className="text-[14px] text-slate-700 mb-2 block dark:text-slate-300">
+            <label className="text-[0.875rem] text-slate-700 mb-2 block dark:text-slate-300">
               Biografia
             </label>
             <textarea
               value={bio}
               onChange={(e) => setBio(e.target.value)}
               rows={4}
-              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors resize-none dark:bg-slate-800 dark:border-slate-700 dark:text-white"
+              className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[0.875rem] focus:outline-none focus:border-[#3b8433] transition-colors resize-none dark:bg-slate-800 dark:border-slate-700 dark:text-white"
               placeholder="Conte um pouco sobre você..."
             />
           </div>
@@ -413,14 +413,14 @@ export function ProfileSettings({
           {/* Certifications */}
           <div>
             <div className="flex items-center justify-between mb-3">
-              <label className="text-[14px] text-slate-700 dark:text-slate-300">
+              <label className="text-[0.875rem] text-slate-700 dark:text-slate-300">
                 Certificações
               </label>
               <button
                 onClick={() =>
                   toast.info("Adicionar certificação")
                 }
-                className="text-[#3b8433] text-[13px] hover:underline"
+                className="text-[#3b8433] text-[0.8125rem] hover:underline"
               >
                 + Adicionar
               </button>
@@ -428,10 +428,10 @@ export function ProfileSettings({
             <div className="space-y-2">
               <div className="bg-white border-2 border-slate-200 rounded-[12px] p-3 flex items-center justify-between dark:bg-slate-800 dark:border-slate-700">
                 <div>
-                  <p className="text-[13px] text-slate-800 dark:text-slate-200">
+                  <p className="text-[0.8125rem] text-slate-800 dark:text-slate-200">
                     foScrum
                   </p>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                  <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400">
                     Formador de forScrum 
                   </p>
                 </div>
@@ -442,10 +442,10 @@ export function ProfileSettings({
               </div>
               <div className="bg-white border-2 border-slate-200 rounded-[12px] p-3 flex items-center justify-between dark:bg-slate-800 dark:border-slate-700">
                 <div>
-                  <p className="text-[13px] text-slate-800 dark:text-slate-200">
+                  <p className="text-[0.8125rem] text-slate-800 dark:text-slate-200">
                    Formador de Informática
                   </p>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                  <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400">
                     Scrum.org • 2019
                   </p>
                 </div>
@@ -460,7 +460,7 @@ export function ProfileSettings({
           {/* Save Button */}
           <button
             onClick={handleSave}
-            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[1rem] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
           >
             <Save size={20} />
             Guardar Alterações
@@ -493,7 +493,7 @@ export function ProfileSettings({
               >
                 <ArrowLeft className="text-white" size={24} />
               </button>
-              <h1 className="text-white text-[20px]">
+              <h1 className="text-white text-[1.25rem]">
                 Configurações
               </h1>
               <div className="w-10" /> {/* Spacer */}
@@ -503,7 +503,7 @@ export function ProfileSettings({
             <div className="flex flex-col items-center">
               <div className="relative">
                 <div
-                  className="w-28 h-28 rounded-full flex items-center justify-center text-white text-[36px] shadow-lg"
+                  className="w-28 h-28 rounded-full flex items-center justify-center text-white text-[2.25rem] shadow-lg"
                   style={{
                     background: userType === "formando"
                       ? "linear-gradient(135deg, #0a7da0 0%, #096d8a 100%)"
@@ -524,10 +524,10 @@ export function ProfileSettings({
                   />
                 </button>
               </div>
-              <h2 className="text-white text-[22px] mt-4 mb-1">
+              <h2 className="text-white text-[1.375rem] mt-4 mb-1">
                 {userProfile.name}
               </h2>
-              <p className="text-white/80 text-[14px]">
+              <p className="text-white/80 text-[0.875rem]">
                 {userProfile.email}
               </p>
             </div>
@@ -538,12 +538,12 @@ export function ProfileSettings({
         <div className="max-w-[390px] mx-auto px-6 py-6 space-y-5">
           {/* Notifications */}
           <div className="bg-white rounded-[16px] p-4 shadow-sm dark:bg-slate-800 dark:border-slate-700">
-            <h3 className="text-[14px] text-slate-800 mb-3 dark:text-slate-200">
+            <h3 className="text-[0.875rem] text-slate-800 mb-3 dark:text-slate-200">
               Notificações
             </h3>
             <div className="space-y-3">
               <label className="flex items-center justify-between cursor-pointer">
-                <span className="text-[13px] text-slate-600 dark:text-slate-400">
+                <span className="text-[0.8125rem] text-slate-600 dark:text-slate-400">
                   Notificações por email
                 </span>
                 <input
@@ -553,7 +553,7 @@ export function ProfileSettings({
                 />
               </label>
               <label className="flex items-center justify-between cursor-pointer">
-                <span className="text-[13px] text-slate-600 dark:text-slate-400">
+                <span className="text-[0.8125rem] text-slate-600 dark:text-slate-400">
                   Notificações push
                 </span>
                 <input
@@ -567,12 +567,12 @@ export function ProfileSettings({
 
           {/* Privacy */}
           <div className="bg-white rounded-[16px] p-4 shadow-sm dark:bg-slate-800 dark:border-slate-700">
-            <h3 className="text-[14px] text-slate-800 mb-3 dark:text-slate-200">
+            <h3 className="text-[0.875rem] text-slate-800 mb-3 dark:text-slate-200">
               Privacidade
             </h3>
             <div className="space-y-3">
               <label className="flex items-center justify-between cursor-pointer">
-                <span className="text-[13px] text-slate-600 dark:text-slate-400">
+                <span className="text-[0.8125rem] text-slate-600 dark:text-slate-400">
                   Perfil público
                 </span>
                 <input
@@ -586,7 +586,7 @@ export function ProfileSettings({
           
           {/* Acessibilidade */}
           <div className="bg-white rounded-[16px] p-4 shadow-sm dark:bg-slate-800 dark:border-slate-700">
-            <h3 className="text-[14px] text-slate-800 mb-3 dark:text-slate-200">
+            <h3 className="text-[0.875rem] text-slate-800 mb-3 dark:text-slate-200">
               Acessibilidade
             </h3>
             <div className="space-y-4">
@@ -599,7 +599,7 @@ export function ProfileSettings({
                     ) : (
                       <Sun size={16} className="text-slate-600 dark:text-slate-400" />
                     )}
-                    <label className="text-[13px] text-slate-600 dark:text-slate-400">
+                    <label className="text-[0.8125rem] text-slate-600 dark:text-slate-400">
                       Modo Escuro
                     </label>
                   </div>
@@ -628,14 +628,14 @@ export function ProfileSettings({
                     />
                   </button>
                 </div>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400">
                   Reduz o brilho do ecrã e melhora a leitura em ambientes escuros
                 </p>
               </div>
 
               {/* Tamanho da Letra */}
               <div>
-                <label className="text-[13px] text-slate-600 dark:text-slate-400 block mb-2">
+                <label className="text-[0.8125rem] text-slate-600 dark:text-slate-400 block mb-2">
                   Tamanho da Letra
                 </label>
                 <div className="grid grid-cols-3 gap-2">
@@ -644,7 +644,7 @@ export function ProfileSettings({
                       setFontSize('normal');
                       toast.success('Tamanho da letra: Normal');
                     }}
-                    className={`py-2 px-3 rounded-lg text-[12px] font-medium transition-all ${
+                    className={`py-2 px-3 rounded-lg text-[0.75rem] font-medium transition-all ${
                       fontSize === 'normal'
                         ? 'bg-[#3b8433] text-white shadow-md'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300'
@@ -657,7 +657,7 @@ export function ProfileSettings({
                       setFontSize('large');
                       toast.success('Tamanho da letra: Grande');
                     }}
-                    className={`py-2 px-3 rounded-lg text-[13px] font-medium transition-all ${
+                    className={`py-2 px-3 rounded-lg text-[0.8125rem] font-medium transition-all ${
                       fontSize === 'large'
                         ? 'bg-[#3b8433] text-white shadow-md'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300'
@@ -670,7 +670,7 @@ export function ProfileSettings({
                       setFontSize('extra-large');
                       toast.success('Tamanho da letra: Muito Grande');
                     }}
-                    className={`py-2 px-3 rounded-lg text-[14px] font-medium transition-all ${
+                    className={`py-2 px-3 rounded-lg text-[0.875rem] font-medium transition-all ${
                       fontSize === 'extra-large'
                         ? 'bg-[#3b8433] text-white shadow-md'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300'
@@ -679,7 +679,7 @@ export function ProfileSettings({
                     Muito Grande
                   </button>
                 </div>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2">
+                <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-2">
                   Ajusta o tamanho do texto em toda a aplicação para melhor leitura
                 </p>
               </div>
@@ -689,7 +689,7 @@ export function ProfileSettings({
           {/* Save Button */}
           <button
             onClick={handleSave}
-            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[1rem] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
           >
             <Save size={20} />
             Guardar Alterações

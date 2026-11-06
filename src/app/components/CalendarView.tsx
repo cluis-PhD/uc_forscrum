@@ -234,7 +234,7 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
             >
               <ArrowLeft className="text-white" size={20} />
             </button>
-            <h1 className="text-white text-[17px] text-center flex-1">Calendário</h1>
+            <h1 className="text-white text-[1.0625rem] text-center flex-1">Calendário</h1>
             <div className="w-9" />
           </div>
         </div>
@@ -247,7 +247,7 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
             <button className="p-2 hover:bg-slate-100 rounded-full transition-colors">
               <ChevronLeft size={20} className="text-slate-600" />
             </button>
-            <h3 className="text-[18px] text-slate-800">
+            <h3 className="text-[1.125rem] text-slate-800">
               {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
             </h3>
             <button className="p-2 hover:bg-slate-100 rounded-full transition-colors">
@@ -259,7 +259,7 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
           <div className="grid grid-cols-7 gap-1">
             {/* Week days */}
             {['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map((day, idx) => (
-              <div key={idx} className="text-center text-[11px] text-slate-500 py-2">
+              <div key={idx} className="text-center text-[0.6875rem] text-slate-500 py-2">
                 {day}
               </div>
             ))}
@@ -279,7 +279,7 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
                 <button
                   key={day}
                   onClick={() => setSelectedDay(day)}
-                  className={`aspect-square rounded-[8px] text-[13px] flex flex-col items-center justify-center transition-all ${
+                  className={`aspect-square rounded-[8px] text-[0.8125rem] flex flex-col items-center justify-center transition-all ${
                     isToday
                       ? 'bg-[#3b8433] text-white font-semibold shadow-md'
                       : selectedDay === day
@@ -302,7 +302,7 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
         {/* Today's Events */}
         {todayEvents.length > 0 && (
           <div>
-            <h3 className="text-[17px] text-slate-800 mb-3">Hoje ({todayEvents.length})</h3>
+            <h3 className="text-[1.0625rem] text-slate-800 mb-3">Hoje ({todayEvents.length})</h3>
             <div className="space-y-2">
               {todayEvents.map((event) => (
                 <div
@@ -312,16 +312,16 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[11px] px-2 py-0.5 bg-white/50 rounded-[6px]">
+                        <span className="text-[0.6875rem] px-2 py-0.5 bg-white/50 rounded-[6px]">
                           {getEventTypeLabel(event.type)}
                         </span>
-                        <span className="text-[13px] font-semibold">{event.time}</span>
+                        <span className="text-[0.8125rem] font-semibold">{event.time}</span>
                       </div>
-                      <h4 className="text-[15px] font-semibold mb-1">{event.title}</h4>
-                      <p className="text-[12px] opacity-80">{event.course}</p>
+                      <h4 className="text-[0.9375rem] font-semibold mb-1">{event.title}</h4>
+                      <p className="text-[0.75rem] opacity-80">{event.course}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 text-[12px]">
+                  <div className="flex items-center gap-3 text-[0.75rem]">
                     {event.location && (
                       <div className="flex items-center gap-1">
                         {event.location === 'Online' ? (
@@ -347,7 +347,7 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
 
         {/* Upcoming Events */}
         <div>
-          <h3 className="text-[17px] text-slate-800 mb-3">Próximos Eventos</h3>
+          <h3 className="text-[1.0625rem] text-slate-800 mb-3">Próximos Eventos</h3>
           <div className="space-y-2">
             {upcomingEvents.slice(0, 5).map((event) => {
               const eventDate = new Date(event.date);
@@ -362,26 +362,26 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
                 >
                   <div className="flex gap-3">
                     <div className="flex flex-col items-center justify-center bg-slate-100 rounded-[10px] px-3 py-2 min-w-[50px]">
-                      <p className="text-[11px] text-slate-500 uppercase">
+                      <p className="text-[0.6875rem] text-slate-500 uppercase">
                         {monthNames[eventDate.getMonth()].slice(0, 3)}
                       </p>
-                      <p className="text-[22px] text-slate-800 font-semibold leading-none">
+                      <p className="text-[1.375rem] text-slate-800 font-semibold leading-none">
                         {eventDate.getDate()}
                       </p>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className={`text-[11px] px-2 py-0.5 rounded-[6px] ${getEventTypeColor(event.type)}`}>
+                        <span className={`text-[0.6875rem] px-2 py-0.5 rounded-[6px] ${getEventTypeColor(event.type)}`}>
                           {getEventTypeLabel(event.type)}
                         </span>
-                        <div className="flex items-center gap-1 text-[12px] text-slate-500">
+                        <div className="flex items-center gap-1 text-[0.75rem] text-slate-500">
                           <Clock size={12} />
                           <span>{event.time}</span>
                         </div>
                       </div>
-                      <h4 className="text-[14px] text-slate-800 font-semibold mb-1">{event.title}</h4>
-                      <p className="text-[12px] text-slate-500 mb-2">{event.course}</p>
-                      <div className="flex items-center gap-3 text-[11px] text-slate-400">
+                      <h4 className="text-[0.875rem] text-slate-800 font-semibold mb-1">{event.title}</h4>
+                      <p className="text-[0.75rem] text-slate-500 mb-2">{event.course}</p>
+                      <div className="flex items-center gap-3 text-[0.6875rem] text-slate-400">
                         {event.location && (
                           <div className="flex items-center gap-1">
                             {event.location === 'Online' ? <Video size={11} /> : <MapPin size={11} />}

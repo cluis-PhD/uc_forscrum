@@ -375,7 +375,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
       <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif] flex items-center justify-center">
         <div className="text-center">
           <Loader2 className="animate-spin mx-auto mb-3" size={40} style={{ color: primaryColor }} />
-          <p className="text-slate-600 text-[14px]">Carregando user story...</p>
+          <p className="text-slate-600 text-[0.875rem]">Carregando user story...</p>
         </div>
       </div>
     );
@@ -396,17 +396,17 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
             >
               <ArrowLeft className="text-white" size={20} />
             </button>
-             <h1 className="text-white text-[14px]">User Story</h1>
+             <h1 className="text-white text-[0.875rem]">User Story</h1>
             <div className="w-9" />
           </div>
         </div>
 
         <div className="max-w-[390px] mx-auto px-6 py-12 text-center">
           <AlertCircle className="text-slate-300 mx-auto mb-3" size={48} />
-          <h3 className="text-[15px] text-slate-800 mb-2">User story não encontrada</h3>
+          <h3 className="text-[0.9375rem] text-slate-800 mb-2">User story não encontrada</h3>
           <button
             onClick={onBack}
-            className="mt-4 px-6 py-2 rounded-lg text-white text-[14px]"
+            className="mt-4 px-6 py-2 rounded-lg text-white text-[0.875rem]"
             style={{ backgroundColor: primaryColor }}
           >
             Voltar
@@ -432,7 +432,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
             >
               <ArrowLeft className="text-white" size={20} />
             </button>
-            <h1 className="text-white text-[14px]">Detalhes da User Story</h1>
+            <h1 className="text-white text-[0.875rem]">Detalhes da User Story</h1>
             {isFormador && (
               <div className="flex gap-2">
                 {!hasEstimate && (
@@ -495,11 +495,11 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
           {/* Tags compactas */}
           <div className="flex gap-2 flex-wrap items-center">
             {story.points && Number(story.points) > 0 && (
-              <span className="bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full text-white text-[11px] font-medium">
+              <span className="bg-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full text-white text-[0.6875rem] font-medium">
                 {story.points} pts
               </span>
             )}
-            <span className={`backdrop-blur-sm px-2.5 py-1 rounded-full text-white text-[11px] capitalize ${
+            <span className={`backdrop-blur-sm px-2.5 py-1 rounded-full text-white text-[0.6875rem] capitalize ${
               story.priority === 'high' ? 'bg-red-500/30' :
               story.priority === 'medium' ? 'bg-orange-500/30' :
               'bg-blue-500/30'
@@ -514,7 +514,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
       <div className="max-w-[390px] mx-auto px-6 pt-32 pb-6 space-y-4">
         {/* Título */}
         <div className="bg-white rounded-[16px] p-4 shadow-sm">
-          <h2 className="text-[16px] text-slate-800 font-medium">{story.title}</h2>
+          <h2 className="text-[1rem] text-slate-800 font-medium">{story.title}</h2>
         </div>
 
         {/* Estimativa de Pontos - Destaque */}
@@ -526,21 +526,21 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
           <div className="flex items-center justify-between mb-3">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
-                <p className="text-white/80 text-[11px]">Estimativa Scrum Poker</p>
+                <p className="text-white/80 text-[0.6875rem]">Estimativa Scrum Poker</p>
                 {hasEstimate ? (
                   <span 
-                    className="text-white px-2 py-0.5 rounded-full text-[10px] font-medium"
+                    className="text-white px-2 py-0.5 rounded-full text-[0.625rem] font-medium"
                     style={{ backgroundColor: isFormador ? '#22c55e' : '#0a7da0' }}
                   >
                     {story?.points && Number(story.points) > 0 ? 'Estimado' : 'Média da votação'}
                   </span>
                 ) : (
-                  <span className="bg-white/20 text-white px-2 py-0.5 rounded-full text-[10px] font-medium">
+                  <span className="bg-white/20 text-white px-2 py-0.5 rounded-full text-[0.625rem] font-medium">
                     Não estimado
                   </span>
                 )}
               </div>
-              <p className="text-white text-[24px] font-bold">
+              <p className="text-white text-[1.5rem] font-bold">
                 {hasEstimate ? `${displayPoints} pontos` : 'Não estimado'}
               </p>
             </div>
@@ -549,13 +549,13 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
             </div>
           </div>
           {hasEstimate ? (
-            <p className="text-white/70 text-[11px]">
+            <p className="text-white/70 text-[0.6875rem]">
               {story?.points && Number(story.points) > 0 
                 ? '✅ Estimativa definida pela equipa' 
                 : '📊 Baseado na média dos votos'}
             </p>
           ) : (
-            <p className="text-white/70 text-[11px]">
+            <p className="text-white/70 text-[0.6875rem]">
               ⏳ Aguardando votação no Scrum Poker
             </p>
           )}
@@ -566,28 +566,28 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
           <div className="bg-white rounded-[16px] p-4 shadow-sm">
             <div className="flex items-center gap-2 mb-3">
               <Vote size={16} className="text-slate-600" />
-              <h3 className="text-[14px] text-slate-800 font-medium">Resultado da Votação</h3>
+              <h3 className="text-[0.875rem] text-slate-800 font-medium">Resultado da Votação</h3>
             </div>
             
             {/* Estatísticas principais */}
             <div className="grid grid-cols-3 gap-3 mb-4">
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-[12px] p-3 text-center">
-                <p className="text-[11px] text-blue-600 mb-1">Média</p>
-                <p className="text-[20px] font-bold text-blue-700">{votingStats.avg}</p>
+                <p className="text-[0.6875rem] text-blue-600 mb-1">Média</p>
+                <p className="text-[1.25rem] font-bold text-blue-700">{votingStats.avg}</p>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-[12px] p-3 text-center">
-                <p className="text-[11px] text-green-600 mb-1">Mínimo</p>
-                <p className="text-[20px] font-bold text-green-700">{votingStats.min}</p>
+                <p className="text-[0.6875rem] text-green-600 mb-1">Mínimo</p>
+                <p className="text-[1.25rem] font-bold text-green-700">{votingStats.min}</p>
               </div>
               <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-[12px] p-3 text-center">
-                <p className="text-[11px] text-orange-600 mb-1">Máximo</p>
-                <p className="text-[20px] font-bold text-orange-700">{votingStats.max}</p>
+                <p className="text-[0.6875rem] text-orange-600 mb-1">Máximo</p>
+                <p className="text-[1.25rem] font-bold text-orange-700">{votingStats.max}</p>
               </div>
             </div>
 
             {/* Votos individuais */}
             <div className="space-y-2">
-              <p className="text-[12px] text-slate-500 font-medium mb-2">
+              <p className="text-[0.75rem] text-slate-500 font-medium mb-2">
                 Votos da equipa ({votingStats.validVotes}/{votingStats.totalVotes})
               </p>
               {votes.map((vote, index) => (
@@ -596,12 +596,12 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                   className="flex items-center justify-between bg-slate-50 rounded-[10px] p-2.5"
                 >
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-[10px] font-medium">
+                    <div className="w-7 h-7 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-[0.625rem] font-medium">
                       {(vote.userName || vote.studentName)?.split(' ').map((n: string) => n[0]).join('').slice(0, 2)}
                     </div>
-                    <span className="text-[13px] text-slate-700">{vote.userName || vote.studentName}</span>
+                    <span className="text-[0.8125rem] text-slate-700">{vote.userName || vote.studentName}</span>
                   </div>
-                  <div className={`px-3 py-1 rounded-[8px] text-[13px] font-bold ${
+                  <div className={`px-3 py-1 rounded-[8px] text-[0.8125rem] font-bold ${
                     (vote.value || vote.vote) === '?' || (vote.value || vote.vote) === '☕' 
                       ? 'bg-slate-200 text-slate-600'
                       : 'bg-purple-100 text-purple-700'
@@ -617,13 +617,13 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
         {/* Status Selector - apenas para formandos */}
         {!isFormador && (
           <div className="bg-white rounded-[16px] p-4 shadow-sm">
-            <p className="text-[13px] text-slate-600 mb-3 font-medium">Alterar Status</p>
+            <p className="text-[0.8125rem] text-slate-600 mb-3 font-medium">Alterar Status</p>
             <div className="grid grid-cols-2 gap-2">
               {statusOptions.map((option) => (
                 <button
                   key={option.id}
                   onClick={() => handleStatusChange(option.id as typeof status)}
-                  className={`py-2.5 px-3 rounded-[10px] text-[12px] transition-all ${
+                  className={`py-2.5 px-3 rounded-[10px] text-[0.75rem] transition-all ${
                     status === option.id
                       ? 'ring-2 ring-offset-2 shadow-md ' + option.color
                       : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
@@ -639,8 +639,8 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
         {/* Status atual - apenas para formadores */}
         {isFormador && (
           <div className="bg-white rounded-[16px] p-4 shadow-sm">
-            <p className="text-[13px] text-slate-600 mb-2 font-medium">Status Atual</p>
-            <div className={`inline-block py-2 px-4 rounded-[10px] text-[13px] ${
+            <p className="text-[0.8125rem] text-slate-600 mb-2 font-medium">Status Atual</p>
+            <div className={`inline-block py-2 px-4 rounded-[10px] text-[0.8125rem] ${
               statusOptions.find(s => s.id === status)?.color || 'bg-slate-100 text-slate-700'
             }`}>
               {statusOptions.find(s => s.id === status)?.label || 'Referencial'}
@@ -652,9 +652,9 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
         <div className="bg-white rounded-[16px] p-4 shadow-sm">
           <div className="flex items-center gap-2 mb-3">
             <Target size={16} className="text-slate-600" />
-            <h3 className="text-[14px] text-slate-800 font-medium">Descrição</h3>
+            <h3 className="text-[0.875rem] text-slate-800 font-medium">Descrição</h3>
           </div>
-          <p className="text-[13px] text-slate-600 leading-relaxed">
+          <p className="text-[0.8125rem] text-slate-600 leading-relaxed">
             {story.description || 'Sem descrição'}
           </p>
         </div>
@@ -664,13 +664,13 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
           <div className="bg-white rounded-[16px] p-4 shadow-sm">
             <div className="flex items-center gap-2 mb-3">
               <CheckCircle size={16} className="text-slate-600" />
-              <h3 className="text-[14px] text-slate-800 font-medium">Critérios de Aceitação</h3>
+              <h3 className="text-[0.875rem] text-slate-800 font-medium">Critérios de Aceitação</h3>
             </div>
             <div className="space-y-2">
               {story.acceptanceCriteria.map((criteria: string, index: number) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-slate-400 rounded-full mt-2 flex-shrink-0" />
-                  <span className="text-[13px] text-slate-600 flex-1">
+                  <span className="text-[0.8125rem] text-slate-600 flex-1">
                     {criteria}
                   </span>
                 </div>
@@ -681,8 +681,8 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
 
         {/* Informações Adicionais */}
         <div className="bg-white rounded-[16px] p-4 shadow-sm">
-          <h3 className="text-[14px] text-slate-800 font-medium mb-3">Informações</h3>
-          <div className="space-y-3 text-[13px]">
+          <h3 className="text-[0.875rem] text-slate-800 font-medium mb-3">Informações</h3>
+          <div className="space-y-3 text-[0.8125rem]">
             {story.assignee && (
               <div className="flex items-center justify-between">
                 <span className="text-slate-500">Atribuído a:</span>
@@ -724,7 +724,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                 >
                   <X className="text-white" size={20} />
                 </button>
-                <h1 className="text-white text-[14px] font-medium">Editar User Story</h1>
+                <h1 className="text-white text-[0.875rem] font-medium">Editar User Story</h1>
                 <button
                   onClick={handleSave}
                   disabled={saving || !editTitle.trim()}
@@ -733,7 +733,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                   {saving ? (
                     <Loader2 className="text-white animate-spin" size={18} />
                   ) : (
-                    <span className="text-white text-[13px] font-medium">Guardar</span>
+                    <span className="text-white text-[0.8125rem] font-medium">Guardar</span>
                   )}
                 </button>
               </div>
@@ -745,7 +745,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
             <div className="max-w-[390px] mx-auto space-y-4">
               {/* Título */}
               <div>
-                <label htmlFor="edit-title" className="block text-[13px] font-medium text-slate-700 mb-2">
+                <label htmlFor="edit-title" className="block text-[0.8125rem] font-medium text-slate-700 mb-2">
                   Título *
                 </label>
                 <input
@@ -753,7 +753,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                   type="text"
                   value={editTitle}
                   onChange={(e) => setEditTitle(e.target.value)}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:ring-2 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-[12px] text-[0.875rem] focus:outline-none focus:ring-2 focus:border-transparent"
                   style={{ focusRing: primaryColor }}
                   placeholder="Ex: Criar sistema de login"
                 />
@@ -761,7 +761,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
 
               {/* Descrição */}
               <div>
-                <label htmlFor="edit-description" className="block text-[13px] font-medium text-slate-700 mb-2">
+                <label htmlFor="edit-description" className="block text-[0.8125rem] font-medium text-slate-700 mb-2">
                   Descrição
                 </label>
                 <textarea
@@ -769,7 +769,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                   value={editDescription}
                   onChange={(e) => setEditDescription(e.target.value)}
                   rows={5}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-[12px] text-[14px] resize-none focus:outline-none focus:ring-2 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-slate-200 rounded-[12px] text-[0.875rem] resize-none focus:outline-none focus:ring-2 focus:border-transparent"
                   style={{ focusRing: primaryColor }}
                   placeholder="Como [tipo de utilizador], quero [objetivo], para [benefício]"
                 />
@@ -777,7 +777,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
 
               {/* Prioridade */}
               <div>
-                <label className="block text-[13px] font-medium text-slate-700 mb-2">
+                <label className="block text-[0.8125rem] font-medium text-slate-700 mb-2">
                   Prioridade
                 </label>
                 <div className="grid grid-cols-3 gap-2">
@@ -785,7 +785,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                     <button
                       key={priority}
                       onClick={() => setEditPriority(priority)}
-                      className={`py-2.5 px-3 rounded-[10px] text-[12px] transition-all ${
+                      className={`py-2.5 px-3 rounded-[10px] text-[0.75rem] transition-all ${
                         editPriority === priority
                           ? `${getPriorityColor(priority)} ring-2 ring-offset-2 shadow-md`
                           : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
@@ -799,7 +799,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
 
               {/* Critérios de Aceitação */}
               <div>
-                <label className="block text-[13px] font-medium text-slate-700 mb-2">
+                <label className="block text-[0.8125rem] font-medium text-slate-700 mb-2">
                   Critérios de Aceitação
                 </label>
                 
@@ -812,7 +812,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                         className="flex items-start gap-2 bg-slate-50 rounded-[10px] p-3"
                       >
                         <CheckCircle size={16} className="text-green-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-[13px] text-slate-700 flex-1">{criterion}</span>
+                        <span className="text-[0.8125rem] text-slate-700 flex-1">{criterion}</span>
                         <button
                           onClick={() => handleRemoveCriterion(index)}
                           className="text-red-500 hover:text-red-700 transition-colors"
@@ -837,7 +837,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                         handleAddCriterion();
                       }
                     }}
-                    className="flex-1 px-4 py-2.5 border border-slate-200 rounded-[10px] text-[13px] focus:outline-none focus:ring-2 focus:border-transparent"
+                    className="flex-1 px-4 py-2.5 border border-slate-200 rounded-[10px] text-[0.8125rem] focus:outline-none focus:ring-2 focus:border-transparent"
                     style={{ focusRing: primaryColor }}
                     placeholder="Adicionar critério..."
                   />
@@ -855,11 +855,11 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
               {/* Equipa */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label className="block text-[13px] font-medium text-slate-700">
+                  <label className="block text-[0.8125rem] font-medium text-slate-700">
                     Equipa {!hasEstimate && '*'}
                   </label>
                   {hasEstimate && (
-                    <span className="text-[10px] text-orange-600 bg-orange-50 px-2 py-1 rounded-full">
+                    <span className="text-[0.625rem] text-orange-600 bg-orange-50 px-2 py-1 rounded-full">
                       🔒 Story estimada
                     </span>
                   )}
@@ -868,14 +868,14 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                 {loadingTeams ? (
                   <div className="w-full px-4 py-3 border border-slate-200 rounded-[12px] bg-slate-50 flex items-center gap-2">
                     <Loader2 size={16} className="animate-spin text-slate-400" />
-                    <span className="text-[13px] text-slate-500">Carregando equipas...</span>
+                    <span className="text-[0.8125rem] text-slate-500">Carregando equipas...</span>
                   </div>
                 ) : (
                   <select
                     value={editTeam}
                     onChange={(e) => setEditTeam(e.target.value)}
                     disabled={hasEstimate}
-                    className={`w-full px-4 py-3 border border-slate-200 rounded-[12px] text-[14px] focus:outline-none focus:ring-2 focus:border-transparent ${
+                    className={`w-full px-4 py-3 border border-slate-200 rounded-[12px] text-[0.875rem] focus:outline-none focus:ring-2 focus:border-transparent ${
                       hasEstimate ? 'bg-slate-100 text-slate-500 cursor-not-allowed' : 'bg-white'
                     }`}
                     style={{ focusRing: primaryColor }}
@@ -890,7 +890,7 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                 )}
                 
                 {hasEstimate && (
-                  <p className="mt-2 text-[11px] text-slate-500">
+                  <p className="mt-2 text-[0.6875rem] text-slate-500">
                     ⚠️ A equipa não pode ser alterada porque esta user story já foi estimada no Scrum Poker.
                   </p>
                 )}

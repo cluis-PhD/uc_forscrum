@@ -178,7 +178,7 @@ export default function AuthLogin({ onBack, onNavigate, onLogin }: AuthLoginProp
             <button
               type="button"
               onClick={() => setLoginType('formador')}
-              className={`py-2 px-4 rounded-md text-[14px] font-medium transition-all ${
+              className={`py-2 px-4 rounded-md text-[0.875rem] font-medium transition-all ${
                 loginType === 'formador'
                   ? 'bg-white text-[#3b8433] shadow-sm'
                   : 'text-slate-600 hover:text-slate-800'
@@ -189,7 +189,7 @@ export default function AuthLogin({ onBack, onNavigate, onLogin }: AuthLoginProp
             <button
               type="button"
               onClick={() => setLoginType('formando')}
-              className={`py-2 px-4 rounded-md text-[14px] font-medium transition-all ${
+              className={`py-2 px-4 rounded-md text-[0.875rem] font-medium transition-all ${
                 loginType === 'formando'
                   ? 'bg-white text-[#0a7da0] shadow-sm'
                   : 'text-slate-600 hover:text-slate-800'

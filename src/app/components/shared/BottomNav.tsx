@@ -48,8 +48,8 @@ export function BottomNav({ currentScreen, onNavigate, onLogout }: BottomNavProp
 
   return (
     <div className="fixed bottom-0 left-0 right-0 mx-auto max-w-[390px] bg-white border-t-2 border-slate-200 shadow-lg z-50 dark:bg-slate-800 dark:border-slate-700 transition-colors duration-200">
-      <div className="px-4 py-2.5">
-        <div className="flex items-center justify-around">
+      <div className="px-2 py-2.5">
+        <div className="flex items-center justify-around gap-1">
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.id);
@@ -59,7 +59,7 @@ export function BottomNav({ currentScreen, onNavigate, onLogout }: BottomNavProp
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`flex flex-col items-center gap-1 px-4 py-2 rounded-[12px] transition-all ${
+                className={`flex-1 min-w-0 flex flex-col items-center gap-1 px-1 py-2 rounded-[12px] transition-all ${
                   isLogoutButton
                     ? 'text-red-500 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20'
                     : active
@@ -72,7 +72,7 @@ export function BottomNav({ currentScreen, onNavigate, onLogout }: BottomNavProp
                 }}
               >
                 <Icon size={24} strokeWidth={active ? 2.5 : 2} />
-                <span className={`text-[11px] ${active ? 'font-semibold' : ''}`}>
+                <span className={`text-[0.6875rem] max-w-full truncate ${active ? 'font-semibold' : ''}`}>
                   {item.label}
                 </span>
               </button>

@@ -173,10 +173,10 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
           </div>
 
           {/* Título */}
-          <h2 className="text-[24px] text-slate-800 mb-2">
+          <h2 className="text-[1.5rem] text-slate-800 mb-2">
             {isEditMode ? 'Equipa Atualizada!' : 'Equipa Criada!'}
           </h2>
-          <p className="text-[14px] text-slate-600 mb-6">
+          <p className="text-[0.875rem] text-slate-600 mb-6">
             {isEditMode 
               ? 'A equipa foi atualizada com sucesso'
               : 'A nova equipa foi criada com sucesso'
@@ -187,12 +187,12 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
           <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-[16px] p-4 mb-6 border-2 border-green-200">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[13px] text-slate-600">Nome:</span>
-                <span className="text-[15px] text-slate-800 font-medium">{createdTeam.name}</span>
+                <span className="text-[0.8125rem] text-slate-600">Nome:</span>
+                <span className="text-[0.9375rem] text-slate-800 font-medium">{createdTeam.name}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-[13px] text-slate-600">Curso:</span>
-                <span className="text-[15px] text-slate-800 font-medium">
+                <span className="text-[0.8125rem] text-slate-600">Curso:</span>
+                <span className="text-[0.9375rem] text-slate-800 font-medium">
                   {courses.find(c => c.id === createdTeam.courseId)?.name || 'N/A'}
                 </span>
               </div>
@@ -202,7 +202,7 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
           {/* Botão OK */}
           <button
             onClick={onBack}
-            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[1rem] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg"
           >
             OK
           </button>
@@ -224,7 +224,7 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
               <ArrowLeft className="text-white" size={24} />
 
             </button>
-            <h1 className="text-white text-[20px]">{isEditMode ? 'Editar Equipa' : 'Nova Equipa'}</h1>
+            <h1 className="text-white text-[1.25rem]">{isEditMode ? 'Editar Equipa' : 'Nova Equipa'}</h1>
             <button 
               onClick={handleSave}
               className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors"
@@ -241,7 +241,7 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
       <div className="max-w-[390px] mx-auto px-6 py-6 space-y-5">
         {/* Team Name */}
         <div>
-          <label className="text-[14px] text-slate-700 mb-2 block flex items-center gap-2">
+          <label className="text-[0.875rem] text-slate-700 mb-2 block flex items-center gap-2">
             <UsersIcon size={16} />
             Nome da Equipa
           </label>
@@ -255,16 +255,16 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
               errors.teamName && touched.teamName ? 'border-red-500' : 
               !errors.teamName && touched.teamName && teamName ? 'border-green-500' : 
               'border-slate-200'
-            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
+            } rounded-[12px] px-4 py-3 text-[0.875rem] focus:outline-none focus:border-[#3b8433] transition-colors`}
           />
           {errors.teamName && touched.teamName && (
-            <p className="text-[12px] text-red-500 flex items-center gap-1 mt-1">
+            <p className="text-[0.75rem] text-red-500 flex items-center gap-1 mt-1">
               <AlertCircle size={12} />
               {errors.teamName}
             </p>
           )}
           {!errors.teamName && touched.teamName && teamName && (
-            <p className="text-[12px] text-green-600 flex items-center gap-1 mt-1">
+            <p className="text-[0.75rem] text-green-600 flex items-center gap-1 mt-1">
               <CheckCircle size={12} />
               Nome válido
             </p>
@@ -273,23 +273,23 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
 
         {/* Course Selection */}
         <div>
-          <label className="text-[14px] text-slate-700 mb-2 block flex items-center gap-2">
+          <label className="text-[0.875rem] text-slate-700 mb-2 block flex items-center gap-2">
             <UsersIcon size={16} />
             Curso
           </label>
           {loadingCourses ? (
-            <div className="w-full bg-slate-50 border-2 border-slate-200 rounded-[10px] px-3 py-2 text-[13px] text-slate-500">
+            <div className="w-full bg-slate-50 border-2 border-slate-200 rounded-[10px] px-3 py-2 text-[0.8125rem] text-slate-500">
               A carregar cursos...
             </div>
           ) : courses.length === 0 ? (
-            <div className="w-full bg-slate-50 border-2 border-slate-200 rounded-[10px] px-3 py-2 text-[13px] text-slate-500">
+            <div className="w-full bg-slate-50 border-2 border-slate-200 rounded-[10px] px-3 py-2 text-[0.8125rem] text-slate-500">
               Nenhum curso disponível. Crie cursos primeiro.
             </div>
           ) : (
             <select
               value={selectedCourseId || ''}
               onChange={(e) => setSelectedCourseId(e.target.value)}
-              className="w-full bg-slate-50 border-2 border-slate-200 rounded-[10px] px-3 py-2 text-[13px] focus:outline-none focus:border-[#3b8433] transition-colors"
+              className="w-full bg-slate-50 border-2 border-slate-200 rounded-[10px] px-3 py-2 text-[0.8125rem] focus:outline-none focus:border-[#3b8433] transition-colors"
             >
               <option value="">Selecione um curso</option>
               {courses.map(course => (
@@ -300,7 +300,7 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
             </select>
           )}
           {errors.courseId && touched.courseId && (
-            <p className="text-[12px] text-red-500 flex items-center gap-1 mt-1">
+            <p className="text-[0.75rem] text-red-500 flex items-center gap-1 mt-1">
               <AlertCircle size={12} />
               {errors.courseId}
             </p>
@@ -310,8 +310,8 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
         {/* Summary Card */}
         {teamName && selectedCourseId && (
           <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-[16px] p-4 border-2 border-green-200">
-            <h3 className="text-[14px] text-slate-800 mb-2">Resumo da Equipa</h3>
-            <div className="space-y-1 text-[13px]">
+            <h3 className="text-[0.875rem] text-slate-800 mb-2">Resumo da Equipa</h3>
+            <div className="space-y-1 text-[0.8125rem]">
               <div className="flex justify-between">
                 <span className="text-slate-600">Nome:</span>
                 <span className="text-slate-800">{teamName}</span>
@@ -329,7 +329,7 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
         {/* Save Button - espaçamento adequado */}
         <button
           onClick={handleSave}
-          className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
+          className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[1rem] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2"
         >
           <Save size={20} />
           {isEditMode ? 'Guardar Alterações' : 'Criar Equipa'}

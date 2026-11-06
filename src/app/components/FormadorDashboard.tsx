@@ -483,8 +483,8 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
             <div className="bg-[#3b8433] p-2 rounded-[10px] w-fit mb-3 mx-auto">
               <BookOpen className="text-white" size={20} />
             </div>
-            <p className="text-[13px] text-slate-800 dark:text-slate-200 text-center">Gerir Cursos</p>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 text-center">
+            <p className="text-[0.8125rem] text-slate-800 dark:text-slate-200 text-center">Gerir Cursos</p>
+            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1 text-center">
               {loading ? '...' : `${getActiveCourses()}`}
             </p>
           </button>
@@ -497,8 +497,8 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
             <div className="bg-orange-600 p-2 rounded-[10px] w-fit mb-3 mx-auto">
               <Bell className="text-white" size={20} />
             </div>
-            <p className="text-[13px] text-slate-800 dark:text-slate-200 text-center">Alertas</p>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 text-center">Gerir</p>
+            <p className="text-[0.8125rem] text-slate-800 dark:text-slate-200 text-center">Alertas</p>
+            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1 text-center">Gerir</p>
           </button>
 
           <button
@@ -509,8 +509,8 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
             <div className="bg-purple-600 p-2 rounded-[10px] w-fit mb-3 mx-auto">
               <Calendar className="text-white" size={20} />
             </div>
-            <p className="text-[13px] text-slate-800 dark:text-slate-200 text-center">Calendário</p>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 text-center">Ver</p>
+            <p className="text-[0.8125rem] text-slate-800 dark:text-slate-200 text-center">Calendário</p>
+            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1 text-center">Ver</p>
           </button>
 
           <button
@@ -521,20 +521,20 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
             <div className="bg-[#0a7da0] p-2 rounded-[10px] w-fit mb-3 mx-auto">
               <MessageSquare className="text-white" size={20} />
             </div>
-            <p className="text-[13px] text-slate-800 dark:text-slate-200 text-center">Mensagens</p>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 text-center">{unreadMessages}</p>
+            <p className="text-[0.8125rem] text-slate-800 dark:text-slate-200 text-center">Mensagens</p>
+            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1 text-center">{unreadMessages}</p>
           </button>
         </div>
 
         {/* Filtros */}
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="text-[12px] text-slate-600 dark:text-slate-400 mb-2 block">Curso</label>
+            <label className="text-[0.75rem] text-slate-600 dark:text-slate-400 mb-2 block">Curso</label>
             <div className="relative">
               <select
                 value={selectedCourse}
                 onChange={(e) => handleCourseChange(e.target.value)}
-                className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-3 py-2 text-[14px] text-slate-800 appearance-none cursor-pointer pr-8 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200"
+                className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-3 py-2 text-[0.875rem] text-slate-800 appearance-none cursor-pointer pr-8 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200"
                 aria-label="Filtrar por curso"
               >
                 {courses.map((course) => (
@@ -548,7 +548,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
           </div>
 
           <div>
-            <label className="text-[12px] text-slate-600 dark:text-slate-400 mb-2 block">Equipa</label>
+            <label className="text-[0.75rem] text-slate-600 dark:text-slate-400 mb-2 block">Equipa</label>
             <div className="relative">
               <select
                 value={selectedTeam}
@@ -557,7 +557,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
                   console.log(`[FormadorDashboard] 🎯 MUDOU EQUIPA: "${newTeam}"`);
                   setSelectedTeam(newTeam);
                 }}
-                className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-3 py-2 text-[14px] text-slate-800 appearance-none cursor-pointer pr-8 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200"
+                className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-3 py-2 text-[0.875rem] text-slate-800 appearance-none cursor-pointer pr-8 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200"
                 aria-label="Filtrar por equipa"
               >
                 {availableTeams.map((team) => (
@@ -574,9 +574,9 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
         {/* Burndown Chart */}
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-[16px] text-slate-800 dark:text-slate-200">Burndown Chart</h2>
+            <h2 className="text-[1rem] text-slate-800 dark:text-slate-200">Burndown Chart</h2>
             <div className="bg-blue-100 px-3 py-1 rounded-[8px] dark:bg-blue-900/30">
-              <p className="text-[11px] text-blue-700 dark:text-blue-400">Sprint Atual</p>
+              <p className="text-[0.6875rem] text-blue-700 dark:text-blue-400">Sprint Atual</p>
             </div>
           </div>
 
@@ -631,7 +631,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
           </ResponsiveContainer>
 
           <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between text-[12px]">
+            <div className="flex items-center justify-between text-[0.75rem]">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-[#3b8433] rounded-full"></div>
                 <span className="text-slate-600 dark:text-slate-400">Trabalho Restante: <strong className="text-slate-800 dark:text-slate-200">5 pts</strong></span>
@@ -644,7 +644,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
         {/* Velocity Chart */}
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-[16px] text-slate-800 dark:text-slate-200">Velocidade por Sprint</h2>
+            <h2 className="text-[1rem] text-slate-800 dark:text-slate-200">Velocidade por Sprint</h2>
             <BarChart3 className="text-[#3b8433]" size={20} />
           </div>
 
@@ -691,13 +691,13 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
           </ResponsiveContainer>
 
           <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between text-[12px]">
+            <div className="flex items-center justify-between text-[0.75rem]">
               <span className="text-slate-600 dark:text-slate-400">Velocidade Média</span>
               <div className="flex items-center gap-2">
-                <strong className="text-[#3b8433] text-[16px]">52 pts</strong>
+                <strong className="text-[#3b8433] text-[1rem]">52 pts</strong>
                 <div className="flex items-center gap-1 bg-green-100 px-2 py-1 rounded-[6px] dark:bg-green-900/30">
                   <TrendingUp size={12} className="text-green-600 dark:text-green-400" />
-                  <span className="text-green-600 dark:text-green-400 text-[11px]">+8%</span>
+                  <span className="text-green-600 dark:text-green-400 text-[0.6875rem]">+8%</span>
                 </div>
               </div>
             </div>
@@ -706,10 +706,10 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
 
         {/* Performance por Equipa */}
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
-          <h2 className="text-[16px] text-slate-800 dark:text-slate-200 mb-4">Performance por Equipa</h2>
+          <h2 className="text-[1rem] text-slate-800 dark:text-slate-200 mb-4">Performance por Equipa</h2>
           
           {loading ? (
-            <div className="text-center py-4 text-slate-500 dark:text-slate-400 text-[13px]">Carregando equipas...</div>
+            <div className="text-center py-4 text-slate-500 dark:text-slate-400 text-[0.8125rem]">Carregando equipas...</div>
           ) : teamPerformance.length > 0 ? (
             <div className="space-y-4">
               {teamPerformance.map((team, index) => {
@@ -735,17 +735,17 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
                   <div key={team.id}>
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        <div className={`w-8 h-8 bg-gradient-to-br ${colorClass} rounded-full flex items-center justify-center text-white text-[11px]`}>
+                        <div className={`w-8 h-8 bg-gradient-to-br ${colorClass} rounded-full flex items-center justify-center text-white text-[0.6875rem]`}>
                           {initials}
                         </div>
                         <div>
-                          <p className="text-[14px] text-slate-800 dark:text-slate-200">{team.name}</p>
-                          <p className="text-[11px] text-slate-500 dark:text-slate-400">{team.courseName || 'Sem Curso'} • {team.memberCount} membros</p>
+                          <p className="text-[0.875rem] text-slate-800 dark:text-slate-200">{team.name}</p>
+                          <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400">{team.courseName || 'Sem Curso'} • {team.memberCount} membros</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-[16px]" style={{ color: barColor }}>{team.velocity} pts</p>
-                        <p className="text-[11px] text-slate-500 dark:text-slate-400">Velocidade</p>
+                        <p className="text-[1rem]" style={{ color: barColor }}>{team.velocity} pts</p>
+                        <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400">Velocidade</p>
                       </div>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-2 dark:bg-slate-700">
@@ -754,13 +754,13 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
                         style={{ width: `${team.completionRate}%`, backgroundColor: barColor }}
                       ></div>
                     </div>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">{team.completionRate}% de conclusão</p>
+                    <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1">{team.completionRate}% de conclusão</p>
                   </div>
                 );
               })}
             </div>
           ) : (
-            <div className="text-center py-4 text-slate-500 dark:text-slate-400 text-[13px]">Nenhuma equipa encontrada</div>
+            <div className="text-center py-4 text-slate-500 dark:text-slate-400 text-[0.8125rem]">Nenhuma equipa encontrada</div>
           )}
         </div>
       </div>

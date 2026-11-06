@@ -367,11 +367,11 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
         {/* Header com contador */}
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-[16px] text-slate-800 dark:text-slate-100">
+            <h3 className="text-[1rem] text-slate-800 dark:text-slate-100">
               {isFormador ? 'Todas as Mensagens' : 'Mensagens Recebidas'} ({messages.length})
             </h3>
             {unreadCount > 0 && (
-              <p className="text-[12px] text-orange-600 dark:text-orange-400">
+              <p className="text-[0.75rem] text-orange-600 dark:text-orange-400">
                 {unreadCount} {unreadCount === 1 ? 'mensagem nova' : 'mensagens novas'}
               </p>
             )}
@@ -379,7 +379,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
           
           <button
             onClick={openNewMessageModal}
-            className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
+            className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[0.8125rem] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
           >
             <Plus size={16} />
             Nova Mensagem
@@ -390,10 +390,10 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
         {messages.length === 0 ? (
           <div className="text-center py-12 bg-white dark:bg-slate-800 rounded-[16px] shadow-sm">
             <Mail className="mx-auto text-slate-300 dark:text-slate-600 mb-3" size={48} />
-            <p className="text-slate-500 dark:text-slate-400 text-[14px]">
+            <p className="text-slate-500 dark:text-slate-400 text-[0.875rem]">
               {isFormador ? 'Nenhuma mensagem enviada' : 'Nenhuma mensagem recebida'}
             </p>
-            <p className="text-slate-400 dark:text-slate-500 text-[12px] mt-1">
+            <p className="text-slate-400 dark:text-slate-500 text-[0.75rem] mt-1">
               {isFormador 
                 ? 'Clique em "Nova Mensagem" para enviar a primeira' 
                 : 'Aguarde mensagens dos formadores'}
@@ -419,14 +419,14 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                     {/* Nome do Formando em destaque para o Formador */}
                     {isFormador && (
                       <div className="flex items-center gap-2 mb-2">
-                        <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-[10px] font-medium">
+                        <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-[0.625rem] font-medium">
                           {message.formandoName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2)}
                         </div>
                         <div>
-                          <p className="text-[13px] font-semibold text-slate-800 dark:text-slate-100">
+                          <p className="text-[0.8125rem] font-semibold text-slate-800 dark:text-slate-100">
                             {message.formandoName}
                           </p>
-                          <p className="text-[10px] text-slate-400 dark:text-slate-500">
+                          <p className="text-[0.625rem] text-slate-400 dark:text-slate-500">
                             {message.sentBy === 'formando' ? 'Enviou mensagem' : 'Recebeu mensagem'}
                           </p>
                         </div>
@@ -434,19 +434,19 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                     )}
                     
                     <div className="flex items-center gap-2 mb-1">
-                      <h4 className="text-[15px] font-medium text-slate-800 dark:text-slate-100">
+                      <h4 className="text-[0.9375rem] font-medium text-slate-800 dark:text-slate-100">
                         {message.title}
                       </h4>
                       {!isFormador && !message.isRead && (
-                        <span className="bg-orange-500 text-white text-[10px] px-2 py-0.5 rounded-full">
+                        <span className="bg-orange-500 text-white text-[0.625rem] px-2 py-0.5 rounded-full">
                           Nova
                         </span>
                       )}
                     </div>
-                    <p className="text-[12px] text-slate-500 dark:text-slate-400 line-clamp-2 mb-2">
+                    <p className="text-[0.75rem] text-slate-500 dark:text-slate-400 line-clamp-2 mb-2">
                       {message.message}
                     </p>
-                    <div className="flex items-center gap-3 text-[11px] text-slate-400 dark:text-slate-500">
+                    <div className="flex items-center gap-3 text-[0.6875rem] text-slate-400 dark:text-slate-500">
                       <span>{formatDate(message.createdAt)}</span>
                       {message.updatedAt !== message.createdAt && (
                         <>
@@ -505,11 +505,11 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
       <Dialog open={isCreateOpen} onOpenChange={setIsCreateOpen}>
         <DialogContent className="sm:max-w-[550px] bg-white dark:bg-slate-800 rounded-xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="dark:text-slate-100 text-[18px] flex items-center gap-2">
+            <DialogTitle className="dark:text-slate-100 text-[1.125rem] flex items-center gap-2">
               <Mail className="text-[#3b8433]" size={22} />
               Nova Mensagem
             </DialogTitle>
-            <DialogDescription className="dark:text-slate-400 text-[13px]">
+            <DialogDescription className="dark:text-slate-400 text-[0.8125rem]">
               {isFormador 
                 ? 'Selecione um formando e escreva sua mensagem' 
                 : 'Escreva uma mensagem para o formador'}
@@ -520,20 +520,20 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
             {/* Seleção de Formando - APENAS PARA FORMADORES */}
             {isFormador && (
               <div className="grid gap-2">
-                <Label className="dark:text-slate-200 text-[14px] font-medium">
+                <Label className="dark:text-slate-200 text-[0.875rem] font-medium">
                   Destinatário <span className="text-red-500">*</span>
                 </Label>
                 
                 {loadingStudents ? (
                   <div className="flex items-center justify-center py-6 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
                     <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-[#3b8433]"></div>
-                    <span className="ml-2 text-[13px] text-slate-500 dark:text-slate-400">
+                    <span className="ml-2 text-[0.8125rem] text-slate-500 dark:text-slate-400">
                       A carregar...
                     </span>
                   </div>
                 ) : students.length === 0 ? (
                   <div className="text-center py-6 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                    <p className="text-[13px] text-slate-500 dark:text-slate-400">
+                    <p className="text-[0.8125rem] text-slate-500 dark:text-slate-400">
                       Nenhum formando encontrado
                     </p>
                   </div>
@@ -559,11 +559,11 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                               : 'border-slate-200 dark:border-slate-600 hover:border-[#3b8433]/50 bg-white dark:bg-slate-700/30'
                           }`}
                         >
-                          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-[11px] font-medium">
+                          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-[0.6875rem] font-medium">
                             {initials}
                           </div>
                           <div className="flex-1">
-                            <p className={`text-[13px] font-medium ${
+                            <p className={`text-[0.8125rem] font-medium ${
                               isSelected 
                                 ? 'text-[#3b8433] dark:text-green-400' 
                                 : 'text-slate-800 dark:text-slate-200'
@@ -589,15 +589,15 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
             {/* Para formandos: mostrar destinatário fixo */}
             {!isFormador && (
               <div className="grid gap-2">
-                <Label className="dark:text-slate-200 text-[14px] font-medium">
+                <Label className="dark:text-slate-200 text-[0.875rem] font-medium">
                   Para
                 </Label>
                 
                 <div className="flex items-center gap-2.5 p-2.5 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/30">
-                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center text-white text-[11px] font-medium">
+                  <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center text-white text-[0.6875rem] font-medium">
                     F
                   </div>
-                  <p className="text-[13px] font-medium text-slate-800 dark:text-slate-200">
+                  <p className="text-[0.8125rem] font-medium text-slate-800 dark:text-slate-200">
                     Formador
                   </p>
                 </div>
@@ -606,7 +606,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
 
             {/* Título */}
             <div className="grid gap-2">
-              <Label htmlFor="title" className="dark:text-slate-200 text-[14px] font-medium">
+              <Label htmlFor="title" className="dark:text-slate-200 text-[0.875rem] font-medium">
                 Assunto <span className="text-red-500">*</span>
               </Label>
               <Input
@@ -614,7 +614,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                 placeholder="Ex: Dúvida sobre Sprint Planning"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="dark:bg-slate-700 dark:border-slate-600 dark:text-slate-100 text-[14px] h-10"
+                className="dark:bg-slate-700 dark:border-slate-600 dark:text-slate-100 text-[0.875rem] h-10"
                 maxLength={100}
                 required
               />
@@ -622,7 +622,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
             
             {/* Mensagem */}
             <div className="grid gap-2">
-              <Label htmlFor="message" className="dark:text-slate-200 text-[14px] font-medium">
+              <Label htmlFor="message" className="dark:text-slate-200 text-[0.875rem] font-medium">
                 Mensagem <span className="text-red-500">*</span>
               </Label>
               <Textarea
@@ -630,11 +630,11 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                 placeholder="Escreva a sua mensagem aqui..."
                 value={messageText}
                 onChange={(e) => setMessageText(e.target.value)}
-                className="min-h-[120px] dark:bg-slate-700 dark:border-slate-600 dark:text-slate-100 text-[14px] resize-none"
+                className="min-h-[120px] dark:bg-slate-700 dark:border-slate-600 dark:text-slate-100 text-[0.875rem] resize-none"
                 maxLength={500}
                 required
               />
-              <p className="text-[11px] text-slate-400 dark:text-slate-500 text-right">
+              <p className="text-[0.6875rem] text-slate-400 dark:text-slate-500 text-right">
                 {messageText.length}/500
               </p>
             </div>
@@ -682,7 +682,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                 Destinatário <span className="text-red-500">*</span>
               </Label>
               {loadingStudents ? (
-                <div className="text-[14px] text-slate-400 py-2 px-3">
+                <div className="text-[0.875rem] text-slate-400 py-2 px-3">
                   A carregar formandos...
                 </div>
               ) : (
@@ -729,7 +729,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                 maxLength={1000}
                 required
               />
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 text-right">
+              <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 text-right">
                 {messageText.length}/1000 caracteres
               </p>
             </div>
@@ -766,11 +766,11 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
           </DialogHeader>
           <div className="py-4">
             <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-4 mb-4">
-              <p className="text-[14px] text-slate-700 dark:text-slate-200 whitespace-pre-wrap">
+              <p className="text-[0.875rem] text-slate-700 dark:text-slate-200 whitespace-pre-wrap">
                 {selectedMessage?.message}
               </p>
             </div>
-            <div className="text-[11px] text-slate-500 dark:text-slate-400 space-y-1">
+            <div className="text-[0.6875rem] text-slate-500 dark:text-slate-400 space-y-1">
               <p>Enviada em: {selectedMessage && new Date(selectedMessage.createdAt).toLocaleString('pt-PT')}</p>
               {selectedMessage?.updatedAt !== selectedMessage?.createdAt && (
                 <p>Última edição: {selectedMessage && new Date(selectedMessage.updatedAt).toLocaleString('pt-PT')}</p>
