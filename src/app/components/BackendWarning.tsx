@@ -18,14 +18,14 @@ export function BackendWarning({ show, onDismiss, type = 'error' }: BackendWarni
           <div className="flex items-start gap-3">
             <Info className="text-blue-600 flex-shrink-0 mt-0.5" size={20} />
             <div className="flex-1 min-w-0">
-              <h4 className="text-[14px] font-medium text-blue-900 mb-1">
+              <h4 className="text-[0.875rem] font-medium text-blue-900 mb-1">
                 Migração para KV Store Concluída
               </h4>
-              <p className="text-[12px] text-blue-800 mb-2">
+              <p className="text-[0.75rem] text-blue-800 mb-2">
                 O backend foi migrado para armazenamento permanente. 
                 Dados antigos serão automaticamente sincronizados quando você tentar editá-los.
               </p>
-              <div className="flex items-center gap-2 text-[11px] text-blue-700 bg-blue-100 rounded-lg px-2 py-1">
+              <div className="flex items-center gap-2 text-[0.6875rem] text-blue-700 bg-blue-100 rounded-lg px-2 py-1">
                 <CheckCircle size={14} />
                 <span>✅ Novos dados são guardados permanentemente e nunca serão perdidos.</span>
               </div>
@@ -50,14 +50,14 @@ export function BackendWarning({ show, onDismiss, type = 'error' }: BackendWarni
         <div className="flex items-start gap-3">
           <CheckCircle className="text-emerald-600 flex-shrink-0 mt-0.5" size={20} />
           <div className="flex-1 min-w-0">
-            <h4 className="text-[14px] font-medium text-emerald-900 mb-1">
+            <h4 className="text-[0.875rem] font-medium text-emerald-900 mb-1">
               Persistência Ativada
             </h4>
-            <p className="text-[12px] text-emerald-800 mb-2">
+            <p className="text-[0.75rem] text-emerald-800 mb-2">
               Os dados agora são guardados permanentemente na base de dados. 
               Não serão perdidos quando o servidor reiniciar.
             </p>
-            <div className="flex items-center gap-2 text-[11px] text-emerald-700 bg-emerald-100 rounded-lg px-2 py-1">
+            <div className="flex items-center gap-2 text-[0.6875rem] text-emerald-700 bg-emerald-100 rounded-lg px-2 py-1">
               <Info size={14} />
               <span>✅ Backend migrado para Supabase KV Store com sucesso!</span>
             </div>

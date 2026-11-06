@@ -182,7 +182,7 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
       <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif] flex items-center justify-center">
         <div className="flex flex-col items-center">
           <Loader2 className="text-[#3b8433] animate-spin mb-4" size={40} />
-          <p className="text-slate-600 text-[14px]">Carregando user stories...</p>
+          <p className="text-slate-600 text-[0.875rem]">Carregando user stories...</p>
         </div>
       </div>
     );
@@ -204,9 +204,9 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
             >
               <ArrowLeft className="text-white" size={20} />
             </button>
-            <h1 className="text-white text-[14px]">Gerir User Stories</h1>
+            <h1 className="text-white text-[0.875rem]">Gerir User Stories</h1>
             <div className="bg-white rounded-full px-2.5 py-1">
-              <span className="text-[12px] font-semibold" style={{ color: primaryColor }}>
+              <span className="text-[0.75rem] font-semibold" style={{ color: primaryColor }}>
                 {assignedStories.length}
               </span>
             </div>
@@ -224,7 +224,7 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
             placeholder="Pesquisar user stories..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white border-none rounded-[12px] pl-11 pr-10 py-3.5 text-[14px] focus:outline-none focus:ring-2 focus:ring-offset-0 shadow-sm"
+            className="w-full bg-white border-none rounded-[12px] pl-11 pr-10 py-3.5 text-[0.875rem] focus:outline-none focus:ring-2 focus:ring-offset-0 shadow-sm"
             style={{ 
               focusRingColor: primaryColor 
             }}
@@ -245,11 +245,11 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
           <div className="bg-white rounded-[16px] p-4 shadow-sm border-l-4 border-red-500">
             <div className="flex items-start gap-3 mb-3">
               <AlertCircle className="text-red-500 flex-shrink-0 mt-0.5" size={20} />
-              <p className="text-red-600 text-[13px] flex-1">{error}</p>
+              <p className="text-red-600 text-[0.8125rem] flex-1">{error}</p>
             </div>
             <button
               onClick={fetchData}
-              className="w-full text-white py-2.5 rounded-[10px] text-[13px] font-medium hover:opacity-90 transition-all"
+              className="w-full text-white py-2.5 rounded-[10px] text-[0.8125rem] font-medium hover:opacity-90 transition-all"
               style={{ backgroundColor: primaryColor }}
             >
               Tentar Novamente
@@ -261,10 +261,10 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
         {filteredStories.length === 0 ? (
           <div className="bg-white rounded-[16px] p-8 shadow-sm text-center">
             <Circle className="text-slate-300 mx-auto mb-3" size={48} />
-            <h3 className="text-[15px] text-slate-800 mb-2">
+            <h3 className="text-[0.9375rem] text-slate-800 mb-2">
               {searchQuery ? 'Nenhuma user story encontrada' : 'Nenhuma user story disponível'}
             </h3>
-            <p className="text-[13px] text-slate-500">
+            <p className="text-[0.8125rem] text-slate-500">
               {searchQuery 
                 ? 'Tente pesquisar por outros termos' 
                 : 'Crie user stories no Referencial primeiro'}
@@ -302,18 +302,18 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
 
                     {/* Content */}
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-[14px] text-slate-800 font-medium mb-1">{story.title}</h4>
+                      <h4 className="text-[0.875rem] text-slate-800 font-medium mb-1">{story.title}</h4>
                       <div className="flex items-center gap-2 flex-wrap mb-2">
-                        <span className={`text-[10px] px-2.5 py-0.5 rounded-full font-medium ${getPriorityColor(story.priority)}`}>
+                        <span className={`text-[0.625rem] px-2.5 py-0.5 rounded-full font-medium ${getPriorityColor(story.priority)}`}>
                           {getPriorityLabel(story.priority)}
                         </span>
                         {story.points && (
-                          <span className="bg-purple-100 text-purple-700 px-2.5 py-0.5 rounded-full text-[10px] font-medium">
+                          <span className="bg-purple-100 text-purple-700 px-2.5 py-0.5 rounded-full text-[0.625rem] font-medium">
                             {story.points} pts
                           </span>
                         )}
                       </div>
-                      <p className="text-[12px] text-slate-500 leading-relaxed">
+                      <p className="text-[0.75rem] text-slate-500 leading-relaxed">
                         {story.description}
                       </p>
                     </div>
@@ -332,7 +332,7 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
           {hasUnsavedChanges && (
             <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2.5 flex items-center gap-2">
               <AlertCircle className="text-amber-600 flex-shrink-0" size={18} />
-              <p className="text-amber-700 text-[13px] font-medium">Tem alterações não guardadas</p>
+              <p className="text-amber-700 text-[0.8125rem] font-medium">Tem alterações não guardadas</p>
             </div>
           )}
           
@@ -341,14 +341,14 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
             <button
               onClick={handleBackClick}
               disabled={isSaving}
-              className="flex-1 bg-slate-200 text-slate-700 py-3.5 rounded-xl text-[14px] font-medium hover:bg-slate-300 transition-all disabled:opacity-50"
+              className="flex-1 bg-slate-200 text-slate-700 py-3.5 rounded-xl text-[0.875rem] font-medium hover:bg-slate-300 transition-all disabled:opacity-50"
             >
               Cancelar
             </button>
             <button
               onClick={handleSave}
               disabled={isSaving}
-              className="flex-[2] text-white py-3.5 rounded-xl text-[15px] font-bold hover:opacity-90 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+              className="flex-[2] text-white py-3.5 rounded-xl text-[0.9375rem] font-bold hover:opacity-90 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
               style={{ backgroundColor: primaryColor }}
             >
               {isSaving ? (

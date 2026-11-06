@@ -240,27 +240,27 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
             <CheckCircle className="text-white" size={48} strokeWidth={2.5} />
           </div>
 
-          <h2 className="text-[24px] text-slate-800 mb-2">Formando Criado!</h2>
-          <p className="text-[14px] text-slate-600 mb-6">O formando foi adicionado com sucesso</p>
+          <h2 className="text-[1.5rem] text-slate-800 mb-2">Formando Criado!</h2>
+          <p className="text-[0.875rem] text-slate-600 mb-6">O formando foi adicionado com sucesso</p>
 
           <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-[16px] p-4 mb-6 border-2 border-green-200">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[13px] text-slate-600">Nome:</span>
-                <span className="text-[15px] text-slate-800 font-medium">{name}</span>
+                <span className="text-[0.8125rem] text-slate-600">Nome:</span>
+                <span className="text-[0.9375rem] text-slate-800 font-medium">{name}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-[13px] text-slate-600">Email:</span>
-                <span className="text-[15px] text-slate-800 font-medium">{email}</span>
+                <span className="text-[0.8125rem] text-slate-600">Email:</span>
+                <span className="text-[0.9375rem] text-slate-800 font-medium">{email}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-[13px] text-slate-600">Curso:</span>
-                <span className="text-[15px] text-slate-800 font-medium">{getCourseName()}</span>
+                <span className="text-[0.8125rem] text-slate-600">Curso:</span>
+                <span className="text-[0.9375rem] text-slate-800 font-medium">{getCourseName()}</span>
               </div>
               {teamId && (
                 <div className="flex items-center justify-between">
-                  <span className="text-[13px] text-slate-600">Equipa:</span>
-                  <span className="text-[15px] text-slate-800 font-medium">{getTeamName()}</span>
+                  <span className="text-[0.8125rem] text-slate-600">Equipa:</span>
+                  <span className="text-[0.9375rem] text-slate-800 font-medium">{getTeamName()}</span>
                 </div>
               )}
             </div>
@@ -268,7 +268,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
 
           <button
             onClick={onBack}
-            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg"
+            className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[1rem] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg"
           >
             OK
           </button>
@@ -289,7 +289,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
             >
               <ArrowLeft className="text-white" size={24} />
             </button>
-            <h1 className="text-white text-[20px]">Novo Formando</h1>
+            <h1 className="text-white text-[1.25rem]">Novo Formando</h1>
             <button 
               onClick={handleSave}
               disabled={isSaving}
@@ -309,7 +309,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
       <div className="max-w-[390px] mx-auto px-6 py-6 space-y-5">
         {/* Name */}
         <div>
-          <label className="text-[14px] text-slate-700 mb-2 block flex items-center gap-2">
+          <label className="text-[0.875rem] text-slate-700 mb-2 block flex items-center gap-2">
             <User size={16} />
             Nome do Formando
           </label>
@@ -323,16 +323,16 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
               errors.name && touched.name ? 'border-red-500' : 
               !errors.name && touched.name && name ? 'border-green-500' : 
               'border-slate-200'
-            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
+            } rounded-[12px] px-4 py-3 text-[0.875rem] focus:outline-none focus:border-[#3b8433] transition-colors`}
           />
           {errors.name && touched.name && (
-            <p className="text-[12px] text-red-500 flex items-center gap-1 mt-1">
+            <p className="text-[0.75rem] text-red-500 flex items-center gap-1 mt-1">
               <AlertCircle size={12} />
               {errors.name}
             </p>
           )}
           {!errors.name && touched.name && name && (
-            <p className="text-[12px] text-green-600 flex items-center gap-1 mt-1">
+            <p className="text-[0.75rem] text-green-600 flex items-center gap-1 mt-1">
               <CheckCircle size={12} />
               Nome válido
             </p>
@@ -341,7 +341,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
 
         {/* Email */}
         <div>
-          <label className="text-[14px] text-slate-700 mb-2 block flex items-center gap-2">
+          <label className="text-[0.875rem] text-slate-700 mb-2 block flex items-center gap-2">
             <Mail size={16} />
             Email (Opcional)
           </label>
@@ -355,22 +355,22 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
               errors.email && touched.email ? 'border-red-500' : 
               !errors.email && touched.email && email ? 'border-green-500' : 
               'border-slate-200'
-            } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
+            } rounded-[12px] px-4 py-3 text-[0.875rem] focus:outline-none focus:border-[#3b8433] transition-colors`}
           />
           {errors.email && touched.email && (
-            <p className="text-[12px] text-red-500 flex items-center gap-1 mt-1">
+            <p className="text-[0.75rem] text-red-500 flex items-center gap-1 mt-1">
               <AlertCircle size={12} />
               {errors.email}
             </p>
           )}
-          <p className="text-[12px] text-slate-500 mt-2">
+          <p className="text-[0.75rem] text-slate-500 mt-2">
             O email é opcional. Pode ser adicionado mais tarde.
           </p>
         </div>
 
         {/* Course Selection */}
         <div>
-          <label className="text-[14px] text-slate-700 mb-2 block flex items-center gap-2">
+          <label className="text-[0.875rem] text-slate-700 mb-2 block flex items-center gap-2">
             <BookOpen size={16} />
             Curso
           </label>
@@ -378,7 +378,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
             <div className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200 rounded-[12px] p-4">
               <div className="flex items-center gap-2">
                 <BookOpen size={16} className="text-[#3b8433]" />
-                <p className="text-[14px] text-slate-800 font-medium">{getCourseName()}</p>
+                <p className="text-[0.875rem] text-slate-800 font-medium">{getCourseName()}</p>
               </div>
             </div>
           ) : (
@@ -392,7 +392,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
                 className={`w-full bg-white border-2 ${
                   errors.course && touched.course ? 'border-red-500' :
                   courseId ? 'border-green-500' : 'border-slate-200'
-                } rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors`}
+                } rounded-[12px] px-4 py-3 text-[0.875rem] focus:outline-none focus:border-[#3b8433] transition-colors`}
               >
                 <option value="">Selecione um curso</option>
                 {loadingCourses ? (
@@ -406,7 +406,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
                 )}
               </select>
               {errors.course && touched.course && (
-                <p className="text-[12px] text-red-500 flex items-center gap-1 mt-1">
+                <p className="text-[0.75rem] text-red-500 flex items-center gap-1 mt-1">
                   <AlertCircle size={12} />
                   {errors.course}
                 </p>
@@ -417,14 +417,14 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
 
         {/* Team Selection (Optional) */}
         <div>
-          <label className="text-[14px] text-slate-700 mb-2 block flex items-center gap-2">
+          <label className="text-[0.875rem] text-slate-700 mb-2 block flex items-center gap-2">
             <UsersIcon size={16} />
             Equipa (Opcional)
           </label>
           <select
             value={teamId}
             onChange={(e) => setTeamId(e.target.value)}
-            className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433] transition-colors"
+            className="w-full bg-white border-2 border-slate-200 rounded-[12px] px-4 py-3 text-[0.875rem] focus:outline-none focus:border-[#3b8433] transition-colors"
           >
             <option value="">Sem equipa</option>
             {loadingTeams ? (
@@ -437,7 +437,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
               ))
             )}
           </select>
-          <p className="text-[12px] text-slate-500 mt-2">
+          <p className="text-[0.75rem] text-slate-500 mt-2">
             Pode atribuir o formando a uma equipa mais tarde
           </p>
         </div>
@@ -446,7 +446,7 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
         <button
           onClick={handleSave}
           disabled={isSaving}
-          className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[16px] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-[#3b8433] text-white py-4 rounded-[16px] text-[1rem] hover:bg-[#2f6b29] active:scale-[0.98] transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSaving ? (
             <>

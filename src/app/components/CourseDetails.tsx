@@ -709,7 +709,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
         <div className="bg-white rounded-[16px] p-2 shadow-sm space-y-2">
           <button
             onClick={() => setActiveTab('overview')}
-            className={`w-full py-3 px-4 rounded-[12px] text-[14px] transition-all flex items-center justify-between ${
+            className={`w-full py-3 px-4 rounded-[12px] text-[0.875rem] transition-all flex items-center justify-between ${
               activeTab === 'overview'
                 ? 'bg-[#3b8433] text-white shadow-md'
                 : 'text-slate-700 hover:bg-slate-50'
@@ -723,7 +723,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
           </button>
           <button
             onClick={() => setActiveTab('teams')}
-            className={`w-full py-3 px-4 rounded-[12px] text-[14px] transition-all flex items-center justify-between ${
+            className={`w-full py-3 px-4 rounded-[12px] text-[0.875rem] transition-all flex items-center justify-between ${
               activeTab === 'teams'
                 ? 'bg-[#3b8433] text-white shadow-md'
                 : 'text-slate-700 hover:bg-slate-50'
@@ -737,7 +737,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
           </button>
           <button
             onClick={() => setActiveTab('students')}
-            className={`w-full py-3 px-4 rounded-[12px] text-[14px] transition-all flex items-center justify-between ${
+            className={`w-full py-3 px-4 rounded-[12px] text-[0.875rem] transition-all flex items-center justify-between ${
               activeTab === 'students'
                 ? 'bg-[#3b8433] text-white shadow-md'
                 : 'text-slate-700 hover:bg-slate-50'
@@ -751,7 +751,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
           </button>
           <button
             onClick={() => setActiveTab('sprints')}
-            className={`w-full py-3 px-4 rounded-[12px] text-[14px] transition-all flex items-center justify-between ${
+            className={`w-full py-3 px-4 rounded-[12px] text-[0.875rem] transition-all flex items-center justify-between ${
               activeTab === 'sprints'
                 ? 'bg-[#3b8433] text-white shadow-md'
                 : 'text-slate-700 hover:bg-slate-50'
@@ -765,7 +765,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
           </button>
           <button
             onClick={() => setActiveTab('stories')}
-            className={`w-full py-3 px-4 rounded-[12px] text-[14px] transition-all flex items-center justify-between ${
+            className={`w-full py-3 px-4 rounded-[12px] text-[0.875rem] transition-all flex items-center justify-between ${
               activeTab === 'stories'
                 ? 'bg-[#3b8433] text-white shadow-md'
                 : 'text-slate-700 hover:bg-slate-50'
@@ -785,7 +785,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
         {/* Overview Tab */}
         {activeTab === 'overview' && (
           <div className="bg-white rounded-[16px] p-5 shadow-sm">
-            <h3 className="text-[18px] text-slate-800 mb-4">Progresso Geral</h3>
+            <h3 className="text-[1.125rem] text-slate-800 mb-4">Progresso Geral</h3>
             
             <div className="grid grid-cols-2 gap-4 mb-6">
               <button 
@@ -793,39 +793,39 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                 className="bg-slate-50 rounded-[12px] p-4 text-center hover:bg-slate-100 transition-colors"
               >
                 <Target className="text-purple-600 mx-auto mb-2" size={28} />
-                <p className="text-[24px] text-slate-800">{teams.length}</p>
-                <p className="text-[13px] text-slate-600">Equipas</p>
+                <p className="text-[1.5rem] text-slate-800">{teams.length}</p>
+                <p className="text-[0.8125rem] text-slate-600">Equipas</p>
               </button>
               <button 
                 onClick={() => setActiveTab('students')}
                 className="bg-slate-50 rounded-[12px] p-4 text-center hover:bg-slate-100 transition-colors"
               >
                 <Users className="text-[#3b8433] mx-auto mb-2" size={28} />
-                <p className="text-[24px] text-slate-800">{studentsList.length}</p>
-                <p className="text-[13px] text-slate-600">Formandos</p>
+                <p className="text-[1.5rem] text-slate-800">{studentsList.length}</p>
+                <p className="text-[0.8125rem] text-slate-600">Formandos</p>
               </button>
               <button 
                 onClick={() => setActiveTab('sprints')}
                 className="bg-slate-50 rounded-[12px] p-4 text-center hover:bg-slate-100 transition-colors"
               >
                 <Layers className="text-orange-600 mx-auto mb-2" size={28} />
-                <p className="text-[24px] text-slate-800">{sprints.length}</p>
-                <p className="text-[13px] text-slate-600">Sprints</p>
+                <p className="text-[1.5rem] text-slate-800">{sprints.length}</p>
+                <p className="text-[0.8125rem] text-slate-600">Sprints</p>
               </button>
               <button 
                 onClick={() => setActiveTab('stories')}
                 className="bg-slate-50 rounded-[12px] p-4 text-center hover:bg-slate-100 transition-colors"
               >
                 <FileText className="text-blue-600 mx-auto mb-2" size={28} />
-                <p className="text-[24px] text-slate-800">{stories.length}</p>
-                <p className="text-[13px] text-slate-600">Stories</p>
+                <p className="text-[1.5rem] text-slate-800">{stories.length}</p>
+                <p className="text-[0.8125rem] text-slate-600">Stories</p>
               </button>
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-2">
-                <span className="text-[15px] text-slate-700">Conclusão do Curso</span>
-                <span className="text-[18px] text-[#3b8433] font-medium">{course.progress}%</span>
+                <span className="text-[0.9375rem] text-slate-700">Conclusão do Curso</span>
+                <span className="text-[1.125rem] text-[#3b8433] font-medium">{course.progress}%</span>
               </div>
               <div className="w-full bg-slate-200 rounded-full h-4">
                 <div 
@@ -841,10 +841,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
         {activeTab === 'students' && (
           <>
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-[16px] text-slate-800">Formandos ({studentsList.length})</h3>
+              <h3 className="text-[1rem] text-slate-800">Formandos ({studentsList.length})</h3>
               <button
                 onClick={() => onNavigate?.('createStudent', { courseId, courseName })}
-                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
+                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[0.8125rem] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
               >
                 <Plus size={16} />
                 Adicionar
@@ -857,7 +857,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
               <input
                 type="text"
                 placeholder="Pesquisar formandos..."
-                className="w-full bg-white border border-slate-200 rounded-[12px] pl-10 pr-4 py-3 text-[14px] focus:outline-none focus:border-[#3b8433]"
+                className="w-full bg-white border border-slate-200 rounded-[12px] pl-10 pr-4 py-3 text-[0.875rem] focus:outline-none focus:border-[#3b8433]"
               />
             </div>
 
@@ -868,8 +868,8 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
             ) : studentsList.length === 0 ? (
               <div className="text-center py-8">
                 <Users className="mx-auto text-slate-300 mb-2" size={40} />
-                <p className="text-slate-500 text-[14px]">Nenhum formando neste curso</p>
-                <p className="text-slate-400 text-[12px]">Clique em "Adicionar" para criar o primeiro</p>
+                <p className="text-slate-500 text-[0.875rem]">Nenhum formando neste curso</p>
+                <p className="text-slate-400 text-[0.75rem]">Clique em "Adicionar" para criar o primeiro</p>
               </div>
             ) : (
               <div className="space-y-3">
@@ -886,9 +886,9 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                         </AvatarFallback>
                       </Avatar>
                       <div>
-                        <h4 className="text-[14px] font-medium text-slate-800">{student.name}</h4>
+                        <h4 className="text-[0.875rem] font-medium text-slate-800">{student.name}</h4>
                         <div className="flex items-center gap-2">
-                           <span className={`text-[11px] px-2 py-0.5 rounded-full ${
+                           <span className={`text-[0.6875rem] px-2 py-0.5 rounded-full ${
                              !student.teamId 
                                ? 'bg-slate-100 text-slate-500' 
                                : 'bg-green-50 text-[#3b8433]'
@@ -914,11 +914,11 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                           </button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end" className="w-[160px] bg-white rounded-xl shadow-lg border-slate-100 p-1">
-                          <DropdownMenuItem onClick={() => openEditModal(student)} className="flex items-center gap-2 text-[13px] text-slate-700 cursor-pointer rounded-lg hover:bg-slate-50 p-2 outline-none">
+                          <DropdownMenuItem onClick={() => openEditModal(student)} className="flex items-center gap-2 text-[0.8125rem] text-slate-700 cursor-pointer rounded-lg hover:bg-slate-50 p-2 outline-none">
                             <Pencil size={14} />
                             Editar
                           </DropdownMenuItem>
-                          <DropdownMenuItem onClick={() => handleDeleteStudent(student.id)} className="flex items-center gap-2 text-[13px] text-red-600 cursor-pointer rounded-lg hover:bg-red-50 p-2 outline-none">
+                          <DropdownMenuItem onClick={() => handleDeleteStudent(student.id)} className="flex items-center gap-2 text-[0.8125rem] text-red-600 cursor-pointer rounded-lg hover:bg-red-50 p-2 outline-none">
                             <Trash2 size={14} />
                             Remover
                           </DropdownMenuItem>
@@ -936,10 +936,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
         {activeTab === 'teams' && (
           <>
             <div className="flex items-center justify-between">
-              <h3 className="text-[16px] text-slate-800">Equipas ({teams.length})</h3>
+              <h3 className="text-[1rem] text-slate-800">Equipas ({teams.length})</h3>
               <button
                 onClick={() => onNavigate?.('createTeam', { courseId, courseName })}
-                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
+                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[0.8125rem] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
               >
                 <Plus size={16} />
                 Nova Equipa
@@ -953,8 +953,8 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
             ) : teams.length === 0 ? (
               <div className="text-center py-8">
                 <Users className="mx-auto text-slate-300 mb-2" size={40} />
-                <p className="text-slate-500 text-[14px]">Nenhuma equipa neste curso</p>
-                <p className="text-slate-400 text-[12px]">Clique em "Nova Equipa" para criar a primeira</p>
+                <p className="text-slate-500 text-[0.875rem]">Nenhuma equipa neste curso</p>
+                <p className="text-slate-400 text-[0.75rem]">Clique em "Nova Equipa" para criar a primeira</p>
               </div>
             ) : (
               <div className="space-y-3">
@@ -971,8 +971,8 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                         onClick={() => onNavigate?.('turmaDetails', { teamId: team.id })}
                         className="flex-1 text-left"
                       >
-                        <h4 className="text-[15px] text-slate-800 mb-1">{team.name}</h4>
-                        <p className="text-[12px] text-slate-500">{getTeamMemberCount(team.id)} membros</p>
+                        <h4 className="text-[0.9375rem] text-slate-800 mb-1">{team.name}</h4>
+                        <p className="text-[0.75rem] text-slate-500">{getTeamMemberCount(team.id)} membros</p>
                       </button>
                       
                       <div className="flex items-center gap-2">
@@ -1023,7 +1023,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                     >
                       <div className="grid grid-cols-2 gap-3">
                         <div>
-                          <p className="text-[11px] text-slate-500 mb-1">Performance</p>
+                          <p className="text-[0.6875rem] text-slate-500 mb-1">Performance</p>
                           <div className="flex items-center gap-2">
                             <div className="flex-1 bg-slate-200 rounded-full h-2">
                               <div 
@@ -1031,12 +1031,12 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                                 style={{ width: `${performance}%` }}
                               />
                             </div>
-                            <span className="text-[12px] text-slate-700">{performance}%</span>
+                            <span className="text-[0.75rem] text-slate-700">{performance}%</span>
                           </div>
                         </div>
                         <div>
-                          <p className="text-[11px] text-slate-500 mb-1">Stories Concluídas</p>
-                          <p className="text-[16px] text-slate-800">{completedStories}/{totalStories}</p>
+                          <p className="text-[0.6875rem] text-slate-500 mb-1">Stories Concluídas</p>
+                          <p className="text-[1rem] text-slate-800">{completedStories}/{totalStories}</p>
                         </div>
                       </div>
                     </button>
@@ -1052,10 +1052,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
         {activeTab === 'sprints' && (
           <>
             <div className="flex items-center justify-between">
-              <h3 className="text-[16px] text-slate-800">Sprints ({sprints.length})</h3>
+              <h3 className="text-[1rem] text-slate-800">Sprints ({sprints.length})</h3>
               <button
                 onClick={() => onNavigate?.('createSprint')}
-                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
+                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[0.8125rem] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
               >
                 <Plus size={16} />
                 Novo Sprint
@@ -1069,8 +1069,8 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
             ) : sprints.length === 0 ? (
               <div className="text-center py-8">
                 <Layers className="mx-auto text-slate-300 mb-2" size={40} />
-                <p className="text-slate-500 text-[14px]">Nenhum sprint criado</p>
-                <p className="text-slate-400 text-[12px]">Clique em "Novo Sprint" para criar o primeiro</p>
+                <p className="text-slate-500 text-[0.875rem]">Nenhum sprint criado</p>
+                <p className="text-slate-400 text-[0.75rem]">Clique em "Novo Sprint" para criar o primeiro</p>
               </div>
             ) : (
               <div className="space-y-3">
@@ -1092,8 +1092,8 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                         className="flex-1 text-left"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="text-[15px] text-slate-800">{sprint.name}</h4>
-                          <span className={`${getStatusColor(sprint.status)} px-2 py-1 rounded-[6px] text-[10px]`}>
+                          <h4 className="text-[0.9375rem] text-slate-800">{sprint.name}</h4>
+                          <span className={`${getStatusColor(sprint.status)} px-2 py-1 rounded-[6px] text-[0.625rem]`}>
                             {getStatusLabel(sprint.status)}
                           </span>
                         </div>
@@ -1145,7 +1145,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                       className="w-full text-left"
                     >
                       <div className="flex items-center justify-between mb-3">
-                        <p className="text-[12px] text-slate-500">{sprint.stories} user stories</p>
+                        <p className="text-[0.75rem] text-slate-500">{sprint.stories} user stories</p>
                         {(() => {
                           // Calcular total de pontos das stories deste sprint
                           const sprintStories = stories.filter(s => s.sprintId === sprint.id);
@@ -1153,7 +1153,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                           
                           return totalPoints > 0 ? (
                             <span 
-                              className="text-white px-2.5 py-1 rounded-[6px] text-[11px] font-medium"
+                              className="text-white px-2.5 py-1 rounded-[6px] text-[0.6875rem] font-medium"
                               style={{ backgroundColor: isFormador ? '#3b8433' : '#0a7da0' }}
                             >
                               {totalPoints} pts total
@@ -1164,8 +1164,8 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
 
                       <div>
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-[11px] text-slate-500">Progresso</span>
-                          <span className="text-[11px] text-slate-700">{(() => {
+                          <span className="text-[0.6875rem] text-slate-500">Progresso</span>
+                          <span className="text-[0.6875rem] text-slate-700">{(() => {
                             // Calcular progresso real baseado nas stories concluídas
                             const sprintStories = stories.filter(s => s.sprintId === sprint.id);
                             const totalStories = sprintStories.length;
@@ -1202,10 +1202,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
         {activeTab === 'stories' && (
           <>
             <div className="flex items-center justify-between">
-              <h3 className="text-[16px] text-slate-800">User Stories ({stories.length})</h3>
+              <h3 className="text-[1rem] text-slate-800">User Stories ({stories.length})</h3>
               <button
                 onClick={() => onNavigate?.('createUserStory')}
-                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[13px] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
+                className="bg-[#3b8433] text-white px-3 py-2 rounded-[10px] text-[0.8125rem] flex items-center gap-1 hover:bg-[#2f6b29] transition-colors"
               >
                 <Plus size={16} />
                 Nova Story
@@ -1219,8 +1219,8 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
             ) : stories.length === 0 ? (
               <div className="text-center py-8">
                 <FileText className="mx-auto text-slate-300 mb-2" size={40} />
-                <p className="text-slate-500 text-[14px]">Nenhuma user story criada</p>
-                <p className="text-slate-400 text-[12px]">Clique em "Nova Story" para criar a primeira</p>
+                <p className="text-slate-500 text-[0.875rem]">Nenhuma user story criada</p>
+                <p className="text-slate-400 text-[0.75rem]">Clique em "Nova Story" para criar a primeira</p>
               </div>
             ) : (
               <div className="space-y-3">
@@ -1252,8 +1252,8 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                           }}
                           className="w-full text-left"
                         >
-                          <h4 className="text-[15px] text-slate-800 font-medium mb-1">{story.title}</h4>
-                          <p className="text-[12px] text-slate-500 line-clamp-2">{story.description}</p>
+                          <h4 className="text-[0.9375rem] text-slate-800 font-medium mb-1">{story.title}</h4>
+                          <p className="text-[0.75rem] text-slate-500 line-clamp-2">{story.description}</p>
                         </button>
                       </div>
                       <button
@@ -1277,7 +1277,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                         if (hasPoints) {
                           return (
                             <span 
-                              className="text-white px-2.5 py-1 rounded-[6px] text-[11px] font-medium"
+                              className="text-white px-2.5 py-1 rounded-[6px] text-[0.6875rem] font-medium"
                               style={{ 
                                 backgroundColor: isFormador ? '#3b8433' : '#0a7da0'
                               }}
@@ -1288,7 +1288,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                         } else if (averageVote !== null) {
                           return (
                             <span 
-                              className="text-white px-2.5 py-1 rounded-[6px] text-[11px] font-medium"
+                              className="text-white px-2.5 py-1 rounded-[6px] text-[0.6875rem] font-medium"
                               style={{ backgroundColor: isFormador ? '#3b8433' : '#60a5fa' }}
                               title={`Média de ${story.votes?.length} voto(s)`}
                             >
@@ -1297,19 +1297,19 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                           );
                         } else {
                           return (
-                            <span className="bg-slate-100 text-slate-500 px-2.5 py-1 rounded-[6px] text-[11px]">
+                            <span className="bg-slate-100 text-slate-500 px-2.5 py-1 rounded-[6px] text-[0.6875rem]">
                               Sem votos
                             </span>
                           );
                         }
                       })()}
-                      <span className={`${getStatusColor(story.status || 'backlog')} px-2 py-1 rounded-[6px] text-[11px]`}>
+                      <span className={`${getStatusColor(story.status || 'backlog')} px-2 py-1 rounded-[6px] text-[0.6875rem]`}>
                         {getStatusLabel(story.status || 'backlog')}
                       </span>
-                      <span className="bg-slate-100 text-slate-600 px-2 py-1 rounded-[6px] text-[11px]">
+                      <span className="bg-slate-100 text-slate-600 px-2 py-1 rounded-[6px] text-[0.6875rem]">
                         {story.team || 'Sem equipa'}
                       </span>
-                      <span className={`px-2 py-1 rounded-[6px] text-[11px] ${
+                      <span className={`px-2 py-1 rounded-[6px] text-[0.6875rem] ${
                         story.priority === 'high' ? 'bg-red-100 text-red-700' :
                         story.priority === 'medium' ? 'bg-orange-100 text-orange-700' :
                         'bg-blue-100 text-blue-700'
@@ -1321,10 +1321,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                     {/* Acceptance Criteria */}
                     {story.acceptanceCriteria && story.acceptanceCriteria.length > 0 && (
                       <div className="border-t border-slate-100 pt-3">
-                        <p className="text-[11px] text-slate-500 uppercase tracking-wide mb-2">Critérios de Aceitação</p>
+                        <p className="text-[0.6875rem] text-slate-500 uppercase tracking-wide mb-2">Critérios de Aceitação</p>
                         <ul className="space-y-1">
                           {story.acceptanceCriteria.map((criterion: string, index: number) => (
-                            <li key={index} className="text-[12px] text-slate-600 flex items-start gap-2">
+                            <li key={index} className="text-[0.75rem] text-slate-600 flex items-start gap-2">
                               <CheckCircle size={12} className="text-green-500 mt-0.5 flex-shrink-0" />
                               <span>{criterion}</span>
                             </li>
@@ -1413,7 +1413,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                 Equipa
               </Label>
               {loadingTeams ? (
-                <div className="text-[14px] text-slate-400 py-2 px-3">
+                <div className="text-[0.875rem] text-slate-400 py-2 px-3">
                   A carregar equipas...
                 </div>
               ) : (
@@ -1431,7 +1431,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                   ))}
                 </select>
               )}
-              <p className="text-[11px] text-slate-500">
+              <p className="text-[0.6875rem] text-slate-500">
                 Selecione a equipa à qual o formando pertence
               </p>
             </div>

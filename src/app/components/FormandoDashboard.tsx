@@ -338,27 +338,27 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
         <div className="bg-gradient-to-br from-[#0a7da0] to-[#096d8a] rounded-[16px] p-5 shadow-lg text-white">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <p className="text-white/80 text-[12px] mb-1">Minha Equipa</p>
-              <h2 className="text-[20px] font-medium mb-1">{myTeam.name}</h2>
-              <p className="text-white/90 text-[13px]">{myTeam.course}</p>
+              <p className="text-white/80 text-[0.75rem] mb-1">Minha Equipa</p>
+              <h2 className="text-[1.25rem] font-medium mb-1">{myTeam.name}</h2>
+              <p className="text-white/90 text-[0.8125rem]">{myTeam.course}</p>
             </div>
-            <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-[20px] font-medium border-2 border-white/30">
+            <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-[1.25rem] font-medium border-2 border-white/30">
               {myTeam.avatar}
             </div>
           </div>
           
           <div className="grid grid-cols-3 gap-3 mt-4 pt-4 border-t border-white/20">
             <div>
-              <p className="text-white/70 text-[11px] mb-1">Velocidade</p>
-              <p className="text-[18px] font-medium">{teamKPIs.velocity} pts</p>
+              <p className="text-white/70 text-[0.6875rem] mb-1">Velocidade</p>
+              <p className="text-[1.125rem] font-medium">{teamKPIs.velocity} pts</p>
             </div>
             <div>
-              <p className="text-white/70 text-[11px] mb-1">Conclusão</p>
-              <p className="text-[18px] font-medium">{teamKPIs.completionRate}%</p>
+              <p className="text-white/70 text-[0.6875rem] mb-1">Conclusão</p>
+              <p className="text-[1.125rem] font-medium">{teamKPIs.completionRate}%</p>
             </div>
             <div>
-              <p className="text-white/70 text-[11px] mb-1">Membros</p>
-              <p className="text-[18px] font-medium">{teamKPIs.teamMembers}</p>
+              <p className="text-white/70 text-[0.6875rem] mb-1">Membros</p>
+              <p className="text-[1.125rem] font-medium">{teamKPIs.teamMembers}</p>
             </div>
           </div>
         </div>
@@ -373,8 +373,8 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
             <div className="bg-[#0a7da0] p-2 rounded-[10px] w-fit mb-3">
               <ListTodo className="text-white" size={20} />
             </div>
-            <p className="text-[14px] font-medium text-slate-800 dark:text-slate-200">Ver Sprints</p>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">{sprints.length} ativos</p>
+            <p className="text-[0.875rem] font-medium text-slate-800 dark:text-slate-200">Ver Sprints</p>
+            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1">{sprints.length} ativos</p>
           </button>
 
           <button
@@ -385,8 +385,8 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
             <div className="bg-[#0a7da0] p-2 rounded-[10px] w-fit mb-3">
               <Mail className="text-white" size={20} />
             </div>
-            <p className="text-[14px] font-medium text-slate-800 dark:text-slate-200">Mensagens</p>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Dos formadores</p>
+            <p className="text-[0.875rem] font-medium text-slate-800 dark:text-slate-200">Mensagens</p>
+            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1">Dos formadores</p>
           </button>
 
           <button
@@ -397,13 +397,13 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
             <div className="bg-orange-600 p-2 rounded-[10px] w-fit mb-3 relative">
               <Bell className="text-white" size={20} />
               {unreadAlerts > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[0.625rem] font-bold rounded-full w-4 h-4 flex items-center justify-center">
                   {unreadAlerts}
                 </span>
               )}
             </div>
-            <p className="text-[14px] font-medium text-slate-800 dark:text-slate-200">Alertas</p>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">{unreadAlerts} novos</p>
+            <p className="text-[0.875rem] font-medium text-slate-800 dark:text-slate-200">Alertas</p>
+            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1">{unreadAlerts} novos</p>
           </button>
 
           <button
@@ -414,32 +414,32 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
             <div className="bg-purple-600 p-2 rounded-[10px] w-fit mb-3">
               <Calendar className="text-white" size={20} />
             </div>
-            <p className="text-[14px] font-medium text-slate-800 dark:text-slate-200">Calendário</p>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">5 eventos</p>
+            <p className="text-[0.875rem] font-medium text-slate-800 dark:text-slate-200">Calendário</p>
+            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1">5 eventos</p>
           </button>
         </div>
 
         {/* Meus Story Points */}
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-[16px] text-slate-800 dark:text-slate-200">Meus Story Points</h2>
+            <h2 className="text-[1rem] text-slate-800 dark:text-slate-200">Meus Story Points</h2>
             <Award className="text-[#0a7da0]" size={20} />
           </div>
           
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-[14px] text-slate-600 dark:text-slate-400 mb-1">Sprint Atual</p>
-                <p className="text-[28px] text-[#0a7da0]">{teamKPIs.myStoryPoints} pts</p>
+                <p className="text-[0.875rem] text-slate-600 dark:text-slate-400 mb-1">Sprint Atual</p>
+                <p className="text-[1.75rem] text-[#0a7da0]">{teamKPIs.myStoryPoints} pts</p>
               </div>
               <div className="flex items-center gap-2 bg-green-100 px-3 py-2 rounded-[10px] dark:bg-green-900/30">
                 <TrendingUp size={16} className="text-green-600 dark:text-green-400" />
-                <span className="text-green-600 dark:text-green-400 text-[14px]">{teamKPIs.storyPointsTrend}</span>
+                <span className="text-green-600 dark:text-green-400 text-[0.875rem]">{teamKPIs.storyPointsTrend}</span>
               </div>
             </div>
 
             <div className="pt-3 border-t border-slate-200 dark:border-slate-700">
-              <div className="flex items-center justify-between text-[13px] mb-2">
+              <div className="flex items-center justify-between text-[0.8125rem] mb-2">
                 <span className="text-slate-600 dark:text-slate-400">Progresso do Sprint</span>
                 <span className="text-slate-800 dark:text-slate-200">{teamKPIs.completionRate}%</span>
               </div>
@@ -455,10 +455,10 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
 
         {/* Performance da Equipa */}
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
-          <h2 className="text-[16px] text-slate-800 dark:text-slate-200 mb-4">Membros da Equipa</h2>
+          <h2 className="text-[1rem] text-slate-800 dark:text-slate-200 mb-4">Membros da Equipa</h2>
           
           {loading ? (
-            <div className="text-center py-4 text-slate-500 dark:text-slate-400 text-[13px]">Carregando membros...</div>
+            <div className="text-center py-4 text-slate-500 dark:text-slate-400 text-[0.8125rem]">Carregando membros...</div>
           ) : teamKPIs.memberPoints && teamKPIs.memberPoints.length > 0 ? (
             <div className="space-y-3">
               {teamKPIs.memberPoints.map((member: any, index: number) => {
@@ -492,31 +492,31 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 bg-gradient-to-br ${colorClass} rounded-full flex items-center justify-center text-white text-[13px]`}>
+                      <div className={`w-10 h-10 bg-gradient-to-br ${colorClass} rounded-full flex items-center justify-center text-white text-[0.8125rem]`}>
                         {initials}
                       </div>
                       <div>
-                        <p className="text-[14px] text-slate-800 dark:text-slate-200">{member.name}</p>
-                        <p className={`text-[11px] ${isCurrentUser ? 'text-[#0a7da0]' : 'text-slate-500 dark:text-slate-400'}`}>
+                        <p className="text-[0.875rem] text-slate-800 dark:text-slate-200">{member.name}</p>
+                        <p className={`text-[0.6875rem] ${isCurrentUser ? 'text-[#0a7da0]' : 'text-slate-500 dark:text-slate-400'}`}>
                           {isCurrentUser ? 'Você' : 'Formando'}
                         </p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-[14px] text-[#0a7da0]">{member.points || 0} pts</p>
+                      <p className="text-[0.875rem] text-[#0a7da0]">{member.points || 0} pts</p>
                     </div>
                   </div>
                 );
               })}
             </div>
           ) : (
-            <div className="text-center py-4 text-slate-500 dark:text-slate-400 text-[13px]">Nenhum membro encontrado</div>
+            <div className="text-center py-4 text-slate-500 dark:text-slate-400 text-[0.8125rem]">Nenhum membro encontrado</div>
           )}
 
           <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between text-[13px]">
+            <div className="flex items-center justify-between text-[0.8125rem]">
               <span className="text-slate-600 dark:text-slate-400">Total da Equipa</span>
-              <strong className="text-[#0a7da0] text-[16px]">{teamKPIs.totalPoints} pts</strong>
+              <strong className="text-[#0a7da0] text-[1rem]">{teamKPIs.totalPoints} pts</strong>
             </div>
           </div>
         </div>
@@ -524,9 +524,9 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
         {/* Burndown Chart */}
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-[16px] text-slate-800 dark:text-slate-200">Burndown Chart</h2>
+            <h2 className="text-[1rem] text-slate-800 dark:text-slate-200">Burndown Chart</h2>
             <div className="bg-blue-100 px-3 py-1 rounded-[8px] dark:bg-blue-900/30">
-              <p className="text-[11px] text-blue-700 dark:text-blue-400">Sprint Atual</p>
+              <p className="text-[0.6875rem] text-blue-700 dark:text-blue-400">Sprint Atual</p>
             </div>
           </div>
 
@@ -581,7 +581,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
           </ResponsiveContainer>
 
           <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between text-[12px]">
+            <div className="flex items-center justify-between text-[0.75rem]">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-[#0a7da0] rounded-full"></div>
                 <span className="text-slate-600 dark:text-slate-400">Trabalho Restante: <strong className="text-slate-800 dark:text-slate-200">0 pts</strong></span>
@@ -594,7 +594,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
         {/* Velocity Chart */}
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-[16px] text-slate-800 dark:text-slate-200">Velocidade da Equipa</h2>
+            <h2 className="text-[1rem] text-slate-800 dark:text-slate-200">Velocidade da Equipa</h2>
             <BarChart3 className="text-[#0a7da0]" size={20} />
           </div>
 
@@ -641,13 +641,13 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
           </ResponsiveContainer>
 
           <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between text-[12px]">
+            <div className="flex items-center justify-between text-[0.75rem]">
               <span className="text-slate-600 dark:text-slate-400">Velocidade Média</span>
               <div className="flex items-center gap-2">
-                <strong className="text-[#0a7da0] text-[16px]">{teamKPIs.velocity} pts</strong>
+                <strong className="text-[#0a7da0] text-[1rem]">{teamKPIs.velocity} pts</strong>
                 <div className="flex items-center gap-1 bg-green-100 px-2 py-1 rounded-[6px] dark:bg-green-900/30">
                   <TrendingUp size={12} className="text-green-600 dark:text-green-400" />
-                  <span className="text-green-600 dark:text-green-400 text-[11px]">{teamKPIs.velocityTrend}</span>
+                  <span className="text-green-600 dark:text-green-400 text-[0.6875rem]">{teamKPIs.velocityTrend}</span>
                 </div>
               </div>
             </div>

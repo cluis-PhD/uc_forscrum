@@ -330,9 +330,9 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
             <div className="bg-gradient-to-br from-[#3b8433] to-[#2f6b29] rounded-[16px] p-4 shadow-lg text-white">
               <div className="flex items-start justify-between mb-3">
                 <div>
-                  <p className="text-white/80 text-[11px] mb-1">Equipa</p>
-                  <h2 className="text-[18px] mb-1">{selectedTeam.name}</h2>
-                  <p className="text-white/90 text-[12px]">{selectedTeam.members?.length || 0} membros ativos</p>
+                  <p className="text-white/80 text-[0.6875rem] mb-1">Equipa</p>
+                  <h2 className="text-[1.125rem] mb-1">{selectedTeam.name}</h2>
+                  <p className="text-white/90 text-[0.75rem]">{selectedTeam.members?.length || 0} membros ativos</p>
                 </div>
                 <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border-2 border-white/30">
                   <UsersIcon size={22} />
@@ -341,7 +341,7 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
               
               {/* Barra de progresso da equipa */}
               <div className="mb-3">
-                <div className="flex items-center justify-between text-[11px] mb-1.5">
+                <div className="flex items-center justify-between text-[0.6875rem] mb-1.5">
                   <span className="text-white/80">Performance Geral</span>
                   <span className="text-white font-medium">{selectedTeam.performance}%</span>
                 </div>
@@ -356,23 +356,23 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
               {/* Métricas da equipa */}
               <div className="grid grid-cols-3 gap-2.5 mt-3 pt-3 border-t border-white/20">
                 <div>
-                  <p className="text-white/70 text-[10px] mb-0.5">Stories</p>
-                  <p className="text-[16px]">{selectedTeam.completedStories}</p>
-                  <p className="text-white/70 text-[9px]">Concluídas</p>
+                  <p className="text-white/70 text-[0.625rem] mb-0.5">Stories</p>
+                  <p className="text-[1rem]">{selectedTeam.completedStories}</p>
+                  <p className="text-white/70 text-[0.5625rem]">Concluídas</p>
                 </div>
                 <div>
-                  <p className="text-white/70 text-[10px] mb-0.5">Sprints</p>
-                  <p className="text-[16px]">{selectedTeam.sprints?.length || 0}</p>
-                  <p className="text-white/70 text-[9px]">Total</p>
+                  <p className="text-white/70 text-[0.625rem] mb-0.5">Sprints</p>
+                  <p className="text-[1rem]">{selectedTeam.sprints?.length || 0}</p>
+                  <p className="text-white/70 text-[0.5625rem]">Total</p>
                 </div>
                 <div>
-                  <p className="text-white/70 text-[10px] mb-0.5">Média</p>
-                  <p className="text-[16px]">
+                  <p className="text-white/70 text-[0.625rem] mb-0.5">Média</p>
+                  <p className="text-[1rem]">
                     {selectedTeam.members && selectedTeam.members.length > 0
                       ? Math.round(selectedTeam.members.reduce((sum, m) => sum + (m.performance || 0), 0) / selectedTeam.members.length)
                       : 0}%
                   </p>
-                  <p className="text-white/70 text-[9px]">Membros</p>
+                  <p className="text-white/70 text-[0.5625rem]">Membros</p>
                 </div>
               </div>
             </div>
@@ -384,18 +384,18 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
           <div className="grid grid-cols-3 gap-3">
             <div className="bg-white rounded-[12px] p-3 text-center shadow-sm dark:bg-slate-800 transition-colors">
               <UsersIcon className="text-[#3b8433] mx-auto mb-1" size={18} />
-              <p className="text-slate-800 text-[16px] dark:text-slate-100">20</p>
-              <p className="text-slate-500 text-[12px] dark:text-slate-400">Formandos</p>
+              <p className="text-slate-800 text-[1rem] dark:text-slate-100">20</p>
+              <p className="text-slate-500 text-[0.75rem] dark:text-slate-400">Formandos</p>
             </div>
             <div className="bg-white rounded-[12px] p-3 text-center shadow-sm dark:bg-slate-800 transition-colors">
               <Award className="text-[#3b8433] mx-auto mb-1" size={18} />
-              <p className="text-slate-800 text-[16px] dark:text-slate-100">85%</p>
-              <p className="text-slate-500 text-[12px] dark:text-slate-400">Média Turma</p>
+              <p className="text-slate-800 text-[1rem] dark:text-slate-100">85%</p>
+              <p className="text-slate-500 text-[0.75rem] dark:text-slate-400">Média Turma</p>
             </div>
             <div className="bg-white rounded-[12px] p-3 text-center shadow-sm dark:bg-slate-800 transition-colors">
               <TrendingUp className="text-[#3b8433] mx-auto mb-1" size={18} />
-              <p className="text-slate-800 text-[16px] dark:text-slate-100">36</p>
-              <p className="text-slate-500 text-[12px] dark:text-slate-400">Stories Done</p>
+              <p className="text-slate-800 text-[1rem] dark:text-slate-100">36</p>
+              <p className="text-slate-500 text-[0.75rem] dark:text-slate-400">Stories Done</p>
             </div>
           </div>
         )}
@@ -407,11 +407,11 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
             className="w-full bg-white text-[#3b8433] border-2 border-[#3b8433] rounded-[14px] p-4 shadow-sm hover:shadow-md hover:bg-[#3b8433] hover:text-white transition-all flex items-center justify-center gap-2 group dark:bg-slate-800 dark:text-[#3b8433] dark:border-[#3b8433] dark:hover:bg-[#3b8433] dark:hover:text-white"
           >
             <Plus size={20} strokeWidth={2.5} className="text-[#3b8433] group-hover:text-white transition-colors" />
-            <span className="text-[15px] font-medium">Criar Nova Equipa</span>
+            <span className="text-[0.9375rem] font-medium">Criar Nova Equipa</span>
           </button>
         )}
 
-        <h2 className="text-[18px] text-slate-800 mt-4 dark:text-slate-200">
+        <h2 className="text-[1.125rem] text-slate-800 mt-4 dark:text-slate-200">
           {teamId ? 'Detalhes da Equipa' : `Equipas (${teams.length})`}
         </h2>
 
@@ -426,8 +426,8 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
                     <UsersIcon className="text-white" size={20} />
                   </div>
                   <div>
-                    <h3 className="text-[16px] text-slate-800 dark:text-slate-100">{team.name}</h3>
-                    <p className="text-[12px] text-slate-500 dark:text-slate-400">{team.members?.length || 0} membros</p>
+                    <h3 className="text-[1rem] text-slate-800 dark:text-slate-100">{team.name}</h3>
+                    <p className="text-[0.75rem] text-slate-500 dark:text-slate-400">{team.members?.length || 0} membros</p>
                   </div>
                 </div>
               </div>
@@ -435,7 +435,7 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
               {/* Team Stats */}
               <div className="grid grid-cols-2 gap-3 mb-4 p-3 bg-slate-50 rounded-[12px] dark:bg-slate-700/50">
                 <div>
-                  <p className="text-[11px] text-slate-500 mb-1 dark:text-slate-400">Performance</p>
+                  <p className="text-[0.6875rem] text-slate-500 mb-1 dark:text-slate-400">Performance</p>
                   <div className="flex items-center gap-2">
                     <div className="flex-1 bg-slate-200 rounded-full h-2 dark:bg-slate-600">
                       <div 
@@ -443,20 +443,20 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
                         style={{ width: `${team.performance}%` }}
                       />
                     </div>
-                    <span className={`text-[13px] ${getPerformanceColor(team.performance)}`}>
+                    <span className={`text-[0.8125rem] ${getPerformanceColor(team.performance)}`}>
                       {team.performance}%
                     </span>
                   </div>
                 </div>
                 <div>
-                  <p className="text-[11px] text-slate-500 mb-1 dark:text-slate-400">Stories Concluídas</p>
-                  <p className="text-[16px] text-slate-800 dark:text-slate-100">{team.completedStories}</p>
+                  <p className="text-[0.6875rem] text-slate-500 mb-1 dark:text-slate-400">Stories Concluídas</p>
+                  <p className="text-[1rem] text-slate-800 dark:text-slate-100">{team.completedStories}</p>
                 </div>
               </div>
 
               {/* Team Members */}
               <div className="space-y-2">
-                <p className="text-[12px] text-slate-600 mb-2 dark:text-slate-400">Membros:</p>
+                <p className="text-[0.75rem] text-slate-600 mb-2 dark:text-slate-400">Membros:</p>
                 {team.members?.map((member) => (
                   <button
                     key={member.id}
@@ -464,19 +464,19 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
                     className="w-full flex items-center justify-between p-2 hover:bg-slate-50 rounded-[10px] transition-colors dark:hover:bg-slate-700"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-[12px]">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white text-[0.75rem]">
                         {member.avatar}
                       </div>
                       <div className="text-left">
-                        <p className="text-[13px] text-slate-800 dark:text-slate-200">{member.name}</p>
-                        <p className="text-[11px] text-slate-500 dark:text-slate-400">{member.email}</p>
+                        <p className="text-[0.8125rem] text-slate-800 dark:text-slate-200">{member.name}</p>
+                        <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400">{member.email}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className={`${getRoleColor(member.role || 'Formando')} px-2 py-1 rounded-[6px] text-[10px]`}>
+                      <span className={`${getRoleColor(member.role || 'Formando')} px-2 py-1 rounded-[6px] text-[0.625rem]`}>
                         {member.role || 'Formando'}
                       </span>
-                      <span className={`text-[12px] ${getPerformanceColor(member.performance || 0)}`}>
+                      <span className={`text-[0.75rem] ${getPerformanceColor(member.performance || 0)}`}>
                         {member.performance || 0}%
                       </span>
                     </div>
@@ -486,7 +486,7 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
               
               {/* Team Sprints */}
               <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
-                <p className="text-[12px] text-slate-600 mb-2 dark:text-slate-400">Sprints da Equipa:</p>
+                <p className="text-[0.75rem] text-slate-600 mb-2 dark:text-slate-400">Sprints da Equipa:</p>
                 <div className="space-y-2">
                   {team.sprints?.map((sprint) => (
                     <div 
@@ -496,14 +496,14 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
                           <Layers size={14} className="text-slate-400 dark:text-slate-300" />
-                          <span className="text-[13px] font-medium text-slate-800 dark:text-slate-200">{sprint.name}</span>
+                          <span className="text-[0.8125rem] font-medium text-slate-800 dark:text-slate-200">{sprint.name}</span>
                         </div>
-                        <span className={`${getStatusColor(sprint.status)} px-2 py-0.5 rounded-[6px] text-[10px]`}>
+                        <span className={`${getStatusColor(sprint.status)} px-2 py-0.5 rounded-[6px] text-[0.625rem]`}>
                           {getStatusLabel(sprint.status)}
                         </span>
                       </div>
                       
-                      <div className="flex items-center gap-4 text-[11px] text-slate-500 mb-2 dark:text-slate-400">
+                      <div className="flex items-center gap-4 text-[0.6875rem] text-slate-500 mb-2 dark:text-slate-400">
                         <span>{sprint.storiesCount} stories</span>
                         <span>{sprint.progress}% concluído</span>
                       </div>
@@ -523,14 +523,14 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
               <div className="flex gap-2 mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
                 {/*<button
                   onClick={() => handleAddMember(team)}
-                  className="flex-1 py-2 px-2 bg-[#3b8433] text-white rounded-[8px] text-[12px] hover:bg-[#2f6b29] transition-colors flex items-center justify-center gap-1"
+                  className="flex-1 py-2 px-2 bg-[#3b8433] text-white rounded-[8px] text-[0.75rem] hover:bg-[#2f6b29] transition-colors flex items-center justify-center gap-1"
                 >
                   <Plus size={14} />
                   <span>Membro</span>
                 </button> 
                 <button
                   onClick={() => handleEditTeam(team)}
-                  className="flex-1 py-2 px-2 border-2 border-slate-200 text-slate-700 rounded-[8px] text-[12px] hover:bg-slate-50 transition-colors flex items-center justify-center gap-1 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
+                  className="flex-1 py-2 px-2 border-2 border-slate-200 text-slate-700 rounded-[8px] text-[0.75rem] hover:bg-slate-50 transition-colors flex items-center justify-center gap-1 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700"
                 >
                   <Edit size={14} />
                   <span>Editar</span>

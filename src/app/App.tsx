@@ -781,10 +781,10 @@ export default function App() {
                   <GraduationCap size={32} className="text-[#3b8433]" />
                 </div>
               </div>
-              <h1 className="text-white text-[36px] tracking-tight mb-1">
+              <h1 className="text-white text-[2.25rem] tracking-tight mb-1">
                 Bem-vindo
               </h1>
-              <p className="text-white/90 text-[15px]">
+              <p className="text-white/90 text-[0.9375rem]">
                 Entre na plataforma forScrum
               </p>
             </div>
@@ -795,7 +795,7 @@ export default function App() {
             <form onSubmit={handleLogin} className="space-y-5">
               {/* Campo Nome do Utilizador */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="username" className="text-[14px] text-slate-600 font-medium">
+                <label htmlFor="username" className="text-[0.875rem] text-slate-600 font-medium">
                   Nome do utilizador
                 </label>
                 <div className="relative">
@@ -814,7 +814,7 @@ export default function App() {
                         : !errors.username && touched.username && username
                         ? 'border-[#3b8433] focus:border-[#3b8433]'
                         : 'border-slate-200 focus:border-[#3b8433]'
-                    } pl-12 pr-12 py-4 text-[16px] text-slate-800 focus:outline-none transition-all placeholder:text-slate-400 shadow-sm`}
+                    } pl-12 pr-12 py-4 text-[1rem] text-slate-800 focus:outline-none transition-all placeholder:text-slate-400 shadow-sm`}
                     placeholder="formador ou formando"
                   />
                   {touched.username && (
@@ -830,19 +830,19 @@ export default function App() {
                 {errors.username && touched.username && (
                   <div className="flex items-start gap-2 bg-red-50 rounded-[10px] px-3 py-2.5 border border-red-100">
                     <AlertCircle size={16} className="text-red-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-[13px] text-red-700">{errors.username}</p>
+                    <p className="text-[0.8125rem] text-red-700">{errors.username}</p>
                   </div>
                 )}
                 {loginError && (
                   <div className="flex items-start gap-2 bg-red-50 rounded-[10px] px-3 py-2.5 border border-red-100">
                     <AlertCircle size={16} className="text-red-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-[13px] text-red-700">{loginError}</p>
+                    <p className="text-[0.8125rem] text-red-700">{loginError}</p>
                   </div>
                 )}
                 {!errors.username && !loginError && touched.username && username && (
                   <div className="flex items-start gap-2 bg-green-50 rounded-[10px] px-3 py-2.5 border border-green-200">
                     <CheckCircle size={16} className="text-green-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-[13px] text-green-700">
+                    <p className="text-[0.8125rem] text-green-700">
                       {username.toLowerCase() === 'formador' ? (
                         <span>Vai entrar como <strong>Formador</strong></span>
                       ) : (
@@ -855,7 +855,7 @@ export default function App() {
 
               {/* Campo Password - Opcional para todos */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="password" className="text-[14px] text-slate-600 font-medium">
+                <label htmlFor="password" className="text-[0.875rem] text-slate-600 font-medium">
                   Palavra-passe (opcional)
                 </label>
                 <div className="relative">
@@ -868,7 +868,7 @@ export default function App() {
                     value={password}
                     onChange={(e) => handlePasswordChange(e.target.value)}
                     onBlur={handlePasswordBlur}
-                    className="bg-white w-full rounded-[14px] border-2 border-slate-200 focus:border-[#3b8433] pl-12 pr-12 py-4 text-[16px] text-slate-800 focus:outline-none transition-all placeholder:text-slate-400 shadow-sm"
+                    className="bg-white w-full rounded-[14px] border-2 border-slate-200 focus:border-[#3b8433] pl-12 pr-12 py-4 text-[1rem] text-slate-800 focus:outline-none transition-all placeholder:text-slate-400 shadow-sm"
                     placeholder="Escreva a palavra-passe"
                     autoComplete="current-password"
                   />
@@ -888,7 +888,7 @@ export default function App() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="bg-[#3b8433] w-full h-[56px] rounded-[14px] text-[17px] text-white font-semibold hover:bg-[#2f6b29] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-[#3b8433]/20 mt-8"
+                className="bg-[#3b8433] w-full h-[56px] rounded-[14px] text-[1.0625rem] text-white font-semibold hover:bg-[#2f6b29] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-[#3b8433]/20 mt-8"
               >
                 {isLoading ? (
                   <div className="flex items-center justify-center gap-2">
@@ -904,7 +904,7 @@ export default function App() {
             {/* Info */}
             <div className="mt-8 pt-6 border-t border-slate-100">
               <div className="flex items-center justify-center gap-2 text-center">
-                <p className="text-[13px] text-slate-500">
+                <p className="text-[0.8125rem] text-slate-500">
                   forScrum
                 </p>
               </div>
@@ -913,7 +913,7 @@ export default function App() {
 
           {/* Footer */}
         <div className="absolute bottom-6 left-0 right-0 text-center px-6">
-            <p className="text-[11px] text-slate-400">
+            <p className="text-[0.6875rem] text-slate-400">
               forScrum © 2025 
             </p>
           </div>

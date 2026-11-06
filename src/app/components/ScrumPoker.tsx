@@ -612,11 +612,11 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
           }}
         >
           <div className="flex items-start justify-between mb-2">
-            <p className="text-white/80 text-[12px]">User Story em Votação</p>
+            <p className="text-white/80 text-[0.75rem]">User Story em Votação</p>
             {currentStory?.points && currentStory.points > 0 && (
               <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1.5">
                 <CheckCircle size={14} />
-                <span className="text-[13px] font-medium">{currentStory.points} pts</span>
+                <span className="text-[0.8125rem] font-medium">{currentStory.points} pts</span>
               </div>
             )}
           </div>
@@ -629,7 +629,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
               aria-label="Selecionar User Story"
               aria-expanded={showStorySelector}
             >
-              <span className="text-[16px] flex-1 pr-2">
+              <span className="text-[1rem] flex-1 pr-2">
                 {loadingStories ? 'Carregando...' : (currentStory?.title || 'Selecione uma story')}
               </span>
               <ChevronDown 
@@ -661,12 +661,12 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
                         story.id === currentStoryId ? 'bg-slate-100' : ''
                       }`}
                     >
-                      <p className="text-[14px] text-slate-800">{story.title}</p>
+                      <p className="text-[0.875rem] text-slate-800">{story.title}</p>
                       {story.description && (
-                        <p className="text-[11px] text-slate-500 mt-1 line-clamp-1">{story.description}</p>
+                        <p className="text-[0.6875rem] text-slate-500 mt-1 line-clamp-1">{story.description}</p>
                       )}
                       {story.points && story.points > 0 && (
-                        <p className="text-[11px] text-green-600 mt-1">✓ {story.points} pontos</p>
+                        <p className="text-[0.6875rem] text-green-600 mt-1">✓ {story.points} pontos</p>
                       )}
                     </button>
                   ))}
@@ -676,14 +676,14 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
           </div>
 
           <div className="flex items-center justify-between pt-3 border-t border-white/20">
-            <div className="flex items-center gap-2 text-[13px]">
+            <div className="flex items-center gap-2 text-[0.8125rem]">
               <Users size={16} />
               <span>{totalVotes}/{totalMembers} votaram</span>
             </div>
             {allVoted && !votesRevealed && (
               <div className="flex items-center gap-1.5 bg-green-500/20 px-3 py-1 rounded-full">
                 <CheckCircle size={14} />
-                <span className="text-[12px]">Todos votaram</span>
+                <span className="text-[0.75rem]">Todos votaram</span>
               </div>
             )}
           </div>
@@ -691,7 +691,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
 
         {/* Voting System Toggle */}
         <div className="bg-white rounded-[16px] p-4 shadow-sm dark:bg-slate-800 transition-colors">
-          <p className="text-[13px] text-slate-600 mb-3 dark:text-slate-400" id="voting-system-label">Sistema de Votação</p>
+          <p className="text-[0.8125rem] text-slate-600 mb-3 dark:text-slate-400" id="voting-system-label">Sistema de Votação</p>
           <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-labelledby="voting-system-label">
             <button
               onClick={() => {
@@ -701,7 +701,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
               role="radio"
               aria-checked={votingSystem === 'fibonacci'}
               aria-label="Sistema Fibonacci"
-              className={`py-3 px-4 rounded-[12px] text-[14px] transition-all ${
+              className={`py-3 px-4 rounded-[12px] text-[0.875rem] transition-all ${
                 votingSystem === 'fibonacci'
                   ? 'text-white shadow-md'
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'
@@ -720,7 +720,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
               role="radio"
               aria-checked={votingSystem === 'tshirt'}
               aria-label="Sistema T-Shirt"
-              className={`py-3 px-4 rounded-[12px] text-[14px] transition-all ${
+              className={`py-3 px-4 rounded-[12px] text-[0.875rem] transition-all ${
                 votingSystem === 'tshirt'
                   ? 'text-white shadow-md'
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'
@@ -736,7 +736,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
 
         {/* Voting Cards */}
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800 transition-colors">
-          <p className="text-[14px] text-slate-800 mb-4 dark:text-slate-200" id="vote-cards-label">Selecione o seu voto</p>
+          <p className="text-[0.875rem] text-slate-800 mb-4 dark:text-slate-200" id="vote-cards-label">Selecione o seu voto</p>
           <div className="grid grid-cols-4 gap-3" role="group" aria-labelledby="vote-cards-label">
             {votingOptions.map((option) => (
               <button
@@ -745,7 +745,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
                 disabled={votesRevealed}
                 aria-pressed={selectedVote === option}
                 aria-label={`Votar ${option}`}
-                className={`aspect-[3/4] rounded-[12px] border-3 transition-all flex items-center justify-center text-[20px] shadow-sm active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed ${
+                className={`aspect-[3/4] rounded-[12px] border-3 transition-all flex items-center justify-center text-[1.25rem] shadow-sm active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed ${
                   selectedVote === option
                     ? 'text-white shadow-lg scale-105'
                     : 'bg-white border-slate-300 text-slate-700 hover:border-slate-400 hover:shadow-md dark:bg-slate-700 dark:border-slate-600 dark:text-slate-200 dark:hover:border-slate-500'
@@ -765,14 +765,14 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
         {/* Team Votes */}
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800 transition-colors" aria-live="polite">
           <div className="flex items-center justify-between mb-4">
-            <p className="text-[14px] text-slate-800 dark:text-slate-200">Votos da Equipa</p>
+            <p className="text-[0.875rem] text-slate-800 dark:text-slate-200">Votos da Equipa</p>
             {votesRevealed ? (
-              <div className="flex items-center gap-1.5 text-green-600 text-[12px] dark:text-green-400">
+              <div className="flex items-center gap-1.5 text-green-600 text-[0.75rem] dark:text-green-400">
                 <Eye size={14} />
                 <span>Revelados</span>
               </div>
             ) : (
-              <div className="flex items-center gap-1.5 text-slate-500 text-[12px] dark:text-slate-400">
+              <div className="flex items-center gap-1.5 text-slate-500 text-[0.75rem] dark:text-slate-400">
                 <EyeOff size={14} />
                 <span>Ocultos</span>
               </div>
@@ -780,7 +780,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
           </div>
 
           {loadingTeam ? (
-            <div className="text-center py-4 text-slate-500 text-[13px]">Carregando membros...</div>
+            <div className="text-center py-4 text-slate-500 text-[0.8125rem]">Carregando membros...</div>
           ) : (
             <div className="space-y-2">
               {teamMembers.map((member) => {
@@ -797,7 +797,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
                   >
                     <div className="flex items-center gap-3">
                       <div 
-                        className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[13px]"
+                        className="w-10 h-10 rounded-full flex items-center justify-center text-white text-[0.8125rem]"
                         style={{
                           background: isCurrentUser 
                             ? `linear-gradient(135deg, ${primaryColor}, ${userType === 'formando' ? '#096d8a' : '#2f6b29'})` 
@@ -807,13 +807,13 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
                         {member.avatar}
                       </div>
                       <div>
-                        <p className="text-[14px] text-slate-800 dark:text-slate-200">{member.name}</p>
-                        <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                        <p className="text-[0.875rem] text-slate-800 dark:text-slate-200">{member.name}</p>
+                        <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400">
                           {member.hasVoted ? 'Votou' : 'Aguardando...'}
                         </p>
                       </div>
                     </div>
-                    <div className={`w-12 h-16 rounded-[8px] border-2 flex items-center justify-center text-[18px] shadow-sm transition-colors ${votesRevealed && member.vote ? '' : 'bg-[#f8fafc] border-[#e2e8f0] text-[#64748b] dark:bg-slate-800 dark:border-slate-600 dark:text-slate-400'}`}
+                    <div className={`w-12 h-16 rounded-[8px] border-2 flex items-center justify-center text-[1.125rem] shadow-sm transition-colors ${votesRevealed && member.vote ? '' : 'bg-[#f8fafc] border-[#e2e8f0] text-[#64748b] dark:bg-slate-800 dark:border-slate-600 dark:text-slate-400'}`}
                       style={{
                         background: votesRevealed && member.vote ? primaryColor : undefined,
                         borderColor: votesRevealed && member.vote ? primaryColor : undefined,
@@ -832,11 +832,11 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
           {votesRevealed && calculateConsensus && (
             <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
               <div className="flex items-center justify-between mb-3">
-                <p className="text-[13px] text-slate-600 dark:text-slate-400">Estatísticas - Clique para salvar</p>
+                <p className="text-[0.8125rem] text-slate-600 dark:text-slate-400">Estatísticas - Clique para salvar</p>
                 {currentStory?.points && currentStory.points > 0 && (
                   <div className="flex items-center gap-1.5 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded-full">
                     <CheckCircle size={12} className="text-green-600 dark:text-green-400" />
-                    <span className="text-[11px] text-green-700 dark:text-green-300">
+                    <span className="text-[0.6875rem] text-green-700 dark:text-green-300">
                       {currentStory.points} pts salvos
                     </span>
                   </div>
@@ -852,8 +852,8 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
                   }`}
                   aria-label={`Salvar estimativa de ${calculateConsensus.min} pontos (mínimo)`}
                 >
-                  <p className="text-[11px] text-slate-500 mb-1 dark:text-slate-400">Mínimo</p>
-                  <p className="text-[18px]" style={{ color: primaryColor }}>{calculateConsensus.min}</p>
+                  <p className="text-[0.6875rem] text-slate-500 mb-1 dark:text-slate-400">Mínimo</p>
+                  <p className="text-[1.125rem]" style={{ color: primaryColor }}>{calculateConsensus.min}</p>
                   {currentStory?.points === calculateConsensus.min && (
                     <CheckCircle size={14} className="mx-auto mt-1 text-green-600 dark:text-green-400" />
                   )}
@@ -867,8 +867,8 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
                   }`}
                   aria-label={`Salvar estimativa de ${Math.round(parseFloat(calculateConsensus.avg))} pontos (média)`}
                 >
-                  <p className="text-[11px] text-slate-500 mb-1 dark:text-slate-400">Média</p>
-                  <p className="text-[18px]" style={{ color: primaryColor }}>{calculateConsensus.avg}</p>
+                  <p className="text-[0.6875rem] text-slate-500 mb-1 dark:text-slate-400">Média</p>
+                  <p className="text-[1.125rem]" style={{ color: primaryColor }}>{calculateConsensus.avg}</p>
                   {currentStory?.points === Math.round(parseFloat(calculateConsensus.avg)) && (
                     <CheckCircle size={14} className="mx-auto mt-1 text-green-600 dark:text-green-400" />
                   )}
@@ -882,8 +882,8 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
                   }`}
                   aria-label={`Salvar estimativa de ${calculateConsensus.max} pontos (máximo)`}
                 >
-                  <p className="text-[11px] text-slate-500 mb-1 dark:text-slate-400">Máximo</p>
-                  <p className="text-[18px]" style={{ color: primaryColor }}>{calculateConsensus.max}</p>
+                  <p className="text-[0.6875rem] text-slate-500 mb-1 dark:text-slate-400">Máximo</p>
+                  <p className="text-[1.125rem]" style={{ color: primaryColor }}>{calculateConsensus.max}</p>
                   {currentStory?.points === calculateConsensus.max && (
                     <CheckCircle size={14} className="mx-auto mt-1 text-green-600 dark:text-green-400" />
                   )}
@@ -899,7 +899,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
             <button
               onClick={handleRevealVotes}
               aria-label="Revelar Votos"
-              className="w-full py-4 rounded-[16px] text-white text-[16px] shadow-lg active:scale-[0.98] transition-all"
+              className="w-full py-4 rounded-[16px] text-white text-[1rem] shadow-lg active:scale-[0.98] transition-all"
               style={{ background: primaryColor }}
             >
               <div className="flex items-center justify-center gap-2">
@@ -913,7 +913,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
             <button
               onClick={handleResetVotes}
               aria-label="Iniciar Nova Votação"
-              className="w-full bg-white border-2 py-4 rounded-[16px] text-[16px] shadow-sm hover:shadow-md active:scale-[0.98] transition-all dark:bg-slate-800 dark:hover:bg-slate-700"
+              className="w-full bg-white border-2 py-4 rounded-[16px] text-[1rem] shadow-sm hover:shadow-md active:scale-[0.98] transition-all dark:bg-slate-800 dark:hover:bg-slate-700"
               style={{ 
                 borderColor: primaryColor,
                 color: primaryColor
