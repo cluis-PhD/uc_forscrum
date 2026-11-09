@@ -16,14 +16,14 @@ export function BottomNav({ currentScreen, onNavigate, onLogout }: BottomNavProp
   // Itens de navegação diferentes para formador e formando
   const navItems = userType === 'formando' 
     ? [
-        { id: 'dashboard', label: 'Home', icon: Home },
+        { id: 'dashboard', label: 'Início', icon: Home },
         { id: 'courseDetails', label: 'Sprints', icon: ListTodo },
         { id: 'messagesFormando', label: 'Mensagens', icon: MessageSquare },
         { id: 'alerts', label: 'Alertas', icon: Bell },
         { id: 'logout', label: 'Sair', icon: LogOut },
       ]
     : [
-        { id: 'dashboard', label: 'Home', icon: Home },
+        { id: 'dashboard', label: 'Início', icon: Home },
         { id: 'courses', label: 'Cursos', icon: BookOpen },
         { id: 'alerts', label: 'Alertas', icon: Bell },
         { id: 'calendar', label: 'Calendário', icon: Calendar },
