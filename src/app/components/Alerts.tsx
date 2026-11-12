@@ -56,11 +56,12 @@ export function Alerts({ onNavigate }: AlertsProps) {
       const courseFilter = loggedStudent?.courseId
         ? `?courseId=${encodeURIComponent(loggedStudent.courseId)}`
         : '';
-      const [alertsRes, readsRes] = await Promise.all([
-        fetch(`${API_URL}/alerts${courseFilter}`).then(r => r.json()),
-        fetch(`${API_URL}/alert-reads?readerId=${encodeURIComponent(readerId)}`).then(r => r.json()),
-      ]);
+      const alertsRes = await fetch(`${API_URL}/alerts${courseFilter}`).then(r => r.json());
       setAlerts(alertsRes.success && Array.isArray(alertsRes.alerts) ? alertsRes.alerts : []);
+      // O registo de leituras é independente: se falhar, os alertas continuam visíveis
+      const readsRes = await fetch(`${API_URL}/alert-reads?readerId=${encodeURIComponent(readerId)}`)
+        .then(r => r.json())
+        .catch(() => ({}));
       setReadAlerts(new Set(readsRes.success ? readsRes.alertIds : []));
     } catch (error) {
       console.error('[Alerts] Erro ao carregar alertas:', error);

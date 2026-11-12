@@ -463,12 +463,12 @@ async function route(method: string, parts: string[], q: URLSearchParams, body: 
       if (userType === 'formador') msgF = '&sent_by=eq.formando&is_read=eq.false';
       else if (studentId) msgF = `&sent_by=eq.formador&is_read=eq.false&student_id=${eq(studentId)}`;
       else return ok({ messages: 0, alerts: 0 });
-      const messages = (await sel(`messages?select=id${msgF}`)).length;
+      const messages = (await sel(`messages?select=id${msgF}`).catch(() => [])).length;
       const reader = userType === 'formador' ? 'formador' : studentId;
       const alertF = userType === 'formando' && courseId
         ? `&or=(course_id.is.null,course_id.eq.${encodeURIComponent(courseId)})` : '';
       const all: string[] = (await sel(`alerts?select=id${alertF}`)).map((r: Json) => r.id);
-      const read = new Set((await sel(`alert_reads?select=alert_id&reader_id=${eq(reader)}`)).map((r: Json) => r.alert_id));
+      const read = new Set((await sel(`alert_reads?select=alert_id&reader_id=${eq(reader)}`).catch(() => [])).map((r: Json) => r.alert_id));
       return ok({ messages, alerts: all.filter((a) => !read.has(a)).length });
     }
   }
