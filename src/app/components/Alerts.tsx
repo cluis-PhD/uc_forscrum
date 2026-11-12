@@ -9,7 +9,7 @@ import {
 import { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { Header } from './shared/Header';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 import { toast } from 'sonner';
 
 interface AlertsProps {
@@ -36,16 +36,9 @@ export function Alerts({ onNavigate }: AlertsProps) {
   useEffect(() => {
     loadAlerts();
     
-    // Polling automático a cada 30 segundos
-    const intervalId = setInterval(() => {
-      console.log('[Alerts] 🔄 Auto-reload - A recarregar alertas...');
-      loadAlerts();
-    }, 30000);
-
-    return () => {
-      console.log('[Alerts] 🛑 Limpando polling automático');
-      clearInterval(intervalId);
-    };
+    // Atualizar a cada 30 segundos
+    const intervalId = setInterval(loadAlerts, 30000);
+    return () => clearInterval(intervalId);
   }, [loggedStudent]);
 
   // Atualizar contador de não lidos quando alerts ou readAlerts mudar
@@ -54,183 +47,52 @@ export function Alerts({ onNavigate }: AlertsProps) {
     setUnreadAlerts(unreadCount);
   }, [alerts, readAlerts, setUnreadAlerts]);
 
+  // Quem está a ler: o formando com sessão iniciada, ou o formador
+  const readerId = loggedStudent?.id || 'formador';
+
   const loadAlerts = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/alerts`,
-        {
-          headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
-          },
-        }
-      );
-
-      if (!response.ok) {
-        // Se o endpoint não existir, usar dados do localStorage ou mockados
-        console.log('[Alerts] Backend não disponível, usando dados do localStorage');
-        const localAlerts = localStorage.getItem('forscrum_alerts');
-        if (localAlerts) {
-          const parsedAlerts = JSON.parse(localAlerts);
-          
-          // Filtrar alertas: mostrar os globais (sem courseId) ou os do curso do formando
-          let filteredAlerts = parsedAlerts;
-          if (loggedStudent?.courseId) {
-            filteredAlerts = parsedAlerts.filter((alert: Alert) => 
-              !alert.courseId || alert.courseId === loggedStudent.courseId
-            );
-            console.log('[Alerts] Alertas filtrados do localStorage para o curso:', loggedStudent.courseId, filteredAlerts.length);
-          }
-          
-          // Ordenar por data (mais recentes primeiro)
-          filteredAlerts.sort((a: Alert, b: Alert) => 
-            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-          );
-          
-          setAlerts(filteredAlerts);
-        } else {
-          const mockAlerts: Alert[] = [
-            {
-              id: '1',
-              type: 'urgent',
-              title: 'Sprint Planning Amanhã',
-              message: 'Reunião de Sprint Planning às 10h00 via Zoom. Todos os formandos devem participar.',
-              createdAt: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
-            },
-            {
-              id: '2',
-              type: 'warning',
-              title: 'User Story Atrasada',
-              message: 'A user story #23 está atrasada. Verifique o estado no SprintBoard.',
-              createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-              courseId: loggedStudent?.courseId,
-              courseName: loggedStudent?.courseName,
-            },
-            {
-              id: '3',
-              type: 'urgent',
-              title: 'Prazo de Entrega',
-              message: 'O prazo para entrega do projeto final é amanhã às 18h00.',
-              createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
-              courseId: loggedStudent?.courseId,
-              courseName: loggedStudent?.courseName,
-            },
-            {
-              id: '4',
-              type: 'warning',
-              title: 'Atualização de Material',
-              message: 'Novo material sobre User Stories disponível para consulta.',
-              createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
-            },
-          ];
-          
-          setAlerts(mockAlerts);
-        }
-        setIsLoading(false);
-        return;
-      }
-
-      const data = await response.json();
-      
-      if (data.success && Array.isArray(data.alerts)) {
-        // Filtrar alertas: mostrar os globais (sem courseId) ou os do curso do formando
-        let filteredAlerts = data.alerts;
-        
-        if (loggedStudent?.courseId) {
-          filteredAlerts = data.alerts.filter((alert: Alert) => 
-            !alert.courseId || alert.courseId === loggedStudent.courseId
-          );
-          console.log('[Alerts] Alertas filtrados para o curso:', loggedStudent.courseId, filteredAlerts.length);
-        }
-        
-        // Ordenar por data (mais recentes primeiro)
-        filteredAlerts.sort((a: Alert, b: Alert) => 
-          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        );
-        
-        setAlerts(filteredAlerts);
-      }
+      const courseFilter = loggedStudent?.courseId
+        ? `?courseId=${encodeURIComponent(loggedStudent.courseId)}`
+        : '';
+      const alertsRes = await fetch(`${API_URL}/alerts${courseFilter}`).then(r => r.json());
+      setAlerts(alertsRes.success && Array.isArray(alertsRes.alerts) ? alertsRes.alerts : []);
+      // O registo de leituras é independente: se falhar, os alertas continuam visíveis
+      const readsRes = await fetch(`${API_URL}/alert-reads?readerId=${encodeURIComponent(readerId)}`)
+        .then(r => r.json())
+        .catch(() => ({}));
+      setReadAlerts(new Set(readsRes.success ? readsRes.alertIds : []));
     } catch (error) {
-      console.error('Erro ao carregar alertas:', error);
-      // Usar dados do localStorage ou mockados em caso de erro
-      console.log('[Alerts] Erro no backend, usando dados do localStorage');
-      const localAlerts = localStorage.getItem('forscrum_alerts');
-      if (localAlerts) {
-        const parsedAlerts = JSON.parse(localAlerts);
-        
-        // Filtrar alertas: mostrar os globais (sem courseId) ou os do curso do formando
-        let filteredAlerts = parsedAlerts;
-        if (loggedStudent?.courseId) {
-          filteredAlerts = parsedAlerts.filter((alert: Alert) => 
-            !alert.courseId || alert.courseId === loggedStudent.courseId
-          );
-          console.log('[Alerts] Alertas filtrados do localStorage para o curso:', loggedStudent.courseId, filteredAlerts.length);
-        }
-        
-        // Ordenar por data (mais recentes primeiro)
-        filteredAlerts.sort((a: Alert, b: Alert) => 
-          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        );
-        
-        setAlerts(filteredAlerts);
-      } else {
-        const mockAlerts: Alert[] = [
-          {
-            id: '1',
-            type: 'urgent',
-            title: 'Sprint Planning Amanhã',
-            message: 'Reunião de Sprint Planning às 10h00 via Zoom. Todos os formandos devem participar.',
-            createdAt: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
-          },
-          {
-            id: '2',
-            type: 'warning',
-            title: 'Material de Estudo',
-            message: 'Novo material sobre User Stories disponível.',
-            createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
-          },
-        ];
-        
-        setAlerts(mockAlerts);
-      }
+      console.error('[Alerts] Erro ao carregar alertas:', error);
+      setAlerts([]);
     } finally {
       setIsLoading(false);
     }
   };
 
+  const saveReads = async (alertIds: string[]) => {
+    try {
+      await fetch(`${API_URL}/alert-reads`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ readerId, alertIds }),
+      });
+      refreshUnreadCounts();
+    } catch (error) {
+      console.error('[Alerts] Erro ao guardar leitura:', error);
+    }
+  };
+
   const handleMarkAsRead = (alertId: string) => {
-    setReadAlerts(prev => {
-      const newSet = new Set(prev);
-      newSet.add(alertId);
-
-      // Atualizar localStorage para persistir alertas lidos
-      const storedAlerts = localStorage.getItem('forscrum_alerts');
-      if (storedAlerts) {
-        const allAlerts = JSON.parse(storedAlerts);
-        const updatedAlerts = allAlerts.map((a: Alert) =>
-          a.id === alertId ? { ...a, read: true } : a
-        );
-        localStorage.setItem('forscrum_alerts', JSON.stringify(updatedAlerts));
-        refreshUnreadCounts(); // Atualizar contador global
-      }
-
-      return newSet;
-    });
+    setReadAlerts(prev => new Set(prev).add(alertId));
+    saveReads([alertId]);
   };
 
   const handleMarkAllAsRead = () => {
-    const allIds = new Set(alerts.map(a => a.id));
-    setReadAlerts(allIds);
-
-    // Atualizar localStorage para persistir alertas lidos
-    const storedAlerts = localStorage.getItem('forscrum_alerts');
-    if (storedAlerts) {
-      const allAlerts = JSON.parse(storedAlerts);
-      const updatedAlerts = allAlerts.map((a: Alert) => ({ ...a, read: true }));
-      localStorage.setItem('forscrum_alerts', JSON.stringify(updatedAlerts));
-      refreshUnreadCounts(); // Atualizar contador global
-    }
-
+    const allIds = alerts.map(a => a.id);
+    setReadAlerts(new Set(allIds));
+    saveReads(allIds);
     toast.success('Todos os alertas marcados como lidos');
   };
 

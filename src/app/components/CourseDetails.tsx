@@ -41,7 +41,8 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { BackendWarning } from './BackendWarning';
 import { useApp } from '../context/AppContext';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { EditDialog } from './shared/EditDialog';
+import { API_URL } from '../data/database';
 import { fetchWithRetry, formatErrorMessage, isNetworkError } from '../utils/apiRetry';
 
 interface CourseDetailsProps {
@@ -60,7 +61,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
   console.log('[CourseDetails] isFormador calculado:', isFormador);
   
   const [activeTab, setActiveTab] = useState<'overview' | 'teams' | 'sprints' | 'stories'>(initialTab);
-  const { setSelectedUserStory, setSelectedCourse, setPreviousScreen } = useApp();
+  const { setSelectedUserStory, setSelectedCourse, setPreviousScreen, userProfile } = useApp();
   
   // Modals state
   const [isAddStudentOpen, setIsAddStudentOpen] = useState(false);
@@ -88,6 +89,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
   
   // Sprints from database
   const [sprints, setSprints] = useState<any[]>([]);
+  const [editingSprint, setEditingSprint] = useState<any | null>(null);
   const [loadingSprints, setLoadingSprints] = useState(false);
   
   // Backend warning state
@@ -139,11 +141,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
       setLoadingStories(true);
       
       const response = await fetchWithRetry(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`,
+        `${API_URL}/stories`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         },
@@ -204,11 +205,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
       setLoadingStudents(true);
       
       const response = await fetchWithRetry(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
+        `${API_URL}/students`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         },
@@ -270,15 +270,14 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
       setLoadingTeams(true);
       
       const teamsUrl = courseId 
-        ? `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams?courseId=${courseId}`
-        : `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams`;
+        ? `${API_URL}/teams?courseId=${courseId}`
+        : `${API_URL}/teams`;
       
       const response = await fetchWithRetry(
         teamsUrl,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         },
@@ -314,16 +313,38 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
     }
   };
 
+  const handleSaveSprint = async (values: Record<string, string>) => {
+    if (!editingSprint) return;
+    const response = await fetch(
+      `${API_URL}/sprints/${editingSprint.id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: values.name.trim(),
+          goal: values.goal.trim(),
+          startDate: values.startDate,
+          endDate: values.endDate,
+        }),
+      }
+    );
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.success) throw new Error(data.error || 'Não foi possível guardar o sprint');
+    toast.success('Sprint atualizado');
+    loadSprints();
+  };
+
   const loadSprints = async () => {
     try {
       setLoadingSprints(true);
       
       const response = await fetchWithRetry(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`,
+        `${API_URL}/sprints`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         },
@@ -359,11 +380,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
   const handleDeleteStory = async (storyId: string) => {
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories/${storyId}`,
+        `${API_URL}/stories/${storyId}`,
         {
           method: 'DELETE',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -386,11 +406,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
     
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students/${id}`,
+        `${API_URL}/students/${id}`,
         {
           method: 'DELETE',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -485,11 +504,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
 
       // Fazer POST request ao backend
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
+        `${API_URL}/students`,
         {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
@@ -551,11 +569,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
       console.log('  → Curso:', selectedStudent.courseId);
       
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students/${selectedStudent.id}`,
+        `${API_URL}/students/${selectedStudent.id}`,
         {
           method: 'PUT',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
@@ -574,11 +591,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
           
           // Criar formando no backend com o mesmo ID
           const createResponse = await fetch(
-            `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
+            `${API_URL}/students`,
             {
               method: 'POST',
               headers: {
-                'Authorization': `Bearer ${publicAnonKey}`,
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({
@@ -657,12 +673,30 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
     setIsMessageStudentOpen(true);
   };
 
-  const handleSendMessage = () => {
-    if (!messageText) return;
-    toast.success(`Mensagem enviada para ${selectedStudent?.name}`);
-    setIsMessageStudentOpen(false);
-    setMessageText('');
-    setSelectedStudent(null);
+  const handleSendMessage = async () => {
+    if (!messageText.trim() || !selectedStudent) return;
+    try {
+      const response = await fetch(`${API_URL}/messages`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formandoId: selectedStudent.id,
+          formandoName: selectedStudent.name,
+          formadorName: userProfile?.name || 'Formador',
+          sentBy: 'formador',
+          title: `Mensagem do formador (${courseName || 'curso'})`,
+          message: messageText.trim(),
+        }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.success) throw new Error(data.error || 'Erro ao enviar');
+      toast.success(`Mensagem enviada para ${selectedStudent.name}`);
+      setIsMessageStudentOpen(false);
+      setMessageText('');
+      setSelectedStudent(null);
+    } catch (error) {
+      toast.error(`Não foi possível enviar: ${(error as Error).message}`);
+    }
   };
 
   const getStatusColor = (status: string) => {
@@ -988,11 +1022,10 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                             if (confirm(`Tem certeza que deseja apagar a equipa "${team.name}"?`)) {
                               try {
                                 const response = await fetch(
-                                  `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams/${team.id}`,
+                                  `${API_URL}/teams/${team.id}`,
                                   {
                                     method: 'DELETE',
                                     headers: {
-                                      'Authorization': `Bearer ${publicAnonKey}`,
                                       'Content-Type': 'application/json',
                                     },
                                   }
@@ -1100,16 +1133,22 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                       </button>
                       
                       <button
+                        onClick={(e) => { e.stopPropagation(); setEditingSprint(sprint); }}
+                        className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors ml-2"
+                        aria-label={`Editar sprint ${sprint.name}`}
+                      >
+                        <Pencil size={18} />
+                      </button>
+                      <button
                         onClick={async (e) => {
                           e.stopPropagation();
-                          if (confirm(`Tem certeza que deseja apagar o sprint "${sprint.name}"?`)) {
+                          if (confirm(`Apagar o sprint "${sprint.name}"?\n\nAs user stories deste sprint também serão apagadas.`)) {
                             try {
                               const response = await fetch(
-                                `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints/${sprint.id}`,
+                                `${API_URL}/sprints/${sprint.id}`,
                                 {
                                   method: 'DELETE',
                                   headers: {
-                                    'Authorization': `Bearer ${publicAnonKey}`,
                                     'Content-Type': 'application/json',
                                   },
                                 }
@@ -1378,6 +1417,20 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      <EditDialog
+        open={!!editingSprint}
+        title="Editar sprint"
+        initial={editingSprint || {}}
+        fields={[
+          { key: 'name', label: 'Nome do sprint', required: true },
+          { key: 'goal', label: 'Objetivo', type: 'textarea' },
+          { key: 'startDate', label: 'Data de início', type: 'date' },
+          { key: 'endDate', label: 'Data de fim', type: 'date' },
+        ]}
+        onClose={() => setEditingSprint(null)}
+        onSave={handleSaveSprint}
+      />
 
       {/* Edit Student Dialog */}
       <Dialog open={isEditStudentOpen} onOpenChange={setIsEditStudentOpen}>

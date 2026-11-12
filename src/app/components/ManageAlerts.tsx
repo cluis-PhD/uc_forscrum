@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { Header } from './shared/Header';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 import { useApp } from '../context/AppContext';
 
 interface Alert {
@@ -67,92 +67,12 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
   const loadAlerts = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/alerts`,
-        {
-          headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
-          },
-        }
-      );
-
-      if (!response.ok) {
-        // Se o endpoint não existir, usar dados do localStorage ou mockados
-        console.log('[ManageAlerts] Backend não disponível, usando dados do localStorage');
-        const localAlerts = localStorage.getItem('forscrum_alerts');
-        if (localAlerts) {
-          const parsedAlerts = JSON.parse(localAlerts);
-          setAlerts(parsedAlerts);
-          console.log('[ManageAlerts] Alertas carregados do localStorage:', parsedAlerts.length);
-        } else {
-          const mockAlerts: Alert[] = [
-            {
-              id: '1',
-              type: 'urgent',
-              title: 'Sprint Planning Amanhã',
-              message: 'Reunião de Sprint Planning às 10h00 via Zoom. Todos os formandos devem participar.',
-              createdAt: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
-              createdBy: 'Formador',
-            },
-            {
-              id: '2',
-              type: 'warning',
-              title: 'Material de Estudo Disponível',
-              message: 'Novo material sobre User Stories disponível na plataforma.',
-              courseId: courses[0]?.id || '1',
-              courseName: courses[0]?.name || 'forScrum',
-              createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-              createdBy: 'Formador',
-            },
-          ];
-          setAlerts(mockAlerts);
-          localStorage.setItem('forscrum_alerts', JSON.stringify(mockAlerts));
-        }
-        setIsLoading(false);
-        return;
-      }
-
+      const response = await fetch(`${API_URL}/alerts`);
       const data = await response.json();
-      
-      if (data.success && Array.isArray(data.alerts)) {
-        setAlerts(data.alerts);
-        // Sincronizar com localStorage
-        localStorage.setItem('forscrum_alerts', JSON.stringify(data.alerts));
-        console.log('[ManageAlerts] Alertas carregados:', data.alerts.length);
-      }
+      setAlerts(data.success && Array.isArray(data.alerts) ? data.alerts : []);
     } catch (error) {
       console.error('Erro ao carregar alertas:', error);
-      // Usar dados do localStorage ou mockados em caso de erro
-      console.log('[ManageAlerts] Erro no backend, usando dados do localStorage');
-      const localAlerts = localStorage.getItem('forscrum_alerts');
-      if (localAlerts) {
-        const parsedAlerts = JSON.parse(localAlerts);
-        setAlerts(parsedAlerts);
-        console.log('[ManageAlerts] Alertas carregados do localStorage:', parsedAlerts.length);
-      } else {
-        const mockAlerts: Alert[] = [
-          {
-            id: '1',
-            type: 'urgent',
-            title: 'Sprint Planning Amanhã',
-            message: 'Reunião de Sprint Planning às 10h00 via Zoom. Todos os formandos devem participar.',
-            createdAt: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
-            createdBy: 'Formador',
-          },
-          {
-            id: '2',
-            type: 'warning',
-            title: 'Material de Estudo Disponível',
-            message: 'Novo material sobre User Stories disponível na plataforma.',
-            courseId: courses[0]?.id || '1',
-            courseName: courses[0]?.name || 'forScrum',
-            createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-            createdBy: 'Formador',
-          },
-        ];
-        setAlerts(mockAlerts);
-        localStorage.setItem('forscrum_alerts', JSON.stringify(mockAlerts));
-      }
+      toast.error('Não foi possível carregar os alertas');
     } finally {
       setIsLoading(false);
     }
@@ -161,12 +81,7 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
   const loadCourses = async () => {
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/courses`,
-        {
-          headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
-          },
-        }
+        `${API_URL}/courses`,
       );
 
       if (!response.ok) {
@@ -218,112 +133,27 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
       };
 
       const url = editingAlert
-        ? `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/alerts/${editingAlert.id}`
-        : `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/alerts`;
+        ? `${API_URL}/alerts/${editingAlert.id}`
+        : `${API_URL}/alerts`;
 
       const response = await fetch(url, {
         method: editingAlert ? 'PUT' : 'POST',
         headers: {
-          'Authorization': `Bearer ${publicAnonKey}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(alertData),
       });
 
-      if (!response.ok) {
-        // Backend não disponível, simular sucesso localmente
-        console.log('[ManageAlerts] Backend não disponível, usando simulação local');
-        
-        let updatedAlerts;
-        if (editingAlert) {
-          // Atualizar alerta existente
-          updatedAlerts = alerts.map(a =>
-            a.id === editingAlert.id
-              ? {
-                  ...a,
-                  type: formType,
-                  title: formTitle.trim(),
-                  message: formMessage.trim(),
-                  courseId: formCourseId === 'all' ? undefined : formCourseId,
-                  courseName: formCourseId === 'all' ? undefined : courses.find(c => c.id === formCourseId)?.name,
-                }
-              : a
-          );
-          setAlerts(updatedAlerts);
-          localStorage.setItem('forscrum_alerts', JSON.stringify(updatedAlerts));
-          refreshUnreadCounts(); // Atualizar contador global
-          toast.success('Alerta atualizado! (modo local)');
-        } else {
-          // Criar novo alerta
-          const newAlert: Alert = {
-            id: Date.now().toString(),
-            type: formType,
-            title: formTitle.trim(),
-            message: formMessage.trim(),
-            courseId: formCourseId === 'all' ? undefined : formCourseId,
-            courseName: formCourseId === 'all' ? undefined : courses.find(c => c.id === formCourseId)?.name,
-            createdAt: new Date().toISOString(),
-            createdBy: 'Formador',
-          };
-
-          updatedAlerts = [newAlert, ...alerts];
-          setAlerts(updatedAlerts);
-          localStorage.setItem('forscrum_alerts', JSON.stringify(updatedAlerts));
-          refreshUnreadCounts(); // Atualizar contador global
-          toast.success('Alerta criado! (modo local)');
-        }
-
-        setShowCreateModal(false);
-        return;
-      }
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.success) throw new Error(data.error || 'Erro ao guardar');
 
       toast.success(editingAlert ? 'Alerta atualizado!' : 'Alerta criado!');
       setShowCreateModal(false);
       loadAlerts();
+      refreshUnreadCounts();
     } catch (error) {
-      console.error('Erro ao salvar alerta:', error);
-      
-      // Em caso de erro de rede, também simular localmente
-      console.log('[ManageAlerts] Erro de rede, usando simulação local');
-      
-      let updatedAlerts;
-      if (editingAlert) {
-        updatedAlerts = alerts.map(a =>
-          a.id === editingAlert.id
-            ? {
-                ...a,
-                type: formType,
-                title: formTitle.trim(),
-                message: formMessage.trim(),
-                courseId: formCourseId === 'all' ? undefined : formCourseId,
-                courseName: formCourseId === 'all' ? undefined : courses.find(c => c.id === formCourseId)?.name,
-              }
-            : a
-        );
-        setAlerts(updatedAlerts);
-        localStorage.setItem('forscrum_alerts', JSON.stringify(updatedAlerts));
-        refreshUnreadCounts(); // Atualizar contador global
-        toast.success('Alerta atualizado! (modo local)');
-      } else {
-        const newAlert: Alert = {
-          id: Date.now().toString(),
-          type: formType,
-          title: formTitle.trim(),
-          message: formMessage.trim(),
-          courseId: formCourseId === 'all' ? undefined : formCourseId,
-          courseName: formCourseId === 'all' ? undefined : courses.find(c => c.id === formCourseId)?.name,
-          createdAt: new Date().toISOString(),
-          createdBy: 'Formador',
-        };
-
-        updatedAlerts = [newAlert, ...alerts];
-        setAlerts(updatedAlerts);
-        localStorage.setItem('forscrum_alerts', JSON.stringify(updatedAlerts));
-        refreshUnreadCounts(); // Atualizar contador global
-        toast.success('Alerta criado! (modo local)');
-      }
-
-      setShowCreateModal(false);
+      console.error('Erro ao guardar alerta:', error);
+      toast.error(`Não foi possível guardar o alerta: ${(error as Error).message}`);
     } finally {
       setIsSaving(false);
     }
@@ -336,38 +166,21 @@ export function ManageAlerts({ onBack }: ManageAlertsProps) {
 
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/alerts/${alertId}`,
+        `${API_URL}/alerts/${alertId}`,
         {
           method: 'DELETE',
-          headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
-          },
         }
       );
 
-      if (!response.ok) {
-        // Backend não disponível, simular remoção local
-        console.log('[ManageAlerts] Backend não disponível, removendo localmente');
-        const updatedAlerts = alerts.filter(a => a.id !== alertId);
-        setAlerts(updatedAlerts);
-        localStorage.setItem('forscrum_alerts', JSON.stringify(updatedAlerts));
-        refreshUnreadCounts(); // Atualizar contador global
-        toast.success('Alerta apagado! (modo local)');
-        return;
-      }
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || !data.success) throw new Error(data.error || 'Erro ao apagar');
 
       toast.success('Alerta apagado!');
       loadAlerts();
-      refreshUnreadCounts(); // Atualizar contador global
+      refreshUnreadCounts();
     } catch (error) {
       console.error('Erro ao apagar alerta:', error);
-      // Em caso de erro de rede, também simular remoção local
-      console.log('[ManageAlerts] Erro de rede, removendo localmente');
-      const updatedAlerts = alerts.filter(a => a.id !== alertId);
-      setAlerts(updatedAlerts);
-      localStorage.setItem('forscrum_alerts', JSON.stringify(updatedAlerts));
-      refreshUnreadCounts(); // Atualizar contador global
-      toast.success('Alerta apagado! (modo local)');
+      toast.error(`Não foi possível apagar o alerta: ${(error as Error).message}`);
     }
   };
 

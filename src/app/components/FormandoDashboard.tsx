@@ -1,9 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import { BookOpen, MessageSquare, Bell, Calendar, User, ListTodo, Mail, Award, TrendingUp, BarChart3 } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { mockAPI } from '../utils/supabase/mock-api';
 import { useApp } from '../context/AppContext';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 import { Header } from './shared/Header';
 
 interface FormandoDashboardProps {
@@ -67,11 +66,10 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
       // ✅ 1. Carregar membros da equipa (com fallback para Mock API)
       try {
         const studentsResponse = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
+          `${API_URL}/students`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -87,7 +85,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
       
       // Fallback para Mock API se backend falhou
       if (!studentsData || !studentsData.success) {
-        studentsData = await mockAPI.getStudents();
+        studentsData = ({ success: true, students: [] as any[] });
         console.log('[FormandoDashboard] ✅ Estudantes recebidos do Mock API');
       }
       
@@ -102,11 +100,10 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
       // ✅ 2. Carregar user stories (com fallback para Mock API)
       try {
         const storiesResponse = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`,
+          `${API_URL}/stories`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -122,7 +119,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
       
       // Fallback para Mock API se backend falhou
       if (!storiesData || !storiesData.success) {
-        storiesData = await mockAPI.getStories();
+        storiesData = ({ success: true, stories: [] as any[] });
         console.log('[FormandoDashboard] ✅ Stories recebidas do Mock API');
       }
       
@@ -137,11 +134,10 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
       // ✅ 3. Carregar sprints (com fallback para Mock API)
       try {
         const sprintsResponse = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`,
+          `${API_URL}/sprints`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -157,7 +153,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
       
       // Fallback para Mock API se backend falhou
       if (!sprintsData || !sprintsData.success) {
-        sprintsData = await mockAPI.getSprints();
+        sprintsData = ({ success: true, sprints: [] as any[] });
         console.log('[FormandoDashboard] ✅ Sprints recebidos do Mock API');
       }
       
@@ -386,7 +382,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
               <Mail className="text-white" size={20} />
             </div>
             <p className="text-[0.875rem] font-medium text-slate-800 dark:text-slate-200">Mensagens</p>
-            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1">Dos formadores</p>
+            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1">Com o formador</p>
           </button>
 
           <button

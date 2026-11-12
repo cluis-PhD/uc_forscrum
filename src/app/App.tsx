@@ -3,7 +3,7 @@ import { User, AlertCircle, CheckCircle, GraduationCap, Lock, Eye, EyeOff } from
 import { toast } from 'sonner';
 import { Toaster } from './components/ui/sonner';
 import svgPaths from './imports/svg-qi3x6nzkk2';
-import { projectId, publicAnonKey } from './utils/supabase/info';
+import { API_URL } from './data/database';
 
 // Context and Components
 import { AppProvider, useApp } from './context/AppContext';
@@ -18,11 +18,9 @@ import { CreateStudent } from './components/CreateStudent';
 import { TurmaDetails } from './components/TurmaDetails';
 import { UserStoryDetails } from './components/UserStoryDetails';
 import { ProfileSettings } from './components/ProfileSettings';
-import { Messages } from './components/Messages';
 import { Alerts } from './components/Alerts';
 import { MessagesFormando } from './components/MessagesFormando';
 import { CalendarView } from './components/CalendarView';
-import { SprintList } from './components/SprintList';
 import { ScrumPoker } from './components/ScrumPoker';
 import { CourseManagement } from './components/CourseManagement';
 import { ManageSprintStories } from './components/ManageSprintStories';
@@ -408,11 +406,10 @@ export default function App() {
       // Se não é formador, é formando - NÃO PRECISA MAIS DE PASSWORD
       // Buscar formando cadastrado no backend
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
+        `${API_URL}/students`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -460,11 +457,10 @@ export default function App() {
           try {
             console.log('[DEBUG] Buscando curso:', student.courseId);
             const courseResponse = await fetch(
-              `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/courses/${student.courseId}`,
+              `${API_URL}/courses/${student.courseId}`,
               {
                 method: 'GET',
                 headers: {
-                  'Authorization': `Bearer ${publicAnonKey}`,
                   'Content-Type': 'application/json',
                 },
               }
@@ -505,11 +501,10 @@ export default function App() {
           try {
             console.log('[DEBUG] Buscando equipa:', student.teamId);
             const teamsResponse = await fetch(
-              `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams`,
+              `${API_URL}/teams`,
               {
                 method: 'GET',
                 headers: {
-                  'Authorization': `Bearer ${publicAnonKey}`,
                   'Content-Type': 'application/json',
                 },
               }

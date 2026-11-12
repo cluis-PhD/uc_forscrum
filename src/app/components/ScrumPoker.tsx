@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ArrowLeft, Users, Eye, EyeOff, RotateCcw, Save, ChevronDown, Trophy, CheckCircle } from 'lucide-react';
 import { toast } from "sonner";
-import { mockAPI } from '../utils/supabase/mock-api';
 import { useApp } from '../context/AppContext';
 import { Header } from './shared/Header';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 interface ScrumPokerProps {
   onBack: () => void;
@@ -89,42 +89,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
     if (!currentStoryId) return;
     
     try {
-      // Primeiro tentar ler do localStorage (sincronização local)
-      const votesKey = `scrumpoker_votes_${currentStoryId}`;
-      const localVotes = JSON.parse(localStorage.getItem(votesKey) || '[]');
-      
-      if (localVotes.length > 0) {
-        console.log('[ScrumPoker] Votos sincronizados do localStorage:', localVotes);
-        
-        // Atualizar votos dos membros com base no localStorage
-        setTeamMembers(prev => prev.map(member => {
-          const vote = localVotes.find((v: any) => 
-            v.userId === member.id || v.userName === member.name
-          );
-          
-          if (vote) {
-            return {
-              ...member,
-              vote: vote.vote,
-              hasVoted: true,
-            };
-          }
-          return member;
-        }));
-        return;
-      }
-      
-      // Se localStorage estiver vazio, tentar backend (quando implementado)
-      const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/votes?storyId=${currentStoryId}`,
-        {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      const response = await fetch(`${API_URL}/votes?storyId=${encodeURIComponent(currentStoryId)}`);
 
       if (response.ok) {
         const data = await response.json();
@@ -135,14 +100,9 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
           // Atualizar votos dos membros
           setTeamMembers(prev => prev.map(member => {
             const vote = data.votes.find((v: any) => v.userId === member.id || v.userName === member.name);
-            if (vote) {
-              return {
-                ...member,
-                vote: vote.vote,
-                hasVoted: true,
-              };
-            }
-            return member;
+            return vote
+              ? { ...member, vote: vote.vote, hasVoted: true }
+              : { ...member, vote: null, hasVoted: false };
           }));
         }
       }
@@ -164,11 +124,10 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       // Tentar backend primeiro
       try {
         const response = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`,
+          `${API_URL}/stories`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -186,7 +145,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       // Se backend falhou, usar Mock API
       if (!success) {
         console.log('[ScrumPoker] 🔄 Fallback para Mock API...');
-        const result = await mockAPI.getStories();
+        const result = ({ success: true, stories: [] as any[] });
         
         if (result.success) {
           data = result;
@@ -255,11 +214,10 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       if (userType === 'formando' && loggedStudent?.teamId) {
         try {
           const response = await fetch(
-            `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
+            `${API_URL}/students`,
             {
               method: 'GET',
               headers: {
-                'Authorization': `Bearer ${publicAnonKey}`,
                 'Content-Type': 'application/json',
               },
             }
@@ -298,7 +256,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
         }
         
         // Fallback para Mock API
-        const result = await mockAPI.getStudents();
+        const result = ({ success: true, students: [] as any[] });
         
         if (result.success) {
           const uniqueStudents = new Map();
@@ -388,26 +346,19 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
         votingSystem
       });
 
-      // Salvar voto no localStorage (sincronização local entre abas)
-      const votesKey = `scrumpoker_votes_${currentStoryId}`;
-      const existingVotes = JSON.parse(localStorage.getItem(votesKey) || '[]');
-      
-      // Remover voto anterior deste utilizador
-      const updatedVotes = existingVotes.filter((v: any) => v.userId !== (loggedStudent?.id || userProfile.name));
-      
-      // Adicionar novo voto
-      updatedVotes.push({
-        storyId: currentStoryId,
-        userId: loggedStudent?.id || userProfile.name,
-        userName: userProfile.name,
-        vote: voteValue,
-        votingSystem,
-        timestamp: Date.now()
+      // Guardar o voto na base de dados (visível para toda a equipa)
+      const response = await fetch(`${API_URL}/votes`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          storyId: currentStoryId,
+          userId: loggedStudent?.id || userProfile.name,
+          userName: userProfile.name,
+          vote: voteValue,
+          votingSystem,
+        }),
       });
-      
-      localStorage.setItem(votesKey, JSON.stringify(updatedVotes));
-      console.log('[ScrumPoker] Voto salvo no localStorage:', updatedVotes);
-      
+      if (!response.ok) throw new Error('Erro ao guardar voto');
     } catch (error) {
       console.error('[ScrumPoker] ❌ Erro ao salvar voto:', error);
       toast.error('Erro ao salvar voto. Tente novamente.');
@@ -443,10 +394,10 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       hasVoted: false
     })));
     
-    // Limpar votos do localStorage
+    // Apagar os votos desta story na base de dados
     if (currentStoryId) {
-      const votesKey = `scrumpoker_votes_${currentStoryId}`;
-      localStorage.removeItem(votesKey);
+      fetch(`${API_URL}/votes?storyId=${encodeURIComponent(currentStoryId)}`, { method: 'DELETE' })
+        .catch(() => toast.error('Não foi possível reiniciar os votos'));
     }
     
     toast.info('Votação reiniciada');
@@ -471,11 +422,10 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       // Tentar backend primeiro
       try {
         const response = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories/${currentStoryId}`,
+          `${API_URL}/stories/${currentStoryId}`,
           {
             method: 'PUT',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({ points }),
@@ -501,7 +451,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       // ✅ Se backend falhou, usar Mock API
       if (!success) {
         console.log('[ScrumPoker] 🔄 Fallback para Mock API...');
-        const result = await mockAPI.updateStory(currentStoryId, { points });
+        const result = ({ success: false, error: 'Sem ligação à base de dados' } as any);
         
         if (result.success && result.story) {
           success = true;

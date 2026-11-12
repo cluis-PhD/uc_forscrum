@@ -10,7 +10,7 @@ import {
   BookOpen
 } from 'lucide-react';
 import { toast } from 'sonner';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 interface CreateSprintProps {
   onBack: () => void;
@@ -74,11 +74,10 @@ export function CreateSprint({ onBack, onSave, courseId: initialCourseId, course
     try {
       setLoadingCourses(true);
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/courses`,
+        `${API_URL}/courses`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -118,11 +117,10 @@ export function CreateSprint({ onBack, onSave, courseId: initialCourseId, course
     try {
       setLoadingTeams(true);
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams?courseId=${courseId}`,
+        `${API_URL}/teams?courseId=${courseId}`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -233,12 +231,11 @@ export function CreateSprint({ onBack, onSave, courseId: initialCourseId, course
     setIsSaving(true);
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`,
+        `${API_URL}/sprints`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`,
           },
           body: JSON.stringify(sprintData),
         }

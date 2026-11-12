@@ -13,7 +13,7 @@ import {
   BookOpen
 } from 'lucide-react';
 import { toast } from "sonner";
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 interface CreateUserStoryProps {
   onBack: () => void;
@@ -89,11 +89,10 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
   const loadCourses = async () => {
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/courses`,
+        `${API_URL}/courses`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -115,7 +114,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
       console.error('Error loading courses:', error);
       if (error instanceof TypeError && error.message === 'Failed to fetch') {
         console.error('Verifique se as credenciais do Supabase estão corretas');
-        console.error('URL tentada:', `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/courses`);
+        console.error('URL tentada:', `${API_URL}/courses`);
       }
       setCourses([]);
     }
@@ -126,11 +125,10 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
       setLoadingSprints(true);
       console.log('🔄 Carregando sprints...');
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`,
+        `${API_URL}/sprints`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -156,7 +154,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
       console.error('❌ Error loading sprints:', error);
       if (error instanceof TypeError && error.message === 'Failed to fetch') {
         console.error('❌ Verifique se as credenciais do Supabase estão corretas');
-        console.error('❌ URL tentada:', `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`);
+        console.error('❌ URL tentada:', `${API_URL}/sprints`);
         toast.error('Erro de conexão. Verifique as credenciais do Supabase.', { duration: 5000 });
       } else {
         toast.error('Erro ao carregar sprints');
@@ -172,11 +170,10 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
       setLoadingTeams(true);
       console.log('🔄 Carregando equipas...');
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams`,
+        `${API_URL}/teams`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -201,7 +198,7 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
       console.error('❌ Error loading teams:', error);
       if (error instanceof TypeError && error.message === 'Failed to fetch') {
         console.error('❌ Verifique se as credenciais do Supabase estão corretas');
-        console.error('❌ URL tentada:', `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams`);
+        console.error('❌ URL tentada:', `${API_URL}/teams`);
         toast.error('Erro de conexão. Verifique as credenciais do Supabase.', { duration: 5000 });
       } else {
         toast.error('Erro ao carregar equipes');
@@ -320,15 +317,14 @@ export function CreateUserStory({ onBack, onSave, sprintId: initialSprintId, spr
     setIsSaving(true);
     try {
       console.log('Criando user story com dados:', storyData);
-      console.log('URL:', `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`);
+      console.log('URL:', `${API_URL}/stories`);
       
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`,
+        `${API_URL}/stories`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`,
           },
           body: JSON.stringify(storyData),
         }
