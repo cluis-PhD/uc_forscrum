@@ -50,7 +50,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
   const [showStorySelector, setShowStorySelector] = useState(false);
 
   
-  const tshirtOptions = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '?', '☕'];
+  const tshirtOptions = ['S', 'M', 'L', 'XL'];
 
   const votingOptions = tshirtOptions;
 
