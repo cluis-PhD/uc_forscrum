@@ -705,13 +705,15 @@ function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprin
     console.log('[SprintBoard handleDeleteStory] 🗑️ Iniciando delete da story:', id, title);
     
     try {
-      console.log('[SprintBoard handleDeleteStory] Chamando Mock API deleteStory...');
-      const result = await mockAPI.deleteStory(id);
-      
-      console.log('[SprintBoard handleDeleteStory] Mock API result:', result);
-      
-      if (!result.success) {
-        console.error('[SprintBoard handleDeleteStory] ❌ Mock API retornou erro:', result.error);
+      const response = await fetch(
+        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories/${id}`,
+        {
+          method: 'DELETE',
+          headers: { 'Authorization': `Bearer ${publicAnonKey}` },
+        }
+      );
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.success) {
         throw new Error(result.error || 'Erro ao apagar user story');
       }
 
