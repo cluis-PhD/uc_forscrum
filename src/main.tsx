@@ -1,8 +1,8 @@
 import { createRoot } from "react-dom/client";
   import App from "./app/App.tsx";
-  import { installRelationalApi } from "./app/data/relationalApi";
+  import { installDatabase } from "./app/data/database";
   import "./styles/index.css";
 
-  installRelationalApi();
+  installDatabase();
 
   createRoot(document.getElementById("root")!).render(<App />);

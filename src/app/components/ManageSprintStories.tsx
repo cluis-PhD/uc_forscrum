@@ -9,7 +9,7 @@ import {
   X
 } from 'lucide-react';
 import { toast } from "sonner";
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 import { useApp } from '../context/AppContext';
 
 interface UserStory {
@@ -51,13 +51,7 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
     try {
       // Carregar todas as user stories
       const storiesResponse = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`,
-        {
-          headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
-          },
-        }
-      );
+        `${API_URL}/stories`);
 
       if (!storiesResponse.ok) {
         throw new Error('Erro ao carregar user stories');
@@ -69,13 +63,7 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
 
       // Carregar user stories associadas ao sprint
       const sprintStoriesResponse = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprint-stories/${sprintId}`,
-        {
-          headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
-          },
-        }
-      );
+        `${API_URL}/sprint-stories/${sprintId}`);
 
       console.log('[ManageSprintStories] Sprint stories response status:', sprintStoriesResponse.status);
       
@@ -116,11 +104,10 @@ export function ManageSprintStories({ sprintId, sprintName, onBack }: ManageSpri
       console.log('[ManageSprintStories] Sprint ID:', sprintId);
       
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprint-stories/${sprintId}`,
+        `${API_URL}/sprint-stories/${sprintId}`,
         {
           method: 'PUT',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ storyIds: assignedStories }),

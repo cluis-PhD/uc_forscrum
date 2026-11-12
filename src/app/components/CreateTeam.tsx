@@ -8,7 +8,7 @@ import {
   Loader2
 } from 'lucide-react';
 import { toast } from "sonner";
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 // Interface para os dados da equipa
 export interface TeamData {
@@ -48,11 +48,10 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
     try {
       setLoadingCourses(true);
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/courses`,
+        `${API_URL}/courses`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -125,11 +124,10 @@ export function CreateTeam({ onBack, onSave, existingTeam, isEditMode = false, c
     setIsSaving(true);
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams`,
+        `${API_URL}/teams`,
         {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(teamData),

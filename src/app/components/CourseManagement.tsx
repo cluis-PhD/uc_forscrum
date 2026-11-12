@@ -19,7 +19,7 @@ import {
 import { toast } from 'sonner';
 import { Header } from './shared/Header';
 import { EditDialog } from './shared/EditDialog';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 interface CourseManagementProps {
   onBack: () => void;
@@ -140,12 +140,11 @@ export function CreateCourse({ onBack, onSave }: CreateCourseProps) {
       console.log('[CreateCourse] endDate formatado:', courseData.endDate);
 
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/courses`,
+        `${API_URL}/courses`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`,
           },
           body: JSON.stringify(courseData),
         }
@@ -392,7 +391,7 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
   const [stories, setStories] = useState<any[]>([]);
 
   // URL base da API
-  const API_BASE_URL = `https://${projectId}.supabase.co/functions/v1/make-server-1184b871`;
+  const API_BASE_URL = API_URL;
 
   // Carregar cursos ao montar o componente
   useEffect(() => {
@@ -428,7 +427,6 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
       const response = await fetch(`${API_BASE_URL}/courses`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${publicAnonKey}`,
           'Content-Type': 'application/json',
         },
       });
@@ -462,7 +460,6 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
       const response = await fetch(`${API_BASE_URL}/students`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${publicAnonKey}`,
           'Content-Type': 'application/json',
         },
       });
@@ -484,7 +481,6 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
       const response = await fetch(`${API_BASE_URL}/teams`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${publicAnonKey}`,
           'Content-Type': 'application/json',
         },
       });
@@ -506,7 +502,6 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
       const response = await fetch(`${API_BASE_URL}/sprints`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${publicAnonKey}`,
           'Content-Type': 'application/json',
         },
       });
@@ -528,7 +523,6 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
       const response = await fetch(`${API_BASE_URL}/stories`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${publicAnonKey}`,
           'Content-Type': 'application/json',
         },
       });
@@ -614,7 +608,6 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
       const response = await fetch(`${API_BASE_URL}/courses/${courseId}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${publicAnonKey}`,
           'Content-Type': 'application/json',
         },
       });
@@ -647,7 +640,6 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
     const response = await fetch(`${API_BASE_URL}/courses/${editingCourse.id}`, {
       method: 'PUT',
       headers: {
-        'Authorization': `Bearer ${publicAnonKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({

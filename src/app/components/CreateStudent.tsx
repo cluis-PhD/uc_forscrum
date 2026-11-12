@@ -11,7 +11,7 @@ import {
   BookOpen
 } from 'lucide-react';
 import { toast } from "sonner";
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 interface CreateStudentProps {
   onBack: () => void;
@@ -53,11 +53,10 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
     try {
       setLoadingCourses(true);
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/courses`,
+        `${API_URL}/courses`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -81,13 +80,12 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
       setLoadingTeams(true);
       // Filtrar equipas por courseId se fornecido
       const teamsUrl = courseId
-        ? `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams?courseId=${courseId}`
-        : `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams`;
+        ? `${API_URL}/teams?courseId=${courseId}`
+        : `${API_URL}/teams`;
       
       const response = await fetch(teamsUrl, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${publicAnonKey}`,
           'Content-Type': 'application/json',
         },
       });
@@ -184,11 +182,10 @@ export function CreateStudent({ onBack, onSave, courseId: initialCourseId, cours
       console.log('Criando formando:', studentData);
 
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
+        `${API_URL}/students`,
         {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(studentData),

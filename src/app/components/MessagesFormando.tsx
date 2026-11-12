@@ -15,7 +15,7 @@ import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { useApp } from '../context/AppContext';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 interface Message {
   id: string;
@@ -25,7 +25,8 @@ interface Message {
   title: string;
   message: string;
   createdAt: string;
-  updatedAt: string;
+  updatedAt?: string;
+  editedAt?: string;
   isRead?: boolean;
   sentBy: 'formador' | 'formando'; // Indica quem enviou a mensagem
 }
@@ -57,85 +58,56 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
   const userId = isFormador ? userProfile.name : loggedStudent?.id || '';
   const userName = isFormador ? userProfile.name : loggedStudent?.name || 'Formando';
 
-  console.log('🎯🎯🎯 DETECÇÃO DE TIPO DE USUÁRIO:');
-  console.log('userType:', userType);
-  console.log('isFormador:', isFormador);
-  console.log('userId:', userId);
-  console.log('userName:', userName);
-  console.log('userProfile:', userProfile);
-  console.log('loggedStudent:', loggedStudent);
 
-  // Carregar mensagens do localStorage
+  // Carregar mensagens da base de dados
   useEffect(() => {
-    console.log('🔄 useEffect disparado', { 
-      isFormador, 
-      userType,
-      userId,
-      userName,
-      loggedStudent
-    });
-    
     loadMessages();
     if (isFormador) {
       loadStudents();
     }
+    // Atualizar a cada 30 segundos para ver mensagens novas
+    const intervalId = setInterval(loadMessages, 30000);
+    return () => clearInterval(intervalId);
   }, [isFormador, userId, userType]);
 
-  const loadMessages = () => {
+  const loadMessages = async () => {
     try {
-      const storedMessages = localStorage.getItem('messages_formandos');
-      console.log('🔍 Carregando mensagens...', { isFormador, userId, userType });
-      
-      if (storedMessages) {
-        const allMessages = JSON.parse(storedMessages);
-        console.log('📦 Total de mensagens no localStorage:', allMessages.length);
-        console.log('📋 Detalhes das mensagens:', allMessages);
-        
-        if (isFormador) {
-          // FORMADOR VÊ TODAS AS MENSAGENS - SEM FILTRO!
-          const sortedMessages = allMessages.sort((a: Message, b: Message) => 
-            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-          );
-          console.log('👨‍🏫 FORMADOR - Mostrando TODAS as mensagens:', sortedMessages.length);
-          console.log('👨‍🏫 Detalhes completos:', sortedMessages);
-          setMessages(sortedMessages);
-        } else if (!isFormador && userId) {
-          // 🎯 CORREÇÃO: Formando vê apenas mensagens onde:
-          // 1. Ele é o destinatário (formandoId === userId)
-          // 2. A mensagem foi enviada PELO FORMADOR (sentBy === 'formador')
-          const userMessages = allMessages.filter((m: Message) => {
-            const isForMe = m.formandoId === userId;
-            const isFromFormador = m.sentBy === 'formador';
-            const match = isForMe && isFromFormador;
-            console.log(`🔎 Verificando mensagem ${m.id}: formandoId=${m.formandoId}, userId=${userId}, sentBy=${m.sentBy}, isForMe=${isForMe}, isFromFormador=${isFromFormador}, MATCH=${match}`);
-            return match;
-          });
-          console.log('👤 Mensagens filtradas do formando:', userMessages.length);
-          console.log('👤 Detalhes:', userMessages);
-          setMessages(userMessages);
-        } else {
-          console.log('⚠️ Usuário não identificado', { isFormador, userId });
-          setMessages([]);
-        }
-      } else {
-        console.log('⚠️ Nenhuma mensagem no localStorage');
+      // Formador vê todas as mensagens; formando vê as que o formador lhe enviou
+      const query = isFormador
+        ? ''
+        : `?formandoId=${encodeURIComponent(userId)}&sentBy=formador`;
+      if (!isFormador && !userId) {
         setMessages([]);
+        return;
       }
+      const response = await fetch(`${API_URL}/messages${query}`);
+      const data = await response.json();
+      setMessages(data.success && Array.isArray(data.messages) ? data.messages : []);
     } catch (error) {
-      console.error('❌ Erro ao carregar mensagens:', error);
+      console.error('Erro ao carregar mensagens:', error);
       setMessages([]);
     }
+  };
+
+  const sendRequest = async (url: string, method: string, body?: any) => {
+    const response = await fetch(url, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.success) throw new Error(data.error || 'Erro na base de dados');
+    return data;
   };
 
   const loadStudents = async () => {
     try {
       setLoadingStudents(true);
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
+        `${API_URL}/students`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -164,149 +136,104 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
     }
   };
 
-  const saveMessages = (newMessages: Message[]) => {
-    console.log('💾 Salvando mensagens:', newMessages.length, 'mensagens');
-    console.log('💾 Detalhes das mensagens:', newMessages);
-    localStorage.setItem('messages_formandos', JSON.stringify(newMessages));
-    loadMessages(); // Recarregar com filtros aplicados
-    refreshUnreadCounts(); // Atualizar contador global
+  const afterChange = async () => {
+    await loadMessages();
+    refreshUnreadCounts();
   };
 
-  const handleCreateMessage = () => {
-    console.log('📝 INICIANDO CRIAÇÃO DE MENSAGEM');
-    console.log('📝 isFormador:', isFormador);
-    console.log('📝 userType:', userType);
-    console.log('📝 userId:', userId);
-    console.log('📝 userName:', userName);
-    console.log('📝 title:', title);
-    console.log('📝 messageText:', messageText);
-    console.log('📝 selectedFormandoId:', selectedFormandoId);
-    
+  const handleCreateMessage = async () => {
     if (!title.trim() || !messageText.trim()) {
       toast.error('Preencha todos os campos');
       return;
     }
-
-    // Se for formador, precisa selecionar um formando
     if (isFormador && !selectedFormandoId) {
       toast.error('Selecione um formando');
       return;
     }
 
-    // Preparar dados da mensagem
-    let newMessage: Message;
+    const selectedStudent = students.find(s => s.id === selectedFormandoId);
+    const newMessage = isFormador
+      ? {
+          formandoId: selectedFormandoId,
+          formandoName: selectedStudent?.name || 'Desconhecido',
+          formadorName: userName,
+          sentBy: 'formador',
+        }
+      : {
+          formandoId: userId,
+          formandoName: userName,
+          formadorName: 'Formador',
+          sentBy: 'formando',
+        };
 
-    if (isFormador) {
-      const selectedStudent = students.find(s => s.id === selectedFormandoId);
-      console.log('👨‍🏫 FORMADOR criando mensagem');
-      console.log('👨‍🏫 Formando selecionado:', selectedStudent);
-      
-      newMessage = {
-        id: `msg-${Date.now()}`,
-        formandoId: selectedFormandoId,
-        formandoName: selectedStudent?.name || 'Desconhecido',
-        formadorName: userName,
+    try {
+      await sendRequest(`${API_URL}/messages`, 'POST', {
+        ...newMessage,
         title: title.trim(),
         message: messageText.trim(),
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
         isRead: false,
-        sentBy: 'formador'
-      };
-    } else {
-      console.log('👤 FORMANDO criando mensagem');
-      console.log('👤 userId (formandoId):', userId);
-      console.log('👤 userName (formandoName):', userName);
-      
-      // Formando enviando mensagem ao formador
-      newMessage = {
-        id: `msg-${Date.now()}`,
-        formandoId: userId,
-        formandoName: userName,
-        formadorName: 'Formador',
-        title: title.trim(),
-        message: messageText.trim(),
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-        isRead: false,
-        sentBy: 'formando'
-      };
+      });
+      setTitle('');
+      setMessageText('');
+      setSelectedFormandoId('');
+      setIsCreateOpen(false);
+      toast.success('Mensagem enviada com sucesso!');
+      afterChange();
+    } catch (error) {
+      toast.error(`Não foi possível enviar: ${(error as Error).message}`);
     }
-
-    console.log('✅ Nova mensagem criada:', newMessage);
-
-    const allMessages = JSON.parse(localStorage.getItem('messages_formandos') || '[]');
-    console.log('📦 Mensagens existentes antes:', allMessages.length);
-    
-    const updatedMessages = [...allMessages, newMessage];
-    console.log('📦 Total de mensagens depois:', updatedMessages.length);
-    console.log('📦 Todas as mensagens:', updatedMessages);
-    
-    saveMessages(updatedMessages);
-
-    setTitle('');
-    setMessageText('');
-    setSelectedFormandoId('');
-    setIsCreateOpen(false);
-    toast.success('Mensagem enviada com sucesso!');
   };
 
-  const handleUpdateMessage = () => {
+  const handleUpdateMessage = async () => {
     if (!selectedMessage || !title.trim() || !messageText.trim() || !selectedFormandoId) {
       toast.error('Preencha todos os campos');
       return;
     }
-
     const selectedStudent = students.find(s => s.id === selectedFormandoId);
-
-    const allMessages = JSON.parse(localStorage.getItem('messages_formandos') || '[]');
-    const updatedMessages = allMessages.map((m: Message) =>
-      m.id === selectedMessage.id
-        ? {
-            ...m,
-            formandoId: selectedFormandoId,
-            formandoName: selectedStudent?.name || 'Desconhecido',
-            title: title.trim(),
-            message: messageText.trim(),
-            updatedAt: new Date().toISOString(),
-          }
-        : m
-    );
-
-    saveMessages(updatedMessages);
-
-    setTitle('');
-    setMessageText('');
-    setSelectedFormandoId('');
-    setSelectedMessage(null);
-    setIsEditOpen(false);
-    toast.success('Mensagem atualizada com sucesso!');
-  };
-
-  const handleDeleteMessage = (messageId: string) => {
-    const message = messages.find(m => m.id === messageId);
-    
-    if (confirm(`Tem certeza que deseja apagar a mensagem "${message?.title}"?`)) {
-      const allMessages = JSON.parse(localStorage.getItem('messages_formandos') || '[]');
-      const updatedMessages = allMessages.filter((m: Message) => m.id !== messageId);
-      saveMessages(updatedMessages);
-      toast.success('Mensagem apagada com sucesso!');
+    try {
+      await sendRequest(`${API_URL}/messages/${selectedMessage.id}`, 'PUT', {
+        formandoId: selectedFormandoId,
+        formandoName: selectedStudent?.name || selectedMessage.formandoName,
+        title: title.trim(),
+        message: messageText.trim(),
+      });
+      setTitle('');
+      setMessageText('');
+      setSelectedFormandoId('');
+      setSelectedMessage(null);
+      setIsEditOpen(false);
+      toast.success('Mensagem atualizada com sucesso!');
+      afterChange();
+    } catch (error) {
+      toast.error(`Não foi possível guardar: ${(error as Error).message}`);
     }
   };
 
-  const handleViewMessage = (message: Message) => {
+  const handleDeleteMessage = async (messageId: string) => {
+    const message = messages.find(m => m.id === messageId);
+    if (!confirm(`Tem certeza que deseja apagar a mensagem "${message?.title}"?`)) return;
+    try {
+      await sendRequest(`${API_URL}/messages/${messageId}`, 'DELETE');
+      toast.success('Mensagem apagada com sucesso!');
+      afterChange();
+    } catch (error) {
+      toast.error(`Não foi possível apagar: ${(error as Error).message}`);
+    }
+  };
+
+  const handleViewMessage = async (message: Message) => {
     setSelectedMessage(message);
     setIsViewOpen(true);
 
-    // Marcar como lida se for formando
-    if (!isFormador) {
-      const allMessages = JSON.parse(localStorage.getItem('messages_formandos') || '[]');
-      const updatedMessages = allMessages.map((m: Message) =>
-        m.id === message.id ? { ...m, isRead: true } : m
-      );
-      localStorage.setItem('messages_formandos', JSON.stringify(updatedMessages));
-      loadMessages();
-      refreshUnreadCounts(); // Atualizar contador global
+    // Marcar como lida quando o destinatário a abre
+    const isRecipient = isFormador ? message.sentBy === 'formando' : message.sentBy === 'formador';
+    if (isRecipient && !message.isRead) {
+      try {
+        await sendRequest(`${API_URL}/messages/${message.id}`, 'PUT', { isRead: true });
+        afterChange();
+      } catch {
+        /* não crítico */
+      }
     }
   };
 
@@ -448,7 +375,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                     </p>
                     <div className="flex items-center gap-3 text-[0.6875rem] text-slate-400 dark:text-slate-500">
                       <span>{formatDate(message.createdAt)}</span>
-                      {message.updatedAt !== message.createdAt && (
+                      {message.editedAt && (
                         <>
                           <span>•</span>
                           <span className="text-blue-500">Editada</span>
@@ -772,8 +699,8 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
             </div>
             <div className="text-[0.6875rem] text-slate-500 dark:text-slate-400 space-y-1">
               <p>Enviada em: {selectedMessage && new Date(selectedMessage.createdAt).toLocaleString('pt-PT')}</p>
-              {selectedMessage?.updatedAt !== selectedMessage?.createdAt && (
-                <p>Última edição: {selectedMessage && new Date(selectedMessage.updatedAt).toLocaleString('pt-PT')}</p>
+              {selectedMessage?.editedAt && (
+                <p>Última edição: {selectedMessage && new Date(selectedMessage.editedAt!).toLocaleString('pt-PT')}</p>
               )}
             </div>
           </div>

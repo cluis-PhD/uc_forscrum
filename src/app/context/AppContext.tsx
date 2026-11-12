@@ -1,3 +1,4 @@
+import { API_URL } from '../data/database';
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface UserProfile {
@@ -81,74 +82,24 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [unreadMessages, setUnreadMessages] = useState(0);
   const [unreadAlerts, setUnreadAlerts] = useState(0);
 
-  // Função para calcular mensagens não lidas
-  const calculateUnreadMessages = () => {
+  // Atualizar contadores de mensagens e alertas não lidos (a partir da base de dados)
+  const refreshUnreadCounts = async () => {
+    if (!userType) return;
     try {
-      const storedMessages = localStorage.getItem('messages_formandos');
-      if (!storedMessages) return 0;
-
-      const allMessages = JSON.parse(storedMessages);
-
-      if (userType === 'formador') {
-        // Formador vê mensagens NÃO LIDAS enviadas PELOS FORMANDOS
-        return allMessages.filter((m: any) => m.sentBy === 'formando' && !m.isRead).length;
-      } else if (userType === 'formando' && loggedStudent?.id) {
-        // Formando vê mensagens NÃO LIDAS enviadas PELO FORMADOR para ele
-        return allMessages.filter((m: any) =>
-          m.formandoId === loggedStudent.id &&
-          m.sentBy === 'formador' &&
-          !m.isRead
-        ).length;
+      const params = new URLSearchParams({ userType });
+      if (loggedStudent?.id) params.set('studentId', loggedStudent.id);
+      if (loggedStudent?.courseId) params.set('courseId', loggedStudent.courseId);
+      const response = await fetch(`${API_URL}/unread?${params}`);
+      const data = await response.json();
+      if (data.success) {
+        setUnreadMessages(data.messages || 0);
+        setUnreadAlerts(data.alerts || 0);
       }
-
-      return 0;
     } catch (error) {
-      console.error('[AppContext] Erro ao calcular mensagens não lidas:', error);
-      return 0;
+      console.error('[AppContext] Erro ao contar mensagens/alertas não lidos:', error);
     }
   };
 
-  // Função para calcular alertas não lidos
-  const calculateUnreadAlerts = () => {
-    try {
-      const storedAlerts = localStorage.getItem('forscrum_alerts');
-      if (!storedAlerts) return 0;
-
-      const allAlerts = JSON.parse(storedAlerts);
-
-      // Filtrar alertas relevantes para o utilizador
-      let relevantAlerts = allAlerts;
-
-      if (userType === 'formando' && loggedStudent?.courseId) {
-        // Formando vê apenas alertas globais ou do seu curso
-        relevantAlerts = allAlerts.filter((alert: any) =>
-          !alert.courseId || alert.courseId === loggedStudent.courseId
-        );
-      }
-
-      // Contar alertas não lidos
-      return relevantAlerts.filter((a: any) => !a.read).length;
-    } catch (error) {
-      console.error('[AppContext] Erro ao calcular alertas não lidos:', error);
-      return 0;
-    }
-  };
-
-  // Função para atualizar contadores
-  const refreshUnreadCounts = () => {
-    const messagesCount = calculateUnreadMessages();
-    const alertsCount = calculateUnreadAlerts();
-
-    console.log('[AppContext] 🔄 Atualizando contadores:', {
-      userType,
-      loggedStudentId: loggedStudent?.id,
-      unreadMessages: messagesCount,
-      unreadAlerts: alertsCount
-    });
-
-    setUnreadMessages(messagesCount);
-    setUnreadAlerts(alertsCount);
-  };
 
   // Atualizar contadores quando userType ou loggedStudent mudar
   useEffect(() => {

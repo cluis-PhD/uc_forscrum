@@ -3,10 +3,10 @@ import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { ArrowLeft, Plus, Search, Filter, MoreVertical, GripVertical, Trash2, CheckCircle, AlertTriangle } from 'lucide-react';
 import { toast } from 'sonner';
-import { mockAPI } from '../utils/supabase/mock-api';
 import { useApp } from '../context/AppContext';
 import { Header } from './shared/Header';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 interface UserStory {
   id: string;
@@ -331,11 +331,10 @@ function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprin
       
       try {
         const response = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`,
+          `${API_URL}/sprints`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -355,7 +354,7 @@ function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprin
       
       if (!success) {
         console.log('[SprintBoard] 🔄 Fallback para Mock API...');
-        const result = await mockAPI.getSprints();
+        const result = ({ success: true, sprints: [] as any[] });
         
         if (result.success) {
           data = result;
@@ -427,11 +426,10 @@ function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprin
       
       try {
         const response = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`,
+          `${API_URL}/stories`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -448,7 +446,7 @@ function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprin
       
       if (!success) {
         console.log('[SprintBoard] 🔄 Fallback para Mock API (stories)...');
-        const result = await mockAPI.getStories();
+        const result = ({ success: true, stories: [] as any[] });
         
         if (result.success) {
           data = result;
@@ -645,11 +643,10 @@ function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprin
 
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories/${item.id}`,
+        `${API_URL}/stories/${item.id}`,
         {
           method: 'PUT',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ status: targetColumnId }),
@@ -671,11 +668,10 @@ function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprin
   const handleEditStory = async (id: string) => {
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`,
+        `${API_URL}/stories`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -706,10 +702,10 @@ function SprintBoardContent({ userType, onBack, onCreateStory, onNavigate, sprin
     
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories/${id}`,
+        `${API_URL}/stories/${id}`,
         {
           method: 'DELETE',
-          headers: { 'Authorization': `Bearer ${publicAnonKey}` },
+  
         }
       );
       const result = await response.json().catch(() => ({}));

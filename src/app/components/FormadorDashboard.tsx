@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Home, BookOpen, Users, Calendar, MessageSquare, Settings, ChevronDown, BarChart3, TrendingUp, AlertCircle, Bell } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { mockAPI } from '../utils/supabase/mock-api';
 import { useApp } from '../context/AppContext';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 import { Header } from './shared/Header';
 
 interface FormadorDashboardProps {
@@ -54,11 +53,10 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       // ✅ 1. Carregar courses (com fallback para Mock API)
       try {
         const coursesResponse = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/courses`,
+          `${API_URL}/courses`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -74,7 +72,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       
       // Fallback para Mock API se backend falhou
       if (!coursesData || !coursesData.success) {
-        coursesData = await mockAPI.getCourses();
+        coursesData = ({ success: true, courses: [] as any[] });
         console.log('[FormadorDashboard] ✅ Cursos recebidos do Mock API');
       }
       
@@ -94,11 +92,10 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       // ✅ 2. Carregar teams (com fallback para Mock API)
       try {
         const teamsResponse = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams`,
+          `${API_URL}/teams`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -114,7 +111,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       
       // Fallback para Mock API se backend falhou
       if (!teamsData || !teamsData.success) {
-        teamsData = await mockAPI.getTeams();
+        teamsData = ({ success: true, teams: [] as any[] });
         console.log('[FormadorDashboard] ✅ Equipas recebidas do Mock API');
       }
       
@@ -129,11 +126,10 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       // ✅ 3. Carregar students (com fallback para Mock API)
       try {
         const studentsResponse = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
+          `${API_URL}/students`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -149,7 +145,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       
       // Fallback para Mock API se backend falhou
       if (!studentsData || !studentsData.success) {
-        studentsData = await mockAPI.getStudents();
+        studentsData = ({ success: true, students: [] as any[] });
         console.log('[FormadorDashboard] ✅ Estudantes recebidos do Mock API');
       }
       
@@ -160,11 +156,10 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       // ✅ 4. Carregar sprints (com fallback para Mock API)
       try {
         const sprintsResponse = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`,
+          `${API_URL}/sprints`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -180,7 +175,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       
       // Fallback para Mock API se backend falhou
       if (!sprintsData || !sprintsData.success) {
-        sprintsData = await mockAPI.getSprints();
+        sprintsData = ({ success: true, sprints: [] as any[] });
         console.log('[FormadorDashboard] ✅ Sprints recebidos do Mock API');
       }
       
@@ -191,11 +186,10 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       // ✅ 5. Carregar user stories (com fallback para Mock API)
       try {
         const storiesResponse = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`,
+          `${API_URL}/stories`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -211,7 +205,7 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       
       // Fallback para Mock API se backend falhou
       if (!storiesData || !storiesData.success) {
-        storiesData = await mockAPI.getStories();
+        storiesData = ({ success: true, stories: [] as any[] });
         console.log('[FormadorDashboard] ✅ Stories recebidas do Mock API');
       }
       

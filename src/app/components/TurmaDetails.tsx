@@ -30,7 +30,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 interface Sprint {
   id: string;
@@ -96,13 +96,12 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
 
       // Carregar teams FILTRADAS por courseId
       const teamsUrl = courseId 
-        ? `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams?courseId=${courseId}`
-        : `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams`;
+        ? `${API_URL}/teams?courseId=${courseId}`
+        : `${API_URL}/teams`;
       
       const teamsResponse = await fetch(teamsUrl, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${publicAnonKey}`,
           'Content-Type': 'application/json',
         },
       });
@@ -117,11 +116,10 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
 
       // Carregar students FILTRADOS por courseId
       const studentsResponse = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/students`,
+        `${API_URL}/students`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -141,11 +139,10 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
 
       // Carregar sprints FILTRADOS por courseId
       const sprintsResponse = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`,
+        `${API_URL}/sprints`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -247,11 +244,10 @@ export function TurmaDetails({ onBack, courseName = 'forScrum', onNavigate, team
     try {
       // Fazer PUT request ao backend
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams/${selectedTeamForAction.id}`,
+        `${API_URL}/teams/${selectedTeamForAction.id}`,
         {
           method: 'PUT',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({

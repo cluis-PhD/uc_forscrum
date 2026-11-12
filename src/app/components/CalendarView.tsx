@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ArrowLeft, ChevronLeft, ChevronRight, Clock, MapPin, Users, Video } from 'lucide-react';
 import { Header } from './shared/Header';
 import { useApp } from '../context/AppContext';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 interface CalendarViewProps {
   onNavigate?: (screen: string) => void;
@@ -40,11 +40,10 @@ export function CalendarView({ onNavigate }: CalendarViewProps) {
     try {
       setLoadingSprints(true);
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`,
+        `${API_URL}/sprints`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }

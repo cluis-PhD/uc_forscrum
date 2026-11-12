@@ -1,27 +1,21 @@
 /**
- * Camada de dados relacional (versão de teste).
+ * Camada de dados do MyforScrum.
  *
- * Intercepta os pedidos às rotas antigas (/functions/v1/make-server-1184b871/...)
- * e responde a partir das tabelas relacionais do Supabase (REST/PostgREST),
- * devolvendo exatamente o mesmo formato JSON que o servidor antigo.
- * Assim os componentes não precisam de mudar.
- *
- * Se as tabelas ainda não existirem (script SQL por correr), todos os pedidos
- * seguem para o servidor antigo, sem alterações.
+ * Os componentes fazem pedidos a `${API_URL}/...` (ex.: fetch(`${API_URL}/courses`)).
+ * Estes pedidos são tratados aqui, no próprio browser, e convertidos em
+ * operações sobre as tabelas relacionais do Supabase (REST/PostgREST).
  */
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 
 const REST = `https://${projectId}.supabase.co/rest/v1`;
-const ROUTE_MARK = '/functions/v1/make-server-1184b871';
+/** Endereço base usado pelos componentes. */
+export const API_URL = '/api';
+
 
 type Json = Record<string, any>;
 type Handled = { status: number; body: Json };
 
 let nativeFetch: typeof fetch = (...a) => fetch(...a);
-let relationalReady: Promise<boolean> | null = null;
-let relationalOn = false;
-
-export const isRelationalMode = () => relationalOn;
 
 // ---------------------------------------------------------------- REST helpers
 
@@ -68,11 +62,14 @@ const FIELDS: Record<string, Record<string, string>> = {
                   acceptanceCriteria: 'acceptance_criteria', sprintId: 'sprint_id',
                   courseId: 'course_id', status: 'status', points: 'points' },
   alerts: { type: 'type', title: 'title', message: 'message', courseId: 'course_id', createdBy: 'created_by' },
+  messages: { formandoId: 'student_id', formandoName: 'student_name', formadorName: 'trainer_name',
+              title: 'title', message: 'message', sentBy: 'sent_by', isRead: 'is_read' },
 };
 /** campos calculados ou geridos pela base de dados: nunca guardados */
 const DERIVED = new Set(['id', 'createdAt', 'updatedAt', 'students', 'teams', 'sprints', 'stories',
   'courseName', 'userStoryCount', 'totalStoryPoints', 'completionRate', 'votes', 'storyIds']);
 const NULLABLE_FK = new Set(['team_id', 'sprint_id', 'course_id']);
+const NO_EMPTY_STRING = new Set(['alerts', 'messages']);
 const HAS_EXTRA = new Set(['courses', 'teams', 'students', 'sprints', 'user_stories']);
 
 function toRow(table: string, body: Json, prevExtra: Json = {}): Json {
@@ -101,11 +98,12 @@ function fromRow(table: string, r: Json): Json {
   const out: Json = { ...(r.extra || {}), id: r.id };
   for (const [k, col] of Object.entries(map)) {
     let v = r[col];
-    if (NULLABLE_FK.has(col) && v == null && table !== 'alerts') v = '';
+    if (NULLABLE_FK.has(col) && v == null && !NO_EMPTY_STRING.has(table)) v = '';
     if (col === 'points') v = Number(v) || 0;
     out[k] = v;
   }
   out.createdAt = r.created_at;
+  if (r.edited_at) out.editedAt = r.edited_at;
   if (r.updated_at) out.updatedAt = r.updated_at;
   return out;
 }
@@ -178,7 +176,7 @@ async function replaceVotes(storyId: string, votes: Json[]) {
 
 // ---------------------------------------------------------------- rotas
 
-async function route(method: string, parts: string[], q: URLSearchParams, body: Json): Promise<Handled | null> {
+async function route(method: string, parts: string[], q: URLSearchParams, body: Json): Promise<Handled> {
   const [res, id, sub] = parts;
 
   switch (res) {
@@ -412,41 +410,85 @@ async function route(method: string, parts: string[], q: URLSearchParams, body: 
       }
       break;
     }
+
+    // ---- alertas lidos (por leitor: id do formando ou 'formador')
+    case 'alert-reads': {
+      const reader = body.readerId || q.get('readerId');
+      if (!reader) return fail(400, 'readerId é obrigatório');
+      if (method === 'GET')
+        return ok({ alertIds: (await sel(`alert_reads?select=alert_id&reader_id=${eq(reader)}`)).map((r: Json) => r.alert_id) });
+      if (method === 'POST') {
+        const ids: string[] = Array.isArray(body.alertIds) ? body.alertIds : [];
+        if (ids.length)
+          await ins('alert_reads?on_conflict=alert_id,reader_id', ids.map((a) => ({ alert_id: a, reader_id: String(reader) })),
+            'return=minimal,resolution=ignore-duplicates');
+        return ok({});
+      }
+      break;
+    }
+
+    // ---- mensagens entre formador e formandos
+    case 'messages': {
+      if (!id && method === 'GET') {
+        let f = '';
+        if (q.get('formandoId')) f += `&student_id=${eq(q.get('formandoId')!)}`;
+        if (q.get('sentBy')) f += `&sent_by=${eq(q.get('sentBy')!)}`;
+        return ok({ messages: (await sel(`messages?select=*${f}&${ORDER}`)).map((r: Json) => fromRow('messages', r)) });
+      }
+      if (!id && method === 'POST') {
+        if (!body.title?.trim() || !body.message?.trim()) return fail(400, 'Título e mensagem são obrigatórios');
+        if (!body.formandoId) return fail(400, 'Formando é obrigatório');
+        const [r] = await ins('messages', { id: newId('msg_'), ...toRow('messages', { isRead: false, sentBy: 'formador', ...body }) });
+        return ok({ message: fromRow('messages', r) }, 201);
+      }
+      if (id && method === 'PUT') {
+        const patch = toRow('messages', body);
+        if (body.title !== undefined || body.message !== undefined) patch.edited_at = new Date().toISOString();
+        const rows = await upd('messages', `id=${eq(id)}`, patch);
+        return rows?.length ? ok({ message: fromRow('messages', rows[0]) }) : fail(404, 'Mensagem não encontrada');
+      }
+      if (id && method === 'DELETE') {
+        const rows = await del('messages', `id=${eq(id)}`);
+        return rows?.length ? ok({}) : fail(404, 'Mensagem não encontrada');
+      }
+      break;
+    }
+
+    // ---- contadores de não lidos (mensagens e alertas)
+    case 'unread': {
+      const userType = q.get('userType');
+      const studentId = q.get('studentId') || '';
+      const courseId = q.get('courseId') || '';
+      let msgF = '';
+      if (userType === 'formador') msgF = '&sent_by=eq.formando&is_read=eq.false';
+      else if (studentId) msgF = `&sent_by=eq.formador&is_read=eq.false&student_id=${eq(studentId)}`;
+      else return ok({ messages: 0, alerts: 0 });
+      const messages = (await sel(`messages?select=id${msgF}`)).length;
+      const reader = userType === 'formador' ? 'formador' : studentId;
+      const alertF = userType === 'formando' && courseId
+        ? `&or=(course_id.is.null,course_id.eq.${encodeURIComponent(courseId)})` : '';
+      const all: string[] = (await sel(`alerts?select=id${alertF}`)).map((r: Json) => r.id);
+      const read = new Set((await sel(`alert_reads?select=alert_id&reader_id=${eq(reader)}`)).map((r: Json) => r.alert_id));
+      return ok({ messages, alerts: all.filter((a) => !read.has(a)).length });
+    }
   }
-  return null; // rota desconhecida: segue para o servidor antigo
+  return fail(404, 'Rota não encontrada');
 }
 
 // ---------------------------------------------------------------- instalação
 
-function checkTables(): Promise<boolean> {
-  if (!relationalReady) {
-    relationalReady = rest('courses?select=id&limit=1')
-      .then(() => true)
-      .catch(() => false)
-      .then((on) => {
-        relationalOn = on;
-        console.log(on
-          ? '[MyforScrum] 🗄️ Base de dados relacional ativa'
-          : '[MyforScrum] ℹ️ Tabelas relacionais não encontradas: a usar o servidor antigo');
-        return on;
-      });
-  }
-  return relationalReady;
-}
-
-export function installRelationalApi() {
-  if ((window as any).__forscrumRelational) return;
-  (window as any).__forscrumRelational = true;
+export function installDatabase() {
+  if ((window as any).__forscrumDatabase) return;
+  (window as any).__forscrumDatabase = true;
   nativeFetch = window.fetch.bind(window);
 
   window.fetch = async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
-    const at = url.indexOf(ROUTE_MARK);
-    if (at === -1 || !(await checkTables())) return nativeFetch(input as any, init);
+    const u = new URL(url, window.location.origin);
+    const isApi = u.origin === window.location.origin && (u.pathname === API_URL || u.pathname.startsWith(API_URL + '/'));
+    if (!isApi) return nativeFetch(input as any, init);
 
-    const u = new URL(url);
-    const parts = u.pathname.slice(u.pathname.indexOf(ROUTE_MARK) + ROUTE_MARK.length)
-      .split('/').filter(Boolean).map(decodeURIComponent);
+    const parts = u.pathname.slice(API_URL.length).split('/').filter(Boolean).map(decodeURIComponent);
     const method = (init?.method || (input instanceof Request ? input.method : 'GET')).toUpperCase();
     let body: Json = {};
     if (init?.body && typeof init.body === 'string') {
@@ -455,9 +497,8 @@ export function installRelationalApi() {
 
     try {
       const handled = await route(method, parts, u.searchParams, body);
-      if (!handled) return nativeFetch(input as any, init);
-      return new Response(JSON.stringify(handled.body), {
-        status: handled.status,
+      return new Response(JSON.stringify(handled!.body), {
+        status: handled!.status,
         headers: { 'Content-Type': 'application/json' },
       });
     } catch (e: any) {
@@ -469,6 +510,4 @@ export function installRelationalApi() {
       });
     }
   };
-
-  checkTables();
 }

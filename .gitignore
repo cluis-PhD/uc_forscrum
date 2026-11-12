@@ -4,3 +4,4 @@ dist/
 build/
 .next/
 .vscode/
+.DS_Store

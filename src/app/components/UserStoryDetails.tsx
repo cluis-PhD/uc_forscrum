@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { toast } from "sonner";
 import { useApp } from '../context/AppContext';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 
 interface UserStoryDetailsProps {
   userType: 'formador' | 'formando';
@@ -61,11 +61,10 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
       setLoading(true);
       try {
         const response = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories/${selectedUserStory.id}`,
+          `${API_URL}/stories/${selectedUserStory.id}`,
           {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
               'Content-Type': 'application/json',
             },
           }
@@ -130,41 +129,9 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
     
     setLoadingVotes(true);
     try {
-      // Tentar carregar do localStorage primeiro
-      const votesKey = `scrumpoker_votes_${selectedUserStory.id}`;
-      const localVotes = JSON.parse(localStorage.getItem(votesKey) || '[]');
-      
-      console.log('[UserStoryDetails] ===========================================');
-      console.log('[UserStoryDetails] Carregando votos para User Story:', selectedUserStory.id);
-      console.log('[UserStoryDetails] Título:', selectedUserStory.title);
-      console.log('[UserStoryDetails] Chave localStorage:', votesKey);
-      console.log('[UserStoryDetails] Votos encontrados:', localVotes);
-      console.log('[UserStoryDetails] ===========================================');
-      
-      if (localVotes.length > 0) {
-        console.log('[UserStoryDetails] ✅ Votos carregados do localStorage:', localVotes);
-        setVotes(localVotes);
-      } else {
-        // Tentar backend
-        const response = await fetch(
-          `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/votes?storyId=${selectedUserStory.id}`,
-          {
-            method: 'GET',
-            headers: {
-              'Authorization': `Bearer ${publicAnonKey}`,
-              'Content-Type': 'application/json',
-            },
-          }
-        );
-
-        if (response.ok) {
-          const data = await response.json();
-          if (data.success && Array.isArray(data.votes)) {
-            console.log('[UserStoryDetails] ✅ Votos carregados do backend:', data.votes);
-            setVotes(data.votes);
-          }
-        }
-      }
+      const response = await fetch(`${API_URL}/votes?storyId=${encodeURIComponent(selectedUserStory.id)}`);
+      const data = await response.json();
+      if (data.success && Array.isArray(data.votes)) setVotes(data.votes);
     } catch (error) {
       console.log('[UserStoryDetails] ⚠️ Erro ao carregar votos:', error);
     } finally {
@@ -259,11 +226,10 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
    const handleStatusChange = async (newStatus: typeof status) => {
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories/${selectedUserStory?.id}`,
+        `${API_URL}/stories/${selectedUserStory?.id}`,
        {
           method: 'PUT',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ status: newStatus }),
@@ -288,11 +254,10 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
 
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories/${selectedUserStory?.id}`,
+        `${API_URL}/stories/${selectedUserStory?.id}`,
         {
           method: 'DELETE',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -325,11 +290,10 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
 
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories/${selectedUserStory?.id}`,
+        `${API_URL}/stories/${selectedUserStory?.id}`,
         {
           method: 'PUT',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(updatedStory),
@@ -451,11 +415,10 @@ export function UserStoryDetails({ userType, onBack, onNavigate }: UserStoryDeta
                         const courseId = story.courseId;
                         if (courseId) {
                           const response = await fetch(
-                            `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/teams?courseId=${courseId}`,
+                            `${API_URL}/teams?courseId=${courseId}`,
                             {
                               method: 'GET',
                               headers: {
-                                'Authorization': `Bearer ${publicAnonKey}`,
                                 'Content-Type': 'application/json',
                               },
                             }

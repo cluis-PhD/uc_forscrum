@@ -14,8 +14,8 @@ Desenvolvido no âmbito da tese de doutoramento *Um contributo para a acessibili
 
 Este é um protótipo de alta fidelidade para avaliação de usabilidade, no contexto de uma investigação em Design Science Research.
 
-- Os fluxos centrais (cursos, equipas, formandos, sprints e user stories) funcionam com dados guardados num servidor Supabase.
-- A autenticação, as mensagens e a votação do Scrum Poker estão simuladas para efeitos de teste.
+- Todos os dados (cursos, equipas, formandos, sprints, user stories, votos do Scrum Poker, mensagens e alertas) ficam numa base de dados relacional PostgreSQL no Supabase, com chaves estrangeiras e eliminação em cascata. Ver `supabase/README.md`.
+- A autenticação é simplificada: entra-se com o nome "formador" ou com o nome de um formando registado.
 - **Todos os dados são fictícios.**
 
 A interface foi desenhada no Figma e o código inicial foi gerado com o Figma Make. O projeto foi depois exportado para este repositório, onde é mantido e desenvolvido de forma independente.
@@ -24,7 +24,7 @@ A interface foi desenhada no Figma e o código inicial foi gerado com o Figma Ma
 
 - React com TypeScript, construído com Vite
 - Tailwind CSS e componentes Radix UI
-- Supabase (PostgreSQL e Edge Functions)
+- Supabase (PostgreSQL, acedido por REST)
 - Publicação contínua na Vercel
 
 ## Executar localmente
@@ -33,6 +33,10 @@ A interface foi desenhada no Figma e o código inicial foi gerado com o Figma Ma
 npm install
 npm run dev
 ```
+
+## Créditos
+
+Componentes de interface baseados em [shadcn/ui](https://ui.shadcn.com/) (licença MIT).
 
 ## Próximos passos
 

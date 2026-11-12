@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { Header } from './shared/Header';
 import { useApp } from '../context/AppContext';
-import { projectId, publicAnonKey } from '../utils/supabase/info';
+import { API_URL } from '../data/database';
 import { toast } from 'sonner';
 
 interface Sprint {
@@ -55,11 +55,10 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
   const loadStories = async () => {
     try {
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/stories`,
+        `${API_URL}/stories`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
@@ -88,11 +87,10 @@ export function FormandoSprints({ onBack, onNavigate }: FormandoSprintsProps) {
       console.log('[FormandoSprints] 📥 A carregar sprints da equipa:', loggedStudent.teamId);
 
       const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints`,
+        `${API_URL}/sprints`,
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${publicAnonKey}`,
             'Content-Type': 'application/json',
           },
         }
