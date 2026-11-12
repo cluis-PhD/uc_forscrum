@@ -170,7 +170,7 @@ async function replaceVotes(storyId: string, votes: Json[]) {
   const rows = votes
     .filter((v) => v && (v.userId || v.userName))
     .map((v) => ({ story_id: storyId, user_id: String(v.userId || v.userName), user_name: v.userName || '',
-                   vote: v.vote == null ? null : String(v.vote), voting_system: v.votingSystem || 'fibonacci' }));
+                   vote: v.vote == null ? null : String(v.vote), voting_system: v.votingSystem || 'tshirt' }));
   if (rows.length) await ins('votes?on_conflict=story_id,user_id', rows, 'return=minimal,resolution=merge-duplicates');
 }
 
@@ -376,7 +376,7 @@ async function route(method: string, parts: string[], q: URLSearchParams, body: 
         const userId = String(body.userId || body.userName || '');
         if (!userId) return fail(400, 'userId é obrigatório');
         await ins('votes?on_conflict=story_id,user_id', { story_id: storyId, user_id: userId, user_name: body.userName || '',
-          vote: body.vote == null ? null : String(body.vote), voting_system: body.votingSystem || 'fibonacci' },
+          vote: body.vote == null ? null : String(body.vote), voting_system: body.votingSystem || 'tshirt' },
           'return=minimal,resolution=merge-duplicates');
         return ok({});
       }
