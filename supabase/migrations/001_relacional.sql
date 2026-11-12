@@ -2,7 +2,7 @@
 -- MyforScrum: modelo relacional (versão de teste)
 -- Executar UMA vez no Supabase: Dashboard > SQL Editor > New query > Run
 --
--- Não apaga nada: a tabela antiga kv_store_1184b871 fica intacta e o
+-- Não apaga nada: a tabela antiga kv_store_... fica intacta e o
 -- site em produção continua a usá-la. Os dados são COPIADOS para as
 -- novas tabelas. Pode voltar a correr o script sem duplicar dados.
 -- =====================================================================
@@ -145,13 +145,31 @@ grant usage on all sequences in schema public to anon, authenticated;
 -- Só copia registos cujo "pai" existe (ex.: equipa de um curso apagado
 -- fica de fora). "on conflict do nothing" evita duplicados.
 
+-- A tabela antiga chama-se kv_store_<código>; o código varia de projeto
+-- para projeto, por isso procura-se automaticamente.
+create temp table if not exists kv_src (key text, value jsonb);
+truncate kv_src;
+do $$
+declare src text;
+begin
+  select string_agg(format('select key, value::jsonb from public.%I', table_name), ' union all ')
+    into src
+  from information_schema.tables
+  where table_schema = 'public' and table_name like 'kv\_store\_%';
+  if src is null then
+    raise notice 'Nenhuma tabela kv_store encontrada: não há dados para copiar';
+  else
+    execute 'insert into kv_src ' || src;
+  end if;
+end $$;
+
 insert into public.courses (id, name, description, status, start_date, end_date, progress, students_list, created_at)
 select v->>'id', coalesce(nullif(v->>'name',''),'(sem nome)'), coalesce(v->>'description',''),
        coalesce(v->>'status','new'), coalesce(v->>'startDate',''), coalesce(v->>'endDate',''),
        coalesce(nullif(v->>'progress','')::numeric,0)::int,
        case when jsonb_typeof(v->'studentsList')='array' then v->'studentsList' else '[]'::jsonb end,
        coalesce(nullif(v->>'createdAt','')::timestamptz, now())
-from (select value v from public.kv_store_1184b871 where key like 'course:%') s
+from (select value v from kv_src where key like 'course:%') s
 where v->>'id' is not null
 on conflict (id) do nothing;
 
@@ -159,7 +177,7 @@ insert into public.teams (id, course_id, name, members, created_at)
 select v->>'id', v->>'courseId', coalesce(nullif(v->>'name',''),'(sem nome)'),
        case when jsonb_typeof(v->'members')='array' then v->'members' else '[]'::jsonb end,
        coalesce(nullif(v->>'createdAt','')::timestamptz, now())
-from (select value v from public.kv_store_1184b871 where key like 'team:%') s
+from (select value v from kv_src where key like 'team:%') s
 where exists (select 1 from public.courses c where c.id = v->>'courseId')
 on conflict (id) do nothing;
 
@@ -168,7 +186,7 @@ select v->>'id', v->>'courseId',
        (select t.id from public.teams t where t.id = nullif(v->>'teamId','')),
        coalesce(nullif(v->>'name',''),'(sem nome)'), coalesce(v->>'email',''),
        coalesce(nullif(v->>'createdAt','')::timestamptz, now())
-from (select value v from public.kv_store_1184b871 where key like 'student:%') s
+from (select value v from kv_src where key like 'student:%') s
 where exists (select 1 from public.courses c where c.id = v->>'courseId')
 on conflict (id) do nothing;
 
@@ -178,7 +196,7 @@ select v->>'id', v->>'courseId',
        coalesce(nullif(v->>'name',''),'(sem nome)'), coalesce(v->>'goal',''),
        coalesce(v->>'startDate',''), coalesce(v->>'endDate',''), coalesce(v->>'status','planning'),
        coalesce(nullif(v->>'createdAt','')::timestamptz, now())
-from (select value v from public.kv_store_1184b871 where key like 'sprint:%') s
+from (select value v from kv_src where key like 'sprint:%') s
 where exists (select 1 from public.courses c where c.id = v->>'courseId')
 on conflict (id) do nothing;
 
@@ -192,14 +210,14 @@ select v->>'id', v->>'courseId',
        coalesce(v->>'status','backlog'),
        coalesce(nullif(regexp_replace(coalesce(v->>'points',''),'[^0-9.]','','g'),'')::numeric,0),
        coalesce(nullif(v->>'createdAt','')::timestamptz, now())
-from (select value v from public.kv_store_1184b871 where key like 'story:%') s
+from (select value v from kv_src where key like 'story:%') s
 where exists (select 1 from public.courses c where c.id = v->>'courseId')
 on conflict (id) do nothing;
 
 insert into public.votes (story_id, user_id, user_name, vote, voting_system, created_at)
 select s.id, coalesce(e->>'userId', e->>'userName'), coalesce(e->>'userName',''), e->>'vote',
        coalesce(e->>'votingSystem','fibonacci'), now()
-from public.kv_store_1184b871 k
+from kv_src k
 join public.user_stories s on k.key = 'story:' || s.id
 cross join lateral jsonb_array_elements(
   case when jsonb_typeof(k.value->'votes')='array' then k.value->'votes' else '[]'::jsonb end) e
