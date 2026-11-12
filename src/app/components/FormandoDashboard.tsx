@@ -382,7 +382,7 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
               <Mail className="text-white" size={20} />
             </div>
             <p className="text-[0.875rem] font-medium text-slate-800 dark:text-slate-200">Mensagens</p>
-            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1">Dos formadores</p>
+            <p className="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-1">Com o formador</p>
           </button>
 
           <button

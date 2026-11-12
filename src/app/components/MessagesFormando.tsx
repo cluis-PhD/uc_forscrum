@@ -75,7 +75,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
       // Formador vê todas as mensagens; formando vê as que o formador lhe enviou
       const query = isFormador
         ? ''
-        : `?formandoId=${encodeURIComponent(userId)}&sentBy=formador`;
+        : `?formandoId=${encodeURIComponent(userId)}`; // recebidas e enviadas pelo formando
       if (!isFormador && !userId) {
         setMessages([]);
         return;
@@ -221,13 +221,16 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
     }
   };
 
+  // Mensagem que chegou do outro lado (para o formando: do formador; para o formador: de um formando)
+  const isIncoming = (message: Message) =>
+    isFormador ? message.sentBy === 'formando' : message.sentBy === 'formador';
+
   const handleViewMessage = async (message: Message) => {
     setSelectedMessage(message);
     setIsViewOpen(true);
 
     // Marcar como lida quando o destinatário a abre
-    const isRecipient = isFormador ? message.sentBy === 'formando' : message.sentBy === 'formador';
-    if (isRecipient && !message.isRead) {
+    if (isIncoming(message) && !message.isRead) {
       try {
         await sendRequest(`${API_URL}/messages/${message.id}`, 'PUT', { isRead: true });
         afterChange();
@@ -273,12 +276,8 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
     });
   };
 
-  // Contar mensagens não lidas
-  // Formador: mensagens RECEBIDAS dos formandos (sentBy === 'formando') que não foram lidas
-  // Formando: mensagens RECEBIDAS do formador (sentBy === 'formador') que não foram lidas
-  const unreadCount = isFormador 
-    ? messages.filter(m => m.sentBy === 'formando' && !m.isRead).length
-    : messages.filter(m => !m.isRead).length;
+  // Contar mensagens recebidas e ainda não lidas
+  const unreadCount = messages.filter(m => isIncoming(m) && !m.isRead).length;
 
   return (
     <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif] pb-24 pt-[110px] dark:bg-slate-900 transition-colors duration-200">
@@ -295,7 +294,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-[1rem] text-slate-800 dark:text-slate-100">
-              {isFormador ? 'Todas as Mensagens' : 'Mensagens Recebidas'} ({messages.length})
+              {isFormador ? 'Todas as Mensagens' : 'As minhas mensagens'} ({messages.length})
             </h3>
             {unreadCount > 0 && (
               <p className="text-[0.75rem] text-orange-600 dark:text-orange-400">
@@ -318,12 +317,10 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
           <div className="text-center py-12 bg-white dark:bg-slate-800 rounded-[16px] shadow-sm">
             <Mail className="mx-auto text-slate-300 dark:text-slate-600 mb-3" size={48} />
             <p className="text-slate-500 dark:text-slate-400 text-[0.875rem]">
-              {isFormador ? 'Nenhuma mensagem enviada' : 'Nenhuma mensagem recebida'}
+              Ainda não há mensagens
             </p>
             <p className="text-slate-400 dark:text-slate-500 text-[0.75rem] mt-1">
-              {isFormador 
-                ? 'Clique em "Nova Mensagem" para enviar a primeira' 
-                : 'Aguarde mensagens dos formadores'}
+              Clique em "Nova Mensagem" para enviar a primeira
             </p>
           </div>
         ) : (
@@ -332,7 +329,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
               <div
                 key={message.id}
                 className={`bg-white dark:bg-slate-800 rounded-[16px] p-4 shadow-sm transition-all ${
-                  !isFormador && !message.isRead 
+                  isIncoming(message) && !message.isRead 
                     ? 'border-2 border-orange-400 dark:border-orange-500' 
                     : 'border-2 border-transparent hover:border-[#3b8433]'
                 }`}
@@ -354,7 +351,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                             {message.formandoName}
                           </p>
                           <p className="text-[0.625rem] text-slate-400 dark:text-slate-500">
-                            {message.sentBy === 'formando' ? 'Enviou mensagem' : 'Recebeu mensagem'}
+                            {message.sentBy === 'formando' ? 'Mensagem recebida' : 'Mensagem enviada'}
                           </p>
                         </div>
                       </div>
@@ -364,7 +361,7 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                       <h4 className="text-[0.9375rem] font-medium text-slate-800 dark:text-slate-100">
                         {message.title}
                       </h4>
-                      {!isFormador && !message.isRead && (
+                      {isIncoming(message) && !message.isRead && (
                         <span className="bg-orange-500 text-white text-[0.625rem] px-2 py-0.5 rounded-full">
                           Nova
                         </span>
@@ -386,18 +383,18 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
                           <span>•</span>
                           <span className="flex items-center gap-1">
                             <User size={12} />
-                            De: {message.formadorName}
+                            {message.sentBy === 'formador' ? `De: ${message.formadorName}` : 'Enviada por si ao formador'}
                           </span>
                         </>
                       )}
                     </div>
                   </div>
 
-                  {/* Botões de ação - APENAS para formador */}
-                  {isFormador && (
+                  {/* Botões de ação: o formador gere todas; o formando apaga as que enviou */}
+                  {(isFormador || message.sentBy === 'formando') && (
                     <div className="flex items-center gap-1 flex-shrink-0">
                       {/* Botão Editar - aparece apenas para mensagens ENVIADAS pelo formador */}
-                      {message.sentBy === 'formador' && (
+                      {isFormador && message.sentBy === 'formador' && (
                         <button
                           type="button"
                           onClick={() => openEditModal(message)}
@@ -686,9 +683,9 @@ export function MessagesFormando({ onBack }: MessagesFormandoProps) {
           <DialogHeader>
             <DialogTitle className="dark:text-slate-100">{selectedMessage?.title}</DialogTitle>
             <DialogDescription className="dark:text-slate-400">
-              {isFormador 
-                ? `Mensagem enviada para ${selectedMessage?.formandoName}` 
-                : `Mensagem de ${selectedMessage?.formadorName}`}
+              {selectedMessage?.sentBy === 'formando'
+                ? (isFormador ? `Mensagem de ${selectedMessage?.formandoName}` : 'Mensagem enviada por si ao formador')
+                : (isFormador ? `Mensagem enviada para ${selectedMessage?.formandoName}` : `Mensagem de ${selectedMessage?.formadorName}`)}
             </DialogDescription>
           </DialogHeader>
           <div className="py-4">
