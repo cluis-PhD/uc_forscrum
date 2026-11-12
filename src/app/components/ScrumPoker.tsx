@@ -10,7 +10,7 @@ interface ScrumPokerProps {
   onBack: () => void;
 }
 
-type VotingSystem = 'fibonacci' | 'tshirt';
+type VotingSystem = 'tshirt';
 
 type Vote = string | null;
 
@@ -37,7 +37,7 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
   
   const primaryColor = userType === 'formando' ? '#0a7da0' : '#3b8433';
   
-  const [votingSystem, setVotingSystem] = useState<VotingSystem>('fibonacci');
+  const votingSystem: VotingSystem = 'tshirt';
   
   const [selectedVote, setSelectedVote] = useState<Vote>(null);
   
@@ -49,11 +49,10 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
   const [currentStoryId, setCurrentStoryId] = useState<string | null>(null);
   const [showStorySelector, setShowStorySelector] = useState(false);
 
-  const fibonacciOptions = ['0', '1', '2', '3', '5', '8', '13', '21', '34', '55', '89', '?', '☕'];
   
   const tshirtOptions = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '?', '☕'];
 
-  const votingOptions = votingSystem === 'fibonacci' ? fibonacciOptions : tshirtOptions;
+  const votingOptions = tshirtOptions;
 
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [loadingTeam, setLoadingTeam] = useState(true);
@@ -521,13 +520,10 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       .filter(v => v && v !== '?' && v !== '☕')
       .map(v => {
         // Converte tamanhos de T-Shirt para números equivalentes
-        if (votingSystem === 'tshirt') {
-          const sizeMap: Record<string, number> = { 
-            'XXS': 1, 'XS': 2, 'S': 3, 'M': 5, 'L': 8, 'XL': 13, 'XXL': 21 
-          };
-          return sizeMap[v!] || 0;
-        }
-        return parseInt(v!);
+        const sizeMap: Record<string, number> = { 
+          'XXS': 1, 'XS': 2, 'S': 3, 'M': 5, 'L': 8, 'XL': 13, 'XXL': 21 
+        };
+        return sizeMap[v!] || 0;
       });
 
     // Retorna null se não houver votos válidos
@@ -636,51 +632,6 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
                 <span className="text-[0.75rem]">Todos votaram</span>
               </div>
             )}
-          </div>
-        </div>
-
-        {/* Voting System Toggle */}
-        <div className="bg-white rounded-[16px] p-4 shadow-sm dark:bg-slate-800 transition-colors">
-          <p className="text-[0.8125rem] text-slate-600 mb-3 dark:text-slate-400" id="voting-system-label">Sistema de Votação</p>
-          <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-labelledby="voting-system-label">
-            <button
-              onClick={() => {
-                setVotingSystem('fibonacci');
-                handleResetVotes();
-              }}
-              role="radio"
-              aria-checked={votingSystem === 'fibonacci'}
-              aria-label="Sistema Fibonacci"
-              className={`py-3 px-4 rounded-[12px] text-[0.875rem] transition-all ${
-                votingSystem === 'fibonacci'
-                  ? 'text-white shadow-md'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'
-              }`}
-              style={{
-                background: votingSystem === 'fibonacci' ? primaryColor : undefined
-              }}
-            >
-              Fibonacci
-            </button>
-            <button
-              onClick={() => {
-                setVotingSystem('tshirt');
-                handleResetVotes();
-              }}
-              role="radio"
-              aria-checked={votingSystem === 'tshirt'}
-              aria-label="Sistema T-Shirt"
-              className={`py-3 px-4 rounded-[12px] text-[0.875rem] transition-all ${
-                votingSystem === 'tshirt'
-                  ? 'text-white shadow-md'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'
-              }`}
-              style={{
-                background: votingSystem === 'tshirt' ? primaryColor : undefined
-              }}
-            >
-              T-Shirt
-            </button>
           </div>
         </div>
 
