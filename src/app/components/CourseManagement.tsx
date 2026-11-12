@@ -13,10 +13,12 @@ import {
   Calendar,
   Loader2,
   AlertCircle,
-  Save
+  Save,
+  Pencil
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { Header } from './shared/Header';
+import { EditDialog } from './shared/EditDialog';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 
 interface CourseManagementProps {
@@ -379,6 +381,7 @@ interface Course {
 export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [showCreateCourse, setShowCreateCourse] = useState(false);
+  const [editingCourse, setEditingCourse] = useState<Course | null>(null);
   const [courses, setCourses] = useState<Course[]>([]);
   const [loadingCourses, setLoadingCourses] = useState(true);
   
@@ -603,7 +606,7 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
    
   // Função para arquivar curso no Supabase
   const handleArchiveCourse = async (courseId: string, courseName: string) => {
-    if (!confirm(`Tem certeza que deseja eliminar o curso "${courseName}"?`)) {
+    if (!confirm(`Eliminar o curso "${courseName}"?\n\nSerão também eliminados as equipas, os formandos, os sprints e as user stories deste curso. Esta ação não pode ser desfeita.`)) {
       return;
     }
 
@@ -635,6 +638,29 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
       console.error('Erro ao eliminar curso:', error);
       toast.error(`Erro ao eliminar curso: ${error instanceof Error ? error.message : 'Erro desconhecido'}`);
     }
+  };
+
+  // Editar curso (nome, descrição e datas)
+  const handleSaveCourse = async (values: Record<string, string>) => {
+    if (!editingCourse) return;
+    const toPt = (d: string) => (/^\d{4}-\d{2}-\d{2}$/.test(d) ? d.split('-').reverse().join('/') : d);
+    const response = await fetch(`${API_BASE_URL}/courses/${editingCourse.id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${publicAnonKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: values.name.trim(),
+        description: values.description.trim(),
+        startDate: toPt(values.startDate),
+        endDate: toPt(values.endDate),
+      }),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.success) throw new Error(data.error || 'Não foi possível guardar o curso');
+    setCourses(prev => prev.map(c => (c.id === editingCourse.id ? { ...c, ...data.course } : c)));
+    toast.success('Curso atualizado');
   };
 
   const getStatusColor = (status: string) => {
@@ -794,6 +820,16 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
+                        setEditingCourse(course);
+                      }}
+                      className="flex-1 py-2.5 px-3 border-2 border-slate-200 text-slate-700 rounded-[10px] text-[0.875rem] hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
+                    >
+                      <Pencil size={16} />
+                      Editar
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
                         handleArchiveCourse(course.id, course.name);
                       }}
                       className="flex-1 py-2.5 px-3 border-2 border-slate-200 text-slate-700 rounded-[10px] text-[0.875rem] hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
@@ -818,6 +854,20 @@ export function CourseManagement({ onBack, onNavigate }: CourseManagementProps) 
 
         <div className="pb-8" />
       </div>
+
+      <EditDialog
+        open={!!editingCourse}
+        title="Editar curso"
+        initial={editingCourse || {}}
+        fields={[
+          { key: 'name', label: 'Nome do curso', required: true },
+          { key: 'description', label: 'Descrição', type: 'textarea' },
+          { key: 'startDate', label: 'Data de início', type: 'date' },
+          { key: 'endDate', label: 'Data de fim', type: 'date' },
+        ]}
+        onClose={() => setEditingCourse(null)}
+        onSave={handleSaveCourse}
+      />
     </div>
   );
 }

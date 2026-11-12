@@ -41,6 +41,7 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { BackendWarning } from './BackendWarning';
 import { useApp } from '../context/AppContext';
+import { EditDialog } from './shared/EditDialog';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import { fetchWithRetry, formatErrorMessage, isNetworkError } from '../utils/apiRetry';
 
@@ -88,6 +89,7 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
   
   // Sprints from database
   const [sprints, setSprints] = useState<any[]>([]);
+  const [editingSprint, setEditingSprint] = useState<any | null>(null);
   const [loadingSprints, setLoadingSprints] = useState(false);
   
   // Backend warning state
@@ -312,6 +314,30 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
     } finally {
       setLoadingTeams(false);
     }
+  };
+
+  const handleSaveSprint = async (values: Record<string, string>) => {
+    if (!editingSprint) return;
+    const response = await fetch(
+      `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints/${editingSprint.id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${publicAnonKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: values.name.trim(),
+          goal: values.goal.trim(),
+          startDate: values.startDate,
+          endDate: values.endDate,
+        }),
+      }
+    );
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok || !data.success) throw new Error(data.error || 'Não foi possível guardar o sprint');
+    toast.success('Sprint atualizado');
+    loadSprints();
   };
 
   const loadSprints = async () => {
@@ -1100,9 +1126,16 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
                       </button>
                       
                       <button
+                        onClick={(e) => { e.stopPropagation(); setEditingSprint(sprint); }}
+                        className="p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors ml-2"
+                        aria-label={`Editar sprint ${sprint.name}`}
+                      >
+                        <Pencil size={18} />
+                      </button>
+                      <button
                         onClick={async (e) => {
                           e.stopPropagation();
-                          if (confirm(`Tem certeza que deseja apagar o sprint "${sprint.name}"?`)) {
+                          if (confirm(`Apagar o sprint "${sprint.name}"?\n\nAs user stories deste sprint também serão apagadas.`)) {
                             try {
                               const response = await fetch(
                                 `https://${projectId}.supabase.co/functions/v1/make-server-1184b871/sprints/${sprint.id}`,
@@ -1378,6 +1411,20 @@ export function CourseDetails({ onBack, onNavigate, courseName, courseId, initia
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      <EditDialog
+        open={!!editingSprint}
+        title="Editar sprint"
+        initial={editingSprint || {}}
+        fields={[
+          { key: 'name', label: 'Nome do sprint', required: true },
+          { key: 'goal', label: 'Objetivo', type: 'textarea' },
+          { key: 'startDate', label: 'Data de início', type: 'date' },
+          { key: 'endDate', label: 'Data de fim', type: 'date' },
+        ]}
+        onClose={() => setEditingSprint(null)}
+        onSave={handleSaveSprint}
+      />
 
       {/* Edit Student Dialog */}
       <Dialog open={isEditStudentOpen} onOpenChange={setIsEditStudentOpen}>

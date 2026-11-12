@@ -407,6 +407,22 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
       
       localStorage.setItem(votesKey, JSON.stringify(updatedVotes));
       console.log('[ScrumPoker] Voto salvo no localStorage:', updatedVotes);
+
+      // Guardar também na base de dados (partilhado entre dispositivos)
+      fetch(`https://${projectId}.supabase.co/functions/v1/make-server-1184b871/votes`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${publicAnonKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          storyId: currentStoryId,
+          userId: loggedStudent?.id || userProfile.name,
+          userName: userProfile.name,
+          vote: voteValue,
+          votingSystem,
+        }),
+      }).catch(() => { /* sem servidor: fica só no localStorage */ });
       
     } catch (error) {
       console.error('[ScrumPoker] ❌ Erro ao salvar voto:', error);
@@ -447,6 +463,10 @@ export function ScrumPoker({ onBack }: ScrumPokerProps) {
     if (currentStoryId) {
       const votesKey = `scrumpoker_votes_${currentStoryId}`;
       localStorage.removeItem(votesKey);
+      fetch(`https://${projectId}.supabase.co/functions/v1/make-server-1184b871/votes?storyId=${currentStoryId}`, {
+        method: 'DELETE',
+        headers: { 'Authorization': `Bearer ${publicAnonKey}` },
+      }).catch(() => { /* sem servidor */ });
     }
     
     toast.info('Votação reiniciada');
