@@ -909,7 +909,7 @@ export default function App() {
           {/* Footer */}
         <div className="absolute bottom-6 left-0 right-0 text-center px-6">
             <p className="text-[0.6875rem] text-slate-400">
-              forScrum © 2025 
+              forScrum © 2026 
             </p>
           </div>
         </div>
