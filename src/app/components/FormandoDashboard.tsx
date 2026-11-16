@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { BookOpen, MessageSquare, Bell, Calendar, User, ListTodo, Mail, Award, TrendingUp, BarChart3 } from 'lucide-react';
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { SprintCharts } from './shared/SprintCharts';
+import { averageVelocity, currentSprint, velocityBySprint, voteToPoints } from '../data/sprintMetrics';
 import { useApp } from '../context/AppContext';
 import { API_URL } from '../data/database';
 import { Header } from './shared/Header';
@@ -172,83 +173,45 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
     }
   };
 
-  // Calcular KPIs dinâmicos
+  // Calcular KPIs a partir dos dados reais (user stories e votos do Scrum Poker)
   const calculateKPIs = () => {
-    console.log('[FormandoDashboard] 📊 Calculando KPIs...');
-    console.log('[FormandoDashboard] Total teamMembers:', teamMembers.length);
-    console.log('[FormandoDashboard] Total userStories:', userStories.length);
-    console.log('[FormandoDashboard] Stories:', userStories);
-    
-    // Calcular story points por membro baseado em votos ou pontos finais
+    const isMemberVote = (member: any, v: any) =>
+      (v.userId && v.userId === member.id) || (v.userName && v.userName === member.name);
+
+    // Pontos de cada membro: soma das estimativas que deu nas votações
     const memberPoints = teamMembers.map(member => {
-      console.log('[FormandoDashboard] 👤 Calculando pontos para:', member.name);
-      
-      // Contar TODOS os votos do membro em TODAS as stories
-      let totalPoints = 0;
-      
-      userStories.forEach(story => {
-        // Verificar se este membro votou nesta story
-        if (story.votes && Array.isArray(story.votes)) {
-          const memberVote = story.votes.find((v: any) => v.studentName === member.name);
-          if (memberVote) {
-            console.log(`[FormandoDashboard] ✅ ${member.name} votou ${memberVote.value} em "${story.title}"`);
-            totalPoints += memberVote.value || 0;
-          }
-        }
-      });
-      
-      console.log(`[FormandoDashboard] 📊 Total de pontos de ${member.name}:`, totalPoints);
-      
-      return { ...member, points: totalPoints };
+      const points = userStories.reduce((sum, story) => {
+        const vote = (story.votes || []).find((v: any) => isMemberVote(member, v));
+        return sum + (vote ? voteToPoints(vote.vote ?? vote.value) || 0 : 0);
+      }, 0);
+      return { ...member, points };
     });
 
-    console.log('[FormandoDashboard] 📊 Member points:', memberPoints);
-
-    // Story points do usuário logado
-    const myStoryPoints = memberPoints.find(
-      m => m.id === loggedStudent?.id
-    )?.points || 0;
-
-    // Total de pontos da equipa
     const totalPoints = memberPoints.reduce((sum, m) => sum + m.points, 0);
 
-    // Calcular velocidade (story points concluídos)
-    const completedStories = userStories.filter(story => story.status === 'done');
-    const velocity = completedStories.reduce((sum, story) => {
-      // Priorizar pontos finais, senão calcular média dos votos
-      if (story.points && Number(story.points) > 0) {
-        return sum + Number(story.points);
-      }
-      if (story.votes && story.votes.length > 0) {
-        const averageVote = Math.round(
-          story.votes.reduce((acc: number, vote: any) => acc + vote.value, 0) / story.votes.length
-        );
-        return sum + averageVote;
-      }
-      return sum;
-    }, 0);
+    // Velocidade: média dos pontos concluídos por sprint da equipa
+    const teamSprints = sprints.filter((sp: any) => !sp.teamId || sp.teamId === loggedStudent?.teamId);
+    const velocity = averageVelocity(velocityBySprint(teamSprints, userStories));
 
-    // Taxa de conclusão
-    const totalStories = userStories.length;
-    const completionRate = totalStories > 0 
-      ? Math.round((completedStories.length / totalStories) * 100) 
+    // Sprint atual: os meus pontos e o progresso referem-se às suas user stories
+    const sprintNow = currentSprint(teamSprints);
+    const sprintStories = sprintNow ? userStories.filter(st => st.sprintId === sprintNow.id) : userStories;
+    const me = teamMembers.find(m => m.id === loggedStudent?.id) || loggedStudent;
+    const myStoryPoints = me
+      ? sprintStories.reduce((sum, story) => {
+          const vote = (story.votes || []).find((v: any) => isMemberVote(me, v));
+          return sum + (vote ? voteToPoints(vote.vote ?? vote.value) || 0 : 0);
+        }, 0)
       : 0;
-
-    console.log('[FormandoDashboard] 📊 KPIs finais:', {
-      velocity,
-      completionRate,
-      myStoryPoints,
-      totalPoints,
-      memberPoints: memberPoints.map(m => ({ name: m.name, points: m.points }))
-    });
+    const completedStories = sprintStories.filter(story => story.status === 'done');
+    const completionRate = sprintStories.length > 0
+      ? Math.round((completedStories.length / sprintStories.length) * 100)
+      : 0;
 
     return {
       velocity,
-      velocityTrend: '+9%',
       completionRate,
-      completionTrend: '+3%',
       myStoryPoints,
-      storyPointsTrend: '+4',
       teamMembers: teamMembers.length,
       memberPoints,
       totalPoints
@@ -256,72 +219,6 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
   };
 
   const teamKPIs = calculateKPIs();
-
-  // Calcular dados dinâmicos do burndown baseado em stories concluídas - ✅ MEMOIZADO
-  const burndownData = useMemo(() => {
-    // Se não houver stories, retornar dados vazios
-    if (userStories.length === 0) {
-      return [];
-    }
-
-    // Total de story points
-    const totalPoints = userStories.reduce((sum, story) => sum + (story.points || 0), 0);
-    
-    // Pontos concluídos
-    const completedPoints = userStories
-      .filter(story => story.status === 'done')
-      .reduce((sum, story) => sum + (story.points || 0), 0);
-
-    // Pontos restantes
-    const remainingPoints = totalPoints - completedPoints;
-
-    // Criar dados simulados para o gráfico (10 dias)
-    const days = 10;
-    const data = [];
-    
-    for (let i = 0; i <= days; i++) {
-      const idealRemaining = totalPoints - (totalPoints / days) * i;
-      // Simular progresso real baseado no percentual de conclusão atual
-      const completionRate = totalPoints > 0 ? completedPoints / totalPoints : 0;
-      const realRemaining = i === days 
-        ? remainingPoints 
-        : totalPoints - (totalPoints * completionRate * (i / days));
-      
-      data.push({
-        id: `burndown-day-${i}`, // ✅ ID único para evitar keys duplicadas
-        day: `Dia ${i + 1}`,
-        ideal: Math.max(0, Math.round(idealRemaining)),
-        real: Math.max(0, Math.round(realRemaining))
-      });
-    }
-
-    return data;
-  }, [userStories]); // Recalcular apenas quando userStories mudar
-
-  // Calcular dados dinâmicos de velocidade baseado em sprints - ✅ MEMOIZADO
-  const velocityData = useMemo(() => {
-    const velocity = teamKPIs.velocity || 20; // valor mínimo de 20 se não houver dados
-    const data = [];
-    
-    // Usar seed baseada em dados reais para manter consistência
-    const seed = userStories.length + teamMembers.length;
-    
-    for (let i = 1; i <= 5; i++) {
-      // Simular variação de ±20% na velocidade (DETERMINISTICO baseado em seed)
-      const variation = ((seed * i) % 40 - 20) / 100; // -20% a +20% deterministico
-      const plannedPoints = Math.max(10, Math.round(velocity * (1 + variation)));
-      const completedPoints = Math.max(8, Math.round(plannedPoints * (0.85 + ((seed * i * 2) % 15) / 100))); // 85-100% conclusão
-      
-      data.push({
-        id: `velocity-sprint-${i}`, // ✅ ID único para evitar keys duplicadas
-        sprint: `S${i}`,
-        planeado: plannedPoints,
-        concluido: completedPoints
-      });
-    }
-
-    return data;
-  }, [teamKPIs.velocity, userStories.length, teamMembers.length]); // Recalcular apenas quando velocidade ou tamanhos mudarem
 
   return (
     <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif] pb-24 pt-[100px] dark:bg-slate-900 transition-colors duration-200">
@@ -428,10 +325,6 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
                 <p className="text-[0.875rem] text-slate-600 dark:text-slate-400 mb-1">Sprint Atual</p>
                 <p className="text-[1.75rem] text-[#0a7da0]">{teamKPIs.myStoryPoints} pts</p>
               </div>
-              <div className="flex items-center gap-2 bg-green-100 px-3 py-2 rounded-[10px] dark:bg-green-900/30">
-                <TrendingUp size={16} className="text-green-600 dark:text-green-400" />
-                <span className="text-green-600 dark:text-green-400 text-[0.875rem]">{teamKPIs.storyPointsTrend}</span>
-              </div>
             </div>
 
             <div className="pt-3 border-t border-slate-200 dark:border-slate-700">
@@ -517,138 +410,12 @@ export function FormandoDashboard({ onLogout, onNavigate }: FormandoDashboardPro
           </div>
         </div>
 
-        {/* Burndown Chart */}
-        <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-[1rem] text-slate-800 dark:text-slate-200">Burndown Chart</h2>
-            <div className="bg-blue-100 px-3 py-1 rounded-[8px] dark:bg-blue-900/30">
-              <p className="text-[0.6875rem] text-blue-700 dark:text-blue-400">Sprint Atual</p>
-            </div>
-          </div>
-
-          <ResponsiveContainer width="100%" height={200} key={`burndown-${burndownData.length}-${burndownData[0]?.real || 0}`}>
-            <LineChart data={burndownData}>
-              <CartesianGrid key="grid-burndown" strokeDasharray="3 3" stroke="#e0e0e0" />
-              <XAxis 
-                key="xaxis-burndown"
-                dataKey="day" 
-                tick={{ fontSize: 11 }}
-                stroke="#94a3b8"
-              />
-              <YAxis 
-                key="yaxis-burndown"
-                tick={{ fontSize: 11 }}
-                stroke="#94a3b8"
-              />
-              <Tooltip 
-                key="tooltip-burndown"
-                contentStyle={{ 
-                  borderRadius: '8px',
-                  border: '1px solid #e0e0e0',
-                  fontSize: '12px'
-                }}
-              />
-              <Legend 
-                key="legend-burndown"
-                wrapperStyle={{ fontSize: '12px' }}
-              />
-              <Line 
-                key="line-ideal-burndown"
-                type="monotone" 
-                dataKey="ideal" 
-                stroke="#94a3b8" 
-                strokeWidth={2}
-                strokeDasharray="5 5"
-                name="Ideal"
-                dot={false}
-                isAnimationActive={false}
-              />
-              <Line 
-                key="line-real-burndown"
-                type="monotone" 
-                dataKey="real" 
-                stroke="#0a7da0" 
-                strokeWidth={3}
-                name="Real"
-                dot={{ fill: '#0a7da0', r: 4 }}
-                isAnimationActive={false}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-
-          <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between text-[0.75rem]">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-[#0a7da0] rounded-full"></div>
-                <span className="text-slate-600 dark:text-slate-400">Trabalho Restante: <strong className="text-slate-800 dark:text-slate-200">0 pts</strong></span>
-              </div>
-              <span className="text-green-600 dark:text-green-400">Concluído ✓</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Velocity Chart */}
-        <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-[1rem] text-slate-800 dark:text-slate-200">Velocidade da Equipa</h2>
-            <BarChart3 className="text-[#0a7da0]" size={20} />
-          </div>
-
-          <ResponsiveContainer width="100%" height={200} key={`velocity-${velocityData.length}-${velocityData[0]?.concluido || 0}`}>
-            <BarChart data={velocityData}>
-              <CartesianGrid key="grid-velocity" strokeDasharray="3 3" stroke="#e0e0e0" />
-              <XAxis 
-                key="xaxis-velocity"
-                dataKey="sprint" 
-                tick={{ fontSize: 11 }}
-                stroke="#94a3b8"
-              />
-              <YAxis 
-                key="yaxis-velocity"
-                tick={{ fontSize: 11 }}
-                stroke="#94a3b8"
-              />
-              <Tooltip 
-                key="tooltip-velocity"
-                contentStyle={{ 
-                  borderRadius: '8px',
-                  border: '1px solid #e0e0e0',
-                  fontSize: '12px'
-                }}
-              />
-              <Legend key="legend-velocity" wrapperStyle={{ fontSize: '12px' }} />
-              <Bar 
-                key="bar-planeado-velocity"
-                dataKey="planeado" 
-                fill="#94a3b8" 
-                radius={[8, 8, 0, 0]}
-                name="Planeado"
-                isAnimationActive={false}
-              />
-              <Bar 
-                key="bar-concluido-velocity"
-                dataKey="concluido" 
-                fill="#0a7da0" 
-                radius={[8, 8, 0, 0]}
-                name="Concluído"
-                isAnimationActive={false}
-              />
-            </BarChart>
-          </ResponsiveContainer>
-
-          <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between text-[0.75rem]">
-              <span className="text-slate-600 dark:text-slate-400">Velocidade Média</span>
-              <div className="flex items-center gap-2">
-                <strong className="text-[#0a7da0] text-[1rem]">{teamKPIs.velocity} pts</strong>
-                <div className="flex items-center gap-1 bg-green-100 px-2 py-1 rounded-[6px] dark:bg-green-900/30">
-                  <TrendingUp size={12} className="text-green-600 dark:text-green-400" />
-                  <span className="text-green-600 dark:text-green-400 text-[0.6875rem]">{teamKPIs.velocityTrend}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Gráficos por sprint (dados reais: user stories e votos do Scrum Poker) */}
+        <SprintCharts
+          sprints={sprints.filter((sp: any) => !sp.teamId || sp.teamId === loggedStudent?.teamId)}
+          stories={userStories}
+          color="#0a7da0"
+        />
       </div>
     </div>
   );

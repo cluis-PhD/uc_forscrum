@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Home, BookOpen, Users, Calendar, MessageSquare, Settings, ChevronDown, BarChart3, TrendingUp, AlertCircle, Bell } from 'lucide-react';
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { SprintCharts } from './shared/SprintCharts';
+import { averageVelocity, velocityBySprint } from '../data/sprintMetrics';
 import { useApp } from '../context/AppContext';
 import { API_URL } from '../data/database';
 import { Header } from './shared/Header';
@@ -241,9 +242,10 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
       // Filtrar stories da equipa (baseado no courseId)
       const teamStories = userStories.filter(story => story.courseId === team.courseId);
       
-      // Calcular velocidade (story points concluídos)
+      // Velocidade: média dos pontos concluídos por sprint (pontos definidos ou média dos votos)
       const completedStories = teamStories.filter(story => story.status === 'done');
-      const velocity = completedStories.reduce((sum, story) => sum + (story.points || 0), 0);
+      const teamSprints = sprints.filter((sp: any) => sp.courseId === team.courseId && (!sp.teamId || sp.teamId === team.id));
+      const velocity = averageVelocity(velocityBySprint(teamSprints, teamStories));
       
       // Calcular taxa de conclusão
       const totalStories = teamStories.length;
@@ -307,113 +309,6 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
     }
   };
 
-  // Mock data - Burndown Chart (filtrável)
-  const getBurndownData = () => {
-    // Dados diferentes baseados nos filtros
-    const baseData = [
-      { id: 'burndown-day-0', day: 'Dia 1', ideal: 100, real: 100 },
-      { id: 'burndown-day-1', day: 'Dia 2', ideal: 90, real: 95 },
-      { id: 'burndown-day-2', day: 'Dia 3', ideal: 80, real: 88 },
-      { id: 'burndown-day-3', day: 'Dia 4', ideal: 70, real: 78 },
-      { id: 'burndown-day-4', day: 'Dia 5', ideal: 60, real: 65 },
-      { id: 'burndown-day-5', day: 'Dia 6', ideal: 50, real: 52 },
-      { id: 'burndown-day-6', day: 'Dia 7', ideal: 40, real: 40 },
-      { id: 'burndown-day-7', day: 'Dia 8', ideal: 30, real: 28 },
-      { id: 'burndown-day-8', day: 'Dia 9', ideal: 20, real: 18 },
-      { id: 'burndown-day-9', day: 'Dia 10', ideal: 10, real: 10 },
-      { id: 'burndown-day-10', day: 'Dia 11', ideal: 0, real: 5 },
-    ];
-    
-    // Ajusta os dados baseado na equipa selecionada
-    if (selectedTeam === '1') { // Alpha - melhor performance
-      return baseData.map(d => ({ ...d, real: Math.max(0, d.real - 5) }));
-    } else if (selectedTeam === '3') { // Gamma - pior performance
-      return baseData.map(d => ({ ...d, real: Math.min(100, d.real + 8) }));
-    }
-    return baseData;
-  };
-
-  // Mock data - Velocity Chart (filtrável)
-  const getVelocityData = () => {
-    const data: Record<string, any[]> = {
-      'all': [
-        { id: 'velocity-all-1', sprint: 'S1', planeado: 45, concluido: 42 },
-        { id: 'velocity-all-2', sprint: 'S2', planeado: 50, concluido: 48 },
-        { id: 'velocity-all-3', sprint: 'S3', planeado: 55, concluido: 52 },
-        { id: 'velocity-all-4', sprint: 'S4', planeado: 50, concluido: 55 },
-        { id: 'velocity-all-5', sprint: 'S5', planeado: 60, concluido: 58 },
-      ],
-      '1': [ // forScrum
-        { id: 'velocity-1-1', sprint: 'S1', planeado: 50, concluido: 48 },
-        { id: 'velocity-1-2', sprint: 'S2', planeado: 55, concluido: 52 },
-        { id: 'velocity-1-3', sprint: 'S3', planeado: 60, concluido: 58 },
-        { id: 'velocity-1-4', sprint: 'S4', planeado: 55, concluido: 60 },
-        { id: 'velocity-1-5', sprint: 'S5', planeado: 65, concluido: 63 },
-      ],
-      '2': [ // Product Owner
-        { id: 'velocity-2-1', sprint: 'S1', planeado: 42, concluido: 40 },
-        { id: 'velocity-2-2', sprint: 'S2', planeado: 48, concluido: 46 },
-        { id: 'velocity-2-3', sprint: 'S3', planeado: 52, concluido: 50 },
-        { id: 'velocity-2-4', sprint: 'S4', planeado: 48, concluido: 52 },
-        { id: 'velocity-2-5', sprint: 'S5', planeado: 58, concluido: 55 },
-      ],
-      '3': [ // Agile Fundamentals
-        { id: 'velocity-3-1', sprint: 'S1', planeado: 40, concluido: 38 },
-        { id: 'velocity-3-2', sprint: 'S2', planeado: 45, concluido: 42 },
-        { id: 'velocity-3-3', sprint: 'S3', planeado: 48, concluido: 45 },
-        { id: 'velocity-3-4', sprint: 'S4', planeado: 45, concluido: 48 },
-        { id: 'velocity-3-5', sprint: 'S5', planeado: 52, concluido: 50 },
-      ],
-    };
-    return data[selectedCourse] || data['all'];
-  };
-
-  // KPIs principais (calculados baseados nos filtros)
-  const getKPIs = () => {
-    const kpisData: Record<string, any> = {
-      'all': {
-        velocity: 52,
-        velocityTrend: '+8%',
-        completionRate: 94,
-        completionTrend: '+2%',
-        activeTeams: 7,
-        teamsTrend: '+1',
-        avgPoints: 156,
-        pointsTrend: '+12',
-      },
-      '1': { // Scrum Master
-        velocity: 58,
-        velocityTrend: '+10%',
-        completionRate: 96,
-        completionTrend: '+3%',
-        activeTeams: 3,
-        teamsTrend: '+1',
-        avgPoints: 174,
-        pointsTrend: '+15',
-      },
-      '2': { // Product Owner
-        velocity: 50,
-        velocityTrend: '+7%',
-        completionRate: 92,
-        completionTrend: '+2%',
-        activeTeams: 2,
-        teamsTrend: '0',
-        avgPoints: 150,
-        pointsTrend: '+10',
-      },
-      '3': { // Agile Fundamentals
-        velocity: 45,
-        velocityTrend: '+5%',
-        completionRate: 88,
-        completionTrend: '+1%',
-        activeTeams: 2,
-        teamsTrend: '+1',
-        avgPoints: 135,
-        pointsTrend: '+8',
-      },
-    };
-    return kpisData[selectedCourse] || kpisData['all'];
-  };
 // inicio conta formados
 
   const getStudentCount = (courseId: string) => {
@@ -456,9 +351,12 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
 
 // fim
   
-  const burndownData = getBurndownData();
-  const velocityData = getVelocityData();
-  const kpis = getKPIs();
+  // Sprints e user stories conforme os filtros de curso e equipa
+  const chartSprints = sprints.filter((sp: any) =>
+    (selectedCourse === 'all' || sp.courseId === selectedCourse) &&
+    (selectedTeam === 'all' || !sp.teamId || sp.teamId === selectedTeam)
+  );
+  const chartStories = userStories.filter((st: any) => selectedCourse === 'all' || st.courseId === selectedCourse);
 
   return (
     <div className="bg-[#f0f0f0] min-h-screen w-full font-['Roboto',-apple-system,BlinkMacSystemFont,sans-serif] pb-24 pt-[100px] dark:bg-slate-900 transition-colors duration-200">
@@ -565,138 +463,8 @@ export function FormadorDashboard({ onLogout, onNavigate }: FormadorDashboardPro
           </div>
         </div>
 
-        {/* Burndown Chart */}
-        <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-[1rem] text-slate-800 dark:text-slate-200">Burndown Chart</h2>
-            <div className="bg-blue-100 px-3 py-1 rounded-[8px] dark:bg-blue-900/30">
-              <p className="text-[0.6875rem] text-blue-700 dark:text-blue-400">Sprint Atual</p>
-            </div>
-          </div>
-
-          <ResponsiveContainer width="100%" height={200} key={`burndown-formador-${burndownData.length}-${burndownData[0]?.real || 0}`}>
-            <LineChart data={burndownData}>
-              <CartesianGrid key="grid-burndown-formador" strokeDasharray="3 3" stroke="#e0e0e0" />
-              <XAxis 
-                key="xaxis-burndown-formador"
-                dataKey="day" 
-                tick={{ fontSize: 11 }}
-                stroke="#94a3b8"
-              />
-              <YAxis 
-                key="yaxis-burndown-formador"
-                tick={{ fontSize: 11 }}
-                stroke="#94a3b8"
-              />
-              <Tooltip 
-                key="tooltip-burndown-formador"
-                contentStyle={{ 
-                  borderRadius: '8px',
-                  border: '1px solid #e0e0e0',
-                  fontSize: '12px'
-                }}
-              />
-              <Legend 
-                key="legend-burndown-formador"
-                wrapperStyle={{ fontSize: '12px' }}
-              />
-              <Line 
-                key="line-ideal-burndown-formador"
-                type="monotone" 
-                dataKey="ideal" 
-                stroke="#94a3b8" 
-                strokeWidth={2}
-                strokeDasharray="5 5"
-                name="Ideal"
-                dot={false}
-                isAnimationActive={false}
-              />
-              <Line 
-                key="line-real-burndown-formador"
-                type="monotone" 
-                dataKey="real" 
-                stroke="#3b8433" 
-                strokeWidth={3}
-                name="Real"
-                dot={{ fill: '#3b8433', r: 4 }}
-                isAnimationActive={false}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-
-          <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between text-[0.75rem]">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-[#3b8433] rounded-full"></div>
-                <span className="text-slate-600 dark:text-slate-400">Trabalho Restante: <strong className="text-slate-800 dark:text-slate-200">5 pts</strong></span>
-              </div>
-              <span className="text-green-600 dark:text-green-400">No prazo ✓</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Velocity Chart */}
-        <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-[1rem] text-slate-800 dark:text-slate-200">Velocidade por Sprint</h2>
-            <BarChart3 className="text-[#3b8433]" size={20} />
-          </div>
-
-          <ResponsiveContainer width="100%" height={200} key={`velocity-formador-${velocityData.length}-${velocityData[0]?.concluido || 0}`}>
-            <BarChart data={velocityData}>
-              <CartesianGrid key="grid-velocity-formador" strokeDasharray="3 3" stroke="#e0e0e0" />
-              <XAxis 
-                key="xaxis-velocity-formador"
-                dataKey="sprint" 
-                tick={{ fontSize: 11 }}
-                stroke="#94a3b8"
-              />
-              <YAxis 
-                key="yaxis-velocity-formador"
-                tick={{ fontSize: 11 }}
-                stroke="#94a3b8"
-              />
-              <Tooltip 
-                key="tooltip-velocity-formador"
-                contentStyle={{ 
-                  borderRadius: '8px',
-                  border: '1px solid #e0e0e0',
-                  fontSize: '12px'
-                }}
-              />
-              <Legend key="legend-velocity-formador" wrapperStyle={{ fontSize: '12px' }} />
-              <Bar 
-                key="bar-planeado-velocity-formador"
-                dataKey="planeado" 
-                fill="#94a3b8" 
-                radius={[8, 8, 0, 0]}
-                name="Planeado"
-                isAnimationActive={false}
-              />
-              <Bar 
-                key="bar-concluido-velocity-formador"
-                dataKey="concluido" 
-                fill="#3b8433" 
-                radius={[8, 8, 0, 0]}
-                name="Concluído"
-                isAnimationActive={false}
-              />
-            </BarChart>
-          </ResponsiveContainer>
-
-          <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
-            <div className="flex items-center justify-between text-[0.75rem]">
-              <span className="text-slate-600 dark:text-slate-400">Velocidade Média</span>
-              <div className="flex items-center gap-2">
-                <strong className="text-[#3b8433] text-[1rem]">52 pts</strong>
-                <div className="flex items-center gap-1 bg-green-100 px-2 py-1 rounded-[6px] dark:bg-green-900/30">
-                  <TrendingUp size={12} className="text-green-600 dark:text-green-400" />
-                  <span className="text-green-600 dark:text-green-400 text-[0.6875rem]">+8%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Gráficos por sprint (dados reais: user stories e votos do Scrum Poker) */}
+        <SprintCharts sprints={chartSprints} stories={chartStories} color="#3b8433" />
 
         {/* Performance por Equipa */}
         <div className="bg-white rounded-[16px] p-5 shadow-sm dark:bg-slate-800">
